@@ -1,0 +1,185 @@
+/* ===================================================
+   MARSELUS PHARMACEUTICALS — DESIGN TOKENS
+   Inspired by premium medical/scientific aesthetic
+   =================================================== */
+
+:root {
+  /* ── Core Brand Colors ── */
+  --color-navy:          #0A192F;
+  --color-navy-90:       rgba(10, 25, 47, 0.9);
+  --color-navy-light:    #172A45;
+  --color-navy-muted:    rgba(10, 25, 47, 0.05);
+
+  /* Primary Accent — Scientific Blue (Capsule match) */
+  --color-accent:        #2563EB;
+  --color-accent-hover:  #1D4ED8;
+  --color-accent-light:  #3B82F6;
+  --color-accent-soft:   rgba(37, 99, 235, 0.08);
+  --color-accent-glow:   rgba(37, 99, 235, 0.1);
+
+  /* Corporate Gold (secondary accent) */
+  --color-gold:          #C5A55A;
+  --color-gold-light:    #D4BA7A;
+  --color-gold-soft:     rgba(197, 165, 90, 0.1);
+
+  /* ── Product Accents ── */
+  --color-artemes:       #0A192F;
+  --color-artemes-soft:  rgba(10, 25, 47, 0.08);
+  --color-artemes-glow:  rgba(10, 25, 47, 0.12);
+
+  --color-saranya:       #EC4899;
+  --color-saranya-soft:  rgba(236, 72, 153, 0.12);
+  --color-saranya-glow:  rgba(236, 72, 153, 0.3);
+
+  --color-immunomars:    #F97316;
+  --color-immunomars-soft: rgba(249, 115, 22, 0.12);
+  --color-immunomars-glow: rgba(249, 115, 22, 0.3);
+
+  --color-uv60k:         #2563EB;
+  --color-uv60k-soft:    rgba(37, 99, 235, 0.12);
+  --color-uv60k-glow:    rgba(37, 99, 235, 0.35);
+
+  /* ── Neutrals ── */
+  --color-white:         #FFFFFF;
+  --color-off-white:     #F4F7FB;
+  
+  /* ── Futuristic Gradients ── */
+  --grad-mesh-blue:      radial-gradient(at 10% 20%, rgba(37, 99, 235, 0.04) 0px, transparent 60%), 
+                         radial-gradient(at 90% 80%, rgba(244, 247, 251, 0.3) 0px, transparent 60%);
+  --grad-mesh-artemes:   radial-gradient(at 10% 20%, rgba(10, 25, 47, 0.05) 0px, transparent 60%), 
+                         radial-gradient(at 90% 80%, rgba(244, 247, 251, 0.4) 0px, transparent 60%);
+  --grad-mesh-saranya:   radial-gradient(at 10% 20%, rgba(236, 72, 153, 0.05) 0px, transparent 60%), 
+                         radial-gradient(at 90% 80%, rgba(244, 247, 251, 0.4) 0px, transparent 60%);
+  --grad-mesh-immunomars: radial-gradient(at 10% 20%, rgba(249, 115, 22, 0.05) 0px, transparent 60%), 
+                         radial-gradient(at 90% 80%, rgba(244, 247, 251, 0.4) 0px, transparent 60%);
+                         
+  --grad-text-blue:      linear-gradient(135deg, #0A192F 20%, #2563EB 100%);
+  --grad-text-gold:      linear-gradient(135deg, #0A192F 20%, #C5A55A 100%);
+  --grad-text-artemes:   linear-gradient(135deg, #0A192F 20%, #2563EB 100%);
+  --grad-text-saranya:   linear-gradient(135deg, #0A192F 20%, #EC4899 100%);
+  --grad-text-immunomars: linear-gradient(135deg, #0A192F 20%, #F97316 100%);
+  --grad-text-uv60k:     linear-gradient(135deg, #0A192F 20%, #2563EB 100%);
+  
+  --glass-bg:            rgba(255, 255, 255, 0.85);
+  --glass-bg-dark:       rgba(244, 247, 251, 0.75);
+  --glass-border:        1px solid rgba(37, 99, 235, 0.08);
+  --glass-border-dark:   1px solid rgba(37, 99, 235, 0.15);
+  --color-gray-50:       #F8FAFC;
+  --color-gray-100:      #F1F5F9;
+  --color-gray-200:      #E2E8F0;
+  --color-gray-300:      #CBD5E1;
+  --color-gray-400:      #94A3B8;
+  --color-gray-500:      #64748B;
+  --color-gray-600:      #475569;
+  --color-gray-700:      #334155;
+  --color-gray-800:      #1E293B;
+  --color-gray-900:      #0F172A;
+
+  /* ── Status Colors ── */
+  --color-success:       #059669;
+  --color-warning:       #D97706;
+  --color-error:         #DC2626;
+
+  /* ── Typography ── */
+  --font-heading:        'Outfit', sans-serif;
+  --font-body:           'Inter', sans-serif;
+
+  --text-xs:   clamp(0.75rem, 0.7rem + 0.15vw, 0.8125rem);
+  --text-sm:   clamp(0.8125rem, 0.775rem + 0.2vw, 0.875rem);
+  --text-base: clamp(0.875rem, 0.825rem + 0.25vw, 1rem);
+  --text-lg:   clamp(1rem, 0.925rem + 0.35vw, 1.125rem);
+  --text-xl:   clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
+  --text-2xl:  clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-3xl:  clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --text-4xl:  clamp(2rem, 1.5rem + 2vw, 2.5rem);
+  --text-5xl:  clamp(2.5rem, 1.8rem + 3vw, 3.5rem);
+  --text-6xl:  clamp(3rem, 2rem + 4vw, 4.5rem);
+  --text-hero: clamp(3.5rem, 2rem + 5.5vw, 6rem);
+
+  --leading-tight:    1.15;
+  --leading-snug:     1.3;
+  --leading-normal:   1.6;
+  --leading-relaxed:  1.75;
+
+  --tracking-tight:   -0.025em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.025em;
+  --tracking-wider:   0.05em;
+  --tracking-widest:  0.1em;
+
+  /* ── Spacing ── */
+  --space-1:  0.25rem;   /* 4px */
+  --space-2:  0.5rem;    /* 8px */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.25rem;   /* 20px */
+  --space-6:  1.5rem;    /* 24px */
+  --space-8:  2rem;      /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+  --space-20: 5rem;      /* 80px */
+  --space-24: 6rem;      /* 96px */
+  --space-32: 8rem;      /* 128px */
+
+  /* ── Layout ── */
+  --container-sm:  640px;
+  --container-md:  768px;
+  --container-lg:  1024px;
+  --container-xl:  1200px;
+  --container-2xl: 1400px;
+  --gutter:        clamp(1.5rem, 1rem + 2vw, 4rem);
+
+  /* ── Borders & Radii ── */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-2xl:  32px;
+  --radius-full: 9999px;
+
+  --border-thin:  1px solid rgba(10, 25, 47, 0.08);
+  --border-light: 1px solid rgba(10, 25, 47, 0.04);
+
+  /* ── Shadows ── */
+  --shadow-xs:    0 1px 2px rgba(10, 25, 47, 0.03);
+  --shadow-sm:    0 2px 8px rgba(10, 25, 47, 0.04);
+  --shadow-md:    0 4px 16px rgba(10, 25, 47, 0.06);
+  --shadow-lg:    0 8px 32px rgba(10, 25, 47, 0.08);
+  --shadow-xl:    0 16px 48px rgba(10, 25, 47, 0.12);
+  --shadow-card:  0 4px 20px rgba(10, 25, 47, 0.02);
+  --shadow-card-hover: 0 12px 30px rgba(10, 25, 47, 0.08);
+
+  /* ── Motion (Section 8 spec) ── */
+  --ease-out:       cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth:    cubic-bezier(0.4, 0, 0.2, 1);
+
+  --duration-fast:   120ms;
+  --duration-base:   200ms;
+  --duration-slow:   300ms;
+  --duration-slower: 500ms;
+
+  --transition-fast:  120ms var(--ease-out);
+  --transition-base:  200ms var(--ease-out);
+  --transition-slow:  300ms var(--ease-out);
+
+  /* ── Z-index Scale ── */
+  --z-behind:   -1;
+  --z-base:     1;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast:   0ms;
+    --duration-base:   0ms;
+    --duration-slow:   0ms;
+    --duration-slower: 0ms;
+  }
+}

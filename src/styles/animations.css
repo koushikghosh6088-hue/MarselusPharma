@@ -1,0 +1,218 @@
+/* ===================================================
+   MARSELUS PHARMACEUTICALS — ANIMATIONS
+   Scroll reveals, page transitions, hover effects
+   All GPU-friendly (transform/opacity only)
+   =================================================== */
+
+/* ── Scroll Reveal Base ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--duration-slower) var(--ease-smooth),
+              transform var(--duration-slower) var(--ease-smooth);
+  will-change: opacity, transform;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children */
+.reveal-stagger > .reveal { transition-delay: 0ms; }
+.reveal-stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger > .reveal:nth-child(2) { transition-delay: 80ms; }
+.reveal-stagger > .reveal:nth-child(3) { transition-delay: 160ms; }
+.reveal-stagger > .reveal:nth-child(4) { transition-delay: 240ms; }
+.reveal-stagger > .reveal:nth-child(5) { transition-delay: 320ms; }
+.reveal-stagger > .reveal:nth-child(6) { transition-delay: 400ms; }
+
+/* Reveal variants */
+.reveal--left {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.reveal--left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal--right {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.reveal--right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal--scale {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.reveal--scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Hero Entrance ── */
+.hero-enter {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: hero-entrance 0.8s var(--ease-smooth) forwards;
+}
+
+.hero-enter--delay-1 { animation-delay: 0.1s; }
+.hero-enter--delay-2 { animation-delay: 0.2s; }
+.hero-enter--delay-3 { animation-delay: 0.3s; }
+.hero-enter--delay-4 { animation-delay: 0.45s; }
+.hero-enter--delay-5 { animation-delay: 0.6s; }
+
+@keyframes hero-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Counter Animation ── */
+.counter-animate {
+  display: inline-block;
+}
+
+/* ── Link Underline ── */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width var(--transition-base);
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* ── Image Parallax (subtle, not gimmicky) ── */
+.subtle-parallax {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* ── Pulse dot ── */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-success);
+  position: relative;
+}
+
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--color-success);
+  opacity: 0;
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  50% { transform: scale(1.8); opacity: 0; }
+}
+
+/* ── Futuristic CSS Animations ── */
+.float-3d {
+  animation: float-3d 6s ease-in-out infinite;
+}
+@keyframes float-3d {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    filter: drop-shadow(0 20px 60px rgba(0,0,0,0.08));
+  }
+  50% {
+    transform: translateY(-15px) rotate(1deg);
+    filter: drop-shadow(0 30px 80px rgba(37, 99, 235, 0.15));
+  }
+}
+
+.holo-glow {
+  position: relative;
+  overflow: hidden;
+}
+.holo-glow::after {
+  content: '';
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(
+    135deg,
+    transparent 45%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 55%
+  );
+  transform: translate(-100%, -100%);
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+  z-index: 10;
+}
+.holo-glow:hover::after {
+  transform: translate(100%, 100%);
+}
+
+.glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.25);
+  }
+}
+
+/* ── Reduced Motion Overrides ── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal--left,
+  .reveal--right,
+  .reveal--scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-enter {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .pulse-dot::after {
+    animation: none;
+  }
+
+  .subtle-parallax {
+    transition: none;
+  }
+}
