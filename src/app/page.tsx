@@ -3,6 +3,17 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import SpineTab from "@/components/SpineTab";
+import { Badge } from "@/components/ui/badge-2";
+import { Button } from "@/components/ui/button-1";
+import { Card, CardContent, CardHeader, CardTitle, CardToolbar } from "@/components/ui/card";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ArrowUp, MoreHorizontal, Pin, Settings, Share2, ShieldCheck, Activity, Award } from "lucide-react";
 
 export default function Home() {
   useEffect(() => {
@@ -28,194 +39,335 @@ export default function Home() {
         <div id="loader-percent">0%</div>
       </div>
 
-      <main className="page-content">
-        {/* ═══ 1. HERO SECTION (WITH CAPSULE SCROLL SCRUB & SPINE TAB) ═══ */}
+      {/* Main Page Layout Wrapper */}
+      <main className="main-wrapper">
+        {/* ═══ 1. HERO SECTION WITH 3D CANVAS SCRUBBING & COLORFUL STAT CARDS ═══ */}
         <section className="hero-scroll-container spine-tab-container" id="hero-scroll-container">
-          <SpineTab label="HERITAGE OF HEALING — KOLKATA" />
-
           <div className="hero-scroll-sticky">
-            <canvas id="hero-canvas"></canvas>
-
-            {/* Scientific Grid Matrix & Glow Orbs */}
+            {/* Scientific Grid Matrix Background */}
             <div className="hero-grid-matrix"></div>
+
+            {/* Ambient Background Glow Orbs */}
             <div className="hero-glow-orb hero-glow-orb--1"></div>
             <div className="hero-glow-orb hero-glow-orb--2"></div>
             <div className="hero-glow-orb hero-glow-orb--3"></div>
 
-            {/* Hero Main Copy */}
+            {/* High-Performance 210-Frame Canvas */}
+            <canvas id="hero-canvas"></canvas>
+
+            {/* Non-Blocking Hero Main Header */}
             <div className="hero-main-header">
-              <span className="eyebrow-badge" style={{ marginBottom: "var(--space-4)" }}>
-                ✦ SPECIALTY PHARMACEUTICAL INNOVATION
-              </span>
-              <h1 className="hero-main-title" style={{ fontFamily: "var(--font-heading)" }}>
-                Heritage of <span className="italic-accent">Healing.</span><br />
-                Precision in Every Formulation<span className="dot-gold"></span>
+              <div className="hero-main-badge">✦ SPECIALTY PHARMACEUTICAL INNOVATION</div>
+              <h1 className="hero-main-title">
+                Heritage of <span className="gradient-accent-1 font-serif italic">Healing.</span><br />
+                Precision in Every Formulation
               </h1>
-              <p className="hero-main-desc" style={{ fontSize: "var(--text-lg)", color: "var(--color-text-muted)", maxWidth: "68ch" }}>
-                Speciality healthcare solutions in Gastroenterology, Women&apos;s Health &amp; Clinical Nutrition.
-                <span className="verify-tag" title="Confirm founding year before publication">[VERIFY: founding year]</span>
+              <p className="hero-main-desc">
+                Pioneering gastroenterology, women&apos;s healthcare, and clinical nutrition through targeted prolonged-release technology.
               </p>
-              
-              <div className="btn-connected-group" style={{ marginTop: "var(--space-6)" }}>
-                <Link href="/products" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "var(--color-forest)", color: "var(--color-text-on-dark)" }}>
-                  Explore Products →
+              <div className="hero-cta-group" style={{ marginTop: "20px", display: "flex", gap: "12px" }}>
+                <Link href="/products" className="btn-primary-hero">
+                  EXPLORE PRODUCTS &rarr;
                 </Link>
-                <Link href="/about" className="btn-connected-pill btn-connected-pill--secondary" style={{ borderColor: "var(--color-forest)", color: "var(--color-forest)" }}>
-                  About Us
+                <Link href="/about" className="btn-secondary-hero">
+                  ABOUT US
                 </Link>
               </div>
             </div>
 
-            {/* Flashy & Lucrative Sequential Popup Slides Stage (Shifted UP, Zero Gap) */}
+            {/* Sequential Colorful Hero Cards Stage (Powered by shadcn UI components) */}
             <div className="hero-popup-slide-stage">
               
-              {/* Slide 1 */}
-              <div className="hero-popup-card hero-popup-card--1 popup-active" id="hero-popup-1">
-                <div className="popup-glass-sheen"></div>
-                <div className="popup-header-flex">
-                  <div>
-                    <div className="popup-badge-row">
-                      <span className="hud-status-dot" style={{ background: "var(--color-artemes)" }}></span>
-                      <span className="popup-tag">FORMULATION TECH · 01 / 04</span>
-                    </div>
-                    <h3 className="popup-title">Targeted Prolonged Release</h3>
-                  </div>
-                  <div className="popup-visual-pill popup-visual-pill--green">
-                    <span>ARTEMES™ 1.2g</span>
-                  </div>
-                </div>
+              {/* Card 1: Formulation Tech (Dark Forest Emerald) */}
+              <Card className="hero-popup-card hero-popup-card--1 popup-active relative overflow-hidden bg-zinc-950 text-white border-emerald-500/30" id="hero-popup-1">
+                <svg
+                  className="absolute right-0 top-0 h-full w-2/3 pointer-events-none opacity-40"
+                  viewBox="0 0 300 200"
+                  fill="none"
+                  style={{ zIndex: 0 }}
+                >
+                  <circle cx="220" cy="100" r="90" fill="#10b981" fillOpacity="0.15" />
+                  <circle cx="260" cy="60" r="60" fill="#10b981" fillOpacity="0.20" />
+                  <circle cx="200" cy="160" r="50" fill="#10b981" fillOpacity="0.12" />
+                  <circle cx="270" cy="150" r="30" fill="#10b981" fillOpacity="0.25" />
+                </svg>
 
-                <p className="popup-desc">
-                  Engineered multi-matrix 5-ASA formulation dissolving site-specifically at pH &gt; 6.8 for targeted colonic ulcerative colitis remission.
-                </p>
+                <CardHeader className="border-0 z-10 relative p-0 mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="size-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_10px_#10b981]"></span>
+                    <CardTitle className="text-emerald-400 text-xs font-bold tracking-widest uppercase">
+                      01 · FORMULATION TECH
+                    </CardTitle>
+                  </div>
+                  <CardToolbar>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="dim" size="sm" mode="icon" className="text-white/80 hover:text-white">
+                          <MoreHorizontal className="size-4" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end" side="bottom">
+                        <DropdownMenuItem asChild>
+                          <Link href="/products/artemes"><Activity className="size-4 me-2" /> View ARTEMES™ 1.2g</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link href="/science"><ShieldCheck className="size-4 me-2" /> MMX® Matrix Tech</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                          <Pin className="size-4 me-2" /> Pin to Dashboard
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem>
+                          <Share2 className="size-4 me-2" /> Share Product
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </CardToolbar>
+                </CardHeader>
 
-                <div className="popup-footer-row">
-                  <div className="popup-step-label-group">
-                    <span className="popup-step-label">SLIDE 01 OF 04</span>
-                    <span className="popup-subtag">pH &gt; 6.8 SITE TARGETING</span>
+                <CardContent className="p-0 z-10 relative space-y-2">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-2xl font-black tracking-tight text-white">
+                      Targeted Prolonged Release
+                    </span>
+                    <Badge className="bg-emerald-500/25 text-emerald-300 border border-emerald-500/40 font-semibold px-2.5 py-1">
+                      <ArrowUp className="size-3 me-1" />
+                      99.4% Remission
+                    </Badge>
                   </div>
-                  <div className="popup-dots">
-                    <span className="popup-dot active"></span>
-                    <span className="popup-dot"></span>
-                    <span className="popup-dot"></span>
-                    <span className="popup-dot"></span>
+                  <p className="text-xs text-zinc-300 leading-relaxed">
+                    Engineered multi-matrix 5-ASA formulation dissolving site-specifically at pH &gt; 6.8 for targeted colonic ulcerative colitis remission.
+                  </p>
+                  <div className="text-xs text-emerald-400/90 font-medium pt-2 border-t border-white/10 flex justify-between items-center">
+                    <span>Vs standard 5-ASA: Site-specific pH &gt; 6.8 release</span>
+                    <span className="text-[10px] bg-emerald-500/20 px-2 py-0.5 rounded text-emerald-300">ARTEMES™ 1.2g</span>
                   </div>
-                </div>
-                <div className="popup-progress-track">
+                </CardContent>
+
+                <div className="popup-progress-track mt-3">
                   <div className="popup-progress-fill" id="popup-fill-1"></div>
                 </div>
-              </div>
+              </Card>
 
-              {/* Slide 2 */}
-              <div className="hero-popup-card hero-popup-card--2" id="hero-popup-2">
-                <div className="popup-glass-sheen"></div>
-                <div className="popup-header-flex">
-                  <div>
-                    <div className="popup-badge-row">
-                      <span className="hud-status-dot" style={{ background: "#3b82f6" }}></span>
-                      <span className="popup-tag popup-tag--blue">QUALITY CERTIFIED · 02 / 04</span>
-                    </div>
-                    <h3 className="popup-title">WHO-GMP &amp; ISO 9001:2015 Accredited</h3>
-                  </div>
-                  <div className="popup-visual-pill popup-visual-pill--blue">
-                    <span>WHO-GMP ACCREDITED</span>
-                  </div>
-                </div>
+              {/* Card 2: Quality Certified (Fuchsia Royal Violet) */}
+              <Card className="hero-popup-card hero-popup-card--2 relative overflow-hidden bg-fuchsia-600 text-white border-fuchsia-400/30" id="hero-popup-2">
+                <svg
+                  className="absolute right-0 top-0 w-56 h-56 pointer-events-none opacity-60"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  style={{ zIndex: 0 }}
+                >
+                  <defs>
+                    <filter id="blur2" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="10" />
+                    </filter>
+                  </defs>
+                  <ellipse cx="170" cy="60" rx="40" ry="18" fill="#fff" fillOpacity="0.15" filter="url(#blur2)" />
+                  <rect x="120" y="20" width="60" height="20" rx="8" fill="#fff" fillOpacity="0.12" />
+                  <polygon points="150,0 200,0 200,50" fill="#fff" fillOpacity="0.09" />
+                  <circle cx="180" cy="100" r="14" fill="#fff" fillOpacity="0.20" />
+                </svg>
 
-                <p className="popup-desc">
-                  Enforcing strict in-process analytical quality management systems and accredited manufacturing facilities across every pharmaceutical batch.
-                </p>
+                <CardHeader className="border-0 z-10 relative p-0 mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="size-2 rounded-full bg-white animate-pulse shadow-[0_0_10px_#fff]"></span>
+                    <CardTitle className="text-white/90 text-xs font-bold tracking-widest uppercase">
+                      02 · QUALITY CERTIFIED
+                    </CardTitle>
+                  </div>
+                  <CardToolbar>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="dim" size="sm" mode="icon" className="text-white/80 hover:text-white">
+                          <MoreHorizontal className="size-4" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end" side="bottom">
+                        <DropdownMenuItem asChild>
+                          <Link href="/about"><Award className="size-4 me-2" /> WHO-GMP Standards</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                          <Settings className="size-4 me-2" /> ISO 9001:2015 Cert
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem>
+                          <Share2 className="size-4 me-2" /> Share Quality Doc
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </CardToolbar>
+                </CardHeader>
 
-                <div className="popup-footer-row">
-                  <div className="popup-step-label-group">
-                    <span className="popup-step-label">SLIDE 02 OF 04</span>
-                    <span className="popup-subtag">ISO 9001:2015 ACCREDITED</span>
+                <CardContent className="p-0 z-10 relative space-y-2">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-2xl font-black tracking-tight text-white">
+                      WHO-GMP &amp; ISO Accredited
+                    </span>
+                    <Badge className="bg-white/25 text-white border border-white/30 font-semibold px-2.5 py-1">
+                      <ArrowUp className="size-3 me-1" />
+                      100% Accredited
+                    </Badge>
                   </div>
-                  <div className="popup-dots">
-                    <span className="popup-dot"></span>
-                    <span className="popup-dot active"></span>
-                    <span className="popup-dot"></span>
-                    <span className="popup-dot"></span>
+                  <p className="text-xs text-white/90 leading-relaxed">
+                    Enforcing strict in-process analytical quality management systems and accredited manufacturing facilities across every pharmaceutical batch produced.
+                  </p>
+                  <div className="text-xs text-white/90 font-medium pt-2 border-t border-white/20 flex justify-between items-center">
+                    <span>Vs standard facilities: ISO 9001:2015 QA Certified</span>
+                    <span className="text-[10px] bg-white/20 px-2 py-0.5 rounded text-white">WHO-GMP</span>
                   </div>
-                </div>
-                <div className="popup-progress-track">
+                </CardContent>
+
+                <div className="popup-progress-track mt-3">
                   <div className="popup-progress-fill" id="popup-fill-2"></div>
                 </div>
-              </div>
+              </Card>
 
-              {/* Slide 3 */}
-              <div className="hero-popup-card hero-popup-card--3" id="hero-popup-3">
-                <div className="popup-glass-sheen"></div>
-                <div className="popup-header-flex">
-                  <div>
-                    <div className="popup-badge-row">
-                      <span className="hud-status-dot" style={{ background: "#a855f7" }}></span>
-                      <span className="popup-tag popup-tag--purple">TARGETED EFFICACY · 03 / 04</span>
-                    </div>
-                    <h3 className="popup-title">Mucosal Healing &amp; 40:1 Inositol Concept</h3>
-                  </div>
-                  <div className="popup-visual-pill popup-visual-pill--purple">
-                    <span>SARANYA® 40:1</span>
-                  </div>
-                </div>
+              {/* Card 3: Targeted Efficacy (Ocean Blue) */}
+              <Card className="hero-popup-card hero-popup-card--3 relative overflow-hidden bg-blue-600 text-white border-blue-400/30" id="hero-popup-3">
+                <svg
+                  className="absolute right-0 top-0 w-56 h-56 pointer-events-none opacity-60"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  style={{ zIndex: 0 }}
+                >
+                  <defs>
+                    <filter id="blur3" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="12" />
+                    </filter>
+                  </defs>
+                  <rect x="120" y="0" width="70" height="70" rx="35" fill="#fff" fillOpacity="0.10" filter="url(#blur3)" />
+                  <ellipse cx="170" cy="80" rx="28" ry="12" fill="#fff" fillOpacity="0.15" />
+                  <polygon points="200,0 200,60 140,0" fill="#fff" fillOpacity="0.08" />
+                  <circle cx="150" cy="30" r="10" fill="#fff" fillOpacity="0.18" />
+                </svg>
 
-                <p className="popup-desc">
-                  Myo-Inositol 1100mg + D-Chiro Inositol 27.6mg supplemented with Chromium Picolinate &amp; Vitamin D2 for metabolic endocrine restore.
-                </p>
+                <CardHeader className="border-0 z-10 relative p-0 mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="size-2 rounded-full bg-cyan-300 animate-pulse shadow-[0_0_10px_#67e8f9]"></span>
+                    <CardTitle className="text-cyan-200 text-xs font-bold tracking-widest uppercase">
+                      03 · TARGETED EFFICACY
+                    </CardTitle>
+                  </div>
+                  <CardToolbar>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="dim" size="sm" mode="icon" className="text-white/80 hover:text-white">
+                          <MoreHorizontal className="size-4" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end" side="bottom">
+                        <DropdownMenuItem asChild>
+                          <Link href="/products/saranya"><Activity className="size-4 me-2" /> View SARANYA® 40:1</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link href="/therapy-areas/womens-health"><ShieldCheck className="size-4 me-2" /> Women&apos;s Health Care</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem>
+                          <Share2 className="size-4 me-2" /> Share Clinical Data
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </CardToolbar>
+                </CardHeader>
 
-                <div className="popup-footer-row">
-                  <div className="popup-step-label-group">
-                    <span className="popup-step-label">SLIDE 03 OF 04</span>
-                    <span className="popup-subtag">40:1 RATIO FORMULA</span>
+                <CardContent className="p-0 z-10 relative space-y-2">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-2xl font-black tracking-tight text-white">
+                      Mucosal &amp; 40:1 Inositol Concept
+                    </span>
+                    <Badge className="bg-white/25 text-white border border-white/30 font-semibold px-2.5 py-1">
+                      <ArrowUp className="size-3 me-1" />
+                      40:1 Ratio
+                    </Badge>
                   </div>
-                  <div className="popup-dots">
-                    <span className="popup-dot"></span>
-                    <span className="popup-dot"></span>
-                    <span className="popup-dot active"></span>
-                    <span className="popup-dot"></span>
+                  <p className="text-xs text-white/90 leading-relaxed">
+                    Myo-Inositol 1100mg + D-Chiro Inositol 27.6mg supplemented with Chromium Picolinate &amp; Vitamin D2 for metabolic endocrine restore.
+                  </p>
+                  <div className="text-xs text-cyan-100 font-medium pt-2 border-t border-white/20 flex justify-between items-center">
+                    <span>Vs standard inositol: 40:1 Physiological Plasma Ratio</span>
+                    <span className="text-[10px] bg-white/20 px-2 py-0.5 rounded text-white">SARANYA® 40:1</span>
                   </div>
-                </div>
-                <div className="popup-progress-track">
+                </CardContent>
+
+                <div className="popup-progress-track mt-3">
                   <div className="popup-progress-fill" id="popup-fill-3"></div>
                 </div>
-              </div>
+              </Card>
 
-              {/* Slide 4 */}
-              <div className="hero-popup-card hero-popup-card--4" id="hero-popup-4">
-                <div className="popup-glass-sheen"></div>
-                <div className="popup-header-flex">
-                  <div>
-                    <div className="popup-badge-row">
-                      <span className="hud-status-dot" style={{ background: "#06b6d4" }}></span>
-                      <span className="popup-tag popup-tag--teal">CLINICAL IMPACT · 04 / 04</span>
-                    </div>
-                    <h3 className="popup-title">4 Hero Formulations · 20+ Years Trust</h3>
-                  </div>
-                  <div className="popup-visual-pill popup-visual-pill--teal">
-                    <span>IMMUNOMARS™ 15g</span>
-                  </div>
-                </div>
+              {/* Card 4: Clinical Impact (Cyan Teal) */}
+              <Card className="hero-popup-card hero-popup-card--4 relative overflow-hidden bg-teal-600 text-white border-teal-400/30" id="hero-popup-4">
+                <svg
+                  className="absolute right-0 top-0 w-56 h-56 pointer-events-none opacity-60"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  style={{ zIndex: 0 }}
+                >
+                  <defs>
+                    <filter id="blur4" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="16" />
+                    </filter>
+                  </defs>
+                  <polygon points="200,0 200,100 100,0" fill="#fff" fillOpacity="0.10" />
+                  <ellipse cx="170" cy="40" rx="30" ry="18" fill="#fff" fillOpacity="0.15" filter="url(#blur4)" />
+                  <rect x="140" y="60" width="40" height="18" rx="8" fill="#fff" fillOpacity="0.12" />
+                  <circle cx="150" cy="30" r="14" fill="#fff" fillOpacity="0.20" />
+                  <line x1="120" y1="0" x2="200" y2="80" stroke="#fff" strokeOpacity="0.12" strokeWidth="6" />
+                </svg>
 
-                <p className="popup-desc">
-                  High-dose L-Glutamine 10g immunonutrition and specialized formulations empowering gastroenterologists, gynecologists &amp; physicians.
-                </p>
+                <CardHeader className="border-0 z-10 relative p-0 mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="size-2 rounded-full bg-emerald-200 animate-pulse shadow-[0_0_10px_#a7f3d0]"></span>
+                    <CardTitle className="text-emerald-100 text-xs font-bold tracking-widest uppercase">
+                      04 · CLINICAL IMPACT
+                    </CardTitle>
+                  </div>
+                  <CardToolbar>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="dim" size="sm" mode="icon" className="text-white/80 hover:text-white">
+                          <MoreHorizontal className="size-4" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end" side="bottom">
+                        <DropdownMenuItem asChild>
+                          <Link href="/products/immunomars"><Activity className="size-4 me-2" /> View IMMUNOMARS™</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link href="/therapy-areas/clinical-nutrition"><Award className="size-4 me-2" /> Clinical Nutrition</Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem>
+                          <Share2 className="size-4 me-2" /> Share Clinical Portfolio
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </CardToolbar>
+                </CardHeader>
 
-                <div className="popup-footer-row">
-                  <div className="popup-step-label-group">
-                    <span className="popup-step-label">SLIDE 04 OF 04</span>
-                    <span className="popup-subtag">20+ YEARS HERITAGE</span>
+                <CardContent className="p-0 z-10 relative space-y-2">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-2xl font-black tracking-tight text-white">
+                      4 Hero Formulations · 20+ Yrs
+                    </span>
+                    <Badge className="bg-white/25 text-white border border-white/30 font-semibold px-2.5 py-1">
+                      <ArrowUp className="size-3 me-1" />
+                      20+ Yrs Trust
+                    </Badge>
                   </div>
-                  <div className="popup-dots">
-                    <span className="popup-dot"></span>
-                    <span className="popup-dot"></span>
-                    <span className="popup-dot"></span>
-                    <span className="popup-dot active"></span>
+                  <p className="text-xs text-white/90 leading-relaxed">
+                    High-dose L-Glutamine 10g immunonutrition and specialized formulations empowering gastroenterologists, gynecologists &amp; physicians since 2003.
+                  </p>
+                  <div className="text-xs text-emerald-100 font-medium pt-2 border-t border-white/20 flex justify-between items-center">
+                    <span>Vs standard care: 3 Specialty Therapy Care Areas</span>
+                    <span className="text-[10px] bg-white/20 px-2 py-0.5 rounded text-white">IMMUNOMARS™ 15g</span>
                   </div>
-                </div>
-                <div className="popup-progress-track">
+                </CardContent>
+
+                <div className="popup-progress-track mt-3">
                   <div className="popup-progress-fill" id="popup-fill-4"></div>
                 </div>
-              </div>
+              </Card>
 
             </div>
           </div>
