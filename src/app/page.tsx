@@ -66,90 +66,154 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Bigger Sequential Popup Slides Stage (Comes One by One on Scroll) */}
+            {/* Flashy & Lucrative Sequential Popup Slides Stage (Shifted UP, Zero Gap) */}
             <div className="hero-popup-slide-stage">
               
               {/* Slide 1 */}
               <div className="hero-popup-card hero-popup-card--1 popup-active" id="hero-popup-1">
-                <div className="popup-badge-row">
-                  <span className="hud-status-dot" style={{ background: "var(--color-artemes)" }}></span>
-                  <span className="popup-tag">FORMULATION TECH · 01 / 04</span>
+                <div className="popup-glass-sheen"></div>
+                <div className="popup-header-flex">
+                  <div>
+                    <div className="popup-badge-row">
+                      <span className="hud-status-dot" style={{ background: "var(--color-artemes)" }}></span>
+                      <span className="popup-tag">FORMULATION TECH · 01 / 04</span>
+                    </div>
+                    <h3 className="popup-title">Targeted Prolonged Release</h3>
+                  </div>
+                  <div className="popup-visual-pill popup-visual-pill--green">
+                    <span>ARTEMES™ 1.2g</span>
+                  </div>
                 </div>
-                <h3 className="popup-title">Targeted Prolonged Release</h3>
+
                 <p className="popup-desc">
-                  Engineered for site-specific colonic therapeutic action in mild-to-moderate ulcerative colitis.
+                  Engineered multi-matrix 5-ASA formulation dissolving site-specifically at pH &gt; 6.8 for targeted colonic ulcerative colitis remission.
                 </p>
+
                 <div className="popup-footer-row">
-                  <span className="popup-step-label">SLIDE 01 OF 04</span>
+                  <div className="popup-step-label-group">
+                    <span className="popup-step-label">SLIDE 01 OF 04</span>
+                    <span className="popup-subtag">pH &gt; 6.8 SITE TARGETING</span>
+                  </div>
                   <div className="popup-dots">
                     <span className="popup-dot active"></span>
                     <span className="popup-dot"></span>
                     <span className="popup-dot"></span>
                     <span className="popup-dot"></span>
                   </div>
+                </div>
+                <div className="popup-progress-track">
+                  <div className="popup-progress-fill" id="popup-fill-1"></div>
                 </div>
               </div>
 
               {/* Slide 2 */}
               <div className="hero-popup-card hero-popup-card--2" id="hero-popup-2">
-                <div className="popup-badge-row">
-                  <span className="hud-status-dot" style={{ background: "#3b82f6" }}></span>
-                  <span className="popup-tag popup-tag--blue">QUALITY CERTIFIED · 02 / 04</span>
+                <div className="popup-glass-sheen"></div>
+                <div className="popup-header-flex">
+                  <div>
+                    <div className="popup-badge-row">
+                      <span className="hud-status-dot" style={{ background: "#3b82f6" }}></span>
+                      <span className="popup-tag popup-tag--blue">QUALITY CERTIFIED · 02 / 04</span>
+                    </div>
+                    <h3 className="popup-title">WHO-GMP &amp; ISO 9001:2015 Accredited</h3>
+                  </div>
+                  <div className="popup-visual-pill popup-visual-pill--blue">
+                    <span>WHO-GMP ACCREDITED</span>
+                  </div>
                 </div>
-                <h3 className="popup-title">WHO-GMP &amp; ISO 9001:2015 Accredited</h3>
+
                 <p className="popup-desc">
-                  Enforcing strict quality management systems and accredited facilities across every batch produced.
+                  Enforcing strict in-process analytical quality management systems and accredited manufacturing facilities across every pharmaceutical batch.
                 </p>
+
                 <div className="popup-footer-row">
-                  <span className="popup-step-label">SLIDE 02 OF 04</span>
+                  <div className="popup-step-label-group">
+                    <span className="popup-step-label">SLIDE 02 OF 04</span>
+                    <span className="popup-subtag">ISO 9001:2015 ACCREDITED</span>
+                  </div>
                   <div className="popup-dots">
                     <span className="popup-dot"></span>
                     <span className="popup-dot active"></span>
                     <span className="popup-dot"></span>
                     <span className="popup-dot"></span>
                   </div>
+                </div>
+                <div className="popup-progress-track">
+                  <div className="popup-progress-fill" id="popup-fill-2"></div>
                 </div>
               </div>
 
               {/* Slide 3 */}
               <div className="hero-popup-card hero-popup-card--3" id="hero-popup-3">
-                <div className="popup-badge-row">
-                  <span className="hud-status-dot" style={{ background: "#a855f7" }}></span>
-                  <span className="popup-tag popup-tag--purple">TARGETED EFFICACY · 03 / 04</span>
+                <div className="popup-glass-sheen"></div>
+                <div className="popup-header-flex">
+                  <div>
+                    <div className="popup-badge-row">
+                      <span className="hud-status-dot" style={{ background: "#a855f7" }}></span>
+                      <span className="popup-tag popup-tag--purple">TARGETED EFFICACY · 03 / 04</span>
+                    </div>
+                    <h3 className="popup-title">Mucosal Healing &amp; 40:1 Inositol Concept</h3>
+                  </div>
+                  <div className="popup-visual-pill popup-visual-pill--purple">
+                    <span>SARANYA® 40:1</span>
+                  </div>
                 </div>
-                <h3 className="popup-title">Mucosal Healing &amp; Metabolic Restore</h3>
+
                 <p className="popup-desc">
-                  Formulated for localized action, optimal patient compliance, and balanced endocrine restoration.
+                  Myo-Inositol 1100mg + D-Chiro Inositol 27.6mg supplemented with Chromium Picolinate &amp; Vitamin D2 for metabolic endocrine restore.
                 </p>
+
                 <div className="popup-footer-row">
-                  <span className="popup-step-label">SLIDE 03 OF 04</span>
+                  <div className="popup-step-label-group">
+                    <span className="popup-step-label">SLIDE 03 OF 04</span>
+                    <span className="popup-subtag">40:1 RATIO FORMULA</span>
+                  </div>
                   <div className="popup-dots">
                     <span className="popup-dot"></span>
                     <span className="popup-dot"></span>
                     <span className="popup-dot active"></span>
                     <span className="popup-dot"></span>
                   </div>
+                </div>
+                <div className="popup-progress-track">
+                  <div className="popup-progress-fill" id="popup-fill-3"></div>
                 </div>
               </div>
 
               {/* Slide 4 */}
               <div className="hero-popup-card hero-popup-card--4" id="hero-popup-4">
-                <div className="popup-badge-row">
-                  <span className="hud-status-dot" style={{ background: "#06b6d4" }}></span>
-                  <span className="popup-tag popup-tag--teal">CLINICAL IMPACT · 04 / 04</span>
+                <div className="popup-glass-sheen"></div>
+                <div className="popup-header-flex">
+                  <div>
+                    <div className="popup-badge-row">
+                      <span className="hud-status-dot" style={{ background: "#06b6d4" }}></span>
+                      <span className="popup-tag popup-tag--teal">CLINICAL IMPACT · 04 / 04</span>
+                    </div>
+                    <h3 className="popup-title">4 Hero Formulations · 20+ Years Trust</h3>
+                  </div>
+                  <div className="popup-visual-pill popup-visual-pill--teal">
+                    <span>IMMUNOMARS™ 15g</span>
+                  </div>
                 </div>
-                <h3 className="popup-title">4 Hero Formulations · 20+ Years Trust</h3>
+
                 <p className="popup-desc">
-                  Empowering gastroenterologists, gynecologists, and clinical nutritionists across specialty care.
+                  High-dose L-Glutamine 10g immunonutrition and specialized formulations empowering gastroenterologists, gynecologists &amp; physicians.
                 </p>
+
                 <div className="popup-footer-row">
-                  <span className="popup-step-label">SLIDE 04 OF 04</span>
+                  <div className="popup-step-label-group">
+                    <span className="popup-step-label">SLIDE 04 OF 04</span>
+                    <span className="popup-subtag">20+ YEARS HERITAGE</span>
+                  </div>
                   <div className="popup-dots">
                     <span className="popup-dot"></span>
                     <span className="popup-dot"></span>
                     <span className="popup-dot"></span>
                     <span className="popup-dot active"></span>
                   </div>
+                </div>
+                <div className="popup-progress-track">
+                  <div className="popup-progress-fill" id="popup-fill-4"></div>
                 </div>
               </div>
 

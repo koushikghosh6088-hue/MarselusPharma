@@ -176,6 +176,22 @@ export function initHeroScrollAnimation() {
         }
       }
     }
+
+    // 3. Update active slide intra-progress fill bar (0% to 100%)
+    const slideRange = 0.25;
+    const slideProgress = (progress % slideRange) / slideRange;
+    for (let i = 1; i <= 4; i++) {
+      const fillBar = document.getElementById(`popup-fill-${i}`);
+      if (fillBar) {
+        if (i === activeIndex) {
+          fillBar.style.width = `${Math.min(100, Math.max(5, slideProgress * 100))}%`;
+        } else if (i < activeIndex) {
+          fillBar.style.width = '100%';
+        } else {
+          fillBar.style.width = '0%';
+        }
+      }
+    }
   }
 
   // Animation frame scrubbing loop with silky 60fps lerp inertia
