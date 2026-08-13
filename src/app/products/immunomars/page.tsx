@@ -60,7 +60,7 @@ export default function ImmunomarsProductPage() {
 
         {/* Specifications Table */}
         <div className="atrimus-glass-card" style={{ padding: "var(--space-10)", borderRadius: "24px", marginBottom: "var(--space-16)" }}>
-          <h2 style={{ fontSize: "1.75rem", fontWeight 900, color: "var(--color-navy)", marginBottom: "var(--space-8)", textTransform: "uppercase" }}>
+          <h2 style={{ fontSize: "1.75rem", fontWeight: 900, color: "var(--color-navy)", marginBottom: "var(--space-8)", textTransform: "uppercase" }}>
             PRODUCT <span style={{ color: "var(--color-immunomars)" }}>SPECIFICATIONS &amp; MONOGRAPH</span>
           </h2>
 

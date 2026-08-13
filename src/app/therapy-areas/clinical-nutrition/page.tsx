@@ -48,7 +48,7 @@ export default function ClinicalNutritionPage() {
 
           <div className="atrimus-glass-card" style={{ padding: "var(--space-8)", borderRadius: "24px" }}>
             <span style={{ color: "#d35400", fontWeight: 800, fontSize: "12px", letterSpacing: "0.12em", textTransform: "uppercase" }}>LEAD SOFTGEL</span>
-            <h2 style={{ fontSize: "1.75rem", fontWeight 900, color: "var(--color-navy)", marginTop: "8px", marginBottom: "12px" }}>UV 60K Softgels</h2>
+            <h2 style={{ fontSize: "1.75rem", fontWeight: 900, color: "var(--color-navy)", marginTop: "8px", marginBottom: "12px" }}>UV 60K Softgels</h2>
             <p style={{ color: "var(--color-gray-600)", lineHeight: 1.6, marginBottom: "var(--space-6)" }}>
               Cholecalciferol 60,000 IU softgel capsules engineered for rapid correction of severe Vitamin D3 deficiency and bone health.
             </p>
