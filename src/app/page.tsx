@@ -84,8 +84,8 @@ export default function Home() {
                   {/* Back (Closed State) */}
                   <div className="card-flip-back">
                     <div className="hud-badge-row">
-                      <span className="hud-status-dot" style={{ background: "#10b981" }}></span>
-                      <span className="hud-tag" style={{ color: "#ffffff" }}>01 · FORMULATION TECH</span>
+                      <span className="hud-status-dot" style={{ background: "#10b981", boxShadow: "0 0 12px #10b981" }}></span>
+                      <span className="hud-tag" style={{ color: "#34d399" }}>01 · FORMULATION TECH</span>
                     </div>
                     <div className="hud-closed-label">✦ SCROLL TO UNLOCK</div>
                   </div>
@@ -97,7 +97,9 @@ export default function Home() {
                       <span className="hud-tag">FORMULATION TECH</span>
                     </div>
                     <div className="hud-title">Targeted Prolonged Release</div>
-                    <div className="hud-sub">ARTEMES™ 1.2g · pH &gt; 6.8 Site Release</div>
+                    <div className="hud-sub">
+                      <span style={{ color: "#059669", fontWeight: "800" }}>ARTEMES™ 1.2g</span> · pH &gt; 6.8 Site Release
+                    </div>
                   </div>
                 </div>
               </div>
@@ -108,8 +110,8 @@ export default function Home() {
                   {/* Back (Closed State) */}
                   <div className="card-flip-back">
                     <div className="hud-badge-row">
-                      <span className="hud-status-dot" style={{ background: "#3b82f6" }}></span>
-                      <span className="hud-tag" style={{ color: "#ffffff" }}>02 · QUALITY CERTIFIED</span>
+                      <span className="hud-status-dot" style={{ background: "#3b82f6", boxShadow: "0 0 12px #3b82f6" }}></span>
+                      <span className="hud-tag" style={{ color: "#60a5fa" }}>02 · QUALITY CERTIFIED</span>
                     </div>
                     <div className="hud-closed-label">✦ SCROLL TO UNLOCK</div>
                   </div>
@@ -121,7 +123,9 @@ export default function Home() {
                       <span className="hud-tag hud-tag--blue">QUALITY CERTIFIED</span>
                     </div>
                     <div className="hud-title">WHO-GMP &amp; ISO Accredited</div>
-                    <div className="hud-sub">100% Analytical Quality System</div>
+                    <div className="hud-sub">
+                      <span style={{ color: "#2563eb", fontWeight: "800" }}>100% Quality</span> · Analytical QA System
+                    </div>
                   </div>
                 </div>
               </div>
@@ -132,8 +136,8 @@ export default function Home() {
                   {/* Back (Closed State) */}
                   <div className="card-flip-back">
                     <div className="hud-badge-row">
-                      <span className="hud-status-dot" style={{ background: "#a855f7" }}></span>
-                      <span className="hud-tag" style={{ color: "#ffffff" }}>03 · TARGETED EFFICACY</span>
+                      <span className="hud-status-dot" style={{ background: "#a855f7", boxShadow: "0 0 12px #a855f7" }}></span>
+                      <span className="hud-tag" style={{ color: "#c084fc" }}>03 · TARGETED EFFICACY</span>
                     </div>
                     <div className="hud-closed-label">✦ SCROLL TO UNLOCK</div>
                   </div>
@@ -145,7 +149,9 @@ export default function Home() {
                       <span className="hud-tag hud-tag--purple">TARGETED EFFICACY</span>
                     </div>
                     <div className="hud-title">Mucosal Healing &amp; Restore</div>
-                    <div className="hud-sub">SARANYA® 40:1 Inositol Concept</div>
+                    <div className="hud-sub">
+                      <span style={{ color: "#7c3aed", fontWeight: "800" }}>SARANYA® 40:1</span> · Inositol Concept
+                    </div>
                   </div>
                 </div>
               </div>
@@ -156,8 +162,8 @@ export default function Home() {
                   {/* Back (Closed State) */}
                   <div className="card-flip-back">
                     <div className="hud-badge-row">
-                      <span className="hud-status-dot" style={{ background: "#06b6d4" }}></span>
-                      <span className="hud-tag" style={{ color: "#ffffff" }}>04 · CLINICAL IMPACT</span>
+                      <span className="hud-status-dot" style={{ background: "#06b6d4", boxShadow: "0 0 12px #06b6d4" }}></span>
+                      <span className="hud-tag" style={{ color: "#22d3ee" }}>04 · CLINICAL IMPACT</span>
                     </div>
                     <div className="hud-closed-label">✦ SCROLL TO UNLOCK</div>
                   </div>
@@ -169,7 +175,9 @@ export default function Home() {
                       <span className="hud-tag hud-tag--teal">CLINICAL IMPACT</span>
                     </div>
                     <div className="hud-title">4 Hero Formulations</div>
-                    <div className="hud-sub">IMMUNOMARS™ 15g · 20+ Yrs Trust</div>
+                    <div className="hud-sub">
+                      <span style={{ color: "#0284c7", fontWeight: "800" }}>IMMUNOMARS™ 15g</span> · 20+ Yrs Trust
+                    </div>
                   </div>
                 </div>
               </div>
