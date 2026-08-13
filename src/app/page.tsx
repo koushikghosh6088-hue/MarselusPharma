@@ -33,41 +33,46 @@ export default function Home() {
           <div className="hero-scroll-sticky">
             <canvas id="hero-canvas"></canvas>
 
+            {/* Vibrant Ambient Mesh Orbs */}
+            <div className="hero-glow-orb hero-glow-orb--1"></div>
+            <div className="hero-glow-orb hero-glow-orb--2"></div>
+            <div className="hero-glow-orb hero-glow-orb--3"></div>
+
             {/* Slide 1 */}
             <div className="scroll-slide scroll-slide--1 active">
-              <div className="scroll-slide__content glass-panel">
-                <div className="scroll-slide__est">/ EST 2003</div>
-                <h1 className="scroll-slide__title">Heritage of<br /><span className="italic-accent">Healing</span></h1>
+              <div className="scroll-slide__content glass-panel" style={{ borderTop: "3px solid #10b981" }}>
+                <span className="slide-badge slide-badge--1">/ EST 2003</span>
+                <h1 className="scroll-slide__title">Heritage of<br /><span className="italic-accent gradient-accent-1">Healing</span></h1>
                 <p className="scroll-slide__desc">Leading specialty pharmaceuticals in Gastroenterology, Women&apos;s Health &amp; Clinical Nutrition.</p>
               </div>
             </div>
 
             {/* Slide 2 */}
             <div className="scroll-slide scroll-slide--2">
-              <div className="scroll-slide__content glass-panel">
-                <div className="scroll-slide__est">/ QUALITY STANDARDS</div>
-                <h1 className="scroll-slide__title">Surgical <span className="italic-accent">Precision</span></h1>
+              <div className="scroll-slide__content glass-panel" style={{ borderTop: "3px solid #3b82f6" }}>
+                <span className="slide-badge slide-badge--2">/ QUALITY STANDARDS</span>
+                <h1 className="scroll-slide__title">Surgical <span className="italic-accent gradient-accent-2">Precision</span></h1>
                 <p className="scroll-slide__desc">Certified state-of-the-art facilities compliant with WHO-GMP and ISO standards.</p>
               </div>
             </div>
 
             {/* Slide 3 */}
             <div className="scroll-slide scroll-slide--3">
-              <div className="scroll-slide__content glass-panel">
-                <div className="scroll-slide__est">/ SCIENTIFIC APPROACH</div>
-                <h1 className="scroll-slide__title">Clinical <span className="italic-accent">Efficacy</span></h1>
+              <div className="scroll-slide__content glass-panel" style={{ borderTop: "3px solid #a855f7" }}>
+                <span className="slide-badge slide-badge--3">/ SCIENTIFIC APPROACH</span>
+                <h1 className="scroll-slide__title">Clinical <span className="italic-accent gradient-accent-3">Efficacy</span></h1>
                 <p className="scroll-slide__desc">Evidence-based drug formulations designed around four key patient-centric hero brands.</p>
               </div>
             </div>
 
             {/* Slide 4 */}
             <div className="scroll-slide scroll-slide--4">
-              <div className="scroll-slide__content glass-panel">
-                <div className="scroll-slide__est">/ MARSELUS PHARMA</div>
-                <h1 className="scroll-slide__title">Innovating <span className="italic-accent">Care</span></h1>
+              <div className="scroll-slide__content glass-panel" style={{ borderTop: "3px solid #06b6d4" }}>
+                <span className="slide-badge slide-badge--4">/ MARSELUS PHARMA</span>
+                <h1 className="scroll-slide__title">Innovating <span className="italic-accent gradient-accent-4">Care</span></h1>
                 <p className="scroll-slide__desc">We deliver specialized pharmaceutical solutions with therapeutic integrity and patient focus.</p>
                 <div className="scroll-slide__actions">
-                  <Link href="/products" className="btn btn--primary btn--lg">Explore Products <span className="arrow">→</span></Link>
+                  <Link href="/products" className="btn btn--primary btn--lg" style={{ background: "linear-gradient(135deg, #059669 0%, #0284c7 100%)", borderColor: "transparent", color: "#ffffff" }}>Explore Products <span className="arrow">→</span></Link>
                   <Link href="/about" className="btn btn--secondary btn--lg">About Us <span className="arrow">→</span></Link>
                 </div>
               </div>

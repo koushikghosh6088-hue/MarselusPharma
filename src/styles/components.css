@@ -2025,3 +2025,88 @@ textarea.form-input {
   box-shadow: 0 20px 45px rgba(12, 56, 37, 0.08) !important;
   transform: translateY(-6px) !important;
 }
+
+/* ===================================================
+   VIBRANT COLORFUL HERO MESH GLOW ORBS & SLIDE STYLES
+   =================================================== */
+.hero-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.75;
+  animation: hero-orb-float 16s ease-in-out infinite alternate;
+}
+
+.hero-glow-orb--1 {
+  width: 480px;
+  height: 480px;
+  top: -10%;
+  left: -5%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, rgba(59, 130, 246, 0.1) 60%, transparent 100%);
+}
+
+.hero-glow-orb--2 {
+  width: 520px;
+  height: 520px;
+  bottom: -15%;
+  right: -5%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.38) 0%, rgba(20, 184, 166, 0.1) 60%, transparent 100%);
+  animation-delay: -6s;
+}
+
+.hero-glow-orb--3 {
+  width: 420px;
+  height: 420px;
+  top: 30%;
+  right: 25%;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.32) 0%, rgba(99, 102, 241, 0.1) 60%, transparent 100%);
+  animation-delay: -11s;
+}
+
+@keyframes hero-orb-float {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, -30px) scale(1.1); }
+  100% { transform: translate(-30px, 40px) scale(0.95); }
+}
+
+/* Gradient Text Accents */
+.gradient-accent-1 {
+  background: linear-gradient(135deg, #059669 0%, #10b981 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-accent-2 {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-accent-3 {
+  background: linear-gradient(135deg, #d946ef 0%, #a855f7 50%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-accent-4 {
+  background: linear-gradient(135deg, #0284c7 0%, #06b6d4 50%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Colorful Slide Badges */
+.slide-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+.slide-badge--1 { background: rgba(16, 185, 129, 0.12); color: #059669; border: 1px solid rgba(16, 185, 129, 0.3); }
+.slide-badge--2 { background: rgba(37, 99, 235, 0.12); color: #2563eb; border: 1px solid rgba(37, 99, 235, 0.3); }
+.slide-badge--3 { background: rgba(168, 85, 247, 0.12); color: #7c3aed; border: 1px solid rgba(168, 85, 247, 0.3); }
+.slide-badge--4 { background: rgba(6, 182, 212, 0.12); color: #0284c7; border: 1px solid rgba(6, 182, 212, 0.3); }
