@@ -101,7 +101,7 @@ export default function TherapyAreasPage() {
                   padding: "var(--space-8)",
                   display: "flex",
                   flexDirection: "column",
-                  justify: "space-between",
+                  justifyContent: "space-between",
                   borderRadius: "24px",
                 }}
               >
