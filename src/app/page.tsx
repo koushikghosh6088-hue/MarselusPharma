@@ -516,7 +516,7 @@ export default function Home() {
                 </div>
                 <div style={{ padding: "var(--space-6)" }}>
                   <div style={{ fontSize: "11px", color: "var(--color-gray-500)", marginBottom: "var(--space-2)", fontWeight: 700 }}>JUNE 2024 • 6 MIN READ</div>
-                  <h3 style={{ fontSize: "var(--text-lg)", fontWeight 800, color: "var(--color-navy)", marginBottom: "var(--space-2)", lineHeight: "1.4" }}>Immunonutrition in Post-Surgical Recovery</h3>
+                  <h3 style={{ fontSize: "var(--text-lg)", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)", lineHeight: "1.4" }}>Immunonutrition in Post-Surgical Recovery</h3>
                   <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", lineHeight: "1.5", margin: 0 }}>The therapeutic role of targeted L-Glutamine and L-Arginine supplementation in hospital recovery.</p>
                 </div>
               </Link>
