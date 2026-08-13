@@ -75,299 +75,104 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Sequential Colorful Hero Cards Stage (Powered by shadcn UI components) */}
-            <div className="hero-popup-slide-stage">
+            {/* 4 Pillars 3D Flip Cards Grid (Sequential Scroll & Tap Flip) */}
+            <div className="hero-hud-grid">
               
-              {/* Card 1: Formulation Tech (Dark Forest Emerald) */}
-              <Card className="hero-popup-card hero-popup-card--1 popup-active relative overflow-hidden bg-zinc-950 text-white border-emerald-500/30" id="hero-popup-1">
-                <svg
-                  className="absolute right-0 top-0 h-full w-2/3 pointer-events-none opacity-40"
-                  viewBox="0 0 300 200"
-                  fill="none"
-                  style={{ zIndex: 0 }}
-                >
-                  <circle cx="220" cy="100" r="90" fill="#10b981" fillOpacity="0.15" />
-                  <circle cx="260" cy="60" r="60" fill="#10b981" fillOpacity="0.20" />
-                  <circle cx="200" cy="160" r="50" fill="#10b981" fillOpacity="0.12" />
-                  <circle cx="270" cy="150" r="30" fill="#10b981" fillOpacity="0.25" />
-                </svg>
-
-                <CardHeader className="border-0 z-10 relative p-0 mb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="size-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_10px_#10b981]"></span>
-                    <CardTitle className="text-emerald-400 text-xs font-bold tracking-widest uppercase">
-                      01 · FORMULATION TECH
-                    </CardTitle>
+              {/* Card 1: Formulation Technology */}
+              <div className="hero-hud-card hero-hud-card--1 hero-hud-card--closed" id="hud-card-1">
+                <div className="card-flip-inner">
+                  {/* Back (Closed State) */}
+                  <div className="card-flip-back">
+                    <div className="hud-badge-row">
+                      <span className="hud-status-dot" style={{ background: "#10b981" }}></span>
+                      <span className="hud-tag" style={{ color: "#ffffff" }}>01 · FORMULATION TECH</span>
+                    </div>
+                    <div className="hud-closed-label">✦ SCROLL TO UNLOCK</div>
                   </div>
-                  <CardToolbar>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button variant="dim" size="sm" mode="icon" className="text-white/80 hover:text-white">
-                          <MoreHorizontal className="size-4" />
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end" side="bottom">
-                        <DropdownMenuItem asChild>
-                          <Link href="/products/artemes"><Activity className="size-4 me-2" /> View ARTEMES™ 1.2g</Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link href="/science"><ShieldCheck className="size-4 me-2" /> MMX® Matrix Tech</Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                          <Pin className="size-4 me-2" /> Pin to Dashboard
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem>
-                          <Share2 className="size-4 me-2" /> Share Product
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </CardToolbar>
-                </CardHeader>
 
-                <CardContent className="p-0 z-10 relative space-y-2">
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="text-2xl font-black tracking-tight text-white">
-                      Targeted Prolonged Release
-                    </span>
-                    <Badge className="bg-emerald-500/25 text-emerald-300 border border-emerald-500/40 font-semibold px-2.5 py-1">
-                      <ArrowUp className="size-3 me-1" />
-                      99.4% Remission
-                    </Badge>
+                  {/* Front (Open State) */}
+                  <div className="card-flip-front">
+                    <div className="hud-badge-row">
+                      <span className="hud-status-dot" style={{ background: "#10b981" }}></span>
+                      <span className="hud-tag">FORMULATION TECH</span>
+                    </div>
+                    <div className="hud-title">Targeted Prolonged Release</div>
+                    <div className="hud-sub">ARTEMES™ 1.2g · pH &gt; 6.8 Site Release</div>
                   </div>
-                  <p className="text-xs text-zinc-300 leading-relaxed">
-                    Engineered multi-matrix 5-ASA formulation dissolving site-specifically at pH &gt; 6.8 for targeted colonic ulcerative colitis remission.
-                  </p>
-                  <div className="text-xs text-emerald-400/90 font-medium pt-2 border-t border-white/10 flex justify-between items-center">
-                    <span>Vs standard 5-ASA: Site-specific pH &gt; 6.8 release</span>
-                    <span className="text-[10px] bg-emerald-500/20 px-2 py-0.5 rounded text-emerald-300">ARTEMES™ 1.2g</span>
-                  </div>
-                </CardContent>
-
-                <div className="popup-progress-track mt-3">
-                  <div className="popup-progress-fill" id="popup-fill-1"></div>
                 </div>
-              </Card>
+              </div>
 
-              {/* Card 2: Quality Certified (Fuchsia Royal Violet) */}
-              <Card className="hero-popup-card hero-popup-card--2 relative overflow-hidden bg-fuchsia-600 text-white border-fuchsia-400/30" id="hero-popup-2">
-                <svg
-                  className="absolute right-0 top-0 w-56 h-56 pointer-events-none opacity-60"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  style={{ zIndex: 0 }}
-                >
-                  <defs>
-                    <filter id="blur2" x="-20%" y="-20%" width="140%" height="140%">
-                      <feGaussianBlur stdDeviation="10" />
-                    </filter>
-                  </defs>
-                  <ellipse cx="170" cy="60" rx="40" ry="18" fill="#fff" fillOpacity="0.15" filter="url(#blur2)" />
-                  <rect x="120" y="20" width="60" height="20" rx="8" fill="#fff" fillOpacity="0.12" />
-                  <polygon points="150,0 200,0 200,50" fill="#fff" fillOpacity="0.09" />
-                  <circle cx="180" cy="100" r="14" fill="#fff" fillOpacity="0.20" />
-                </svg>
-
-                <CardHeader className="border-0 z-10 relative p-0 mb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="size-2 rounded-full bg-white animate-pulse shadow-[0_0_10px_#fff]"></span>
-                    <CardTitle className="text-white/90 text-xs font-bold tracking-widest uppercase">
-                      02 · QUALITY CERTIFIED
-                    </CardTitle>
+              {/* Card 2: Quality Certified */}
+              <div className="hero-hud-card hero-hud-card--2 hero-hud-card--closed" id="hud-card-2">
+                <div className="card-flip-inner">
+                  {/* Back (Closed State) */}
+                  <div className="card-flip-back">
+                    <div className="hud-badge-row">
+                      <span className="hud-status-dot" style={{ background: "#3b82f6" }}></span>
+                      <span className="hud-tag" style={{ color: "#ffffff" }}>02 · QUALITY CERTIFIED</span>
+                    </div>
+                    <div className="hud-closed-label">✦ SCROLL TO UNLOCK</div>
                   </div>
-                  <CardToolbar>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button variant="dim" size="sm" mode="icon" className="text-white/80 hover:text-white">
-                          <MoreHorizontal className="size-4" />
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end" side="bottom">
-                        <DropdownMenuItem asChild>
-                          <Link href="/about"><Award className="size-4 me-2" /> WHO-GMP Standards</Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                          <Settings className="size-4 me-2" /> ISO 9001:2015 Cert
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem>
-                          <Share2 className="size-4 me-2" /> Share Quality Doc
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </CardToolbar>
-                </CardHeader>
 
-                <CardContent className="p-0 z-10 relative space-y-2">
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="text-2xl font-black tracking-tight text-white">
-                      WHO-GMP &amp; ISO Accredited
-                    </span>
-                    <Badge className="bg-white/25 text-white border border-white/30 font-semibold px-2.5 py-1">
-                      <ArrowUp className="size-3 me-1" />
-                      100% Accredited
-                    </Badge>
+                  {/* Front (Open State) */}
+                  <div className="card-flip-front">
+                    <div className="hud-badge-row">
+                      <span className="hud-status-dot" style={{ background: "#3b82f6" }}></span>
+                      <span className="hud-tag hud-tag--blue">QUALITY CERTIFIED</span>
+                    </div>
+                    <div className="hud-title">WHO-GMP &amp; ISO Accredited</div>
+                    <div className="hud-sub">100% Analytical Quality System</div>
                   </div>
-                  <p className="text-xs text-white/90 leading-relaxed">
-                    Enforcing strict in-process analytical quality management systems and accredited manufacturing facilities across every pharmaceutical batch produced.
-                  </p>
-                  <div className="text-xs text-white/90 font-medium pt-2 border-t border-white/20 flex justify-between items-center">
-                    <span>Vs standard facilities: ISO 9001:2015 QA Certified</span>
-                    <span className="text-[10px] bg-white/20 px-2 py-0.5 rounded text-white">WHO-GMP</span>
-                  </div>
-                </CardContent>
-
-                <div className="popup-progress-track mt-3">
-                  <div className="popup-progress-fill" id="popup-fill-2"></div>
                 </div>
-              </Card>
+              </div>
 
-              {/* Card 3: Targeted Efficacy (Ocean Blue) */}
-              <Card className="hero-popup-card hero-popup-card--3 relative overflow-hidden bg-blue-600 text-white border-blue-400/30" id="hero-popup-3">
-                <svg
-                  className="absolute right-0 top-0 w-56 h-56 pointer-events-none opacity-60"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  style={{ zIndex: 0 }}
-                >
-                  <defs>
-                    <filter id="blur3" x="-20%" y="-20%" width="140%" height="140%">
-                      <feGaussianBlur stdDeviation="12" />
-                    </filter>
-                  </defs>
-                  <rect x="120" y="0" width="70" height="70" rx="35" fill="#fff" fillOpacity="0.10" filter="url(#blur3)" />
-                  <ellipse cx="170" cy="80" rx="28" ry="12" fill="#fff" fillOpacity="0.15" />
-                  <polygon points="200,0 200,60 140,0" fill="#fff" fillOpacity="0.08" />
-                  <circle cx="150" cy="30" r="10" fill="#fff" fillOpacity="0.18" />
-                </svg>
-
-                <CardHeader className="border-0 z-10 relative p-0 mb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="size-2 rounded-full bg-cyan-300 animate-pulse shadow-[0_0_10px_#67e8f9]"></span>
-                    <CardTitle className="text-cyan-200 text-xs font-bold tracking-widest uppercase">
-                      03 · TARGETED EFFICACY
-                    </CardTitle>
+              {/* Card 3: Targeted Efficacy */}
+              <div className="hero-hud-card hero-hud-card--3 hero-hud-card--closed" id="hud-card-3">
+                <div className="card-flip-inner">
+                  {/* Back (Closed State) */}
+                  <div className="card-flip-back">
+                    <div className="hud-badge-row">
+                      <span className="hud-status-dot" style={{ background: "#a855f7" }}></span>
+                      <span className="hud-tag" style={{ color: "#ffffff" }}>03 · TARGETED EFFICACY</span>
+                    </div>
+                    <div className="hud-closed-label">✦ SCROLL TO UNLOCK</div>
                   </div>
-                  <CardToolbar>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button variant="dim" size="sm" mode="icon" className="text-white/80 hover:text-white">
-                          <MoreHorizontal className="size-4" />
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end" side="bottom">
-                        <DropdownMenuItem asChild>
-                          <Link href="/products/saranya"><Activity className="size-4 me-2" /> View SARANYA® 40:1</Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link href="/therapy-areas/womens-health"><ShieldCheck className="size-4 me-2" /> Women&apos;s Health Care</Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem>
-                          <Share2 className="size-4 me-2" /> Share Clinical Data
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </CardToolbar>
-                </CardHeader>
 
-                <CardContent className="p-0 z-10 relative space-y-2">
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="text-2xl font-black tracking-tight text-white">
-                      Mucosal &amp; 40:1 Inositol Concept
-                    </span>
-                    <Badge className="bg-white/25 text-white border border-white/30 font-semibold px-2.5 py-1">
-                      <ArrowUp className="size-3 me-1" />
-                      40:1 Ratio
-                    </Badge>
+                  {/* Front (Open State) */}
+                  <div className="card-flip-front">
+                    <div className="hud-badge-row">
+                      <span className="hud-status-dot" style={{ background: "#a855f7" }}></span>
+                      <span className="hud-tag hud-tag--purple">TARGETED EFFICACY</span>
+                    </div>
+                    <div className="hud-title">Mucosal Healing &amp; Restore</div>
+                    <div className="hud-sub">SARANYA® 40:1 Inositol Concept</div>
                   </div>
-                  <p className="text-xs text-white/90 leading-relaxed">
-                    Myo-Inositol 1100mg + D-Chiro Inositol 27.6mg supplemented with Chromium Picolinate &amp; Vitamin D2 for metabolic endocrine restore.
-                  </p>
-                  <div className="text-xs text-cyan-100 font-medium pt-2 border-t border-white/20 flex justify-between items-center">
-                    <span>Vs standard inositol: 40:1 Physiological Plasma Ratio</span>
-                    <span className="text-[10px] bg-white/20 px-2 py-0.5 rounded text-white">SARANYA® 40:1</span>
-                  </div>
-                </CardContent>
-
-                <div className="popup-progress-track mt-3">
-                  <div className="popup-progress-fill" id="popup-fill-3"></div>
                 </div>
-              </Card>
+              </div>
 
-              {/* Card 4: Clinical Impact (Cyan Teal) */}
-              <Card className="hero-popup-card hero-popup-card--4 relative overflow-hidden bg-teal-600 text-white border-teal-400/30" id="hero-popup-4">
-                <svg
-                  className="absolute right-0 top-0 w-56 h-56 pointer-events-none opacity-60"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  style={{ zIndex: 0 }}
-                >
-                  <defs>
-                    <filter id="blur4" x="-20%" y="-20%" width="140%" height="140%">
-                      <feGaussianBlur stdDeviation="16" />
-                    </filter>
-                  </defs>
-                  <polygon points="200,0 200,100 100,0" fill="#fff" fillOpacity="0.10" />
-                  <ellipse cx="170" cy="40" rx="30" ry="18" fill="#fff" fillOpacity="0.15" filter="url(#blur4)" />
-                  <rect x="140" y="60" width="40" height="18" rx="8" fill="#fff" fillOpacity="0.12" />
-                  <circle cx="150" cy="30" r="14" fill="#fff" fillOpacity="0.20" />
-                  <line x1="120" y1="0" x2="200" y2="80" stroke="#fff" strokeOpacity="0.12" strokeWidth="6" />
-                </svg>
-
-                <CardHeader className="border-0 z-10 relative p-0 mb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="size-2 rounded-full bg-emerald-200 animate-pulse shadow-[0_0_10px_#a7f3d0]"></span>
-                    <CardTitle className="text-emerald-100 text-xs font-bold tracking-widest uppercase">
-                      04 · CLINICAL IMPACT
-                    </CardTitle>
+              {/* Card 4: Clinical Impact */}
+              <div className="hero-hud-card hero-hud-card--4 hero-hud-card--closed" id="hud-card-4">
+                <div className="card-flip-inner">
+                  {/* Back (Closed State) */}
+                  <div className="card-flip-back">
+                    <div className="hud-badge-row">
+                      <span className="hud-status-dot" style={{ background: "#06b6d4" }}></span>
+                      <span className="hud-tag" style={{ color: "#ffffff" }}>04 · CLINICAL IMPACT</span>
+                    </div>
+                    <div className="hud-closed-label">✦ SCROLL TO UNLOCK</div>
                   </div>
-                  <CardToolbar>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button variant="dim" size="sm" mode="icon" className="text-white/80 hover:text-white">
-                          <MoreHorizontal className="size-4" />
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end" side="bottom">
-                        <DropdownMenuItem asChild>
-                          <Link href="/products/immunomars"><Activity className="size-4 me-2" /> View IMMUNOMARS™</Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link href="/therapy-areas/clinical-nutrition"><Award className="size-4 me-2" /> Clinical Nutrition</Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem>
-                          <Share2 className="size-4 me-2" /> Share Clinical Portfolio
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </CardToolbar>
-                </CardHeader>
 
-                <CardContent className="p-0 z-10 relative space-y-2">
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="text-2xl font-black tracking-tight text-white">
-                      4 Hero Formulations · 20+ Yrs
-                    </span>
-                    <Badge className="bg-white/25 text-white border border-white/30 font-semibold px-2.5 py-1">
-                      <ArrowUp className="size-3 me-1" />
-                      20+ Yrs Trust
-                    </Badge>
+                  {/* Front (Open State) */}
+                  <div className="card-flip-front">
+                    <div className="hud-badge-row">
+                      <span className="hud-status-dot" style={{ background: "#06b6d4" }}></span>
+                      <span className="hud-tag hud-tag--teal">CLINICAL IMPACT</span>
+                    </div>
+                    <div className="hud-title">4 Hero Formulations</div>
+                    <div className="hud-sub">IMMUNOMARS™ 15g · 20+ Yrs Trust</div>
                   </div>
-                  <p className="text-xs text-white/90 leading-relaxed">
-                    High-dose L-Glutamine 10g immunonutrition and specialized formulations empowering gastroenterologists, gynecologists &amp; physicians since 2003.
-                  </p>
-                  <div className="text-xs text-emerald-100 font-medium pt-2 border-t border-white/20 flex justify-between items-center">
-                    <span>Vs standard care: 3 Specialty Therapy Care Areas</span>
-                    <span className="text-[10px] bg-white/20 px-2 py-0.5 rounded text-white">IMMUNOMARS™ 15g</span>
-                  </div>
-                </CardContent>
-
-                <div className="popup-progress-track mt-3">
-                  <div className="popup-progress-fill" id="popup-fill-4"></div>
                 </div>
-              </Card>
+              </div>
 
             </div>
           </div>
