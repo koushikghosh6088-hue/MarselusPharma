@@ -1,7 +1,7 @@
 /* ===================================================
    MARSELUS PHARMACEUTICALS — HERO SCROLL ANIMATION
    Uses preloaded 210 frame images for buttery scrolling
-   100% Full-Screen Cover Scaling + Ultra-Smooth Overlapping Text Slides
+   High DPI retina crisp rendering + seamless background matching
    =================================================== */
 
 export function initHeroScrollAnimation() {
@@ -53,7 +53,7 @@ export function initHeroScrollAnimation() {
   let currentFrame = 0;
   let targetFrame = 0;
 
-  // High DPI Retina Canvas scaling for ultra-crisp quality
+  // High DPI Retina Canvas scaling for ultra-crisp 4K quality
   function resizeCanvas() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     canvas.width = window.innerWidth * dpr;
@@ -63,7 +63,7 @@ export function initHeroScrollAnimation() {
     drawFrame(Math.round(currentFrame));
   }
 
-  // Draw 100% full-screen COVER image with high smoothing & zero letterbox gaps
+  // Draw natural proportional image without stretching + high-quality smoothing
   function drawFrame(index) {
     const img = images[index];
     if (!img) return;
@@ -78,12 +78,23 @@ export function initHeroScrollAnimation() {
     const canvasWidth = canvas.width;
     const canvasHeight = canvas.height;
 
-    // Full viewport COVER mode to fill 100% of the screen seamlessly
-    const scale = Math.max(canvasWidth / imgWidth, canvasHeight / imgHeight);
-    const drawWidth = imgWidth * scale;
-    const drawHeight = imgHeight * scale;
-    const drawX = (canvasWidth - drawWidth) / 2;
-    const drawY = (canvasHeight - drawHeight) / 2;
+    const imgRatio = imgWidth / imgHeight;
+    const canvasRatio = canvasWidth / canvasHeight;
+
+    let drawWidth, drawHeight, drawX, drawY;
+
+    // Preserves native proportion and sharp detail (No over-stretching!)
+    if (canvasRatio > imgRatio) {
+      drawHeight = canvasHeight * 0.92;
+      drawWidth = drawHeight * imgRatio;
+      drawX = (canvasWidth - drawWidth) / 2;
+      drawY = (canvasHeight - drawHeight) / 2;
+    } else {
+      drawWidth = canvasWidth * 0.96;
+      drawHeight = drawWidth / imgRatio;
+      drawX = (canvasWidth - drawWidth) / 2;
+      drawY = (canvasHeight - drawHeight) * 0.5;
+    }
 
     ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
   }
