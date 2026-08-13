@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { Metadata } from "next";
 
 export default function About() {
   useEffect(() => {
@@ -10,187 +10,289 @@ export default function About() {
   }, []);
 
   return (
-    <main className="page-content atrimus-white-bg">
-      {/* Hero */}
-      <section className="page-hero about-hero">
+    <main className="page-content atrimus-white-bg" style={{ paddingTop: "120px", paddingBottom: "var(--space-20)", position: "relative", overflow: "hidden" }}>
+      
+      {/* Background Glow Mesh Orbs */}
+      <div className="hero-glow-orb hero-glow-orb--1" style={{ top: "5%", left: "-10%", opacity: 0.6 }}></div>
+      <div className="hero-glow-orb hero-glow-orb--2" style={{ top: "35%", right: "-10%", opacity: 0.6 }}></div>
+      <div className="hero-glow-orb hero-glow-orb--3" style={{ bottom: "10%", left: "30%", opacity: 0.5 }}></div>
+      <div className="hero-grid-matrix"></div>
+
+      {/* ═══ 1. VIBRANT GLASSMOPHIC HERO BANNER ═══ */}
+      <section className="section" style={{ padding: "0 0 var(--space-12) 0", position: "relative", zIndex: 10 }}>
         <div className="container">
-          <div className="breadcrumb hero-enter hero-enter--delay-1">
-            <Link href="/">Home</Link>
-            <span className="separator">/</span>
-            <span className="current">About Us</span>
+          <div style={{ maxWidth: "860px", margin: "0 auto", textAlign: "center" }}>
+            <span className="slide-badge slide-badge--1" style={{ marginBottom: "var(--space-4)" }}>
+              ✦ ESTABLISHED 2003 IN KOLKATA
+            </span>
+            <h1
+              style={{
+                fontSize: "clamp(2.75rem, 5.5vw, 4.5rem)",
+                fontWeight: 900,
+                color: "var(--color-navy)",
+                lineHeight: 1.05,
+                letterSpacing: "-0.025em",
+                marginBottom: "var(--space-6)",
+                textTransform: "uppercase",
+              }}
+            >
+              HERITAGE OF <span className="gradient-accent-1">HEALING.</span><br />
+              DRIVEN BY <span className="gradient-accent-2">SCIENCE.</span>
+            </h1>
+            <p style={{ fontSize: "var(--text-xl)", color: "var(--color-gray-600)", lineHeight: "1.65", marginBottom: "var(--space-8)" }}>
+              A specialist pharmaceutical company committed to evidence-based innovation across Gastroenterology, Women&apos;s Health, and Clinical Nutrition for over two decades.
+            </p>
+
+            {/* Quick Stats Pill Row */}
+            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "var(--space-3)", marginBottom: "var(--space-4)" }}>
+              <span className="slide-badge slide-badge--1">✓ 20+ YEARS EXCELLENCE</span>
+              <span className="slide-badge slide-badge--2">✓ 20,000+ PATIENTS SERVED</span>
+              <span className="slide-badge slide-badge--3">✓ 4 CORE HERO FORMULATIONS</span>
+              <span className="slide-badge slide-badge--4">✓ ISO 9001:2015 CERTIFIED</span>
+            </div>
           </div>
-          <h1 className="page-hero__title hero-enter hero-enter--delay-2">
-            About <span className="heading-dot">Marselus</span>
-          </h1>
-          <p className="page-hero__subtitle hero-enter hero-enter--delay-3">
-            Rooted in Kolkata, driven by science — a specialist pharmaceutical company committed to improving therapeutic outcomes since 2003.
-          </p>
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="section" id="our-story">
+      {/* ═══ 2. INTERACTIVE 3D VISUAL NARRATIVE & TIMELINE ═══ */}
+      <section className="section" style={{ padding: "var(--space-12) 0", position: "relative", zIndex: 10 }}>
         <div className="container">
-          <div className="split">
-            <div className="reveal--left reveal">
-              <p className="section-subtitle">Our Story</p>
-              <h2 className="heading-dot" style={{ marginBottom: "var(--space-6)" }}>Heritage of Healing</h2>
-              <p>Founded in Kolkata, Marselus Pharmaceuticals began with a singular vision: to bring scientific rigour and ethical integrity to every aspect of pharmaceutical development and delivery.</p>
-              <p>Over two decades, we have grown into a focused, specialist pharmaceutical company serving three core therapy areas — Gastroenterology, Women&apos;s Health, and Clinical Nutrition — with products that address real, unmet clinical needs.</p>
-              <p>Our commitment extends beyond the molecules we develop. We believe in ethical compliance, teamwork-driven culture, and an unwavering focus on the patient at every step of our journey.</p>
-            </div>
-            <div className="reveal--right reveal">
-              <div className="timeline">
-                <div className="timeline-item">
-                  <div className="timeline-item__year">2003</div>
-                  <div className="timeline-item__title">Foundation</div>
-                  <p className="timeline-item__text">Marselus Pharmaceuticals established in Kolkata with a focus on gastroenterology and urology.</p>
-                </div>
-                <div className="timeline-item">
-                  <div className="timeline-item__year">2010</div>
-                  <div className="timeline-item__title">Expanding Horizons</div>
-                  <p className="timeline-item__text">Expanded into pediatrics and gynaecology, broadening our therapeutic footprint.</p>
-                </div>
-                <div className="timeline-item">
-                  <div className="timeline-item__year">2018</div>
-                  <div className="timeline-item__title">Quality Certification</div>
-                  <p className="timeline-item__text">Achieved ISO 9001:2015 certification, reinforcing our commitment to quality.</p>
-                </div>
-                <div className="timeline-item">
-                  <div className="timeline-item__year">2024</div>
-                  <div className="timeline-item__title">Hero Brands Launch</div>
-                  <p className="timeline-item__text">Launch of ARTEMES, SARANYA, IMMUNOMARS, and UV 60K — four specialist hero brands.</p>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-12)", alignItems: "center" }}>
+            
+            {/* Left Column: Story & 3D Capsule Render */}
+            <div className="reveal">
+              <span className="slide-badge slide-badge--2" style={{ marginBottom: "var(--space-3)" }}>
+                OUR JOURNEY
+              </span>
+              <h2 style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)", fontWeight: 900, color: "var(--color-navy)", lineHeight: 1.1, marginBottom: "var(--space-6)", textTransform: "uppercase" }}>
+                TWO DECADES OF <span className="gradient-accent-1">CLINICAL RIGOR</span>
+              </h2>
+              <p style={{ fontSize: "var(--text-base)", color: "var(--color-gray-600)", lineHeight: "1.7", marginBottom: "var(--space-4)" }}>
+                Founded in Kolkata in 2003, Marselus Pharmaceuticals began with a singular mission: bringing scientific discipline, ethical compliance, and uncompromised quality to specialized healthcare domains.
+              </p>
+              <p style={{ fontSize: "var(--text-base)", color: "var(--color-gray-600)", lineHeight: "1.7", marginBottom: "var(--space-8)" }}>
+                By developing targeted delivery systems like our prolonged-release MMX™ mesalamine technology and clinically validated 40:1 inositol formulations, we empower physicians to deliver predictable, transformative patient outcomes.
+              </p>
+
+              {/* Floating 3D Capsule Asset */}
+              <div className="atrimus-glass-card" style={{ padding: "var(--space-6)", display: "flex", alignItems: "center", gap: "var(--space-6)", background: "linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(236, 253, 245, 0.8) 100%)", borderRadius: "20px" }}>
+                <img src="/assets/images/atrimus-capsule.png" className="float-3d" alt="3D Capsule Render" style={{ width: "100px", height: "auto", filter: "drop-shadow(0 10px 20px rgba(16, 185, 129, 0.2))" }} />
+                <div>
+                  <h4 style={{ fontSize: "1rem", fontWeight: 800, color: "var(--color-navy)", margin: 0 }}>Targeted Colonic Technology</h4>
+                  <p style={{ fontSize: "12px", color: "var(--color-gray-500)", margin: "4px 0 0 0" }}>Engineered for uniform active ingredient release along mucosa.</p>
                 </div>
               </div>
             </div>
+
+            {/* Right Column: Holographic Timeline */}
+            <div className="reveal">
+              <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-6)" }}>
+                
+                {/* 2003 Timeline Item */}
+                <div className="atrimus-glass-card" style={{ padding: "var(--space-6)", borderLeft: "4px solid #10b981", background: "linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(236, 253, 245, 0.75) 100%)", borderRadius: "20px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
+                    <span style={{ fontSize: "1.5rem", fontWeight: 900, color: "#059669" }}>2003</span>
+                    <span className="slide-badge slide-badge--1">FOUNDATION</span>
+                  </div>
+                  <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "4px" }}>Company Established in Kolkata</h3>
+                  <p style={{ fontSize: "0.875rem", color: "var(--color-gray-600)", margin: 0 }}>Marselus Pharmaceuticals was founded with an initial focus on gastroenterology and specialized therapeutic care.</p>
+                </div>
+
+                {/* 2010 Timeline Item */}
+                <div className="atrimus-glass-card" style={{ padding: "var(--space-6)", borderLeft: "4px solid #3b82f6", background: "linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(239, 246, 255, 0.75) 100%)", borderRadius: "20px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
+                    <span style={{ fontSize: "1.5rem", fontWeight: 900, color: "#2563eb" }}>2010</span>
+                    <span className="slide-badge slide-badge--2">THERAPEUTIC EXPANSION</span>
+                  </div>
+                  <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "4px" }}>Women&apos;s Health &amp; Pediatrics</h3>
+                  <p style={{ fontSize: "0.875rem", color: "var(--color-gray-600)", margin: 0 }}>Expanded therapeutic footprint into Gynaecology, PCOS management, and specialized pediatric nutrition.</p>
+                </div>
+
+                {/* 2018 Timeline Item */}
+                <div className="atrimus-glass-card" style={{ padding: "var(--space-6)", borderLeft: "4px solid #a855f7", background: "linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(250, 245, 255, 0.75) 100%)", borderRadius: "20px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
+                    <span style={{ fontSize: "1.5rem", fontWeight: 900, color: "#7c3aed" }}>2018</span>
+                    <span className="slide-badge slide-badge--3">QUALITY ACCREDITATION</span>
+                  </div>
+                  <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "4px" }}>ISO 9001:2015 Certification</h3>
+                  <p style={{ fontSize: "0.875rem", color: "var(--color-gray-600)", margin: 0 }}>Achieved ISO 9001:2015 quality management accreditation and WHO-GMP compliance across operations.</p>
+                </div>
+
+                {/* 2024 Timeline Item */}
+                <div className="atrimus-glass-card" style={{ padding: "var(--space-6)", borderLeft: "4px solid #06b6d4", background: "linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(236, 254, 255, 0.75) 100%)", borderRadius: "20px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
+                    <span style={{ fontSize: "1.5rem", fontWeight: 900, color: "#0284c7" }}>2024</span>
+                    <span className="slide-badge slide-badge--4">HERO BRANDS LAUNCH</span>
+                  </div>
+                  <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "4px" }}>Launch of Core Formulations</h3>
+                  <p style={{ fontSize: "0.875rem", color: "var(--color-gray-600)", margin: 0 }}>National launch of ARTEMES 1.2g, SARANYA, IMMUNOMARS, and UV 60K hero formulations.</p>
+                </div>
+
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* Vision & Values */}
-      <section className="section section--gray" id="vision">
+      {/* ═══ 3. COLORFUL NEON CORE VALUE CARDS ═══ */}
+      <section className="section" style={{ padding: "var(--space-16) 0", position: "relative", zIndex: 10 }}>
         <div className="container">
-          <div className="section-header section-header--center reveal">
-            <p className="section-subtitle" style={{ justifyContent: "center" }}>Vision &amp; Values</p>
-            <h2 className="heading-dot">What Drives Us</h2>
-            <p className="section-description">Our vision is to become a trusted name in speciality pharmaceuticals by consistently delivering high-quality, evidence-based therapeutic solutions.</p>
+          
+          <div style={{ textAlign: "center", maxWidth: "700px", margin: "0 auto var(--space-12)" }}>
+            <span className="slide-badge slide-badge--3" style={{ marginBottom: "var(--space-3)" }}>
+              PHILOSOPHICAL PILLARS
+            </span>
+            <h2 style={{ fontSize: "clamp(2.25rem, 4vw, 3.5rem)", fontWeight: 900, color: "var(--color-navy)", textTransform: "uppercase" }}>
+              WHAT <span className="gradient-accent-3">DRIVES US</span>
+            </h2>
+            <p style={{ fontSize: "var(--text-lg)", color: "var(--color-gray-600)", marginTop: "var(--space-3)" }}>
+              Our values shape every clinical trial, manufacturing standard, and patient interaction.
+            </p>
           </div>
 
-          <div className="values-grid reveal-stagger">
-            <div className="value-item reveal">
-              <div className="value-item__icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "var(--space-8)" }}>
+            
+            {/* Card 1: Ethics */}
+            <div className="atrimus-glass-card reveal" style={{ padding: "var(--space-8)", borderTop: "4px solid #10b981", background: "linear-gradient(180deg, rgba(236, 253, 245, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%)", borderRadius: "24px" }}>
+              <div style={{ width: "52px", height: "52px", borderRadius: "16px", background: "rgba(16, 185, 129, 0.15)", color: "#059669", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "var(--space-6)" }}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" style={{ width: "28px", height: "28px" }}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                 </svg>
               </div>
-              <h3 className="value-item__title">Ethics &amp; Compliance</h3>
-              <p className="value-item__text">Unwavering commitment to ethical business practices, regulatory compliance, and transparent operations at every level.</p>
+              <h3 style={{ fontSize: "1.35rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Ethics &amp; Compliance</h3>
+              <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", lineHeight: "1.6", margin: 0 }}>
+                Unwavering adherence to international regulatory standards, WHO-GMP protocols, and transparent operations.
+              </p>
             </div>
-            <div className="value-item reveal">
-              <div className="value-item__icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+
+            {/* Card 2: Scientific Rigor */}
+            <div className="atrimus-glass-card reveal" style={{ padding: "var(--space-8)", borderTop: "4px solid #3b82f6", background: "linear-gradient(180deg, rgba(239, 246, 255, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%)", borderRadius: "24px" }}>
+              <div style={{ width: "52px", height: "52px", borderRadius: "16px", background: "rgba(37, 99, 235, 0.15)", color: "#2563eb", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "var(--space-6)" }}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" style={{ width: "28px", height: "28px" }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3" />
                 </svg>
               </div>
-              <h3 className="value-item__title">Teamwork</h3>
-              <p className="value-item__text">A collaborative culture where every team member contributes to our shared mission of improving patient outcomes.</p>
+              <h3 style={{ fontSize: "1.35rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Scientific Rigor</h3>
+              <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", lineHeight: "1.6", margin: 0 }}>
+                Continuous investment in R&amp;D to engineer specialized combination molecules addressing high unmet clinical needs.
+              </p>
             </div>
-            <div className="value-item reveal">
-              <div className="value-item__icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+
+            {/* Card 3: Patient Centricity */}
+            <div className="atrimus-glass-card reveal" style={{ padding: "var(--space-8)", borderTop: "4px solid #a855f7", background: "linear-gradient(180deg, rgba(250, 245, 255, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%)", borderRadius: "24px" }}>
+              <div style={{ width: "52px", height: "52px", borderRadius: "16px", background: "rgba(168, 85, 247, 0.15)", color: "#7c3aed", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "var(--space-6)" }}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" style={{ width: "28px", height: "28px" }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                 </svg>
               </div>
-              <h3 className="value-item__title">Innovation</h3>
-              <p className="value-item__text">Continuously investing in research and development to bring novel, effective therapeutic solutions to underserved areas.</p>
+              <h3 style={{ fontSize: "1.35rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Patient Centricity</h3>
+              <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", lineHeight: "1.6", margin: 0 }}>
+                Designing drug delivery mechanisms that minimize dosage frequency and optimize patient comfort and compliance.
+              </p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Quality / ISO */}
-      <section className="section" id="quality">
-        <div className="container">
-          <div className="split">
-            <div className="reveal">
-              <p className="section-subtitle">Quality Assurance</p>
-              <h2 className="heading-dot" style={{ marginBottom: "var(--space-6)" }}>Manufacturing Excellence</h2>
-              <p>Our manufacturing facilities meet the highest international standards, ensuring every product that reaches healthcare providers and patients is safe, effective, and consistently reliable.</p>
-              <div style={{ marginTop: "var(--space-6)" }}>
-                <div className="iso-badge">
-                  <div className="iso-badge__icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="iso-badge__text">ISO 9001:2015 Certified</div>
-                    <div className="iso-badge__sub">Quality Management System</div>
-                  </div>
-                </div>
+            {/* Card 4: Global Partnerships */}
+            <div className="atrimus-glass-card reveal" style={{ padding: "var(--space-8)", borderTop: "4px solid #06b6d4", background: "linear-gradient(180deg, rgba(236, 254, 255, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%)", borderRadius: "24px" }}>
+              <div style={{ width: "52px", height: "52px", borderRadius: "16px", background: "rgba(6, 182, 212, 0.15)", color: "#0284c7", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "var(--space-6)" }}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" style={{ width: "28px", height: "28px" }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9s2.015-9 4.5-9m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582" />
+                </svg>
               </div>
+              <h3 style={{ fontSize: "1.35rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Collaborative Vision</h3>
+              <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", lineHeight: "1.6", margin: 0 }}>
+                Building lasting relationships of trust with healthcare providers, clinical institutions, and distribution networks.
+              </p>
             </div>
-            <div className="reveal--right reveal">
-              <ul className="content-list">
-                <li>WHO-GMP compliant manufacturing facilities</li>
-                <li>ISO 9001:2015 certified quality management system</li>
-                <li>Stringent in-process quality checks at every stage</li>
-                <li>Comprehensive stability testing and batch analysis</li>
-                <li>Regulatory compliance across all operations</li>
-                <li>Continuous quality improvement programmes</li>
-              </ul>
-            </div>
+
           </div>
         </div>
       </section>
 
-      {/* Leadership */}
-      <section className="section section--gray" id="team">
+      {/* ═══ 4. EXECUTIVE LEADERSHIP TEAM ═══ */}
+      <section className="section" style={{ padding: "var(--space-16) 0", position: "relative", zIndex: 10 }}>
         <div className="container">
-          <div className="section-header section-header--center reveal">
-            <p className="section-subtitle" style={{ justifyContent: "center" }}>Leadership</p>
-            <h2 className="heading-dot">Our Team</h2>
-            <p className="section-description">A dedicated team of pharmaceutical professionals driving our mission forward.</p>
+          
+          <div style={{ textAlign: "center", maxWidth: "700px", margin: "0 auto var(--space-12)" }}>
+            <span className="slide-badge slide-badge--4" style={{ marginBottom: "var(--space-3)" }}>
+              EXECUTIVE LEADERSHIP
+            </span>
+            <h2 style={{ fontSize: "clamp(2.25rem, 4vw, 3.5rem)", fontWeight: 900, color: "var(--color-navy)", textTransform: "uppercase" }}>
+              MEET OUR <span className="gradient-accent-4">LEADERSHIP TEAM</span>
+            </h2>
+            <p style={{ fontSize: "var(--text-lg)", color: "var(--color-gray-600)", marginTop: "var(--space-3)" }}>
+              A dedicated team of pharmaceutical pioneers driving our mission forward.
+            </p>
           </div>
 
-          <div className="team-grid reveal-stagger">
-            <div className="team-card reveal">
-              <div className="team-card__avatar">MP</div>
-              <div className="team-card__name">Managing Director</div>
-              <div className="team-card__role">Founder &amp; Visionary</div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "var(--space-8)" }}>
+            
+            {/* Leader 1 */}
+            <div className="atrimus-glass-card reveal" style={{ padding: "var(--space-8)", textAlign: "center", borderRadius: "24px" }}>
+              <div style={{ width: "72px", height: "72px", borderRadius: "50%", background: "linear-gradient(135deg, #059669, #10b981)", color: "#ffffff", fontSize: "1.5rem", fontWeight: 900, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto var(--space-4)", boxShadow: "0 10px 25px rgba(16, 185, 129, 0.3)" }}>
+                MP
+              </div>
+              <h3 style={{ fontSize: "1.25rem", fontWeight: 900, color: "var(--color-navy)", marginBottom: "4px" }}>Managing Director</h3>
+              <p style={{ fontSize: "12px", fontWeight: 800, color: "#059669", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "var(--space-3)" }}>Founder &amp; Executive Visionary</p>
+              <p style={{ fontSize: "13px", color: "var(--color-gray-600)", lineHeight: "1.5", margin: 0 }}>Over 22 years of leadership in pharmaceutical manufacturing and strategic expansion.</p>
             </div>
-            <div className="team-card reveal">
-              <div className="team-card__avatar">RD</div>
-              <div className="team-card__name">Head of R&amp;D</div>
-              <div className="team-card__role">Scientific Leadership</div>
+
+            {/* Leader 2 */}
+            <div className="atrimus-glass-card reveal" style={{ padding: "var(--space-8)", textAlign: "center", borderRadius: "24px" }}>
+              <div style={{ width: "72px", height: "72px", borderRadius: "50%", background: "linear-gradient(135deg, #2563eb, #3b82f6)", color: "#ffffff", fontSize: "1.5rem", fontWeight: 900, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto var(--space-4)", boxShadow: "0 10px 25px rgba(37, 99, 235, 0.3)" }}>
+                RD
+              </div>
+              <h3 style={{ fontSize: "1.25rem", fontWeight: 900, color: "var(--color-navy)", marginBottom: "4px" }}>Head of R&amp;D</h3>
+              <p style={{ fontSize: "12px", fontWeight: 800, color: "#2563eb", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "var(--space-3)" }}>Scientific Leadership</p>
+              <p style={{ fontSize: "13px", color: "var(--color-gray-600)", lineHeight: "1.5", margin: 0 }}>Directs MMX™ multi-matrix polymer research and active dosage formulation.</p>
             </div>
-            <div className="team-card reveal">
-              <div className="team-card__avatar">QA</div>
-              <div className="team-card__name">Quality Director</div>
-              <div className="team-card__role">Quality Assurance</div>
+
+            {/* Leader 3 */}
+            <div className="atrimus-glass-card reveal" style={{ padding: "var(--space-8)", textAlign: "center", borderRadius: "24px" }}>
+              <div style={{ width: "72px", height: "72px", borderRadius: "50%", background: "linear-gradient(135deg, #7c3aed, #a855f7)", color: "#ffffff", fontSize: "1.5rem", fontWeight: 900, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto var(--space-4)", boxShadow: "0 10px 25px rgba(168, 85, 247, 0.3)" }}>
+                QA
+              </div>
+              <h3 style={{ fontSize: "1.25rem", fontWeight: 900, color: "var(--color-navy)", marginBottom: "4px" }}>Quality Director</h3>
+              <p style={{ fontSize: "12px", fontWeight: 800, color: "#7c3aed", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "var(--space-3)" }}>Quality Assurance</p>
+              <p style={{ fontSize: "13px", color: "var(--color-gray-600)", lineHeight: "1.5", margin: 0 }}>Oversees ISO 9001:2015 audit compliance and WHO-GMP batch validation.</p>
             </div>
-            <div className="team-card reveal">
-              <div className="team-card__avatar">MK</div>
-              <div className="team-card__name">Marketing Head</div>
-              <div className="team-card__role">Brand Strategy</div>
+
+            {/* Leader 4 */}
+            <div className="atrimus-glass-card reveal" style={{ padding: "var(--space-8)", textAlign: "center", borderRadius: "24px" }}>
+              <div style={{ width: "72px", height: "72px", borderRadius: "50%", background: "linear-gradient(135deg, #0284c7, #06b6d4)", color: "#ffffff", fontSize: "1.5rem", fontWeight: 900, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto var(--space-4)", boxShadow: "0 10px 25px rgba(6, 182, 212, 0.3)" }}>
+                MK
+              </div>
+              <h3 style={{ fontSize: "1.25rem", fontWeight: 900, color: "var(--color-navy)", marginBottom: "4px" }}>Marketing Head</h3>
+              <p style={{ fontSize: "12px", fontWeight: 800, color: "#0284c7", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "var(--space-3)" }}>Brand Strategy</p>
+              <p style={{ fontSize: "13px", color: "var(--color-gray-600)", lineHeight: "1.5", margin: 0 }}>Manages medical communications and national specialist outreach.</p>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section">
+      {/* ═══ 5. BOTTOM CTA BANNER ═══ */}
+      <section className="section" style={{ padding: "0 0 var(--space-12) 0", position: "relative", zIndex: 10 }}>
         <div className="container">
-          <div className="cta-banner reveal--scale reveal">
-            <h2 className="cta-banner__title heading-dot">Partner with Marselus</h2>
-            <p className="cta-banner__text">Interested in learning more about our products, partnerships, or career opportunities?</p>
-            <div className="cta-banner__actions">
-              <Link href="/contact" className="btn btn--primary btn--lg">Get in Touch</Link>
-              <Link href="/products" className="btn btn--white btn--lg">View Products</Link>
+          <div className="atrimus-glass-card reveal" style={{ padding: "var(--space-12)", textAlign: "center", background: "linear-gradient(135deg, rgba(244, 249, 246, 0.95) 0%, rgba(226, 239, 224, 0.5) 100%)", borderRadius: "28px" }}>
+            <h2 style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)", fontWeight: 900, color: "var(--color-navy)", textTransform: "uppercase", marginBottom: "var(--space-4)" }}>
+              PARTNER WITH <span className="gradient-accent-1">MARSELUS PHARMACEUTICALS</span>
+            </h2>
+            <p style={{ color: "var(--color-gray-600)", fontSize: "var(--text-lg)", marginBottom: "var(--space-8)", maxWidth: "54ch", margin: "0 auto var(--space-8)" }}>
+              Explore our core formulation portfolio or contact our medical affairs team for prescribing information and inquiries.
+            </p>
+            <div className="btn-connected-group">
+              <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary">
+                Contact Medical Team →
+              </Link>
+              <Link href="/products" className="btn-connected-pill btn-connected-pill--secondary">
+                View Products
+              </Link>
             </div>
           </div>
         </div>
       </section>
+
     </main>
   );
 }
