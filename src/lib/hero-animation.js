@@ -111,8 +111,8 @@ export function initHeroScrollAnimation() {
     let drawWidth, drawHeight, drawX, drawY;
 
     if (isMobile) {
-      // Mobile: Centered 0.80 height scale
-      const maxDrawHeight = canvasHeight * 0.80;
+      // Mobile: Crisp unzoomed capsule in upper-center area, perfectly above lower slide card
+      const maxDrawHeight = canvasHeight * 0.44;
       const maxDrawWidth = canvasWidth * 0.88;
 
       drawHeight = maxDrawHeight;
@@ -124,7 +124,7 @@ export function initHeroScrollAnimation() {
       }
 
       drawX = (canvasWidth - drawWidth) / 2;
-      drawY = (canvasHeight - drawHeight) / 2;
+      drawY = canvasHeight * 0.24; // Sits in upper middle, leaving zero overlap with lower card!
     } else {
       // PC Desktop: Ultra-crisp un-stretched 0.54 scale, positioned in center-right
       const maxDrawHeight = canvasHeight * 0.54;
