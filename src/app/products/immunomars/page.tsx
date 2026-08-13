@@ -13,7 +13,7 @@ export default function ImmunomarsPage() {
         <SpineTab label="IMMUNOMARS — MONOGRAPH" />
 
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-12)", alignItems: "center" }}>
+          <div className="grid-split">
             
             {/* Left Column: Pack Artwork */}
             <div>

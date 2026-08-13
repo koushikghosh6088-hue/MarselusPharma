@@ -105,15 +105,6 @@ export default function Home() {
                 <div className="hud-title">4 Hero Formulations</div>
                 <div className="hud-sub">Across 3 speciality therapy areas</div>
               </div>
-
-            </div>
-
-            {/* Scroll Indicator */}
-            <div className="scroll-indicator-wrap">
-              <span className="scroll-text">SCROLL TO DISCOVER</span>
-              <div className="scroll-mouse">
-                <div className="scroll-wheel"></div>
-              </div>
             </div>
           </div>
         </section>
@@ -121,7 +112,7 @@ export default function Home() {
         {/* ═══ 2. COMPANY INTRO (SPLIT LAYOUT WITH GOLD HAIRLINE) ═══ */}
         <section className="section" style={{ padding: "var(--space-20) 0", background: "var(--color-cream)", position: "relative" }}>
           <div className="container">
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-16)", alignItems: "center" }}>
+            <div className="grid-split">
               
               {/* Left Column: Copy */}
               <div className="reveal">

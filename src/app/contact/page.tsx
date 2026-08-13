@@ -36,7 +36,7 @@ export default function ContactPage() {
       {/* Main Grid: Details + Form */}
       <section className="section" style={{ padding: "var(--space-12) 0" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-12)", alignItems: "start" }}>
+          <div className="grid-split" style={{ alignItems: "start" }}>
             
             {/* Left Column: Contact Details & Medical Note */}
             <div>

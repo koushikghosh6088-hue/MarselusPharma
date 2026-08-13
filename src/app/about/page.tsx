@@ -34,7 +34,7 @@ export default function About() {
       {/* ═══ 2. OUR STORY — HERITAGE OF HEALING & TIMELINE ═══ */}
       <section className="section" style={{ padding: "var(--space-16) 0", background: "var(--color-cream-light)" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-12)", alignItems: "center" }}>
+          <div className="grid-split">
             
             {/* Left: Narrative */}
             <div className="reveal">
@@ -165,7 +165,7 @@ export default function About() {
       {/* ═══ 5. MANUFACTURING EXCELLENCE & ISO CERTIFICATE ═══ */}
       <section className="section" style={{ padding: "var(--space-20) 0", background: "var(--color-cream)" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-12)", alignItems: "center" }}>
+          <div className="grid-split">
             
             <div className="reveal">
               <span className="eyebrow-label">QUALITY &amp; COMPLIANCE</span>

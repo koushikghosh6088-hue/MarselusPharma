@@ -16,7 +16,7 @@ export default function UV60KPage() {
         <SpineTab label="UV 60K — HIGH POTENCY VITAMIN D3" />
 
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-12)", alignItems: "center" }}>
+          <div className="grid-split">
             
             {/* Left Column: Pack Artwork */}
             <div>

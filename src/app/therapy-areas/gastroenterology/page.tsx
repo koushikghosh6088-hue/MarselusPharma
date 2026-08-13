@@ -30,7 +30,7 @@ export default function GastroenterologyPage() {
       {/* Scientific Rationale with Annotation Leader Lines */}
       <section className="section" style={{ padding: "var(--space-12) 0" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-12)", alignItems: "center" }}>
+          <div className="grid-split">
             
             <div>
               <span className="eyebrow-label" style={{ color: "var(--color-artemes)" }}>SCIENTIFIC RATIONALE</span>

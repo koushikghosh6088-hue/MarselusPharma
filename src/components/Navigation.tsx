@@ -12,7 +12,7 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      setIsScrolled(window.scrollY > 30);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -23,7 +23,7 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 900) {
+      if (window.innerWidth > 992) {
         setIsMobileMenuOpen(false);
       }
     };
@@ -33,7 +33,11 @@ export default function Navigation() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
   }, [isMobileMenuOpen]);
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -50,15 +54,15 @@ export default function Navigation() {
       <header className={`nav-header ${isScrolled ? "scrolled" : ""}`} id="main-nav">
         <div className="container" style={{ maxWidth: "1280px" }}>
           <nav className="nav-inner" aria-label="Main navigation">
-            {/* Holographic Cyber-Logo */}
-            <Link href="/" className="nav-logo" aria-label="Marselus Pharmaceuticals Home">
+            {/* Brand Logo */}
+            <Link href="/" className="nav-logo" aria-label="Marselus Pharmaceuticals Home" onClick={closeMobileMenu}>
               <div className="nav-logo-icon-wrap">
                 <span className="nav-logo-icon">M</span>
               </div>
               <span className="nav-logo-text">Marselus</span>
             </Link>
 
-            {/* Futuristic Glass Nav Links */}
+            {/* Desktop Navigation Links */}
             <ul className="nav-links">
               <li>
                 <Link href="/" className={`nav-link-pill ${isActive("/") ? "active" : ""}`}>
@@ -115,14 +119,14 @@ export default function Navigation() {
               </li>
             </ul>
 
-            {/* Prescriber Portal CTA Button */}
+            {/* Prescriber Portal CTA (Desktop) */}
             <div className="nav-actions-desktop">
               <Link href="/contact" className="nav-portal-btn">
                 <span className="portal-dot"></span> Prescriber Portal →
               </Link>
             </div>
 
-            {/* Hamburger */}
+            {/* Hamburger Button (Mobile) */}
             <button
               className={`nav-hamburger ${isMobileMenuOpen ? "active" : ""}`}
               aria-label="Toggle menu"
@@ -135,16 +139,30 @@ export default function Navigation() {
         </div>
       </header>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer Overlay */}
       <div
         className={`nav-mobile-overlay ${isMobileMenuOpen ? "active" : ""}`}
-        aria-hidden="true"
         onClick={closeMobileMenu}
+        aria-hidden="true"
       ></div>
-      <div className={`nav-mobile-drawer ${isMobileMenuOpen ? "active" : ""}`} aria-hidden="true">
+
+      {/* Mobile Right Drawer */}
+      <div className={`nav-mobile-drawer ${isMobileMenuOpen ? "active" : ""}`}>
+        <div className="mobile-drawer-header">
+          <Link href="/" className="nav-logo" onClick={closeMobileMenu}>
+            <div className="nav-logo-icon-wrap">
+              <span className="nav-logo-icon">M</span>
+            </div>
+            <span className="nav-logo-text">Marselus</span>
+          </Link>
+          <button className="mobile-drawer-close" onClick={closeMobileMenu} aria-label="Close menu">
+            ✕
+          </button>
+        </div>
+
         <ul className="mobile-nav-links">
           <li><Link href="/" className={`mobile-nav-link ${isActive("/") ? "active" : ""}`} onClick={closeMobileMenu}>Home</Link></li>
-          <li><Link href="/about" className={`mobile-nav-link ${isActive("/about") ? "active" : ""}`} onClick={closeMobileMenu}>About</Link></li>
+          <li><Link href="/about" className={`mobile-nav-link ${isActive("/about") ? "active" : ""}`} onClick={closeMobileMenu}>About Us</Link></li>
           <li><Link href="/therapy-areas" className={`mobile-nav-link ${isActive("/therapy-areas") ? "active" : ""}`} onClick={closeMobileMenu}>Therapy Areas</Link></li>
           <li>
             <Link href="/products" className={`mobile-nav-link ${isActive("/products") ? "active" : ""}`} onClick={closeMobileMenu}>Products</Link>
@@ -155,11 +173,12 @@ export default function Navigation() {
               <li><Link href="/products/uv60k" onClick={closeMobileMenu}><span className="dot dot--uv60k"></span> UV 60K</Link></li>
             </ul>
           </li>
-          <li><Link href="/science" className={`mobile-nav-link ${isActive("/science") ? "active" : ""}`} onClick={closeMobileMenu}>Science</Link></li>
+          <li><Link href="/science" className={`mobile-nav-link ${isActive("/science") ? "active" : ""}`} onClick={closeMobileMenu}>Science &amp; Resources</Link></li>
           <li><Link href="/careers" className={`mobile-nav-link ${isActive("/careers") ? "active" : ""}`} onClick={closeMobileMenu}>Careers</Link></li>
           <li><Link href="/contact" className={`mobile-nav-link ${isActive("/contact") ? "active" : ""}`} onClick={closeMobileMenu}>Contact</Link></li>
         </ul>
-        <div style={{ marginTop: "var(--space-8)" }}>
+
+        <div className="mobile-drawer-footer">
           <Link href="/contact" className="nav-portal-btn" style={{ width: "100%", justifyContent: "center" }} onClick={closeMobileMenu}>
             <span className="portal-dot"></span> Prescriber Portal →
           </Link>
