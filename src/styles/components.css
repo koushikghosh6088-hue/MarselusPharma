@@ -2319,16 +2319,16 @@ textarea.form-input {
   z-index: 10;
 }
 
-/* Bigger Flashy & Lucrative Sequential Popup Slides Stage (Perfect Bottom Positioning, Zero Capsule Overlap) */
+/* Bigger Flashy & Lucrative Sequential Popup Slides Stage (Taller Height & Balanced Positioning) */
 .hero-popup-slide-stage {
   position: absolute;
-  bottom: 5vh;
+  bottom: 4vh;
   top: auto;
   left: 50%;
   transform: translateX(-50%);
   width: 92%;
-  max-width: 660px; /* Fits elegantly on screen */
-  min-height: 155px;
+  max-width: 680px;
+  min-height: 185px; /* Taller slide card stage */
   z-index: 20;
   pointer-events: auto;
 }
@@ -2341,7 +2341,7 @@ textarea.form-input {
   -webkit-backdrop-filter: blur(28px);
   border: 1.5px solid rgba(255, 255, 255, 0.95);
   border-radius: 26px;
-  padding: 22px 30px;
+  padding: 24px 32px; /* Taller padding */
   box-shadow: 0 25px 60px rgba(12, 56, 37, 0.16), 0 0 30px rgba(36, 136, 166, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
   opacity: 0;
   transform: translateY(30px) scale(0.9) rotateX(8deg);
@@ -2590,17 +2590,17 @@ textarea.form-input {
   }
   .hero-popup-slide-stage {
     position: absolute !important;
-    top: 55% !important; /* Positioned RIGHT BELOW capsule video with zero gap & full visibility */
+    top: 57.5% !important; /* Moved just a little lower right below capsule video */
     bottom: auto !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: 92% !important;
     max-width: 520px !important;
-    min-height: 145px !important;
+    min-height: 175px !important; /* Taller slide card stage */
   }
   .hero-popup-card {
-    padding: 16px 18px !important;
-    border-radius: 20px !important;
+    padding: 18px 20px !important; /* Taller padding */
+    border-radius: 22px !important;
   }
   .popup-header-flex {
     margin-bottom: 6px !important;
