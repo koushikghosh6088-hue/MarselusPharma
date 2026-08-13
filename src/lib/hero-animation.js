@@ -107,7 +107,7 @@ export function initHeroScrollAnimation() {
 
     // Slide ranges (with smooth cross-fading overlaps)
     const ranges = [
-      { start: 0.00, end: 0.25, fadeInStart: 0.00, fadeInEnd: 0.05, fadeOutStart: 0.18, fadeOutEnd: 0.25 },
+      { start: 0.00, end: 0.25, fadeInStart: 0.00, fadeInEnd: 0.00, fadeOutStart: 0.18, fadeOutEnd: 0.25 },
       { start: 0.20, end: 0.50, fadeInStart: 0.20, fadeInEnd: 0.27, fadeOutStart: 0.43, fadeOutEnd: 0.50 },
       { start: 0.45, end: 0.75, fadeInStart: 0.45, fadeInEnd: 0.52, fadeOutStart: 0.68, fadeOutEnd: 0.75 },
       { start: 0.70, end: 1.00, fadeInStart: 0.70, fadeInEnd: 0.78, fadeOutStart: 0.98, fadeOutEnd: 1.00 }
