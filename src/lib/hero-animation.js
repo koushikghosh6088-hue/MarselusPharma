@@ -146,7 +146,7 @@ export function initHeroScrollAnimation() {
     ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
   }
 
-  // Dynamic HUD Card sequential 3D flip animation loop reactively driven by scroll progress
+  // Dynamic Sequential Popup Slide activation loop reactively driven by scroll progress
   function updateTextOverlays(progress) {
     const orb1 = document.querySelector('.hero-glow-orb--1');
     const orb2 = document.querySelector('.hero-glow-orb--2');
@@ -159,30 +159,23 @@ export function initHeroScrollAnimation() {
       orb2.style.transform = `translate(${progress * -30}px, ${progress * 20}px) scale(${1 - progress * 0.1})`;
     }
 
-    // 2. Sequential 3D Flip Thresholds (One by one flip open as user scrolls)
-    const card1 = document.getElementById('hud-card-1');
-    const card2 = document.getElementById('hud-card-2');
-    const card3 = document.getElementById('hud-card-3');
-    const card4 = document.getElementById('hud-card-4');
+    // 2. Sequential Popup Slide Card Activation (One by one popup as user scrolls)
+    let activeIndex = 1;
+    if (progress < 0.25) activeIndex = 1;
+    else if (progress < 0.50) activeIndex = 2;
+    else if (progress < 0.75) activeIndex = 3;
+    else activeIndex = 4;
 
-    const cardThresholds = [
-      { card: card1, threshold: 0.12 },
-      { card: card2, threshold: 0.32 },
-      { card: card3, threshold: 0.52 },
-      { card: card4, threshold: 0.72 },
-    ];
-
-    cardThresholds.forEach(({ card, threshold }) => {
-      if (card) {
-        if (progress >= threshold) {
-          card.classList.add('hero-hud-card--open');
-          card.classList.remove('hero-hud-card--closed');
+    for (let i = 1; i <= 4; i++) {
+      const popupCard = document.getElementById(`hero-popup-${i}`);
+      if (popupCard) {
+        if (i === activeIndex) {
+          popupCard.classList.add('popup-active');
         } else {
-          card.classList.add('hero-hud-card--closed');
-          card.classList.remove('hero-hud-card--open');
+          popupCard.classList.remove('popup-active');
         }
       }
-    });
+    }
   }
 
   // Animation frame scrubbing loop with silky 60fps lerp inertia

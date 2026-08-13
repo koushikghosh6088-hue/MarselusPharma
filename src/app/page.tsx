@@ -66,101 +66,93 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Trust Strip HUD Cards (4 Pillars with Scroll 3D Flip) */}
-            <div className="hero-hud-grid">
+            {/* Bigger Sequential Popup Slides Stage (Comes One by One on Scroll) */}
+            <div className="hero-popup-slide-stage">
               
-              {/* Card 1: Formulation Technology */}
-              <div className="hero-hud-card hero-hud-card--1 hero-hud-card--closed" id="hud-card-1">
-                <div className="card-flip-inner">
-                  {/* Back (Closed State) */}
-                  <div className="card-flip-back">
-                    <div className="hud-badge-row">
-                      <span className="hud-status-dot" style={{ background: "var(--color-artemes)" }}></span>
-                      <span className="hud-tag" style={{ color: "#ffffff" }}>01 · FORMULATION TECH</span>
-                    </div>
-                    <div className="hud-closed-label">✦ SCROLL TO UNLOCK</div>
-                  </div>
-
-                  {/* Front (Open State) */}
-                  <div className="card-flip-front">
-                    <div className="hud-badge-row">
-                      <span className="hud-status-dot" style={{ background: "var(--color-artemes)" }}></span>
-                      <span className="hud-tag">FORMULATION TECH</span>
-                    </div>
-                    <div className="hud-title">Targeted Prolonged Release</div>
-                    <div className="hud-sub">Engineered for site-specific colonic therapeutic action</div>
+              {/* Slide 1 */}
+              <div className="hero-popup-card hero-popup-card--1 popup-active" id="hero-popup-1">
+                <div className="popup-badge-row">
+                  <span className="hud-status-dot" style={{ background: "var(--color-artemes)" }}></span>
+                  <span className="popup-tag">FORMULATION TECH · 01 / 04</span>
+                </div>
+                <h3 className="popup-title">Targeted Prolonged Release</h3>
+                <p className="popup-desc">
+                  Engineered for site-specific colonic therapeutic action in mild-to-moderate ulcerative colitis.
+                </p>
+                <div className="popup-footer-row">
+                  <span className="popup-step-label">SLIDE 01 OF 04</span>
+                  <div className="popup-dots">
+                    <span className="popup-dot active"></span>
+                    <span className="popup-dot"></span>
+                    <span className="popup-dot"></span>
+                    <span className="popup-dot"></span>
                   </div>
                 </div>
               </div>
 
-              {/* Card 2: Quality Certified */}
-              <div className="hero-hud-card hero-hud-card--2 hero-hud-card--closed" id="hud-card-2">
-                <div className="card-flip-inner">
-                  {/* Back (Closed State) */}
-                  <div className="card-flip-back">
-                    <div className="hud-badge-row">
-                      <span className="hud-status-dot" style={{ background: "#3b82f6" }}></span>
-                      <span className="hud-tag" style={{ color: "#ffffff" }}>02 · QUALITY CERTIFIED</span>
-                    </div>
-                    <div className="hud-closed-label">✦ SCROLL TO UNLOCK</div>
-                  </div>
-
-                  {/* Front (Open State) */}
-                  <div className="card-flip-front">
-                    <div className="hud-badge-row">
-                      <span className="hud-tag hud-tag--blue">QUALITY CERTIFIED</span>
-                    </div>
-                    <div className="hud-title">WHO-GMP &amp; ISO 9001:2015</div>
-                    <div className="hud-sub">ISO certified quality management system &amp; GMP facilities</div>
+              {/* Slide 2 */}
+              <div className="hero-popup-card hero-popup-card--2" id="hero-popup-2">
+                <div className="popup-badge-row">
+                  <span className="hud-status-dot" style={{ background: "#3b82f6" }}></span>
+                  <span className="popup-tag popup-tag--blue">QUALITY CERTIFIED · 02 / 04</span>
+                </div>
+                <h3 className="popup-title">WHO-GMP &amp; ISO 9001:2015 Accredited</h3>
+                <p className="popup-desc">
+                  Enforcing strict quality management systems and accredited facilities across every batch produced.
+                </p>
+                <div className="popup-footer-row">
+                  <span className="popup-step-label">SLIDE 02 OF 04</span>
+                  <div className="popup-dots">
+                    <span className="popup-dot"></span>
+                    <span className="popup-dot active"></span>
+                    <span className="popup-dot"></span>
+                    <span className="popup-dot"></span>
                   </div>
                 </div>
               </div>
 
-              {/* Card 3: Targeted Efficacy */}
-              <div className="hero-hud-card hero-hud-card--3 hero-hud-card--closed" id="hud-card-3">
-                <div className="card-flip-inner">
-                  {/* Back (Closed State) */}
-                  <div className="card-flip-back">
-                    <div className="hud-badge-row">
-                      <span className="hud-status-dot" style={{ background: "#a855f7" }}></span>
-                      <span className="hud-tag" style={{ color: "#ffffff" }}>03 · TARGETED EFFICACY</span>
-                    </div>
-                    <div className="hud-closed-label">✦ SCROLL TO UNLOCK</div>
-                  </div>
-
-                  {/* Front (Open State) */}
-                  <div className="card-flip-front">
-                    <div className="hud-badge-row">
-                      <span className="hud-tag hud-tag--purple" style={{ color: "var(--color-saranya)" }}>TARGETED EFFICACY</span>
-                    </div>
-                    <div className="hud-title">Mucosal Healing &amp; Recovery</div>
-                    <div className="hud-sub">Formulated for localized action and enhanced patient tolerance</div>
+              {/* Slide 3 */}
+              <div className="hero-popup-card hero-popup-card--3" id="hero-popup-3">
+                <div className="popup-badge-row">
+                  <span className="hud-status-dot" style={{ background: "#a855f7" }}></span>
+                  <span className="popup-tag popup-tag--purple">TARGETED EFFICACY · 03 / 04</span>
+                </div>
+                <h3 className="popup-title">Mucosal Healing &amp; Metabolic Restore</h3>
+                <p className="popup-desc">
+                  Formulated for localized action, optimal patient compliance, and balanced endocrine restoration.
+                </p>
+                <div className="popup-footer-row">
+                  <span className="popup-step-label">SLIDE 03 OF 04</span>
+                  <div className="popup-dots">
+                    <span className="popup-dot"></span>
+                    <span className="popup-dot"></span>
+                    <span className="popup-dot active"></span>
+                    <span className="popup-dot"></span>
                   </div>
                 </div>
               </div>
 
-              {/* Card 4: Clinical Impact */}
-              <div className="hero-hud-card hero-hud-card--4 hero-hud-card--closed" id="hud-card-4">
-                <div className="card-flip-inner">
-                  {/* Back (Closed State) */}
-                  <div className="card-flip-back">
-                    <div className="hud-badge-row">
-                      <span className="hud-status-dot" style={{ background: "#06b6d4" }}></span>
-                      <span className="hud-tag" style={{ color: "#ffffff" }}>04 · CLINICAL IMPACT</span>
-                    </div>
-                    <div className="hud-closed-label">✦ SCROLL TO UNLOCK</div>
-                  </div>
-
-                  {/* Front (Open State) */}
-                  <div className="card-flip-front">
-                    <div className="hud-badge-row">
-                      <span className="hud-tag hud-tag--teal" style={{ color: "var(--color-immunomars)" }}>CLINICAL IMPACT</span>
-                    </div>
-                    <div className="hud-title">4 Hero Formulations</div>
-                    <div className="hud-sub">Across 3 speciality therapy areas</div>
+              {/* Slide 4 */}
+              <div className="hero-popup-card hero-popup-card--4" id="hero-popup-4">
+                <div className="popup-badge-row">
+                  <span className="hud-status-dot" style={{ background: "#06b6d4" }}></span>
+                  <span className="popup-tag popup-tag--teal">CLINICAL IMPACT · 04 / 04</span>
+                </div>
+                <h3 className="popup-title">4 Hero Formulations · 20+ Years Trust</h3>
+                <p className="popup-desc">
+                  Empowering gastroenterologists, gynecologists, and clinical nutritionists across specialty care.
+                </p>
+                <div className="popup-footer-row">
+                  <span className="popup-step-label">SLIDE 04 OF 04</span>
+                  <div className="popup-dots">
+                    <span className="popup-dot"></span>
+                    <span className="popup-dot"></span>
+                    <span className="popup-dot"></span>
+                    <span className="popup-dot active"></span>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
