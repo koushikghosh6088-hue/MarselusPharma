@@ -107,9 +107,9 @@ export function initHeroScrollAnimation() {
 
     const imgRatio = imgWidth / imgHeight;
 
-    // Cap maximum scale at 72% of screen height/width so image is NEVER zoomed in or blown up!
-    const maxDrawHeight = canvasHeight * 0.72;
-    const maxDrawWidth = canvasWidth * 0.75;
+    // Optimal 0.85 height scale for crisp, high-impact presence without zoom distortion
+    const maxDrawHeight = canvasHeight * 0.85;
+    const maxDrawWidth = canvasWidth * 0.85;
 
     let drawWidth = maxDrawHeight * imgRatio;
     let drawHeight = maxDrawHeight;
