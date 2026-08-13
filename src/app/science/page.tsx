@@ -1,106 +1,98 @@
-"use client";
-
-import { useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Science() {
-  useEffect(() => {
-    import("@/lib/scroll-animations").then((mod) => mod.initScrollAnimations());
-  }, []);
-
   return (
-    <main className="page-content atrimus-white-bg">
-      <section className="page-hero bg-mesh-blue">
-        <div className="container">
-          <div className="breadcrumb hero-enter hero-enter--delay-1">
-            <Link href="/">Home</Link>
-            <span className="separator">/</span>
-            <span className="current">Science &amp; Resources</span>
-          </div>
-          <h1 className="page-hero__title hero-enter hero-enter--delay-2">
-            Science &amp; <span className="text-gradient-blue">Resources</span>
+    <main className="page-content atrimus-white-bg" style={{ paddingTop: "120px", paddingBottom: "var(--space-20)" }}>
+      <div className="container">
+        
+        {/* Science Hero */}
+        <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto var(--space-16)" }}>
+          <span className="slide-badge slide-badge--2" style={{ marginBottom: "var(--space-4)" }}>
+            ✦ SCIENTIFIC EVIDENCE &amp; EDUCATION
+          </span>
+          <h1 style={{ fontSize: "clamp(2.75rem, 5vw, 4.25rem)", fontWeight: 900, color: "var(--color-navy)", lineHeight: 1.05, textTransform: "uppercase", marginBottom: "var(--space-6)" }}>
+            SCIENCE &amp; <span className="gradient-accent-2">RESOURCES</span>
           </h1>
-          <p className="page-hero__subtitle hero-enter hero-enter--delay-3">
-            Access product monographs, clinical evidence, therapy education, and downloadable resources for healthcare professionals.
+          <p style={{ fontSize: "var(--text-xl)", color: "var(--color-gray-600)", lineHeight: "1.6" }}>
+            Access product monographs, clinical evidence, therapy education, and downloadable resources for registered healthcare professionals.
           </p>
         </div>
-      </section>
 
-      <section className="section">
-        <div className="container">
-          <div className="split" style={{ alignItems: "flex-start", gap: "var(--space-12)" }}>
-            {/* Left column: Feature Cards */}
-            <div className="grid grid--2 reveal-stagger" style={{ gap: "var(--space-6)" }}>
-              <div className="feature-card glass-panel glow-border reveal" id="monographs">
-                <div className="feature-card__icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                  </svg>
-                </div>
-                <h3 className="feature-card__title">Product Monographs</h3>
-                <p className="feature-card__text">Comprehensive product monographs for ARTEMES, SARANYA, IMMUNOMARS, and UV 60K. Detailed prescribing information, pharmacology, and clinical data.</p>
-                <p style={{ marginTop: "var(--space-4)", fontSize: "var(--text-xs)", color: "var(--color-gray-500)" }}>
-                  <em>Monographs will be available for download once approved by Marselus medical/regulatory team.</em>
-                </p>
-              </div>
-
-              <div className="feature-card glass-panel glow-border reveal" id="evidence">
-                <div className="feature-card__icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
-                  </svg>
-                </div>
-                <h3 className="feature-card__title">Clinical Evidence</h3>
-                <p className="feature-card__text">Peer-reviewed clinical studies and evidence summaries supporting the efficacy and safety of our products across all therapy areas.</p>
-                <p style={{ marginTop: "var(--space-4)", fontSize: "var(--text-xs)", color: "var(--color-gray-500)" }}>
-                  <em>Clinical evidence summaries are currently under medical review for accuracy and compliance.</em>
-                </p>
-              </div>
-
-              <div className="feature-card glass-panel glow-border reveal">
-                <div className="feature-card__icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
-                  </svg>
-                </div>
-                <h3 className="feature-card__title">Therapy Education</h3>
-                <p className="feature-card__text">Educational materials on Gastroenterology, Women&apos;s Health, and Clinical Nutrition — designed for healthcare professionals seeking to stay current with therapeutic advances.</p>
-              </div>
-
-              <div className="feature-card glass-panel glow-border reveal" id="downloads">
-                <div className="feature-card__icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                  </svg>
-                </div>
-                <h3 className="feature-card__title">Download Centre</h3>
-                <p className="feature-card__text">Access approved product information leaflets, prescribing guides, and scientific resources as versioned PDFs.</p>
-                <p style={{ marginTop: "var(--space-4)", fontSize: "var(--text-xs)", color: "var(--color-gray-500)" }}>
-                  <em>Downloads will be available after regulatory approval. All documents are version-controlled.</em>
-                </p>
-              </div>
+        {/* 4 Modules Grid */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "var(--space-8)", marginBottom: "var(--space-16)" }}>
+          
+          {/* Module 1: Product Monographs */}
+          <div id="monographs" className="atrimus-glass-card" style={{ padding: "var(--space-8)", borderRadius: "24px", borderTop: "4px solid #10b981" }}>
+            <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "rgba(16, 185, 129, 0.15)", color: "#059669", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "var(--space-4)" }}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" style={{ width: "24px", height: "24px" }}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18c-2.305 0-4.408.867-6 2.292m0-14.25v14.25" />
+              </svg>
             </div>
-
-            {/* Right column: Glowing 3D Molecule Model */}
-            <div className="reveal--right reveal" style={{ textAlign: "center", position: "sticky", top: "120px", zIndex: 5 }}>
-              <img src="/assets/images/research-labs.png" className="float-3d" alt="Molecule Drug Discovery 3D render" style={{ width: "100%", maxWidth: "420px", borderRadius: "var(--radius-2xl)", boxShadow: "0 20px 50px var(--color-accent-glow)" }} />
-            </div>
+            <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Product Monographs</h3>
+            <p style={{ fontSize: "14px", color: "var(--color-gray-600)", lineHeight: "1.6", marginBottom: "var(--space-4)" }}>
+              Comprehensive product monographs for ARTEMES, SARANYA, IMMUNOMARS, and UV 60K, detailing pharmacology and prescribing data.
+            </p>
+            <span style={{ fontSize: "12px", fontWeight: 700, color: "#059669" }}>Monographs Available Upon Request →</span>
           </div>
-        </div>
-      </section>
 
-      <section className="section">
-        <div className="container">
-          <div className="cta-banner reveal--scale reveal">
-            <h2 className="cta-banner__title heading-dot">Need Medical Information</h2>
-            <p className="cta-banner__text">For specific medical information requests, product enquiries, or to request a product monograph, contact our medical information team.</p>
-            <div className="cta-banner__actions">
-              <Link href="/contact" className="btn btn--primary btn--lg">Contact Medical Info</Link>
+          {/* Module 2: Clinical Evidence */}
+          <div className="atrimus-glass-card" style={{ padding: "var(--space-8)", borderRadius: "24px", borderTop: "4px solid #3b82f6" }}>
+            <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "rgba(37, 99, 235, 0.15)", color: "#2563eb", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "var(--space-4)" }}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" style={{ width: "24px", height: "24px" }}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3" />
+              </svg>
             </div>
+            <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Clinical Evidence</h3>
+            <p style={{ fontSize: "14px", color: "var(--color-gray-600)", lineHeight: "1.6", marginBottom: "var(--space-4)" }}>
+              Peer-reviewed clinical trials supporting therapeutic efficacy across Gastroenterology, Women&apos;s Health, and Nutrition.
+            </p>
+            <span style={{ fontSize: "12px", fontWeight: 700, color: "#2563eb" }}>*Currently under medical review for compliance</span>
           </div>
+
+          {/* Module 3: Therapy Education */}
+          <div className="atrimus-glass-card" style={{ padding: "var(--space-8)", borderRadius: "24px", borderTop: "4px solid #a855f7" }}>
+            <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "rgba(168, 85, 247, 0.15)", color: "#7c3aed", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "var(--space-4)" }}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" style={{ width: "24px", height: "24px" }}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 01-.491-6.347A48.627 48.627 0 0112 3c4.229 0 8.287.572 12.16 1.637-.156 2.148-.323 4.281-.49 6.347m-19.41 0a48.536 48.536 0 002.585 10.428A48.536 48.536 0 0012 21c3.96 0 7.747-.57 11.255-1.638.932-3.376 1.76-6.85 2.404-10.427m-19.41 0c1.077 3.577 2.378 7.05 3.864 10.427" />
+              </svg>
+            </div>
+            <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Therapy Education</h3>
+            <p style={{ fontSize: "14px", color: "var(--color-gray-600)", lineHeight: "1.6", marginBottom: "var(--space-4)" }}>
+              Educational modules covering MMX™ prolonged-release kinetics, 40:1 inositol ratios, and immunonutrition mechanisms.
+            </p>
+            <span style={{ fontSize: "12px", fontWeight: 700, color: "#7c3aed" }}>Explore Educational Insights →</span>
+          </div>
+
+          {/* Module 4: Download Centre */}
+          <div id="downloads" className="atrimus-glass-card" style={{ padding: "var(--space-8)", borderRadius: "24px", borderTop: "4px solid #06b6d4" }}>
+            <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "rgba(6, 182, 212, 0.15)", color: "#0284c7", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "var(--space-4)" }}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" style={{ width: "24px", height: "24px" }}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+              </svg>
+            </div>
+            <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Download Centre</h3>
+            <p style={{ fontSize: "14px", color: "var(--color-gray-600)", lineHeight: "1.6", marginBottom: "var(--space-4)" }}>
+              Approved product leaflets, prescribing guides, and scientific resources as versioned PDFs.
+            </p>
+            <span style={{ fontSize: "12px", fontWeight: 700, color: "#0284c7" }}>*Version-controlled PDFs available after sign-off</span>
+          </div>
+
         </div>
-      </section>
+
+        {/* Closing CTA */}
+        <div className="atrimus-glass-card" style={{ padding: "var(--space-10)", textAlign: "center", borderRadius: "24px", background: "linear-gradient(135deg, rgba(239, 246, 255, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%)" }}>
+          <h2 style={{ fontSize: "1.75rem", fontWeight: 900, color: "var(--color-navy)", marginBottom: "var(--space-3)" }}>
+            NEED MEDICAL INFORMATION?
+          </h2>
+          <p style={{ fontSize: "var(--text-base)", color: "var(--color-gray-600)", marginBottom: "var(--space-6)", maxWidth: "50ch", margin: "0 auto var(--space-6)" }}>
+            For specific medical information requests, product inquiries, or to request a full product monograph, contact our medical information team.
+          </p>
+          <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary">
+            Contact Medical Info →
+          </Link>
+        </div>
+
+      </div>
     </main>
   );
 }

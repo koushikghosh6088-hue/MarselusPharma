@@ -1,91 +1,124 @@
-import { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "UV 60K (Cholecalciferol 60,000 IU Softgels) | Marselus Pharmaceuticals",
-  description:
-    "Product monograph for UV 60K Softgel Capsules providing high-potency Vitamin D3 (60,000 IU) for rapid correction of severe deficiency.",
-  openGraph: {
-    title: "UV 60K | High-Potency Vitamin D3 Softgel",
-    description:
-      "Pharmaceutical-grade Vitamin D3 softgels engineered for calcium homeostasis, bone mineralization, and immune resilience.",
-  },
-};
+export default function UV60K() {
+  const [activeTab, setActiveTab] = useState<"gut" | "women" | "bone">("gut");
 
-export default function Uv60kProductPage() {
   return (
     <main className="page-content atrimus-white-bg" style={{ paddingTop: "120px", paddingBottom: "var(--space-20)" }}>
       <div className="container">
-        {/* Breadcrumb Navigation */}
-        <div style={{ fontSize: "12px", color: "var(--color-gray-500)", marginBottom: "var(--space-6)" }}>
-          <Link href="/" style={{ color: "var(--color-gray-500)", textDecoration: "none" }}>Home</Link> /{" "}
-          <Link href="/products" style={{ color: "var(--color-gray-500)", textDecoration: "none" }}>Products</Link> /{" "}
-          <span style={{ color: "#d35400", fontWeight: 700 }}>UV 60K</span>
-        </div>
-
-        {/* Hero Section */}
-        <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "var(--space-12)", alignItems: "center", marginBottom: "var(--space-16)" }}>
-          <div>
-            <span style={{ background: "rgba(230, 126, 34, 0.1)", color: "#d35400", fontSize: "11px", fontWeight: 800, padding: "6px 14px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: "var(--space-4)", display: "inline-block" }}>
-              VITAMIN THERAPY • RAPID CORRECTION
+        
+        {/* Product Hero Split */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: "var(--space-12)", alignItems: "center", marginBottom: "var(--space-16)" }}>
+          
+          {/* Pack Artwork Column */}
+          <div className="atrimus-glass-card" style={{ padding: "var(--space-8)", textAlign: "center", borderRadius: "28px", borderTop: "4px solid #2e7fe0", background: "linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(239, 246, 255, 0.8) 100%)" }}>
+            <img src="/assets/images/3d_pharmaceutical_bottle_1786571813302.png" alt="UV 60K Pack Artwork" style={{ maxWidth: "280px", height: "auto", margin: "0 auto var(--space-6)" }} />
+            <span className="slide-badge slide-badge--4" style={{ background: "rgba(46, 127, 224, 0.12)", color: "#2e7fe0", border: "1px solid rgba(46, 127, 224, 0.3)" }}>
+              CHOLECALCIFEROL 60,000 IU SOFTGEL
             </span>
-            <h1 style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 900, color: "var(--color-navy)", lineHeight: 1.05, marginBottom: "var(--space-4)", letterSpacing: "-0.02em" }}>
-              UV 60K <span style={{ color: "#d35400" }}>SOFTGELS</span>
+          </div>
+
+          {/* Details Column */}
+          <div>
+            <span className="slide-badge slide-badge--4" style={{ background: "rgba(46, 127, 224, 0.12)", color: "#2e7fe0", border: "1px solid rgba(46, 127, 224, 0.3)", marginBottom: "var(--space-3)" }}>
+              VITAMIN THERAPY · SOFTGEL CAPSULE
+            </span>
+            <h1 style={{ fontSize: "clamp(2.5rem, 4.5vw, 3.75rem)", fontWeight: 900, color: "var(--color-navy)", lineHeight: 1.05, marginBottom: "var(--space-4)" }}>
+              UV 60K
             </h1>
-            <p style={{ fontSize: "var(--text-xl)", fontWeight: 700, color: "#d35400", marginBottom: "var(--space-6)" }}>
-              Cholecalciferol Softgel Capsules 60,000 IU
-            </p>
-            <p style={{ fontSize: "var(--text-base)", color: "var(--color-gray-600)", lineHeight: 1.65, marginBottom: "var(--space-8)", maxWidth: "54ch" }}>
-              UV 60K contains 60,000 IU of pharmaceutical-grade Cholecalciferol (Vitamin D3) encased in gelatin soft capsules to maximize bioavailability and ensure rapid restoration of serum 25-hydroxyvitamin D levels.
+            <p style={{ fontSize: "var(--text-lg)", color: "var(--color-gray-600)", lineHeight: "1.6", marginBottom: "var(--space-6)" }}>
+              Cholecalciferol (Vitamin D3) 60,000 IU Softgel Capsule formulated for rapid correction of severe Vitamin D deficiency and sustained clinical recovery.
             </p>
 
+            {/* Indication Selectable Tabs */}
+            <div style={{ marginBottom: "var(--space-6)" }}>
+              <div className="indication-tabs-row">
+                <button
+                  className={`indication-tab-btn ${activeTab === "gut" ? "active" : ""}`}
+                  onClick={() => setActiveTab("gut")}
+                >
+                  Tab 1: Gut Immunity
+                </button>
+                <button
+                  className={`indication-tab-btn ${activeTab === "women" ? "active" : ""}`}
+                  onClick={() => setActiveTab("women")}
+                >
+                  Tab 2: Women&apos;s Wellness &amp; Fertility
+                </button>
+                <button
+                  className={`indication-tab-btn ${activeTab === "bone" ? "active" : ""}`}
+                  onClick={() => setActiveTab("bone")}
+                >
+                  Tab 3: Bone &amp; Muscle Health
+                </button>
+              </div>
+
+              {/* Tab Content Display */}
+              <div className="atrimus-glass-card" style={{ padding: "var(--space-6)", borderRadius: "18px", transition: "all 0.2s ease" }}>
+                {activeTab === "gut" && (
+                  <div>
+                    <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "6px" }}>Gut Immunity &amp; Mucosal Recovery</h4>
+                    <p style={{ fontSize: "14px", color: "var(--color-gray-600)", lineHeight: "1.6", margin: 0 }}>
+                      Supports mucosal immune modulation, tight junction repair, and intestinal barrier defense during gastroenterological remission maintenance.
+                    </p>
+                  </div>
+                )}
+
+                {activeTab === "women" && (
+                  <div>
+                    <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "6px" }}>Women&apos;s Wellness &amp; Endocrine Balance</h4>
+                    <p style={{ fontSize: "14px", color: "var(--color-gray-600)", lineHeight: "1.6", margin: 0 }}>
+                      Supports follicular maturation, insulin receptor sensitivity, and hormonal equilibrium in PCOS and fertility management protocols.
+                    </p>
+                  </div>
+                )}
+
+                {activeTab === "bone" && (
+                  <div>
+                    <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "6px" }}>Musculoskeletal Integrity &amp; Bone Density</h4>
+                    <p style={{ fontSize: "14px", color: "var(--color-gray-600)", lineHeight: "1.6", margin: 0 }}>
+                      Optimizes intestinal calcium absorption, enhances bone mineral density, and preserves neuromuscular function.
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* CTAs */}
             <div className="btn-connected-group">
-              <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#e67e22", border: "none" }}>
-                Request Prescribing Dossier
+              <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#2e7fe0", border: "none" }}>
+                Request Prescribing Guide →
               </Link>
               <Link href="/products" className="btn-connected-pill btn-connected-pill--secondary">
-                Back to Products
+                View All Products
               </Link>
             </div>
+
           </div>
 
-          {/* Product Render Card */}
-          <div className="atrimus-glass-card" style={{ padding: "var(--space-10)", textAlign: "center", background: "linear-gradient(135deg, rgba(230, 126, 34, 0.08) 0%, rgba(255, 255, 255, 0.9) 100%)", borderRadius: "28px" }}>
-            <img src="/assets/images/atrimus-capsule.png" alt="UV 60K Softgel Render" style={{ width: "100%", maxWidth: "340px", height: "auto", filter: "drop-shadow(0 15px 30px rgba(230, 126, 34, 0.15))" }} />
-            <div style={{ marginTop: "var(--space-6)", fontSize: "11px", fontWeight: 800, color: "#d35400", letterSpacing: "0.14em", textTransform: "uppercase" }}>
-              HIGH-BIOAVAILABILITY SOFTGEL DELIVERY
+        </div>
+
+        {/* Composition & Compliance Notice */}
+        <div className="atrimus-glass-card" style={{ padding: "var(--space-8)", borderRadius: "24px" }}>
+          <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-4)" }}>
+            Composition &amp; Healthcare Professional Disclaimer
+          </h3>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-6)" }}>
+            <div>
+              <p style={{ fontSize: "14px", fontWeight: 700, color: "var(--color-navy)", marginBottom: "4px" }}>Active Ingredient:</p>
+              <p style={{ fontSize: "14px", color: "var(--color-gray-600)" }}>Cholecalciferol (Vitamin D3) 60,000 IU Softgel Capsule</p>
+            </div>
+            <div>
+              <p style={{ fontSize: "12px", color: "var(--color-gray-500)", lineHeight: "1.5" }}>
+                *This information is intended exclusively for registered medical practitioners and healthcare professionals. Please refer to full prescribing information before administration.
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Specifications Table */}
-        <div className="atrimus-glass-card" style={{ padding: "var(--space-10)", borderRadius: "24px", marginBottom: "var(--space-16)" }}>
-          <h2 style={{ fontSize: "1.75rem", fontWeight: 900, color: "var(--color-navy)", marginBottom: "var(--space-8)", textTransform: "uppercase" }}>
-            PRODUCT <span style={{ color: "#d35400" }}>SPECIFICATIONS &amp; MONOGRAPH</span>
-          </h2>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "var(--space-8)" }}>
-            <div>
-              <h3 style={{ fontSize: "var(--text-base)", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Active Substance</h3>
-              <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", margin: 0 }}>Cholecalciferol IP 60,000 IU (Vitamin D3)</p>
-            </div>
-
-            <div>
-              <h3 style={{ fontSize: "var(--text-base)", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Therapeutic Class</h3>
-              <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", margin: 0 }}>Fat-Soluble Vitamin Supplement</p>
-            </div>
-
-            <div>
-              <h3 style={{ fontSize: "var(--text-base)", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Indication</h3>
-              <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", margin: 0 }}>Severe Vitamin D deficiency, Osteomalacia, Osteoporosis adjunct</p>
-            </div>
-
-            <div>
-              <h3 style={{ fontSize: "var(--text-base)", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Dosing Schedule</h3>
-              <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", margin: 0 }}>1 softgel weekly for 8 to 12 weeks or as directed</p>
-            </div>
-          </div>
-        </div>
       </div>
     </main>
   );

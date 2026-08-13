@@ -1,127 +1,123 @@
 "use client";
 
-import { useEffect } from "react";
-import Link from "next/link";
+import { useState, FormEvent } from "react";
 
 export default function Contact() {
-  useEffect(() => {
-    import("@/lib/scroll-animations").then((mod) => mod.initScrollAnimations());
-    import("@/lib/forms").then((mod) => mod.initForms());
-  }, []);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
 
   return (
-    <main className="page-content atrimus-white-bg">
-      <section className="page-hero">
-        <div className="container">
-          <div className="breadcrumb hero-enter hero-enter--delay-1">
-            <Link href="/">Home</Link>
-            <span className="separator">/</span>
-            <span className="current">Contact</span>
-          </div>
-          <h1 className="page-hero__title hero-enter hero-enter--delay-2">
-            Get in <span className="heading-dot">Touch</span>
+    <main className="page-content atrimus-white-bg" style={{ paddingTop: "120px", paddingBottom: "var(--space-20)" }}>
+      <div className="container">
+        
+        {/* Contact Hero */}
+        <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto var(--space-16)" }}>
+          <span className="slide-badge slide-badge--1" style={{ marginBottom: "var(--space-4)" }}>
+            ✦ CLINICAL &amp; CORPORATE ENQUIRIES
+          </span>
+          <h1 style={{ fontSize: "clamp(2.75rem, 5vw, 4.25rem)", fontWeight: 900, color: "var(--color-navy)", lineHeight: 1.05, textTransform: "uppercase", marginBottom: "var(--space-6)" }}>
+            GET IN <span className="gradient-accent-1">TOUCH</span>
           </h1>
-          <p className="page-hero__subtitle hero-enter hero-enter--delay-3">
-            We&apos;d love to hear from you. Reach out for product enquiries, medical information, partnerships, or career opportunities.
+          <p style={{ fontSize: "var(--text-xl)", color: "var(--color-gray-600)", lineHeight: "1.6" }}>
+            We&apos;d love to hear from you. Reach out for product enquiries, medical information requests, partnerships, or career opportunities.
           </p>
         </div>
-      </section>
 
-      <section className="section">
-        <div className="container">
-          <div className="grid grid--3 reveal-stagger" style={{ gap: "var(--space-6)", marginBottom: "var(--space-12)" }}>
-            <div className="contact-info-card reveal">
-              <div className="contact-info-card__icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                </svg>
-              </div>
-              <h3 className="contact-info-card__title">Corporate Office</h3>
-              <p className="contact-info-card__text">
-                Marselus Pharmaceuticals<br />Kolkata, West Bengal<br />India
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.3fr", gap: "var(--space-12)", alignItems: "start" }}>
+          
+          {/* Details Column */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-6)" }}>
+            
+            <div className="atrimus-glass-card" style={{ padding: "var(--space-6)", borderRadius: "20px", borderLeft: "4px solid #10b981" }}>
+              <h4 style={{ fontSize: "1rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "4px" }}>Corporate Office</h4>
+              <p style={{ fontSize: "14px", color: "var(--color-gray-600)", margin: 0 }}>
+                Marselus Pharmaceuticals<br />
+                Kolkata, West Bengal, India
               </p>
             </div>
-            <div className="contact-info-card reveal">
-              <div className="contact-info-card__icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                </svg>
-              </div>
-              <h3 className="contact-info-card__title">Phone</h3>
-              <p className="contact-info-card__text">
-                <a href="tel:+919876543210">+91 98765 43210</a><br />
-                <small>Mon–Fri, 9:00 AM – 6:00 PM IST</small>
+
+            <div className="atrimus-glass-card" style={{ padding: "var(--space-6)", borderRadius: "20px", borderLeft: "4px solid #3b82f6" }}>
+              <h4 style={{ fontSize: "1rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "8px" }}>Email Enquiries</h4>
+              <p style={{ fontSize: "13px", color: "var(--color-gray-600)", margin: "0 0 6px 0" }}>
+                <strong>General Enquiries:</strong><br />
+                <a href="mailto:info@marseluspharma.com" style={{ color: "#2563eb", textDecoration: "none" }}>info@marseluspharma.com</a>
+              </p>
+              <p style={{ fontSize: "13px", color: "var(--color-gray-600)", margin: 0 }}>
+                <strong>Medical Information &amp; Adverse Events:</strong><br />
+                <a href="mailto:medical@marseluspharma.com" style={{ color: "#2563eb", textDecoration: "none" }}>medical@marseluspharma.com</a>
               </p>
             </div>
-            <div className="contact-info-card reveal">
-              <div className="contact-info-card__icon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                </svg>
-              </div>
-              <h3 className="contact-info-card__title">Email</h3>
-              <p className="contact-info-card__text">
-                <a href="mailto:info@marseluspharma.com">info@marseluspharma.com</a><br />
-                <a href="mailto:medical@marseluspharma.com">medical@marseluspharma.com</a>
+
+            {/* Medical Information Notice Box */}
+            <div className="atrimus-glass-card" style={{ padding: "var(--space-6)", borderRadius: "20px", borderLeft: "4px solid #a855f7", background: "linear-gradient(135deg, rgba(250, 245, 255, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%)" }}>
+              <h4 style={{ fontSize: "1rem", fontWeight: 800, color: "var(--color-navy)", marginBottom: "4px" }}>Medical Information Notice</h4>
+              <p style={{ fontSize: "12px", color: "var(--color-gray-600)", lineHeight: "1.5", margin: 0 }}>
+                For specific medical information requests, adverse event reports, or product-specific clinical queries, please email our dedicated medical team at <strong>medical@marseluspharma.com</strong>.
               </p>
             </div>
+
           </div>
 
-          <div className="split" style={{ gap: "var(--space-12)" }}>
-            {/* General Enquiry Form */}
-            <div className="reveal">
-              <h2 style={{ marginBottom: "var(--space-6)" }}>General <span className="heading-dot">Enquiry</span></h2>
-              <form data-validate>
-                <div className="form-group">
-                  <label className="form-label" htmlFor="contact-name">Full Name *</label>
-                  <input type="text" id="contact-name" className="form-input" required placeholder="Your full name" />
+          {/* Form Column */}
+          <div className="atrimus-glass-card" style={{ padding: "var(--space-10)", borderRadius: "28px" }}>
+            <h2 style={{ fontSize: "1.5rem", fontWeight: 900, color: "var(--color-navy)", textTransform: "uppercase", marginBottom: "var(--space-6)" }}>
+              SEND AN ENQUIRY
+            </h2>
+
+            {submitted ? (
+              <div style={{ padding: "var(--space-6)", background: "rgba(16, 185, 129, 0.12)", border: "1px solid rgba(16, 185, 129, 0.3)", borderRadius: "16px", textAlign: "center" }}>
+                <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#059669", margin: "0 0 4px 0" }}>Enquiry Sent!</h4>
+                <p style={{ fontSize: "14px", color: "var(--color-gray-700)", margin: 0 }}>Thank you for contacting Marselus Pharmaceuticals. Our clinical team will respond shortly.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "var(--space-4)" }}>
+                <div>
+                  <label style={{ display: "block", fontSize: "12px", fontWeight: 700, color: "var(--color-navy)", marginBottom: "4px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Full Name *</label>
+                  <input type="text" required placeholder="Dr. / Mr. / Ms. Full Name" style={{ width: "100%", padding: "12px 16px", borderRadius: "12px", border: "1px solid rgba(10, 25, 47, 0.15)", background: "#ffffff", fontSize: "14px" }} />
                 </div>
-                <div className="form-group">
-                  <label className="form-label" htmlFor="contact-email">Email *</label>
-                  <input type="email" id="contact-email" className="form-input" required placeholder="your@email.com" />
+
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-4)" }}>
+                  <div>
+                    <label style={{ display: "block", fontSize: "12px", fontWeight: 700, color: "var(--color-navy)", marginBottom: "4px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Email *</label>
+                    <input type="email" required placeholder="your.email@domain.com" style={{ width: "100%", padding: "12px 16px", borderRadius: "12px", border: "1px solid rgba(10, 25, 47, 0.15)", background: "#ffffff", fontSize: "14px" }} />
+                  </div>
+                  <div>
+                    <label style={{ display: "block", fontSize: "12px", fontWeight: 700, color: "var(--color-navy)", marginBottom: "4px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Phone *</label>
+                    <input type="tel" required placeholder="+91 XXXXX XXXXX" style={{ width: "100%", padding: "12px 16px", borderRadius: "12px", border: "1px solid rgba(10, 25, 47, 0.15)", background: "#ffffff", fontSize: "14px" }} />
+                  </div>
                 </div>
-                <div className="form-group">
-                  <label className="form-label" htmlFor="contact-phone">Phone</label>
-                  <input type="tel" id="contact-phone" className="form-input" placeholder="+91 XXXXX XXXXX" />
-                </div>
-                <div className="form-group">
-                  <label className="form-label" htmlFor="contact-type">Enquiry Type</label>
-                  <select id="contact-type" className="form-input form-select">
-                    <option value="">Select type</option>
-                    <option value="product">Product Enquiry</option>
-                    <option value="medical">Medical Information</option>
-                    <option value="partnership">Business / Partnership</option>
-                    <option value="career">Career Enquiry</option>
-                    <option value="other">Other</option>
+
+                <div>
+                  <label style={{ display: "block", fontSize: "12px", fontWeight: 700, color: "var(--color-navy)", marginBottom: "4px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Enquiry Type *</label>
+                  <select required style={{ width: "100%", padding: "12px 16px", borderRadius: "12px", border: "1px solid rgba(10, 25, 47, 0.15)", background: "#ffffff", fontSize: "14px" }}>
+                    <option value="product">Product &amp; Prescribing Guide Enquiry</option>
+                    <option value="medical">Medical Information Request</option>
+                    <option value="business">Business &amp; Distribution Partnership</option>
+                    <option value="career">Career Opportunities</option>
+                    <option value="other">Other Inquiry</option>
                   </select>
                 </div>
-                <div className="form-group">
-                  <label className="form-label" htmlFor="contact-message">Message *</label>
-                  <textarea id="contact-message" className="form-input" required placeholder="How can we help you?"></textarea>
+
+                <div>
+                  <label style={{ display: "block", fontSize: "12px", fontWeight: 700, color: "var(--color-navy)", marginBottom: "4px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Message *</label>
+                  <textarea rows={4} required placeholder="Please write your inquiry details here..." style={{ width: "100%", padding: "12px 16px", borderRadius: "12px", border: "1px solid rgba(10, 25, 47, 0.15)", background: "#ffffff", fontSize: "14px", resize: "vertical" }}></textarea>
                 </div>
-                <button type="submit" className="btn btn--primary btn--lg">Send Enquiry</button>
+
+                <button type="submit" className="btn-connected-pill btn-connected-pill--primary" style={{ marginTop: "var(--space-2)", width: "100%", justifyContent: "center" }}>
+                  Send Enquiry →
+                </button>
               </form>
-            </div>
+            )}
 
-            {/* Map */}
-            <div className="reveal--right reveal">
-              <h2 style={{ marginBottom: "var(--space-6)" }}>Find <span className="heading-dot">Us</span></h2>
-              <div className="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235013.70717961025!2d88.26495051547877!3d22.535564881896498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1691234567890!5m2!1sen!2sin" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Marselus Pharmaceuticals Corporate Office Location - Kolkata"></iframe>
-              </div>
-
-              {/* Medical Info Callout */}
-              <div style={{ marginTop: "var(--space-6)", background: "var(--color-accent-soft)", padding: "var(--space-6)", borderRadius: "var(--radius-xl)", border: "2px solid var(--color-accent)" }}>
-                <h3 style={{ color: "var(--color-accent)", marginBottom: "var(--space-2)", fontSize: "var(--text-lg)" }}>Medical Information</h3>
-                <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", margin: 0 }}>
-                  For medical information requests, adverse event reports, or product-specific clinical queries, please email <a href="mailto:medical@marseluspharma.com" style={{ color: "var(--color-accent)", fontWeight: 600 }}>medical@marseluspharma.com</a>
-                </p>
-              </div>
-            </div>
           </div>
+
         </div>
-      </section>
+
+      </div>
     </main>
   );
 }
