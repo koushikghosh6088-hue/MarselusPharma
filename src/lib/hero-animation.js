@@ -1,7 +1,7 @@
 /* ===================================================
    MARSELUS PHARMACEUTICALS — HERO SCROLL ANIMATION
    Uses preloaded 210 frame images for buttery scrolling
-   Native aspect ratio crispness + dynamic color sampling & edge blending
+   Compact 1:1 original crisp scale + seamless background color matching
    =================================================== */
 
 export function initHeroScrollAnimation() {
@@ -88,7 +88,7 @@ export function initHeroScrollAnimation() {
     drawFrame(Math.round(currentFrame));
   }
 
-  // Draw native 1:1 crisp aspect ratio with sampled background fill & zero stretching
+  // Draw compact 1:1 original sharp aspect ratio (no zoom, no stretch)
   function drawFrame(index) {
     const img = images[index];
     if (!img) return;
@@ -106,22 +106,22 @@ export function initHeroScrollAnimation() {
     const canvasHeight = canvas.height;
 
     const imgRatio = imgWidth / imgHeight;
-    const canvasRatio = canvasWidth / canvasHeight;
 
-    let drawWidth, drawHeight, drawX, drawY;
+    // Cap maximum scale at 72% of screen height/width so image is NEVER zoomed in or blown up!
+    const maxDrawHeight = canvasHeight * 0.72;
+    const maxDrawWidth = canvasWidth * 0.75;
 
-    // Preserves native 1:1 crisp aspect ratio without stretching
-    if (canvasRatio > imgRatio) {
-      drawHeight = canvasHeight;
-      drawWidth = drawHeight * imgRatio;
-      drawX = (canvasWidth - drawWidth) / 2;
-      drawY = 0;
-    } else {
-      drawWidth = canvasWidth;
+    let drawWidth = maxDrawHeight * imgRatio;
+    let drawHeight = maxDrawHeight;
+
+    if (drawWidth > maxDrawWidth) {
+      drawWidth = maxDrawWidth;
       drawHeight = drawWidth / imgRatio;
-      drawX = 0;
-      drawY = (canvasHeight - drawHeight) / 2;
     }
+
+    // Center perfectly in viewport
+    const drawX = (canvasWidth - drawWidth) / 2;
+    const drawY = (canvasHeight - drawHeight) / 2;
 
     ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
   }
