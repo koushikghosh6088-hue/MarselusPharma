@@ -275,7 +275,7 @@ export default function Home() {
                   <div style={{ background: "linear-gradient(135deg, rgba(230, 126, 34, 0.15) 0%, rgba(12, 56, 37, 0.08) 100%)", borderRadius: "var(--radius-xl)", height: "160px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "var(--space-4)", marginBottom: "var(--space-6)", border: "1px solid rgba(230, 126, 34, 0.2)", position: "relative" }}>
                     <span style={{ position: "absolute", top: "12px", right: "12px", background: "#e67e22", color: "#ffffff", fontSize: "10px", fontWeight: 800, padding: "3px 8px", borderRadius: "10px" }}>VITAMIN THERAPY</span>
                     <h3 style={{ fontSize: "1.75rem", fontWeight: 900, color: "var(--color-navy)", letterSpacing: "-0.01em" }}>UV 60K</h3>
-                    <span style={{ fontSize: "11px", color="#d35400", fontWeight: 700, marginTop: "4px" }}>SOFTGEL CAPSULES</span>
+                    <span style={{ fontSize: "11px", color: "#d35400", fontWeight: 700, marginTop: "4px" }}>SOFTGEL CAPSULES</span>
                   </div>
                   <span style={{ background: "rgba(230, 126, 34, 0.1)", color: "#d35400", fontSize: "11px", fontWeight: 700, padding: "4px 10px", borderRadius: "6px", display: "inline-block", marginBottom: "var(--space-3)" }}>
                     Cholecalciferol 60,000 IU
