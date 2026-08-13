@@ -183,6 +183,50 @@ export default function Home() {
               </div>
 
             </div>
+
+            {/* Running Brand Highlight Ticker Banner (Fills Space Below Cards) */}
+            <div className="hero-running-ticker-wrapper">
+              <div className="hero-ticker-track">
+                <div className="hero-ticker-item">
+                  <span className="ticker-star">✦</span> 20+ YEARS PHARMACEUTICAL EXCELLENCE
+                </div>
+                <div className="hero-ticker-item">
+                  <span className="ticker-star">✦</span> WHO-GMP &amp; ISO 9001:2015 ACCREDITED
+                </div>
+                <div className="hero-ticker-item">
+                  <span className="ticker-star">✦</span> TARGETED PROLONGED RELEASE TECHNOLOGY
+                </div>
+                <div className="hero-ticker-item">
+                  <span className="ticker-star">✦</span> ARTEMES™ 1.2g · SARANYA® 40:1 · IMMUNOMARS™ 15g · UV-60K
+                </div>
+                <div className="hero-ticker-item">
+                  <span className="ticker-star">✦</span> GASTROENTEROLOGY · WOMEN&apos;S HEALTH · CLINICAL NUTRITION
+                </div>
+                <div className="hero-ticker-item">
+                  <span className="ticker-star">✦</span> TRUSTED BY LEADING PHYSICIANS NATIONWIDE
+                </div>
+
+                {/* Duplicated for smooth infinite loop */}
+                <div className="hero-ticker-item">
+                  <span className="ticker-star">✦</span> 20+ YEARS PHARMACEUTICAL EXCELLENCE
+                </div>
+                <div className="hero-ticker-item">
+                  <span className="ticker-star">✦</span> WHO-GMP &amp; ISO 9001:2015 ACCREDITED
+                </div>
+                <div className="hero-ticker-item">
+                  <span className="ticker-star">✦</span> TARGETED PROLONGED RELEASE TECHNOLOGY
+                </div>
+                <div className="hero-ticker-item">
+                  <span className="ticker-star">✦</span> ARTEMES™ 1.2g · SARANYA® 40:1 · IMMUNOMARS™ 15g · UV-60K
+                </div>
+                <div className="hero-ticker-item">
+                  <span className="ticker-star">✦</span> GASTROENTEROLOGY · WOMEN&apos;S HEALTH · CLINICAL NUTRITION
+                </div>
+                <div className="hero-ticker-item">
+                  <span className="ticker-star">✦</span> TRUSTED BY LEADING PHYSICIANS NATIONWIDE
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
