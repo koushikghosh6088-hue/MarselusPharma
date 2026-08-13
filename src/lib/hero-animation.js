@@ -1,7 +1,7 @@
 /* ===================================================
    MARSELUS PHARMACEUTICALS — HERO SCROLL ANIMATION
    Uses preloaded 210 frame images for buttery scrolling
-   High DPI retina crisp rendering + seamless background matching
+   Native aspect ratio crispness + dynamic color sampling & edge blending
    =================================================== */
 
 export function initHeroScrollAnimation() {
@@ -17,10 +17,31 @@ export function initHeroScrollAnimation() {
   const frameCount = 210;
   const images = [];
   let loadedCount = 0;
+  let sampledBgColor = '#f0f2f5';
 
   // Format frame filenames
   function getFramePath(index) {
     return `/frames/ezgif-frame-${String(index).padStart(3, '0')}.jpg`;
+  }
+
+  // Sample exact background color from top corner of frame 0
+  function sampleFrameColor(img) {
+    try {
+      const sampleCanvas = document.createElement('canvas');
+      sampleCanvas.width = 1;
+      sampleCanvas.height = 1;
+      const sampleCtx = sampleCanvas.getContext('2d');
+      sampleCtx.drawImage(img, 10, 10, 1, 1, 0, 0, 1, 1);
+      const [r, g, b] = sampleCtx.getImageData(0, 0, 1, 1).data;
+      sampledBgColor = `rgb(${r}, ${g}, ${b})`;
+
+      // Apply sampled background color to hero container and sticky elements
+      container.style.backgroundColor = sampledBgColor;
+      const sticky = document.querySelector('.hero-scroll-sticky');
+      if (sticky) sticky.style.backgroundColor = sampledBgColor;
+    } catch (e) {
+      sampledBgColor = '#f0f2f5';
+    }
   }
 
   // Preload all 210 images
@@ -34,6 +55,10 @@ export function initHeroScrollAnimation() {
           const percent = Math.round((loadedCount / frameCount) * 100);
           if (loaderPercent) loaderPercent.textContent = percent + '%';
           if (loaderBar) loaderBar.style.width = percent + '%';
+
+          if (i === 1) {
+            sampleFrameColor(img);
+          }
 
           if (loadedCount === frameCount) {
             resolve();
@@ -53,7 +78,7 @@ export function initHeroScrollAnimation() {
   let currentFrame = 0;
   let targetFrame = 0;
 
-  // High DPI Retina Canvas scaling for ultra-crisp 4K quality
+  // High DPI Retina Canvas scaling for 4K crispness
   function resizeCanvas() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     canvas.width = window.innerWidth * dpr;
@@ -63,7 +88,7 @@ export function initHeroScrollAnimation() {
     drawFrame(Math.round(currentFrame));
   }
 
-  // Draw natural proportional image without stretching + high-quality smoothing
+  // Draw native 1:1 crisp aspect ratio with sampled background fill & zero stretching
   function drawFrame(index) {
     const img = images[index];
     if (!img) return;
@@ -71,7 +96,9 @@ export function initHeroScrollAnimation() {
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = 'high';
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Fill canvas with exact sampled frame background color
+    ctx.fillStyle = sampledBgColor;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     const imgWidth = img.naturalWidth || 1920;
     const imgHeight = img.naturalHeight || 1080;
@@ -83,17 +110,17 @@ export function initHeroScrollAnimation() {
 
     let drawWidth, drawHeight, drawX, drawY;
 
-    // Preserves native proportion and sharp detail (No over-stretching!)
+    // Preserves native 1:1 crisp aspect ratio without stretching
     if (canvasRatio > imgRatio) {
-      drawHeight = canvasHeight * 0.92;
+      drawHeight = canvasHeight;
       drawWidth = drawHeight * imgRatio;
       drawX = (canvasWidth - drawWidth) / 2;
-      drawY = (canvasHeight - drawHeight) / 2;
+      drawY = 0;
     } else {
-      drawWidth = canvasWidth * 0.96;
+      drawWidth = canvasWidth;
       drawHeight = drawWidth / imgRatio;
-      drawX = (canvasWidth - drawWidth) / 2;
-      drawY = (canvasHeight - drawHeight) * 0.5;
+      drawX = 0;
+      drawY = (canvasHeight - drawHeight) / 2;
     }
 
     ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
