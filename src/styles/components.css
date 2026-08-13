@@ -28,8 +28,8 @@
   background: rgba(244, 241, 232, 0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(15, 61, 40, 0.12);
-  box-shadow: 0 10px 30px rgba(15, 61, 40, 0.08);
+  border: 1px solid rgba(36, 136, 166, 0.12);
+  box-shadow: 0 10px 30px rgba(36, 136, 166, 0.08);
   border-radius: 40px;
   padding: 8px 18px;
   transition: all 0.3s ease;
@@ -37,7 +37,7 @@
 
 .nav-header.scrolled .nav-inner {
   background: rgba(244, 241, 232, 0.98);
-  box-shadow: 0 14px 36px rgba(15, 61, 40, 0.12);
+  box-shadow: 0 14px 36px rgba(36, 136, 166, 0.12);
   padding: 6px 16px;
 }
 
@@ -52,11 +52,11 @@
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #0F3D28 0%, #1D9E75 100%);
+  background: linear-gradient(135deg, #2488A6 0%, #1D9E75 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(15, 61, 40, 0.25);
+  box-shadow: 0 4px 12px rgba(36, 136, 166, 0.25);
   transition: transform 0.3s ease;
 }
 
@@ -103,12 +103,12 @@
 
 .nav-link-pill:hover {
   color: var(--color-forest);
-  background: rgba(15, 61, 40, 0.06);
+  background: rgba(36, 136, 166, 0.06);
 }
 
 .nav-link-pill.active {
   color: var(--color-forest);
-  background: rgba(15, 61, 40, 0.1);
+  background: rgba(36, 136, 166, 0.1);
   font-weight: 700;
 }
 
@@ -131,18 +131,18 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #ffffff;
-  background: linear-gradient(135deg, #0F3D28 0%, #1D9E75 100%);
+  background: linear-gradient(135deg, #2488A6 0%, #1D9E75 100%);
   padding: 8px 18px;
   border-radius: 24px;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(15, 61, 40, 0.2);
+  box-shadow: 0 4px 14px rgba(36, 136, 166, 0.2);
   transition: all 0.25s ease;
   white-space: nowrap;
 }
 
 .nav-portal-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(15, 61, 40, 0.3);
+  box-shadow: 0 6px 20px rgba(36, 136, 166, 0.3);
 }
 
 .portal-dot {
@@ -169,14 +169,14 @@
   transform: translateX(-50%) translateY(8px);
   background: #ffffff;
   border-radius: var(--radius-lg);
-  box-shadow: 0 12px 36px rgba(15, 61, 40, 0.12);
+  box-shadow: 0 12px 36px rgba(36, 136, 166, 0.12);
   padding: var(--space-3);
   min-width: 220px;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s ease, transform 0.2s ease;
   z-index: 100;
-  border: 1px solid rgba(15, 61, 40, 0.1);
+  border: 1px solid rgba(36, 136, 166, 0.1);
 }
 
 .nav-dropdown:hover .nav-dropdown-menu,
@@ -227,10 +227,10 @@
   height: 36px;
   padding: 4px;
   border-radius: 10px;
-  background: rgba(15, 61, 40, 0.06);
+  background: rgba(36, 136, 166, 0.06);
   cursor: pointer;
   z-index: 1001;
-  border: 1px solid rgba(15, 61, 40, 0.12);
+  border: 1px solid rgba(36, 136, 166, 0.12);
 }
 
 .nav-hamburger span {
@@ -284,7 +284,7 @@
   transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   overflow-y: auto;
-  box-shadow: -10px 0 40px rgba(15, 61, 40, 0.2);
+  box-shadow: -10px 0 40px rgba(36, 136, 166, 0.2);
   display: flex;
   flex-direction: column;
 }
@@ -298,7 +298,7 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: 16px;
-  border-bottom: 1px solid rgba(15, 61, 40, 0.1);
+  border-bottom: 1px solid rgba(36, 136, 166, 0.1);
   margin-bottom: 20px;
 }
 
@@ -306,7 +306,7 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: rgba(15, 61, 40, 0.08);
+  background: rgba(36, 136, 166, 0.08);
   color: var(--color-forest);
   font-size: 16px;
   display: flex;
@@ -318,7 +318,7 @@
 }
 
 .mobile-drawer-close:hover {
-  background: rgba(15, 61, 40, 0.15);
+  background: rgba(36, 136, 166, 0.15);
 }
 
 .mobile-nav-links {
@@ -344,7 +344,7 @@
 
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
-  background: rgba(15, 61, 40, 0.08);
+  background: rgba(36, 136, 166, 0.08);
   color: var(--color-artemes);
 }
 
@@ -371,13 +371,13 @@
 
 .mobile-nav-sub a:hover {
   color: var(--color-forest);
-  background: rgba(15, 61, 40, 0.05);
+  background: rgba(36, 136, 166, 0.05);
 }
 
 .mobile-drawer-footer {
   margin-top: auto;
   padding-top: 24px;
-  border-top: 1px solid rgba(15, 61, 40, 0.1);
+  border-top: 1px solid rgba(36, 136, 166, 0.1);
 }
 
 /* Media Queries for Navigation Responsive States */
@@ -2625,7 +2625,7 @@ textarea.form-input {
 .annotation-line {
   flex-grow: 1;
   height: 1px;
-  background: linear-gradient(90deg, var(--color-forest) 0%, rgba(15, 61, 40, 0.1) 100%);
+  background: linear-gradient(90deg, var(--color-forest) 0%, rgba(36, 136, 166, 0.1) 100%);
   margin-top: 10px;
 }
 
@@ -2652,7 +2652,7 @@ textarea.form-input {
   padding: 40px 0 20px 0;
   text-align: center;
   background: var(--color-cream);
-  border-top: 1px solid rgba(15, 61, 40, 0.08);
+  border-top: 1px solid rgba(36, 136, 166, 0.08);
 }
 
 .giant-wordmark {
@@ -2661,14 +2661,14 @@ textarea.form-input {
   font-weight: 900;
   line-height: 0.85;
   letter-spacing: -0.04em;
-  color: rgba(15, 61, 40, 0.08);
+  color: rgba(36, 136, 166, 0.08);
   text-transform: uppercase;
   user-select: none;
   transition: color 0.6s ease;
 }
 
 .giant-wordmark:hover {
-  color: rgba(15, 61, 40, 0.15);
+  color: rgba(36, 136, 166, 0.15);
 }
 
 /* 4. Product Color-Coded Full-Bleed Section Tints */
@@ -2742,21 +2742,21 @@ textarea.form-input {
   font-size: 13px;
   font-weight: 700;
   color: var(--color-forest);
-  background: rgba(15, 61, 40, 0.05);
-  border: 1px solid rgba(15, 61, 40, 0.1);
+  background: rgba(36, 136, 166, 0.05);
+  border: 1px solid rgba(36, 136, 166, 0.1);
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .filter-btn:hover {
-  background: rgba(15, 61, 40, 0.1);
+  background: rgba(36, 136, 166, 0.1);
   transform: translateY(-1px);
 }
 
 .filter-btn.active {
   background: var(--color-forest);
   color: var(--color-text-on-dark);
-  box-shadow: 0 6px 20px rgba(15, 61, 40, 0.25);
+  box-shadow: 0 6px 20px rgba(36, 136, 166, 0.25);
   border-color: var(--color-forest);
 }
 
@@ -2766,8 +2766,8 @@ textarea.form-input {
   background: #ffffff;
   border-radius: 28px;
   padding: 32px;
-  border: 1px solid rgba(15, 61, 40, 0.08);
-  box-shadow: 0 10px 30px rgba(15, 61, 40, 0.05);
+  border: 1px solid rgba(36, 136, 166, 0.08);
+  box-shadow: 0 10px 30px rgba(36, 136, 166, 0.05);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
@@ -2776,8 +2776,8 @@ textarea.form-input {
 
 .product-card-luxury:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 45px rgba(15, 61, 40, 0.12);
-  border-color: rgba(15, 61, 40, 0.2);
+  box-shadow: 0 20px 45px rgba(36, 136, 166, 0.12);
+  border-color: rgba(36, 136, 166, 0.2);
 }
 
 .product-card-luxury--artemes:hover {
@@ -2817,7 +2817,7 @@ textarea.form-input {
   max-height: 180px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 14px 20px rgba(15, 61, 40, 0.12));
+  filter: drop-shadow(0 14px 20px rgba(36, 136, 166, 0.12));
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -2854,7 +2854,7 @@ textarea.form-input {
   border-radius: 12px;
   background: var(--color-cream-light);
   color: var(--color-forest);
-  border: 1px solid rgba(15, 61, 40, 0.1);
+  border: 1px solid rgba(36, 136, 166, 0.1);
 }
 
 /* Comparison Table */
@@ -2864,8 +2864,8 @@ textarea.form-input {
   background: #ffffff;
   border-radius: 24px;
   padding: 24px;
-  border: 1px solid rgba(15, 61, 40, 0.1);
-  box-shadow: 0 10px 30px rgba(15, 61, 40, 0.05);
+  border: 1px solid rgba(36, 136, 166, 0.1);
+  box-shadow: 0 10px 30px rgba(36, 136, 166, 0.05);
 }
 
 .comparison-table {
@@ -2880,12 +2880,12 @@ textarea.form-input {
   font-weight: 800;
   color: var(--color-forest);
   padding: 16px;
-  border-bottom: 2px solid rgba(15, 61, 40, 0.1);
+  border-bottom: 2px solid rgba(36, 136, 166, 0.1);
   background: var(--color-cream-light);
 }
 
 .comparison-table tr:hover td {
-  background: rgba(15, 61, 40, 0.02);
+  background: rgba(36, 136, 166, 0.02);
 }
 
 /* ═══════════════════════════════════
@@ -2907,11 +2907,11 @@ textarea.form-input {
   padding: 8px 18px;
   border-radius: 30px;
   background: #ffffff;
-  border: 1px solid rgba(15, 61, 40, 0.12);
+  border: 1px solid rgba(36, 136, 166, 0.12);
   font-size: 13px;
   font-weight: 700;
   color: var(--color-forest);
-  box-shadow: 0 4px 14px rgba(15, 61, 40, 0.04);
+  box-shadow: 0 4px 14px rgba(36, 136, 166, 0.04);
 }
 
 .timeline-step-card {
@@ -2919,24 +2919,24 @@ textarea.form-input {
   background: #ffffff;
   padding: 24px 28px;
   border-radius: 20px;
-  border: 1px solid rgba(15, 61, 40, 0.08);
+  border: 1px solid rgba(36, 136, 166, 0.08);
   border-left-width: 4px;
-  box-shadow: 0 8px 24px rgba(15, 61, 40, 0.05);
+  box-shadow: 0 8px 24px rgba(36, 136, 166, 0.05);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .timeline-step-card:hover {
   transform: translateX(6px);
-  box-shadow: 0 14px 32px rgba(15, 61, 40, 0.1);
+  box-shadow: 0 14px 32px rgba(36, 136, 166, 0.1);
 }
 
 .vision-card-editorial {
   position: relative;
   padding: 48px;
   border-radius: 32px;
-  background: linear-gradient(135deg, rgba(15, 61, 40, 0.96) 0%, rgba(9, 38, 25, 0.98) 100%);
+  background: linear-gradient(135deg, rgba(36, 136, 166, 0.96) 0%, rgba(9, 38, 25, 0.98) 100%);
   color: var(--color-text-on-dark);
-  box-shadow: 0 20px 50px rgba(15, 61, 40, 0.2);
+  box-shadow: 0 20px 50px rgba(36, 136, 166, 0.2);
   overflow: hidden;
 }
 
@@ -2944,14 +2944,14 @@ textarea.form-input {
   background: #ffffff;
   padding: 32px;
   border-radius: 24px;
-  border: 1px solid rgba(15, 61, 40, 0.08);
-  box-shadow: 0 10px 30px rgba(15, 61, 40, 0.05);
+  border: 1px solid rgba(36, 136, 166, 0.08);
+  box-shadow: 0 10px 30px rgba(36, 136, 166, 0.05);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .value-card-hover:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(15, 61, 40, 0.12);
+  box-shadow: 0 18px 40px rgba(36, 136, 166, 0.12);
 }
 
 /* ═══════════════════════════════════
@@ -2959,7 +2959,7 @@ textarea.form-input {
    ═══════════════════════════════════ */
 
 :root {
-  --color-artemes-dark: #0F3D28;
+  --color-artemes-dark: #2488A6;
   --color-artemes-lime: #84CC16;
   --color-artemes-teal: #1D9E75;
 
@@ -2984,8 +2984,8 @@ textarea.form-input {
   background: #ffffff;
   border-radius: 24px;
   padding: 36px;
-  border: 1px solid rgba(15, 61, 40, 0.08);
-  box-shadow: 0 10px 30px rgba(15, 61, 40, 0.04);
+  border: 1px solid rgba(36, 136, 166, 0.08);
+  box-shadow: 0 10px 30px rgba(36, 136, 166, 0.04);
   margin-bottom: 24px;
 }
 
@@ -3000,9 +3000,9 @@ textarea.form-input {
   background: #ffffff;
   border-radius: 20px;
   padding: 20px;
-  border: 1px solid rgba(15, 61, 40, 0.08);
+  border: 1px solid rgba(36, 136, 166, 0.08);
   border-left: 5px solid var(--color-artemes-lime);
-  box-shadow: 0 6px 18px rgba(15, 61, 40, 0.04);
+  box-shadow: 0 6px 18px rgba(36, 136, 166, 0.04);
   transition: transform 0.3s ease;
 }
 
@@ -3082,12 +3082,12 @@ textarea.form-input {
   font-family: var(--font-heading);
   font-weight: 700;
   color: var(--color-forest);
-  border-bottom: 2px solid rgba(15, 61, 40, 0.1);
+  border-bottom: 2px solid rgba(36, 136, 166, 0.1);
 }
 
 .ingredient-table td {
   padding: 12px 18px;
-  border-bottom: 1px solid rgba(15, 61, 40, 0.06);
+  border-bottom: 1px solid rgba(36, 136, 166, 0.06);
   font-size: 0.9rem;
   color: var(--color-text-muted);
 }
@@ -3135,7 +3135,7 @@ textarea.form-input {
   cursor: pointer;
   overflow: hidden;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 12px rgba(15, 61, 40, 0.05);
+  box-shadow: 0 4px 12px rgba(36, 136, 166, 0.05);
 }
 
 .fable-thumb-btn img {
@@ -3147,7 +3147,7 @@ textarea.form-input {
 .fable-thumb-btn.active {
   border-color: var(--color-forest);
   transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(15, 61, 40, 0.15);
+  box-shadow: 0 6px 18px rgba(36, 136, 166, 0.15);
 }
 
 /* Arched Architectural Stage */
@@ -3161,7 +3161,7 @@ textarea.form-input {
   align-items: center;
   justify-content: center;
   padding: 40px;
-  box-shadow: 0 20px 50px rgba(15, 61, 40, 0.08);
+  box-shadow: 0 20px 50px rgba(36, 136, 166, 0.08);
   overflow: hidden;
 }
 
@@ -3169,7 +3169,7 @@ textarea.form-input {
   max-height: 380px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 25px 40px rgba(15, 61, 40, 0.2));
+  filter: drop-shadow(0 25px 40px rgba(36, 136, 166, 0.2));
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

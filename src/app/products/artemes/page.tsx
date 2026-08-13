@@ -51,14 +51,14 @@ export default function ArtemesMasterLuxuryPage() {
               
               <div className="fable-rating-row">
                 <div className="fable-star-rating">★★★★★</div>
-                <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#0F3D28" }}>(WHO-GMP Certified 5-ASA Therapy)</span>
+                <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#2488A6" }}>(WHO-GMP Certified 5-ASA Therapy)</span>
               </div>
 
               <span className="eyebrow-badge" style={{ color: "#1D9E75", borderColor: "rgba(29, 158, 117, 0.3)", marginBottom: "8px", width: "fit-content" }}>
                 GASTROENTEROLOGY · PROLONGED RELEASE
               </span>
 
-              <h1 style={{ fontSize: "clamp(2.25rem, 4vw, 3.25rem)", fontFamily: "var(--font-heading)", color: "#0F3D28", marginBottom: "6px", lineHeight: "1.1" }}>
+              <h1 style={{ fontSize: "clamp(2.25rem, 4vw, 3.25rem)", fontFamily: "var(--font-heading)", color: "#2488A6", marginBottom: "6px", lineHeight: "1.1" }}>
                 ARTEMES<span style={{ fontSize: "1.2rem", verticalAlign: "super", color: "#84CC16" }}>™</span> 1.2g
               </h1>
 
@@ -75,7 +75,7 @@ export default function ArtemesMasterLuxuryPage() {
               </p>
 
               <div style={{ display: "flex", gap: "12px", marginBottom: "var(--space-6)" }}>
-                <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#0F3D28", color: "#ffffff", padding: "14px 32px", fontSize: "0.95rem", fontWeight: 800 }}>
+                <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#2488A6", color: "#ffffff", padding: "14px 32px", fontSize: "0.95rem", fontWeight: 800 }}>
                   REQUEST PRESCRIBING SAMPLE →
                 </Link>
               </div>
@@ -152,7 +152,7 @@ export default function ArtemesMasterLuxuryPage() {
         <div className="container">
           <div style={{ textAlign: "center", maxWidth: "750px", margin: "0 auto var(--space-12)" }}>
             <span className="eyebrow-label" style={{ color: "#1D9E75" }}>DISEASE OVERVIEW</span>
-            <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 2.75rem)", fontFamily: "var(--font-heading)", color: "#0F3D28" }}>
+            <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 2.75rem)", fontFamily: "var(--font-heading)", color: "#2488A6" }}>
               Understanding Ulcerative Colitis
             </h2>
             <p style={{ fontSize: "var(--text-base)", color: "var(--color-text-muted)", lineHeight: "1.7" }}>
@@ -166,33 +166,33 @@ export default function ArtemesMasterLuxuryPage() {
             <div>
               <div className="atrimus-glass-card" style={{ padding: "var(--space-8)", background: "#FAF8F5", borderRadius: "24px", textAlign: "center" }}>
                 <img src="/assets/images/gastro-therapy.png" alt="Healthy vs Inflamed Colonic Mucosa" style={{ width: "90%", height: "auto", borderRadius: "16px", margin: "0 auto", filter: "drop-shadow(0 12px 25px rgba(0,0,0,0.1))" }} />
-                <span className="slide-badge" style={{ marginTop: "12px", background: "rgba(15, 61, 40, 0.08)", color: "#0F3D28", fontSize: "11px" }}>
+                <span className="slide-badge" style={{ marginTop: "12px", background: "rgba(15, 61, 40, 0.08)", color: "#2488A6", fontSize: "11px" }}>
                   Healthy vs. Inflamed Mucosal Visual
                 </span>
               </div>
             </div>
 
             <div>
-              <h3 style={{ fontSize: "1.5rem", color: "#0F3D28", marginBottom: "var(--space-4)" }}>Colonic Disease Progression</h3>
+              <h3 style={{ fontSize: "1.5rem", color: "#2488A6", marginBottom: "var(--space-4)" }}>Colonic Disease Progression</h3>
               
               <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                 <div style={{ padding: "16px 20px", background: "rgba(15, 61, 40, 0.04)", borderRadius: "16px", borderLeft: "4px solid #1D9E75" }}>
-                  <strong style={{ color: "#0F3D28", display: "block" }}>1. Mucosal Inflammation</strong>
+                  <strong style={{ color: "#2488A6", display: "block" }}>1. Mucosal Inflammation</strong>
                   <span style={{ fontSize: "0.85rem", color: "var(--color-text-muted)" }}>Elevated leukotrienes and prostaglandins in mucosal tissue.</span>
                 </div>
 
                 <div style={{ padding: "16px 20px", background: "rgba(15, 61, 40, 0.04)", borderRadius: "16px", borderLeft: "4px solid #84CC16" }}>
-                  <strong style={{ color: "#0F3D28", display: "block" }}>2. Mucosal Injury</strong>
+                  <strong style={{ color: "#2488A6", display: "block" }}>2. Mucosal Injury</strong>
                   <span style={{ fontSize: "0.85rem", color: "var(--color-text-muted)" }}>Loss of epithelial integrity, mucosal erosion, and ulceration.</span>
                 </div>
 
                 <div style={{ padding: "16px 20px", background: "rgba(15, 61, 40, 0.04)", borderRadius: "16px", borderLeft: "4px solid #D6438C" }}>
-                  <strong style={{ color: "#0F3D28", display: "block" }}>3. Clinical Symptoms</strong>
+                  <strong style={{ color: "#2488A6", display: "block" }}>3. Clinical Symptoms</strong>
                   <span style={{ fontSize: "0.85rem", color: "var(--color-text-muted)" }}>Rectal bleeding, stool urgency, abdominal cramping, and fatigue.</span>
                 </div>
 
-                <div style={{ padding: "16px 20px", background: "rgba(15, 61, 40, 0.04)", borderRadius: "16px", borderLeft: "4px solid #0F3D28" }}>
-                  <strong style={{ color: "#0F3D28", display: "block" }}>4. Fluctuating Disease Activity</strong>
+                <div style={{ padding: "16px 20px", background: "rgba(15, 61, 40, 0.04)", borderRadius: "16px", borderLeft: "4px solid #2488A6" }}>
+                  <strong style={{ color: "#2488A6", display: "block" }}>4. Fluctuating Disease Activity</strong>
                   <span style={{ fontSize: "0.85rem", color: "var(--color-text-muted)" }}>Active disease flares requiring physician-directed remission therapy.</span>
                 </div>
               </div>
@@ -208,11 +208,11 @@ export default function ArtemesMasterLuxuryPage() {
           
           <div style={{ textAlign: "center", maxWidth: "750px", margin: "0 auto var(--space-8)" }}>
             <span className="eyebrow-label" style={{ color: "#1D9E75" }}>BRAND COMMUNICATION MNEMONIC</span>
-            <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 2.75rem)", fontFamily: "var(--font-heading)", color: "#0F3D28" }}>
+            <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 2.75rem)", fontFamily: "var(--font-heading)", color: "#2488A6" }}>
               ARTEMES<span style={{ fontSize: "1.2rem" }}>™</span> Scientific Story
             </h2>
             <div style={{ padding: "8px 16px", background: "rgba(132, 204, 22, 0.15)", borderRadius: "20px", display: "inline-block", marginTop: "8px" }}>
-              <span style={{ fontSize: "0.85rem", color: "#0F3D28", fontWeight: 700 }}>
+              <span style={{ fontSize: "0.85rem", color: "#2488A6", fontWeight: 700 }}>
                  Designer Note: Brand communication mnemonic only; not the generic full form of mesalamine.
               </span>
             </div>
@@ -221,43 +221,43 @@ export default function ArtemesMasterLuxuryPage() {
           <div className="mnemonic-grid">
             <div className="mnemonic-item">
               <div className="mnemonic-letter">A</div>
-              <strong style={{ color: "#0F3D28", display: "block", marginBottom: "4px" }}>Anti-inflammatory Action</strong>
+              <strong style={{ color: "#2488A6", display: "block", marginBottom: "4px" }}>Anti-inflammatory Action</strong>
               <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Local inhibition of colonic mucosal inflammatory cascade.</p>
             </div>
 
             <div className="mnemonic-item">
               <div className="mnemonic-letter">R</div>
-              <strong style={{ color: "#0F3D28", display: "block", marginBottom: "4px" }}>Remission</strong>
+              <strong style={{ color: "#2488A6", display: "block", marginBottom: "4px" }}>Remission</strong>
               <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Targeted clinical and endoscopic mucosal remission.</p>
             </div>
 
             <div className="mnemonic-item">
               <div className="mnemonic-letter">T</div>
-              <strong style={{ color: "#0F3D28", display: "block", marginBottom: "4px" }}>Targeted Release</strong>
+              <strong style={{ color: "#2488A6", display: "block", marginBottom: "4px" }}>Targeted Release</strong>
               <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Site-specific delivery to inflamed colonic tissue.</p>
             </div>
 
             <div className="mnemonic-item">
               <div className="mnemonic-letter">E</div>
-              <strong style={{ color: "#0F3D28", display: "block", marginBottom: "4px" }}>Enteric Protection</strong>
+              <strong style={{ color: "#2488A6", display: "block", marginBottom: "4px" }}>Enteric Protection</strong>
               <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>pH-triggered polymer matrix shielding upper GI tract.</p>
             </div>
 
             <div className="mnemonic-item">
               <div className="mnemonic-letter">M</div>
-              <strong style={{ color: "#0F3D28", display: "block", marginBottom: "4px" }}>Mucosal Improvement</strong>
+              <strong style={{ color: "#2488A6", display: "block", marginBottom: "4px" }}>Mucosal Improvement</strong>
               <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Supportive mucosal barrier restoration and restitution.</p>
             </div>
 
             <div className="mnemonic-item">
               <div className="mnemonic-letter">E</div>
-              <strong style={{ color: "#0F3D28", display: "block", marginBottom: "4px" }}>Efficacy</strong>
+              <strong style={{ color: "#2488A6", display: "block", marginBottom: "4px" }}>Efficacy</strong>
               <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Proven 5-ASA clinical therapeutic disease control.</p>
             </div>
 
             <div className="mnemonic-item">
               <div className="mnemonic-letter">S</div>
-              <strong style={{ color: "#0F3D28", display: "block", marginBottom: "4px" }}>Simplified Therapy</strong>
+              <strong style={{ color: "#2488A6", display: "block", marginBottom: "4px" }}>Simplified Therapy</strong>
               <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Convenient once-daily dosing regimen for patient compliance.</p>
             </div>
           </div>
@@ -270,29 +270,29 @@ export default function ArtemesMasterLuxuryPage() {
         <div className="container">
           <div style={{ textAlign: "center", maxWidth: "700px", margin: "0 auto var(--space-10)" }}>
             <span className="eyebrow-label" style={{ color: "#1D9E75" }}>GI TRACT MECHANISM</span>
-            <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 2.75rem)", fontFamily: "var(--font-heading)", color: "#0F3D28" }}>
+            <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 2.75rem)", fontFamily: "var(--font-heading)", color: "#2488A6" }}>
               How Mesalamine Works
             </h2>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "20px" }}>
             <div style={{ background: "rgba(15, 61, 40, 0.04)", padding: "24px", borderRadius: "20px", borderTop: "4px solid #1D9E75" }}>
-              <strong style={{ color: "#0F3D28", fontSize: "1.05rem", display: "block", marginBottom: "6px" }}>5-ASA Active Molecule</strong>
+              <strong style={{ color: "#2488A6", fontSize: "1.05rem", display: "block", marginBottom: "6px" }}>5-ASA Active Molecule</strong>
               <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Oral administration protected by enteric polymer coating.</p>
             </div>
 
             <div style={{ background: "rgba(15, 61, 40, 0.04)", padding: "24px", borderRadius: "20px", borderTop: "4px solid #84CC16" }}>
-              <strong style={{ color: "#0F3D28", fontSize: "1.05rem", display: "block", marginBottom: "6px" }}>Local Anti-Inflammatory</strong>
+              <strong style={{ color: "#2488A6", fontSize: "1.05rem", display: "block", marginBottom: "6px" }}>Local Anti-Inflammatory</strong>
               <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Topical colonic activity reducing COX &amp; LOX inflammatory pathways.</p>
             </div>
 
             <div style={{ background: "rgba(15, 61, 40, 0.04)", padding: "24px", borderRadius: "20px", borderTop: "4px solid #1D9E75" }}>
-              <strong style={{ color: "#0F3D28", fontSize: "1.05rem", display: "block", marginBottom: "6px" }}>Reduction of Cascade</strong>
+              <strong style={{ color: "#2488A6", fontSize: "1.05rem", display: "block", marginBottom: "6px" }}>Reduction of Cascade</strong>
               <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Decreased leukotriene B4 &amp; prostaglandin tissue levels.</p>
             </div>
 
-            <div style={{ background: "rgba(15, 61, 40, 0.04)", padding: "24px", borderRadius: "20px", borderTop: "4px solid #0F3D28" }}>
-              <strong style={{ color: "#0F3D28", fontSize: "1.05rem", display: "block", marginBottom: "6px" }}>Improved Disease Control</strong>
+            <div style={{ background: "rgba(15, 61, 40, 0.04)", padding: "24px", borderRadius: "20px", borderTop: "4px solid #2488A6" }}>
+              <strong style={{ color: "#2488A6", fontSize: "1.05rem", display: "block", marginBottom: "6px" }}>Improved Disease Control</strong>
               <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Mucosal barrier healing &amp; sustained clinical remission.</p>
             </div>
           </div>
@@ -302,9 +302,9 @@ export default function ArtemesMasterLuxuryPage() {
       {/* ═══ 5. CLINICAL POSITIONING & OBJECTIVES ═══ */}
       <section className="section" style={{ padding: "var(--space-12) 0", background: "var(--color-cream-light)" }}>
         <div className="container">
-          <div className="monograph-card" style={{ borderLeft: "5px solid #0F3D28" }}>
-            <span className="eyebrow-label" style={{ color: "#0F3D28" }}>CLINICAL POSITIONING</span>
-            <h2 style={{ fontSize: "1.75rem", color: "#0F3D28", marginBottom: "var(--space-4)" }}>Physician-Directed Therapeutic Role</h2>
+          <div className="monograph-card" style={{ borderLeft: "5px solid #2488A6" }}>
+            <span className="eyebrow-label" style={{ color: "#2488A6" }}>CLINICAL POSITIONING</span>
+            <h2 style={{ fontSize: "1.75rem", color: "#2488A6", marginBottom: "var(--space-4)" }}>Physician-Directed Therapeutic Role</h2>
             <p style={{ fontSize: "var(--text-lg)", color: "var(--color-text-muted)", lineHeight: "1.7" }}>
               Physician-directed use in appropriately selected mild-to-moderate ulcerative colitis; therapeutic objectives may include the induction and maintenance of remission. Please refer to current approved prescribing information.
             </p>
@@ -317,7 +317,7 @@ export default function ArtemesMasterLuxuryPage() {
         <div className="container">
           <div className="monograph-card">
             <span className="eyebrow-label" style={{ color: "#1D9E75" }}>EVIDENCE &amp; PRACTICE GUIDELINES</span>
-            <h2 style={{ fontSize: "1.75rem", color: "#0F3D28", marginBottom: "var(--space-4)" }}>ACG Guideline Recognition</h2>
+            <h2 style={{ fontSize: "1.75rem", color: "#2488A6", marginBottom: "var(--space-4)" }}>ACG Guideline Recognition</h2>
             
             <p style={{ fontSize: "var(--text-base)", color: "var(--color-text-muted)", lineHeight: "1.7", marginBottom: "var(--space-6)" }}>
               Current American College of Gastroenterology (ACG) guidance recognizes 5-ASA therapy as an important option in appropriately selected mild-to-moderate UC. Once-daily oral dosing may be used when clinically appropriate.
@@ -325,12 +325,12 @@ export default function ArtemesMasterLuxuryPage() {
 
             <div style={{ padding: "20px", background: "rgba(29, 158, 117, 0.1)", borderRadius: "16px", borderLeft: "4px solid #1D9E75", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px" }}>
               <div>
-                <strong style={{ fontSize: "0.95rem", color: "#0F3D28", display: "block" }}>Reference Citation:</strong>
+                <strong style={{ fontSize: "0.95rem", color: "#2488A6", display: "block" }}>Reference Citation:</strong>
                 <span style={{ fontSize: "0.85rem", color: "var(--color-text-muted)" }}>
                   Rubin DT, et al. ACG Clinical Guideline: Ulcerative Colitis in Adults. <em>Am J Gastroenterol.</em> 2019;114(3):384-413.
                 </span>
               </div>
-              <div style={{ padding: "8px 16px", background: "#ffffff", borderRadius: "12px", border: "1px solid rgba(15,61,40,0.15)", fontSize: "0.8rem", fontWeight: 800, color: "#0F3D28" }}>
+              <div style={{ padding: "8px 16px", background: "#ffffff", borderRadius: "12px", border: "1px solid rgba(15,61,40,0.15)", fontSize: "0.8rem", fontWeight: 800, color: "#2488A6" }}>
                 [Reference / QR Area]
               </div>
             </div>
@@ -343,7 +343,7 @@ export default function ArtemesMasterLuxuryPage() {
         <div className="container">
           <div className="monograph-card" style={{ borderLeft: "5px solid #1D9E75" }}>
             <span className="eyebrow-label" style={{ color: "#1D9E75" }}>PRESCRIBING SAFETY &amp; PRECAUTIONS</span>
-            <h2 style={{ fontSize: "1.75rem", color: "#0F3D28", marginBottom: "var(--space-4)" }}>Use &amp; Safety Profile</h2>
+            <h2 style={{ fontSize: "1.75rem", color: "#2488A6", marginBottom: "var(--space-4)" }}>Use &amp; Safety Profile</h2>
             
             <ul style={{ paddingLeft: "20px", color: "var(--color-text-muted)", lineHeight: "1.7", fontSize: "0.95rem", marginBottom: "var(--space-6)" }}>
               <li style={{ marginBottom: "8px" }}><strong>Dosing:</strong> As directed by the physician.</li>
@@ -355,9 +355,9 @@ export default function ArtemesMasterLuxuryPage() {
 
             {/* Safety Icons Badge Row */}
             <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", borderTop: "1px solid rgba(15,61,40,0.1)", paddingTop: "16px" }}>
-              <span className="slide-badge" style={{ background: "rgba(15,61,40,0.08)", color: "#0F3D28" }}>🛡️ Renal Function Check</span>
-              <span className="slide-badge" style={{ background: "rgba(15,61,40,0.08)", color: "#0F3D28" }}>⚠️ Hepatic Caution</span>
-              <span className="slide-badge" style={{ background: "rgba(15,61,40,0.08)", color: "#0F3D28" }}>🚫 Salicylate Allergy Warning</span>
+              <span className="slide-badge" style={{ background: "rgba(15,61,40,0.08)", color: "#2488A6" }}>🛡️ Renal Function Check</span>
+              <span className="slide-badge" style={{ background: "rgba(15,61,40,0.08)", color: "#2488A6" }}>⚠️ Hepatic Caution</span>
+              <span className="slide-badge" style={{ background: "rgba(15,61,40,0.08)", color: "#2488A6" }}>🚫 Salicylate Allergy Warning</span>
             </div>
           </div>
         </div>
@@ -366,15 +366,15 @@ export default function ArtemesMasterLuxuryPage() {
       {/* ═══ 8. SYNERGISTIC CARE ═══ */}
       <section className="fable-ritual-section">
         <div className="container">
-          <span className="eyebrow-label" style={{ color: "#0F3D28" }}>SYNERGISTIC CARE</span>
-          <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 2.75rem)", fontFamily: "var(--font-heading)", color: "#0F3D28" }}>
+          <span className="eyebrow-label" style={{ color: "#2488A6" }}>SYNERGISTIC CARE</span>
+          <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 2.75rem)", fontFamily: "var(--font-heading)", color: "#2488A6" }}>
             Complete Your GI Therapy
           </h2>
 
           <div className="fable-ritual-card">
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
               <img src="/assets/images/atrimus-capsule.png" alt="ARTEMES" style={{ width: "40px", height: "auto" }} />
-              <span style={{ fontWeight: 800, color: "#0F3D28" }}>ARTEMES™ 1.2g</span>
+              <span style={{ fontWeight: 800, color: "#2488A6" }}>ARTEMES™ 1.2g</span>
             </div>
             <span style={{ fontSize: "1.2rem", fontWeight: 900, color: "#1D9E75" }}>+</span>
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -382,7 +382,7 @@ export default function ArtemesMasterLuxuryPage() {
               <span style={{ fontWeight: 800, color: "#2E7FE0" }}>UV 60K Softgel</span>
             </div>
 
-            <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#0F3D28", color: "#ffffff", padding: "10px 24px", fontSize: "0.85rem" }}>
+            <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#2488A6", color: "#ffffff", padding: "10px 24px", fontSize: "0.85rem" }}>
               REQUEST COMBINED SAMPLE →
             </Link>
           </div>
@@ -393,10 +393,10 @@ export default function ArtemesMasterLuxuryPage() {
       <div className="fable-sticky-bar">
         <img src="/assets/images/atrimus-capsule.png" alt="ARTEMES Mini" />
         <div>
-          <strong style={{ fontSize: "0.85rem", color: "#0F3D28", display: "block" }}>ARTEMES™ 1.2g</strong>
+          <strong style={{ fontSize: "0.85rem", color: "#2488A6", display: "block" }}>ARTEMES™ 1.2g</strong>
           <span style={{ fontSize: "0.75rem", color: "var(--color-text-muted)" }}>Mesalamine PR Tablet IP</span>
         </div>
-        <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#0F3D28", color: "#ffffff", padding: "8px 18px", fontSize: "0.8rem", fontWeight: 800, marginLeft: "auto" }}>
+        <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#2488A6", color: "#ffffff", padding: "8px 18px", fontSize: "0.8rem", fontWeight: 800, marginLeft: "auto" }}>
           REQUEST SAMPLE
         </Link>
       </div>

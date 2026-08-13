@@ -9,11 +9,11 @@
   --color-cream-light:   #FAF8F3;
   --color-cream-dark:    #EAE6DA;
 
-  --color-forest:        #0F3D28;
-  --color-forest-dark:   #092619;
-  --color-forest-light:  #1B4332;
-  --color-forest-soft:   rgba(15, 61, 40, 0.06);
-  --color-forest-glow:   rgba(15, 61, 40, 0.12);
+  --color-forest:        #2488A6; /* Official Marselus Ocean Blue */
+  --color-forest-dark:   #196780; /* Darker Ocean Blue */
+  --color-forest-light:  #349CBB; /* Lighter Accent Blue */
+  --color-forest-soft:   rgba(36, 136, 166, 0.08);
+  --color-forest-glow:   rgba(36, 136, 166, 0.18);
 
   --color-text-dark:     #1C1C1A;
   --color-text-muted:    #5A5A54;
@@ -39,10 +39,10 @@
   --color-immunomars-tint: rgba(224, 138, 46, 0.04);
   --color-immunomars-glow: rgba(224, 138, 46, 0.25);
 
-  --color-uv60k:         #2E7FE0; /* Vitamin Therapy - Blue */
-  --color-uv60k-soft:    rgba(46, 127, 224, 0.08);
-  --color-uv60k-tint:    rgba(46, 127, 224, 0.04);
-  --color-uv60k-glow:    rgba(46, 127, 224, 0.25);
+  --color-uv60k:         #2488A6; /* Vitamin Therapy - Marselus Ocean Blue */
+  --color-uv60k-soft:    rgba(36, 136, 166, 0.08);
+  --color-uv60k-tint:    rgba(36, 136, 166, 0.04);
+  --color-uv60k-glow:    rgba(36, 136, 166, 0.25);
 
   /* Legacy mapping aliases for backward compatibility */
   --color-navy:          var(--color-forest);
@@ -51,17 +51,17 @@
 
   /* ── Glassmorphism & Surface Gradients ── */
   --glass-cream:         rgba(244, 241, 232, 0.85);
-  --glass-forest:        rgba(15, 61, 40, 0.92);
+  --glass-forest:        rgba(36, 136, 166, 0.94);
   --glass-white:         rgba(255, 255, 255, 0.85);
-  --glass-border:        1px solid rgba(15, 61, 40, 0.1);
+  --glass-border:        1px solid rgba(36, 136, 166, 0.12);
   --glass-border-gold:   1px solid rgba(217, 164, 65, 0.3);
 
   --grad-mesh-cream:     radial-gradient(at 15% 15%, rgba(217, 164, 65, 0.06) 0px, transparent 60%),
-                         radial-gradient(at 85% 85%, rgba(15, 61, 40, 0.05) 0px, transparent 60%);
+                         radial-gradient(at 85% 85%, rgba(36, 136, 166, 0.06) 0px, transparent 60%);
   --grad-artemes:        linear-gradient(135deg, rgba(29, 158, 117, 0.06) 0%, rgba(244, 241, 232, 0.8) 100%);
   --grad-saranya:        linear-gradient(135deg, rgba(214, 67, 140, 0.06) 0%, rgba(244, 241, 232, 0.8) 100%);
   --grad-immunomars:     linear-gradient(135deg, rgba(224, 138, 46, 0.06) 0%, rgba(244, 241, 232, 0.8) 100%);
-  --grad-uv60k:          linear-gradient(135deg, rgba(46, 127, 224, 0.06) 0%, rgba(244, 241, 232, 0.8) 100%);
+  --grad-uv60k:          linear-gradient(135deg, rgba(36, 136, 166, 0.06) 0%, rgba(244, 241, 232, 0.8) 100%);
 
   /* ── Status Colors ── */
   --color-success:       #1D9E75;

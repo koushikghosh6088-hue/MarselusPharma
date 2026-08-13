@@ -18,7 +18,7 @@ export default function ProductsCataloguePage() {
       generic: "Mesalamine Prolonged Release Tablets IP 1.2 g",
       pills: ["Mesalamine 1.2g", "Colonic Release Matrix", "Once-Daily Dosing"],
       positioning: "Targeted 5-ASA therapy for appropriately selected mild-to-moderate ulcerative colitis.",
-      brandColors: { primary: "#0F3D28", accent: "#84CC16", bg: "linear-gradient(180deg, rgba(132, 204, 22, 0.2) 0%, rgba(15, 61, 40, 0.08) 100%)" },
+      brandColors: { primary: "#2488A6", accent: "#84CC16", bg: "linear-gradient(180deg, rgba(36, 136, 166, 0.2) 0%, rgba(36, 136, 166, 0.08) 100%)" },
       image: "/assets/images/atrimus-capsule.png",
       link: "/products/artemes",
     },
@@ -54,7 +54,7 @@ export default function ProductsCataloguePage() {
       generic: "Cholecalciferol 60,000 IU Softgel Capsules",
       pills: ["Cholecalciferol 60,000 IU", "Softgel Bioavailability", "Weekly Dosing"],
       positioning: "High-strength Vitamin D3 supplementation for clinical deficiency correction & calcium homeostasis.",
-      brandColors: { primary: "#2E7FE0", accent: "#EAB308", bg: "linear-gradient(180deg, rgba(234, 179, 8, 0.25) 0%, rgba(46, 127, 224, 0.08) 100%)" },
+      brandColors: { primary: "#2488A6", accent: "#EAB308", bg: "linear-gradient(180deg, rgba(234, 179, 8, 0.25) 0%, rgba(36, 136, 166, 0.08) 100%)" },
       image: "/assets/images/3d-pharma-bottle.png",
       link: "/products/uv60k",
     },
@@ -73,12 +73,12 @@ export default function ProductsCataloguePage() {
 
         <div className="container">
           <div style={{ maxWidth: "860px", margin: "0 auto", textAlign: "center" }}>
-            <span className="eyebrow-badge" style={{ marginBottom: "var(--space-4)", color: "#0F3D28" }}>
+            <span className="eyebrow-badge" style={{ marginBottom: "var(--space-4)", color: "#2488A6" }}>
               ✦ SPECIALITY PHARMACEUTICAL CATALOGUE
             </span>
-            <h1 style={{ fontSize: "clamp(2.75rem, 5.5vw, 4.5rem)", fontFamily: "var(--font-heading)", color: "#0F3D28", marginBottom: "var(--space-4)" }}>
+            <h1 style={{ fontSize: "clamp(2.75rem, 5.5vw, 4.5rem)", fontFamily: "var(--font-heading)", color: "#2488A6", marginBottom: "var(--space-4)" }}>
               Speciality Formulations.<br />
-              <span className="italic-accent" style={{ color: "#1D9E75" }}>Heritage of Healing.</span>
+              <span className="italic-accent" style={{ color: "#2488A6" }}>Heritage of Healing.</span>
             </h1>
             <p style={{ fontSize: "var(--text-xl)", color: "var(--color-text-muted)", lineHeight: "1.65" }}>
               Explore Marselus Pharmaceuticals&apos; four hero formulations — presented in arched luxury architectural showcases with interactive prescribing monographs.
@@ -126,14 +126,14 @@ export default function ProductsCataloguePage() {
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "36px" }}>
             {filteredProducts.map((p) => (
-              <div key={p.id} className="product-card-luxury" style={{ background: "#ffffff", borderRadius: "32px", border: "1px solid rgba(15, 61, 40, 0.08)", padding: "28px" }}>
+              <div key={p.id} className="product-card-luxury" style={{ background: "#ffffff", borderRadius: "32px", border: "1px solid rgba(36, 136, 166, 0.08)", padding: "28px" }}>
                 
                 {/* Arched Architectural Product Stage */}
                 <div className="fable-arch-stage" style={{ height: "300px", borderRadius: "140px 140px 24px 24px", background: p.brandColors.bg, marginBottom: "20px" }}>
                   <img src={p.image} alt={p.name} style={{ maxHeight: "220px" }} />
                 </div>
 
-                <span className="slide-badge" style={{ fontSize: "11px", color: p.brandColors.primary, background: "rgba(15,61,40,0.04)", border: `1px solid ${p.brandColors.primary}`, marginBottom: "12px", width: "fit-content" }}>
+                <span className="slide-badge" style={{ fontSize: "11px", color: p.brandColors.primary, background: "rgba(36,136,166,0.04)", border: `1px solid ${p.brandColors.primary}`, marginBottom: "12px", width: "fit-content" }}>
                   {p.tag}
                 </span>
 
@@ -181,18 +181,18 @@ export default function ProductsCataloguePage() {
       {/* ═══ 3. COMMON FOOTER DISCLAIMER BANNER ═══ */}
       <section className="section" style={{ padding: "0 0 var(--space-12) 0" }}>
         <div className="container">
-          <div style={{ background: "#0F3D28", padding: "var(--space-12)", borderRadius: "32px", textAlign: "center", color: "#ffffff" }}>
-            <span className="eyebrow-badge" style={{ background: "rgba(255, 255, 255, 0.1)", color: "#84CC16", borderColor: "rgba(132, 204, 22, 0.3)", marginBottom: "var(--space-4)" }}>
+          <div style={{ background: "#2488A6", padding: "var(--space-12)", borderRadius: "32px", textAlign: "center", color: "#ffffff" }}>
+            <span className="eyebrow-badge" style={{ background: "rgba(255, 255, 255, 0.15)", color: "#ffffff", borderColor: "rgba(255, 255, 255, 0.3)", marginBottom: "var(--space-4)" }}>
               MARSELUS PHARMACEUTICALS PVT. LTD.
             </span>
             <h2 style={{ color: "#ffffff", fontSize: "clamp(2rem, 4vw, 3.25rem)", fontFamily: "var(--font-heading)", marginBottom: "var(--space-4)" }}>
-              HERITAGE OF <span className="italic-accent" style={{ color: "#84CC16" }}>HEALING.</span>
+              HERITAGE OF <span className="italic-accent" style={{ color: "#FAF8F5" }}>HEALING.</span>
             </h2>
-            <p style={{ color: "rgba(255, 255, 255, 0.85)", fontSize: "var(--text-lg)", maxWidth: "60ch", margin: "0 auto var(--space-8)" }}>
+            <p style={{ color: "rgba(255, 255, 255, 0.9)", fontSize: "var(--text-lg)", maxWidth: "60ch", margin: "0 auto var(--space-8)" }}>
               The information presented on the website is intended for healthcare-professional and general educational purposes and should not be construed as a substitute for professional medical advice.
             </p>
             <div className="btn-connected-group" style={{ justifyContent: "center" }}>
-              <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#84CC16", color: "#0F3D28", fontWeight: 800 }}>
+              <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#ffffff", color: "#2488A6", fontWeight: 800 }}>
                 Request Prescribing Information →
               </Link>
             </div>
