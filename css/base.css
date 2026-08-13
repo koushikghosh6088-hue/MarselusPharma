@@ -1,0 +1,291 @@
+/* ===================================================
+   MARSELUS PHARMACEUTICALS — BASE STYLES
+   Reset, typography, global defaults
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: var(--leading-normal);
+  color: var(--color-gray-700);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Elegant serif italic highlights inside headings/text */
+h1 em, h2 em, h3 em, h4 em, h5 em, h6 em,
+h1 span.italic-accent, h2 span.italic-accent, h3 span.italic-accent, h4 span.italic-accent, h5 span.italic-accent, h6 span.italic-accent,
+.italic-accent {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-navy);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+h1 { font-size: var(--text-hero); font-weight: 800; }
+h2 { font-size: var(--text-5xl); }
+h3 { font-size: var(--text-4xl); }
+h4 { font-size: var(--text-3xl); }
+h5 { font-size: var(--text-2xl); }
+h6 { font-size: var(--text-xl); font-weight: 600; }
+
+p {
+  margin-bottom: var(--space-4);
+  max-width: 72ch;
+}
+
+p:last-child { margin-bottom: 0; }
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+strong, b { font-weight: 600; }
+
+small { font-size: var(--text-sm); }
+
+/* ── Lists ── */
+ul, ol {
+  padding-left: var(--space-6);
+}
+
+li {
+  margin-bottom: var(--space-2);
+}
+
+/* ── Images ── */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Forms ── */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* ── Focus ── */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-300);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-400);
+}
+
+/* ── Utility Classes ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-accent { color: var(--color-accent); }
+.text-navy { color: var(--color-navy); }
+.text-gold { color: var(--color-gold); }
+.text-muted { color: var(--color-gray-500); }
+.text-center { text-align: center; }
+
+.dot-accent::after {
+  content: '.';
+  color: var(--color-accent);
+}
+
+.dot-gold::after {
+  content: '.';
+  color: var(--color-gold);
+}
+
+/* ── Headings with colored dot (matching reference design) ── */
+.heading-dot {
+  display: inline;
+}
+
+.heading-dot::after {
+  content: '.';
+  color: var(--color-accent);
+}
+
+/* ── HR ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--color-gray-200);
+  margin: var(--space-8) 0;
+}
+
+/* ── Disclaimer Badge ── */
+.disclaimer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-xs);
+  color: var(--color-gray-500);
+  background: var(--color-gray-50);
+  border: var(--border-light);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+.disclaimer-badge svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* ── Futuristic Text Gradients ── */
+.text-gradient-blue {
+  background: var(--grad-text-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+.text-gradient-gold {
+  background: var(--grad-text-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+.text-gradient-artemes {
+  background: var(--grad-text-artemes);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+.text-gradient-saranya {
+  background: var(--grad-text-saranya);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+.text-gradient-immunomars {
+  background: var(--grad-text-immunomars);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+.text-gradient-uv60k {
+  background: var(--grad-text-uv60k);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* ── Mesh Backgrounds ── */
+.bg-mesh-blue { background: var(--grad-mesh-blue); }
+.bg-mesh-artemes { background: var(--grad-mesh-artemes); }
+.bg-mesh-saranya { background: var(--grad-mesh-saranya); }
+.bg-mesh-immunomars { background: var(--grad-mesh-immunomars); }
+
+/* ── Glassmorphism ── */
+.glass-panel {
+  background: var(--glass-bg);
+  border: var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-sm);
+}
+.glass-panel-dark {
+  background: var(--glass-bg-dark);
+  border: var(--glass-border-dark);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-lg);
+}
+.glow-border {
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+}
+.glow-border:hover {
+  border-color: var(--color-navy);
+  box-shadow: var(--shadow-card-hover);
+}
+.glow-border--artemes:hover {
+  border-color: var(--color-artemes);
+  box-shadow: var(--shadow-card-hover);
+}
+.glow-border--saranya:hover {
+  border-color: var(--color-saranya);
+  box-shadow: var(--shadow-card-hover);
+}
+.glow-border--immunomars:hover {
+  border-color: var(--color-immunomars);
+  box-shadow: var(--shadow-card-hover);
+}
+.glow-border--uv60k:hover {
+  border-color: var(--color-uv60k);
+  box-shadow: var(--shadow-card-hover);
+}

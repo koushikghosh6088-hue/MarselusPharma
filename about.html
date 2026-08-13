@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Marselus Pharmaceuticals</title>
+  <meta name="description" content="Discover the story behind Marselus Pharmaceuticals — our heritage, vision, values, quality certifications, leadership team, and commitment to scientific excellence since 2003." />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+  <style>
+    .about-hero { background: linear-gradient(135deg, var(--color-off-white) 0%, var(--color-white) 100%); }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+    .value-item { text-align: center; padding: var(--space-8); background: var(--color-white); border: var(--border-light); border-radius: var(--radius-xl); transition: transform var(--transition-base), box-shadow var(--transition-base); }
+    .value-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-card-hover); }
+    .value-item__icon { width: 64px; height: 64px; margin: 0 auto var(--space-5); background: var(--color-accent-soft); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; }
+    .value-item__icon svg { width: 28px; height: 28px; color: var(--color-accent); }
+    .value-item__title { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: 700; color: var(--color-navy); margin-bottom: var(--space-3); }
+    .value-item__text { font-size: var(--text-sm); color: var(--color-gray-500); line-height: var(--leading-relaxed); }
+    .timeline { position: relative; padding-left: var(--space-8); }
+    .timeline::before { content: ''; position: absolute; left: 12px; top: 0; bottom: 0; width: 2px; background: var(--color-gray-200); }
+    .timeline-item { position: relative; margin-bottom: var(--space-8); padding-left: var(--space-6); }
+    .timeline-item::before { content: ''; position: absolute; left: calc(-1 * var(--space-8) + 6px); top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--color-accent); border: 3px solid var(--color-white); box-shadow: 0 0 0 2px var(--color-accent); }
+    .timeline-item__year { font-family: var(--font-heading); font-weight: 700; color: var(--color-accent); font-size: var(--text-sm); margin-bottom: var(--space-1); }
+    .timeline-item__title { font-family: var(--font-heading); font-weight: 700; color: var(--color-navy); font-size: var(--text-lg); margin-bottom: var(--space-2); }
+    .timeline-item__text { font-size: var(--text-sm); color: var(--color-gray-500); }
+    .iso-badge { display: inline-flex; align-items: center; gap: var(--space-4); padding: var(--space-6) var(--space-8); background: var(--color-accent-soft); border: 2px solid var(--color-accent); border-radius: var(--radius-xl); }
+    .iso-badge__icon { width: 64px; height: 64px; background: var(--color-accent); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .iso-badge__icon svg { width: 32px; height: 32px; color: white; }
+    .iso-badge__text { font-family: var(--font-heading); font-weight: 700; color: var(--color-navy); }
+    .iso-badge__sub { font-size: var(--text-sm); color: var(--color-gray-500); font-weight: 400; }
+    .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-6); }
+    .team-card { text-align: center; padding: var(--space-6); background: var(--color-white); border: var(--border-light); border-radius: var(--radius-xl); transition: transform var(--transition-base); }
+    .team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card-hover); }
+    .team-card__avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--color-gray-100); margin: 0 auto var(--space-4); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: var(--text-2xl); font-weight: 700; color: var(--color-accent); }
+    .team-card__name { font-family: var(--font-heading); font-weight: 700; color: var(--color-navy); margin-bottom: var(--space-1); }
+    .team-card__role { font-size: var(--text-sm); color: var(--color-gray-500); }
+    @media (max-width: 1024px) { .values-grid, .team-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .values-grid, .team-grid { grid-template-columns: 1fr; } }
+  </style>
+  <script type="module" src="/js/main.js"></script>
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- NAV -->
+    <header class="nav-header" id="main-nav">
+      <div class="container">
+        <nav class="nav-inner" aria-label="Main navigation">
+          <a href="index.html" class="nav-logo"><span class="nav-logo-icon">M</span><span>Marselus</span></a>
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><span class="nav-separator">/</span></li>
+            <li><a href="about.html" class="nav-link active">About</a></li>
+            <li><span class="nav-separator">/</span></li>
+            <li><a href="therapy-areas.html" class="nav-link">Therapy Areas</a></li>
+            <li><span class="nav-separator">/</span></li>
+            <li class="nav-dropdown">
+              <a href="products.html" class="nav-link" aria-haspopup="true">Products</a>
+              <div class="nav-dropdown-menu" role="menu">
+                <a href="product-artemes.html" class="nav-dropdown-item" role="menuitem"><span class="dot dot--artemes"></span> ARTEMES</a>
+                <a href="product-saranya.html" class="nav-dropdown-item" role="menuitem"><span class="dot dot--saranya"></span> SARANYA</a>
+                <a href="product-immunomars.html" class="nav-dropdown-item" role="menuitem"><span class="dot dot--immunomars"></span> IMMUNOMARS</a>
+                <a href="product-uv60k.html" class="nav-dropdown-item" role="menuitem"><span class="dot dot--uv60k"></span> UV 60K</a>
+              </div>
+            </li>
+            <li><span class="nav-separator">/</span></li>
+            <li><a href="science.html" class="nav-link">Science</a></li>
+            <li><span class="nav-separator">/</span></li>
+            <li><a href="careers.html" class="nav-link">Careers</a></li>
+            <li><span class="nav-separator">/</span></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+          <button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </nav>
+      </div>
+    </header>
+    <div class="nav-mobile-overlay"></div>
+    <div class="nav-mobile-drawer">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
+        <li><a href="therapy-areas.html" class="mobile-nav-link">Therapy Areas</a></li>
+        <li><a href="products.html" class="mobile-nav-link">Products</a></li>
+        <li><a href="science.html" class="mobile-nav-link">Science</a></li>
+        <li><a href="careers.html" class="mobile-nav-link">Careers</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </div>
+
+    <main class="page-content">
+      <!-- Hero -->
+      <section class="page-hero about-hero">
+        <div class="container">
+          <div class="breadcrumb hero-enter hero-enter--delay-1">
+            <a href="index.html">Home</a>
+            <span class="separator">/</span>
+            <span class="current">About Us</span>
+          </div>
+          <h1 class="page-hero__title hero-enter hero-enter--delay-2">About <span class="heading-dot">Marselus</span></h1>
+          <p class="page-hero__subtitle hero-enter hero-enter--delay-3">Rooted in Kolkata, driven by science — a specialist pharmaceutical company committed to improving therapeutic outcomes since 2003.</p>
+        </div>
+      </section>
+
+      <!-- Our Story -->
+      <section class="section" id="our-story">
+        <div class="container">
+          <div class="split">
+            <div class="reveal--left reveal">
+              <p class="section-subtitle">Our Story</p>
+              <h2 class="heading-dot" style="margin-bottom:var(--space-6)">Heritage of Healing</h2>
+              <p>Founded in Kolkata, Marselus Pharmaceuticals began with a singular vision: to bring scientific rigour and ethical integrity to every aspect of pharmaceutical development and delivery.</p>
+              <p>Over two decades, we have grown into a focused, specialist pharmaceutical company serving three core therapy areas — Gastroenterology, Women's Health, and Clinical Nutrition — with products that address real, unmet clinical needs.</p>
+              <p>Our commitment extends beyond the molecules we develop. We believe in ethical compliance, teamwork-driven culture, and an unwavering focus on the patient at every step of our journey.</p>
+            </div>
+            <div class="reveal--right reveal">
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-item__year">2003</div>
+                  <div class="timeline-item__title">Foundation</div>
+                  <p class="timeline-item__text">Marselus Pharmaceuticals established in Kolkata with a focus on gastroenterology and urology.</p>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-item__year">2010</div>
+                  <div class="timeline-item__title">Expanding Horizons</div>
+                  <p class="timeline-item__text">Expanded into pediatrics and gynaecology, broadening our therapeutic footprint.</p>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-item__year">2018</div>
+                  <div class="timeline-item__title">Quality Certification</div>
+                  <p class="timeline-item__text">Achieved ISO 9001:2015 certification, reinforcing our commitment to quality.</p>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-item__year">2024</div>
+                  <div class="timeline-item__title">Hero Brands Launch</div>
+                  <p class="timeline-item__text">Launch of ARTEMES, SARANYA, IMMUNOMARS, and UV 60K — four specialist hero brands.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vision & Values -->
+      <section class="section section--gray" id="vision">
+        <div class="container">
+          <div class="section-header section-header--center reveal">
+            <p class="section-subtitle" style="justify-content:center">Vision &amp; Values</p>
+            <h2 class="heading-dot">What Drives Us</h2>
+            <p class="section-description">Our vision is to become a trusted name in speciality pharmaceuticals by consistently delivering high-quality, evidence-based therapeutic solutions.</p>
+          </div>
+
+          <div class="values-grid reveal-stagger">
+            <div class="value-item reveal">
+              <div class="value-item__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+              </div>
+              <h3 class="value-item__title">Ethics &amp; Compliance</h3>
+              <p class="value-item__text">Unwavering commitment to ethical business practices, regulatory compliance, and transparent operations at every level.</p>
+            </div>
+            <div class="value-item reveal">
+              <div class="value-item__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+              </div>
+              <h3 class="value-item__title">Teamwork</h3>
+              <p class="value-item__text">A collaborative culture where every team member contributes to our shared mission of improving patient outcomes.</p>
+            </div>
+            <div class="value-item reveal">
+              <div class="value-item__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+              </div>
+              <h3 class="value-item__title">Innovation</h3>
+              <p class="value-item__text">Continuously investing in research and development to bring novel, effective therapeutic solutions to underserved areas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quality / ISO -->
+      <section class="section" id="quality">
+        <div class="container">
+          <div class="split">
+            <div class="reveal">
+              <p class="section-subtitle">Quality Assurance</p>
+              <h2 class="heading-dot" style="margin-bottom:var(--space-6)">Manufacturing Excellence</h2>
+              <p>Our manufacturing facilities meet the highest international standards, ensuring every product that reaches healthcare providers and patients is safe, effective, and consistently reliable.</p>
+              <div style="margin-top:var(--space-6)">
+                <div class="iso-badge">
+                  <div class="iso-badge__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+                  </div>
+                  <div>
+                    <div class="iso-badge__text">ISO 9001:2015 Certified</div>
+                    <div class="iso-badge__sub">Quality Management System</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="reveal--right reveal">
+              <ul class="content-list">
+                <li>WHO-GMP compliant manufacturing facilities</li>
+                <li>ISO 9001:2015 certified quality management system</li>
+                <li>Stringent in-process quality checks at every stage</li>
+                <li>Comprehensive stability testing and batch analysis</li>
+                <li>Regulatory compliance across all operations</li>
+                <li>Continuous quality improvement programmes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Leadership -->
+      <section class="section section--gray" id="team">
+        <div class="container">
+          <div class="section-header section-header--center reveal">
+            <p class="section-subtitle" style="justify-content:center">Leadership</p>
+            <h2 class="heading-dot">Our Team</h2>
+            <p class="section-description">A dedicated team of pharmaceutical professionals driving our mission forward.</p>
+          </div>
+
+          <div class="team-grid reveal-stagger">
+            <div class="team-card reveal">
+              <div class="team-card__avatar">MP</div>
+              <div class="team-card__name">Managing Director</div>
+              <div class="team-card__role">Founder &amp; Visionary</div>
+            </div>
+            <div class="team-card reveal">
+              <div class="team-card__avatar">RD</div>
+              <div class="team-card__name">Head of R&amp;D</div>
+              <div class="team-card__role">Scientific Leadership</div>
+            </div>
+            <div class="team-card reveal">
+              <div class="team-card__avatar">QA</div>
+              <div class="team-card__name">Quality Director</div>
+              <div class="team-card__role">Quality Assurance</div>
+            </div>
+            <div class="team-card reveal">
+              <div class="team-card__avatar">MK</div>
+              <div class="team-card__name">Marketing Head</div>
+              <div class="team-card__role">Brand Strategy</div>
+            </div>
+          </div>
+          <p class="text-center text-muted reveal" style="margin-top:var(--space-8);font-size:var(--text-sm)"><em>Leadership profiles will be updated with approved names and photographs.</em></p>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section">
+        <div class="container">
+          <div class="cta-banner reveal--scale reveal">
+            <h2 class="cta-banner__title heading-dot">Partner with Marselus</h2>
+            <p class="cta-banner__text">Interested in learning more about our products, partnerships, or career opportunities?</p>
+            <div class="cta-banner__actions">
+              <a href="contact.html" class="btn btn--primary btn--lg">Get in Touch</a>
+              <a href="products.html" class="btn btn--white btn--lg">View Products</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a href="index.html" class="footer__logo"><span class="footer__logo-icon">M</span>Marselus Pharmaceuticals</a>
+            <p>A specialist pharmaceutical company focused on Gastroenterology, Women's Health, and Clinical Nutrition.</p>
+          </div>
+          <div>
+            <h3 class="footer__heading">Company</h3>
+            <ul class="footer__links"><li><a href="about.html">About Us</a></li><li><a href="about.html#quality">Quality</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
+          </div>
+          <div>
+            <h3 class="footer__heading">Products</h3>
+            <ul class="footer__links"><li><a href="product-artemes.html">ARTEMES</a></li><li><a href="product-saranya.html">SARANYA</a></li><li><a href="product-immunomars.html">IMMUNOMARS</a></li><li><a href="product-uv60k.html">UV 60K</a></li></ul>
+          </div>
+          <div>
+            <h3 class="footer__heading">Resources</h3>
+            <ul class="footer__links"><li><a href="therapy-areas.html">Therapy Areas</a></li><li><a href="science.html">Scientific Resources</a></li><li><a href="science.html#downloads">Download Centre</a></li></ul>
+          </div>
+        </div>
+        <hr class="footer__divider" />
+        <div class="footer__bottom">
+          <span>&copy; 2024 Marselus Pharmaceuticals. All rights reserved.</span>
+          <div class="footer__bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Disclaimer</a></div>
+        </div>
+      </div>
+    </footer>
+    <div class="mobile-cta"><a href="contact.html" class="btn btn--primary">Contact Us</a></div>
+  </div>
+</body>
+</html>

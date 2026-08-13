@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marselus Pharmaceuticals — Heritage of Healing</title>
+  <meta name="description" content="Marselus Pharmaceuticals is a specialist pharmaceutical company focused on Gastroenterology, Women's Health, and Clinical Nutrition. Discover our hero brands: ARTEMES, SARANYA, IMMUNOMARS, and UV 60K." />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+
+  <style>
+    /* ── Homepage-specific styles ── */
+    .home-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      overflow: hidden;
+      background: var(--color-white);
+    }
+
+    .home-hero__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-8);
+    }
+
+    .home-hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 620px;
+      flex-shrink: 0;
+    }
+
+    .home-hero__title {
+      font-family: var(--font-heading);
+      font-size: clamp(3.5rem, 2rem + 6vw, 7rem);
+      font-weight: 900;
+      line-height: 1.0;
+      color: var(--color-navy);
+      letter-spacing: -0.04em;
+      margin-bottom: var(--space-6);
+    }
+
+    .home-hero__title .dot {
+      color: var(--color-accent);
+    }
+
+    .home-hero__desc {
+      font-size: var(--text-base);
+      color: var(--color-gray-500);
+      max-width: 380px;
+      line-height: var(--leading-relaxed);
+      margin-bottom: var(--space-8);
+    }
+
+    .home-hero__est {
+      font-size: var(--text-sm);
+      color: var(--color-gray-400);
+      letter-spacing: var(--tracking-wider);
+      font-weight: 500;
+    }
+
+    .home-hero__lang {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      color: var(--color-accent);
+      font-weight: 500;
+      margin-top: var(--space-8);
+    }
+
+    .home-hero__lang span {
+      color: var(--color-gray-300);
+    }
+
+    .home-hero__visual {
+      position: relative;
+      width: 50%;
+      max-width: 550px;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+
+    .home-hero__visual img {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 20px 60px rgba(0,0,0,0.08));
+    }
+
+    /* Floating dots like reference */
+    .home-hero__dot {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--color-accent);
+      opacity: 0.15;
+    }
+
+    .home-hero__dot--1 {
+      width: 80px;
+      height: 80px;
+      top: 20%;
+      right: 5%;
+      animation: float-gentle 7s ease-in-out infinite;
+    }
+
+    .home-hero__dot--2 {
+      width: 12px;
+      height: 12px;
+      top: 35%;
+      right: 45%;
+      opacity: 0.3;
+      animation: float-gentle 5s ease-in-out infinite 1s;
+    }
+
+    .home-hero__dot--3 {
+      width: 20px;
+      height: 20px;
+      bottom: 30%;
+      right: 25%;
+      opacity: 0.2;
+      animation: float-gentle 6s ease-in-out infinite 0.5s;
+    }
+
+    @media (max-width: 900px) {
+      .home-hero {
+        min-height: auto;
+        padding-top: 120px;
+        padding-bottom: var(--space-8);
+      }
+
+      .home-hero__inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .home-hero__content {
+        max-width: 100%;
+      }
+
+      .home-hero__desc {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .home-hero__visual {
+        width: 80%;
+        max-width: 350px;
+      }
+
+      .home-hero__lang {
+        justify-content: center;
+      }
+
+      .home-hero__actions {
+        justify-content: center;
+      }
+    }
+
+    /* ── Expertise/Therapy Grid ── */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-5);
+    }
+
+    .expertise-card {
+      display: flex;
+      align-items: center;
+      gap: var(--space-5);
+      background: var(--color-white);
+      border: var(--border-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-5) var(--space-6);
+      text-decoration: none;
+      color: inherit;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .expertise-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+    
+    .expertise-card--gastro:hover { background: var(--grad-mesh-blue); }
+    .expertise-card--womens:hover { background: var(--grad-mesh-saranya); }
+    .expertise-card--nutrition:hover { background: var(--grad-mesh-immunomars); }
+    .expertise-card--science:hover { background: var(--grad-mesh-artemes); }
+
+    .expertise-card__image {
+      width: 100px;
+      height: 100px;
+      background: var(--color-gray-50);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .expertise-card__image svg {
+      width: 48px;
+      height: 48px;
+      color: var(--color-gray-400);
+    }
+
+    .expertise-card__name {
+      font-family: var(--font-heading);
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--color-navy);
+    }
+
+    @media (max-width: 768px) {
+      .expertise-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Products Showcase ── */
+    .products-showcase {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-5);
+    }
+
+    @media (max-width: 1024px) {
+      .products-showcase {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .products-showcase {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Why Marselus ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+    }
+
+    .why-card {
+      background: var(--color-white);
+      border: var(--border-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .why-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .why-card__icon {
+      width: 56px;
+      height: 56px;
+      background: var(--color-accent-soft);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-5);
+    }
+
+    .why-card__icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--color-accent);
+    }
+
+    .why-card__title {
+      font-family: var(--font-heading);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: var(--space-3);
+    }
+
+    .why-card__text {
+      font-size: var(--text-sm);
+      color: var(--color-gray-500);
+      line-height: var(--leading-relaxed);
+    }
+
+    @media (max-width: 768px) {
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Marquee second row from reference ── */
+    .marquee--secondary {
+      background: var(--color-accent);
+      margin-top: -1px;
+    }
+
+    /* ── Stats Section ── */
+    .stats-section {
+      background: linear-gradient(135deg, #0A192F 0%, #172A45 100%);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+    }
+    .stats-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--grad-mesh-blue);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .stats-section .stat-item__label {
+      color: var(--color-gray-500);
+    }
+
+    .stats-section .stat-item__number {
+      color: var(--color-accent);
+      text-shadow: 0 0 15px var(--color-accent-glow);
+    }
+  </style>
+
+  <!-- JS -->
+  <script type="module" src="/js/main.js"></script>
+</head>
+<body>
+  <!-- Loader Screen Preloader Overlay -->
+  <div id="loader-screen">
+    <div class="loader-logo">
+      <span class="loader-logo-icon">M</span>
+      <span>Marselus</span>
+    </div>
+    <div class="loader-bar-bg">
+      <div class="loader-bar-fill"></div>
+    </div>
+    <div id="loader-percent">0%</div>
+  </div>
+
+  <div class="page-wrapper">
+
+    <!-- ═══ NAVIGATION ═══ -->
+    <header class="nav-header" id="main-nav">
+      <div class="container">
+        <nav class="nav-inner" aria-label="Main navigation">
+          <a href="index.html" class="nav-logo" aria-label="Marselus Pharmaceuticals Home">
+            <span class="nav-logo-icon">M</span>
+            <span>Marselus</span>
+          </a>
+
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><span class="nav-separator">/</span></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><span class="nav-separator">/</span></li>
+            <li><a href="therapy-areas.html" class="nav-link">Therapy Areas</a></li>
+            <li><span class="nav-separator">/</span></li>
+            <li class="nav-dropdown">
+              <a href="products.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Products</a>
+              <div class="nav-dropdown-menu" role="menu">
+                <a href="product-artemes.html" class="nav-dropdown-item" role="menuitem">
+                  <span class="dot dot--artemes"></span> ARTEMES
+                </a>
+                <a href="product-saranya.html" class="nav-dropdown-item" role="menuitem">
+                  <span class="dot dot--saranya"></span> SARANYA
+                </a>
+                <a href="product-immunomars.html" class="nav-dropdown-item" role="menuitem">
+                  <span class="dot dot--immunomars"></span> IMMUNOMARS
+                </a>
+                <a href="product-uv60k.html" class="nav-dropdown-item" role="menuitem">
+                  <span class="dot dot--uv60k"></span> UV 60K
+                </a>
+              </div>
+            </li>
+            <li><span class="nav-separator">/</span></li>
+            <li><a href="science.html" class="nav-link">Science</a></li>
+            <li><span class="nav-separator">/</span></li>
+            <li><a href="careers.html" class="nav-link">Careers</a></li>
+            <li><span class="nav-separator">/</span></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+
+          <!-- Hamburger -->
+          <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Mobile drawer -->
+    <div class="nav-mobile-overlay" aria-hidden="true"></div>
+    <div class="nav-mobile-drawer" aria-hidden="true">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
+        <li><a href="therapy-areas.html" class="mobile-nav-link">Therapy Areas</a></li>
+        <li>
+          <a href="products.html" class="mobile-nav-link">Products</a>
+          <ul class="mobile-nav-sub">
+            <li><a href="product-artemes.html"><span class="dot dot--artemes"></span> ARTEMES</a></li>
+            <li><a href="product-saranya.html"><span class="dot dot--saranya"></span> SARANYA</a></li>
+            <li><a href="product-immunomars.html"><span class="dot dot--immunomars"></span> IMMUNOMARS</a></li>
+            <li><a href="product-uv60k.html"><span class="dot dot--uv60k"></span> UV 60K</a></li>
+          </ul>
+        </li>
+        <li><a href="science.html" class="mobile-nav-link">Science</a></li>
+        <li><a href="careers.html" class="mobile-nav-link">Careers</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </div>
+
+    <main class="page-content">
+
+      <!-- ═══ HERO SCROLL ANIMATION SECTION ═══ -->
+      <section class="hero-scroll-container" id="hero-scroll-container">
+        <div class="hero-scroll-sticky">
+          <canvas id="hero-canvas"></canvas>
+
+          <!-- Slide 1 -->
+          <div class="scroll-slide scroll-slide--1 active">
+            <div class="scroll-slide__content glass-panel">
+              <div class="scroll-slide__est">/ EST 2003</div>
+              <h1 class="scroll-slide__title">Heritage of<br><span class="italic-accent">Healing</span></h1>
+              <p class="scroll-slide__desc">Leading specialty pharmaceuticals in Gastroenterology, Women's Health &amp; Clinical Nutrition.</p>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="scroll-slide scroll-slide--2">
+            <div class="scroll-slide__content glass-panel">
+              <div class="scroll-slide__est">/ QUALITY STANDARDS</div>
+              <h1 class="scroll-slide__title">Surgical <span class="italic-accent">Precision</span></h1>
+              <p class="scroll-slide__desc">Certified state-of-the-art facilities compliant with WHO-GMP and ISO standards.</p>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="scroll-slide scroll-slide--3">
+            <div class="scroll-slide__content glass-panel">
+              <div class="scroll-slide__est">/ SCIENTIFIC APPROACH</div>
+              <h1 class="scroll-slide__title">Clinical <span class="italic-accent">Efficacy</span></h1>
+              <p class="scroll-slide__desc">Evidence-based drug formulations designed around four key patient-centric hero brands.</p>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="scroll-slide scroll-slide--4">
+            <div class="scroll-slide__content glass-panel">
+              <div class="scroll-slide__est">/ MARSELUS PHARMA</div>
+              <h1 class="scroll-slide__title">Innovating <span class="italic-accent">Care</span></h1>
+              <p class="scroll-slide__desc">We deliver specialized pharmaceutical solutions with therapeutic integrity and patient focus.</p>
+              <div class="scroll-slide__actions">
+                <a href="products.html" class="btn btn--primary btn--lg">Explore Products <span class="arrow">→</span></a>
+                <a href="about.html" class="btn btn--secondary btn--lg">About Us <span class="arrow">→</span></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══ THERAPY AREAS / OUR EXPERTISE ═══ -->
+      <section class="section section--transparent" id="expertise" style="position: relative;">
+        <!-- Floating Balls -->
+        <div class="hero__float hero__float--1" style="top: -5%; left: 2%; background: var(--color-white); opacity: 0.6;"></div>
+        <div class="hero__float hero__float--3" style="bottom: 15%; right: 8%; opacity: 0.3;"></div>
+        <div class="hero__float hero__float--1" style="top: 50%; right: 2%; width: 60px; height: 60px; opacity: 0.2;"></div>
+
+        <div class="container">
+          <div class="section-header section-header--center reveal">
+            <h2 class="heading-dot" style="font-size:var(--text-5xl); color:var(--color-navy); font-weight:800; line-height:1.2;">
+              Our <span class="italic-accent">Expertise</span>
+            </h2>
+            <p class="section-description">Specialised pharmaceutical solutions across three core therapy areas, driven by science and designed for impact.</p>
+          </div>
+
+          <div class="expertise-grid reveal-stagger">
+            <a href="therapy-gastroenterology.html" class="expertise-card expertise-card--gastro glass-panel reveal">
+              <div class="expertise-card__image" style="background: var(--color-accent-soft); color: var(--color-accent);">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c-1.2 0-2.4.6-3 1.5C8.4 5.4 7.2 6 6 6c-2.2 0-4 2-4 4.5C2 14 5 19 12 21c7-2 10-7 10-10.5C22 8 20.2 6 18 6c-1.2 0-2.4-.6-3-1.5C14.4 3.6 13.2 3 12 3z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="expertise-card__name">Gastroenterology</div>
+                <p class="text-muted" style="font-size:var(--text-sm);margin:var(--space-1) 0 0;">IBD, Ulcerative Colitis &amp; Gut Health</p>
+              </div>
+            </a>
+
+            <a href="therapy-womens-health.html" class="expertise-card expertise-card--womens glass-panel reveal">
+              <div class="expertise-card__image" style="background: var(--color-saranya-soft); color: var(--color-saranya);">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="expertise-card__name">Women's Health</div>
+                <p class="text-muted" style="font-size:var(--text-sm);margin:var(--space-1) 0 0;">PCOS, Fertility &amp; Metabolic Balance</p>
+              </div>
+            </a>
+
+            <a href="therapy-clinical-nutrition.html" class="expertise-card expertise-card--nutrition glass-panel reveal">
+              <div class="expertise-card__image" style="background: var(--color-immunomars-soft); color: var(--color-immunomars);">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+                </svg>
+              </div>
+              <div>
+                <div class="expertise-card__name">Clinical Nutrition</div>
+                <p class="text-muted" style="font-size:var(--text-sm);margin:var(--space-1) 0 0;">Recovery, Immunity &amp; Nutritional Support</p>
+              </div>
+            </a>
+
+            <a href="science.html" class="expertise-card expertise-card--science glass-panel reveal">
+              <div class="expertise-card__image" style="background: var(--color-artemes-soft); color: var(--color-navy);">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342"/>
+                </svg>
+              </div>
+              <div>
+                <div class="expertise-card__name">Scientific Research</div>
+                <p class="text-muted" style="font-size:var(--text-sm);margin:var(--space-1) 0 0;">Evidence-Based Pharmaceutical Innovation</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ FEATURED PRODUCTS ═══ -->
+      <section class="section" id="products" style="background:transparent; position: relative;">
+        <!-- Floating Balls -->
+        <div class="hero__float hero__float--3" style="top: 20%; left: 10%; background: var(--color-white); opacity: 0.8;"></div>
+        <div class="hero__float hero__float--1" style="bottom: 10%; left: -2%; width: 100px; height: 100px; opacity: 0.15;"></div>
+        <div class="hero__float hero__float--3" style="top: 60%; right: 10%; opacity: 0.4;"></div>
+
+        <div class="container">
+          <div class="section-header reveal">
+            <p class="section-subtitle">Our Products</p>
+            <h2 class="heading-dot" style="font-size:var(--text-5xl); color:var(--color-navy); font-weight:800; line-height:1.2;">
+              Marselus <span class="italic-accent">Brands</span>
+            </h2>
+            <p class="section-description">Four specialist pharmaceutical brands, each designed to address unmet clinical needs with <em class="italic-accent">Care &amp; Precision</em>.</p>
+          </div>
+
+          <div class="products-showcase reveal-stagger">
+
+            <!-- ARTEMES -->
+            <a href="product-artemes.html" class="product-card glow-border reveal">
+              <div class="product-card__image">
+                <div class="product-card__image-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0l-3-3m3 3l3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
+                  <span>Pack Image<br><small>Supplied artwork</small></span>
+                </div>
+                <span class="product-card__arrow">↗</span>
+              </div>
+              <div class="product-card__badge">ARTEMES</div>
+              <p class="product-card__composition">Mesalamine 1.2g Prolonged Release Tablets</p>
+            </a>
+
+            <!-- SARANYA -->
+            <a href="product-saranya.html" class="product-card glow-border reveal">
+              <div class="product-card__image">
+                <div class="product-card__image-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0l-3-3m3 3l3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
+                  <span>Pack Image<br><small>Supplied artwork</small></span>
+                </div>
+                <span class="product-card__arrow">↗</span>
+              </div>
+              <div class="product-card__badge">SARANYA</div>
+              <p class="product-card__composition">Myo-Inositol + D-Chiro Inositol + Chromium Picolinate</p>
+            </a>
+
+            <!-- IMMUNOMARS -->
+            <a href="product-immunomars.html" class="product-card glow-border reveal">
+              <div class="product-card__image">
+                <div class="product-card__image-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0l-3-3m3 3l3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
+                  <span>Pack Image<br><small>Supplied artwork</small></span>
+                </div>
+                <span class="product-card__arrow">↗</span>
+              </div>
+              <div class="product-card__badge">IMMUNOMARS</div>
+              <p class="product-card__composition">L-Glutamine + L-Lysine + L-Arginine Sachet</p>
+            </a>
+
+            <!-- UV 60K -->
+            <a href="product-uv60k.html" class="product-card glow-border reveal">
+              <div class="product-card__image">
+                <div class="product-card__image-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0l-3-3m3 3l3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
+                  <span>Pack Image<br><small>Supplied artwork</small></span>
+                </div>
+                <span class="product-card__arrow">↗</span>
+              </div>
+              <div class="product-card__badge">UV 60K</div>
+              <p class="product-card__composition">Cholecalciferol 60,000 IU Softgel Capsules</p>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ WHY CHOOSE MARSELUS (Core Values) ═══ -->
+      <section class="section" id="why-choose-us" style="background:var(--color-off-white);">
+        <div class="container">
+          <div class="section-header section-header--center reveal">
+            <h2 class="heading-dot" style="font-size:var(--text-5xl); color:var(--color-navy); font-weight:800; line-height:1.2;">
+              Why Choose <span class="italic-accent">Marselus</span>
+            </h2>
+            <p class="section-description">Our core values drive every pharmaceutical solution we deliver to patients worldwide.</p>
+          </div>
+          <div class="why-grid reveal-stagger">
+            <div class="why-card" style="background: var(--grad-mesh-blue);">
+              <div class="why-card__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <h3 class="why-card__title">Uncompromising Quality</h3>
+              <p class="why-card__text">ISO 9001:2015 and WHO-GMP certified facilities ensuring the highest manufacturing standards.</p>
+            </div>
+            <div class="why-card" style="background: var(--grad-mesh-saranya);">
+              <div class="why-card__icon" style="background: var(--color-saranya-soft); color: var(--color-saranya);">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
+              </div>
+              <h3 class="why-card__title">Patient Centricity</h3>
+              <p class="why-card__text">Every formulation is developed with a deep understanding of patient needs and therapeutic outcomes.</p>
+            </div>
+            <div class="why-card" style="background: var(--grad-mesh-immunomars);">
+              <div class="why-card__icon" style="background: var(--color-immunomars-soft); color: var(--color-immunomars);">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.315 48.315 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" /></svg>
+              </div>
+              <h3 class="why-card__title">Scientific Innovation</h3>
+              <p class="why-card__text">Continuous investment in research to bring advanced, evidence-based treatments to market.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ SECOND MARQUEE (like reference design) ═══ -->
+      <div class="marquee marquee--secondary" aria-hidden="true">
+        <div class="marquee__track" style="animation-direction: reverse; animation-duration: 30s;">
+          <span class="marquee__item">Explore Products <span class="plus">+</span></span>
+          <span class="marquee__item">Scientific Excellence <span class="plus">+</span></span>
+          <span class="marquee__item">ISO 9001:2015 <span class="plus">+</span></span>
+          <span class="marquee__item">WHO-GMP Certified <span class="plus">+</span></span>
+          <span class="marquee__item">Heritage of Healing <span class="plus">+</span></span>
+          <span class="marquee__item">Explore Products <span class="plus">+</span></span>
+          <span class="marquee__item">Scientific Excellence <span class="plus">+</span></span>
+          <span class="marquee__item">ISO 9001:2015 <span class="plus">+</span></span>
+          <span class="marquee__item">WHO-GMP Certified <span class="plus">+</span></span>
+          <span class="marquee__item">Heritage of Healing <span class="plus">+</span></span>
+        </div>
+      </div>
+
+      <!-- ═══ CIRCULAR HIGHLIGHT SECTION (Mockup style) ═══ -->
+      <section class="section" id="understanding" style="background:transparent; border-top:1px solid rgba(12, 56, 37, 0.06); padding:var(--space-20) 0; position: relative;">
+        <!-- Floating Balls -->
+        <div class="hero__float hero__float--1" style="top: 10%; right: 5%; background: var(--color-white); opacity: 0.5;"></div>
+        <div class="hero__float hero__float--3" style="bottom: 20%; left: 10%; opacity: 0.3;"></div>
+
+        <div class="container">
+          <div class="split" style="gap:var(--space-16); align-items:center;">
+            
+            <!-- Left Side: Circular Image visual -->
+            <div class="reveal" style="position:relative; display:flex; justify-content:center;">
+              <div style="position:relative; width:100%; max-width:440px; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle, var(--color-off-white) 0%, rgba(226,239,224,0.1) 70%); display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-lg); overflow:hidden; border:1px solid rgba(12, 56, 37, 0.08);">
+                <!-- Animated grid pattern backdrop -->
+                <div style="position:absolute; inset:0; opacity:0.15; background-image:linear-gradient(rgba(12,56,37,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(12,56,37,0.3) 1px, transparent 1px); background-size:20px 20px;"></div>
+                <!-- Splitting capsule image inside circle -->
+                <img src="assets/images/capsule-split-hero.png" class="float-3d" alt="Capsule detail rendering" style="width:85%; height:auto; position:relative; z-index:2;" />
+              </div>
+            </div>
+
+            <!-- Right Side: Content -->
+            <div class="reveal--right reveal">
+              <p class="section-subtitle" style="margin-bottom:var(--space-4);">Connect. Communicate. Care.</p>
+              <h2 style="font-size:clamp(2rem, 4vw, 3.5rem); font-weight:800; color:var(--color-navy); line-height:1.2; margin-bottom:var(--space-6); letter-spacing:-0.02em;">
+                Your <span class="italic-accent">Health</span> Begins with understanding
+              </h2>
+              <p style="color:var(--color-gray-500); font-size:var(--text-base); line-height:var(--leading-relaxed); margin-bottom:var(--space-8);">
+                We build strong connections with patients and healthcare professionals to ensure that quality medical care is understandable, accessible, and precise.
+              </p>
+
+              <!-- Stats Block -->
+              <div class="flex items-center gap-8" style="border-top:1px solid rgba(12, 56, 37, 0.08); padding-top:var(--space-6);">
+                <div>
+                  <div style="font-family:var(--font-heading); font-size:var(--text-4xl); font-weight:900; color:var(--color-navy);">20k+</div>
+                  <div style="font-size:var(--text-xs); color:var(--color-gray-500); text-transform:uppercase; letter-spacing:var(--tracking-wide); margin-top:var(--space-1);">Patients served across therapeutic areas</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ STATS ═══ -->
+      <section class="section stats-section" id="stats">
+        <div class="container">
+          <div class="stats-grid reveal">
+            <div class="stat-item">
+              <div class="stat-item__number" data-count="20" data-suffix="+">0</div>
+              <div class="stat-item__label">Years of Heritage</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-item__number" data-count="4">0</div>
+              <div class="stat-item__label">Hero Brands</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-item__number" data-count="3">0</div>
+              <div class="stat-item__label">Therapy Areas</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-item__number" data-count="100" data-suffix="%">0</div>
+              <div class="stat-item__label">Quality Commitment</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ PATIENT IMPACT & TESTIMONIALS ═══ -->
+      <section class="section" style="background:var(--color-white);">
+        <div class="container">
+          <div class="section-header section-header--center reveal">
+            <h2 class="heading-dot" style="font-size:var(--text-5xl); color:var(--color-navy); font-weight:800; line-height:1.2;">
+              Patient <span class="italic-accent">Impact</span>
+            </h2>
+            <p class="section-description">Real outcomes from our evidence-based formulations.</p>
+          </div>
+          <div class="expertise-grid reveal-stagger">
+            <div class="expertise-card glass-panel" style="background: var(--grad-mesh-artemes);">
+              <div>
+                <p class="text-muted" style="font-size:var(--text-lg); font-style:italic; margin-bottom:var(--space-4); color:var(--color-navy);">"The prolonged release formulation of ARTEMES has significantly improved patient compliance and clinical outcomes in our gastroenterology practice."</p>
+                <div class="expertise-card__name" style="font-size:var(--text-base);">Dr. Sharma</div>
+                <p class="text-muted" style="font-size:var(--text-xs); text-transform:uppercase; letter-spacing:0.1em;">Consultant Gastroenterologist</p>
+              </div>
+            </div>
+            <div class="expertise-card glass-panel" style="background: var(--grad-mesh-saranya);">
+              <div>
+                <p class="text-muted" style="font-size:var(--text-lg); font-style:italic; margin-bottom:var(--space-4); color:var(--color-navy);">"SARANYA has been a breakthrough in managing metabolic balance for patients. The clinical efficacy is evident within weeks of starting the regimen."</p>
+                <div class="expertise-card__name" style="font-size:var(--text-base);">Dr. Mehta</div>
+                <p class="text-muted" style="font-size:var(--text-xs); text-transform:uppercase; letter-spacing:0.1em;">Women's Health Specialist</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ CAPSULE BANNER (Mockup style) ═══ -->
+      <section class="section" id="capsule-banner" style="padding:var(--space-12) 0;">
+        <div class="container">
+          <div class="reveal--scale reveal" style="display:grid; grid-template-columns:1fr 1fr; border-radius:var(--radius-2xl); overflow:hidden; box-shadow:var(--shadow-lg);">
+            
+            <!-- Left Side: Sage background + dual capsules -->
+            <div style="background:transparent; display:flex; align-items:center; justify-content:center; padding:var(--space-8); min-height:320px; border-right:1px solid rgba(12, 56, 37, 0.04);">
+              <img src="assets/images/capsules-dual.png" class="float-3d" alt="Dual pharmaceutical capsules rendering" style="width:70%; height:auto;" />
+            </div>
+
+            <!-- Right Side: Dark forest green background + CTA text -->
+            <div style="background:var(--color-navy); display:flex; flex-direction:column; justify-content:center; padding:var(--space-12) var(--space-10); color:#FFFFFF;">
+              <h2 style="font-size:clamp(1.75rem, 3.5vw, 2.75rem); font-weight:700; line-height:1.2; margin-bottom:var(--space-8); max-width:16ch;">
+                Innovating Care, <span class="italic-accent" style="color:var(--color-white)">One Capsule</span> at a Time.
+              </h2>
+              <div>
+                <a href="products.html" class="btn btn--white">
+                  Discover More <span class="arrow">→</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ LATEST INSIGHTS & RESEARCH ═══ -->
+      <section class="section" style="background:var(--color-off-white);">
+        <div class="container">
+          <div class="section-header reveal">
+            <p class="section-subtitle">Scientific Resources</p>
+            <h2 class="heading-dot" style="font-size:var(--text-5xl); color:var(--color-navy); font-weight:800; line-height:1.2;">
+              Latest <span class="italic-accent">Insights</span>
+            </h2>
+          </div>
+          <div class="why-grid reveal-stagger">
+            <a href="science.html" class="why-card glass-panel" style="text-decoration:none; padding:var(--space-5);">
+              <div style="background:var(--color-gray-200); height:160px; border-radius:var(--radius-lg); margin-bottom:var(--space-4);"></div>
+              <span class="product-card__badge" style="background:var(--color-accent-soft); color:var(--color-accent); font-size:var(--text-xs); padding:var(--space-1) var(--space-2);">Research</span>
+              <h3 class="why-card__title" style="margin-top:var(--space-3);">Advancements in Gut Health</h3>
+              <p class="why-card__text">Exploring new paradigms in IBD management with prolonged release formulations.</p>
+            </a>
+            <a href="science.html" class="why-card glass-panel" style="text-decoration:none; padding:var(--space-5);">
+              <div style="background:var(--color-gray-200); height:160px; border-radius:var(--radius-lg); margin-bottom:var(--space-4);"></div>
+              <span class="product-card__badge" style="background:var(--color-saranya-soft); color:var(--color-saranya); font-size:var(--text-xs); padding:var(--space-1) var(--space-2);">Clinical Update</span>
+              <h3 class="why-card__title" style="margin-top:var(--space-3);">Metabolic Balance in PCOS</h3>
+              <p class="why-card__text">Clinical efficacy of Myo-Inositol combinations in women's health treatments.</p>
+            </a>
+            <a href="science.html" class="why-card glass-panel" style="text-decoration:none; padding:var(--space-5);">
+              <div style="background:var(--color-gray-200); height:160px; border-radius:var(--radius-lg); margin-bottom:var(--space-4);"></div>
+              <span class="product-card__badge" style="background:var(--color-immunomars-soft); color:var(--color-immunomars); font-size:var(--text-xs); padding:var(--space-1) var(--space-2);">Nutrition</span>
+              <h3 class="why-card__title" style="margin-top:var(--space-3);">Immunity & Recovery</h3>
+              <p class="why-card__text">The role of L-Glutamine and L-Arginine in accelerating patient recovery.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a href="index.html" class="footer__logo">
+              <span class="footer__logo-icon">M</span>
+              Marselus Pharmaceuticals
+            </a>
+            <p>A specialist pharmaceutical company focused on Gastroenterology, Women's Health, and Clinical Nutrition. Heritage of Healing since 2003.</p>
+          </div>
+
+          <div>
+            <h3 class="footer__heading">Company</h3>
+            <ul class="footer__links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="about.html#quality">Quality &amp; ISO</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer__heading">Products</h3>
+            <ul class="footer__links">
+              <li><a href="product-artemes.html">ARTEMES</a></li>
+              <li><a href="product-saranya.html">SARANYA</a></li>
+              <li><a href="product-immunomars.html">IMMUNOMARS</a></li>
+              <li><a href="product-uv60k.html">UV 60K</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer__heading">Resources</h3>
+            <ul class="footer__links">
+              <li><a href="therapy-areas.html">Therapy Areas</a></li>
+              <li><a href="science.html">Scientific Resources</a></li>
+              <li><a href="science.html#monographs">Product Monographs</a></li>
+              <li><a href="science.html#downloads">Download Centre</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="footer__divider" />
+
+        <div class="footer__bottom" style="margin-bottom:var(--space-8);">
+          <span>&copy; 2024 Marselus Pharmaceuticals. All rights reserved.</span>
+          <div class="footer__bottom-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms &amp; Disclaimer</a>
+          </div>
+        </div>
+
+
+      </div>
+    </footer>
+
+    <!-- ═══ MOBILE CTA ═══ -->
+    <div class="mobile-cta">
+      <a href="contact.html" class="btn btn--primary">Contact Us</a>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Therapy Areas — Marselus Pharmaceuticals</title>
+  <meta name="description" content="Explore Marselus Pharmaceuticals' three core therapy areas: Gastroenterology, Women's Health/Gynaecology, and Clinical Nutrition/Immunonutrition." />
+  <link rel="stylesheet" href="/css/variables.css" /><link rel="stylesheet" href="/css/base.css" /><link rel="stylesheet" href="/css/layout.css" /><link rel="stylesheet" href="/css/components.css" /><link rel="stylesheet" href="/css/animations.css" />
+  <style>
+    .therapy-hero-card { display:flex; flex-direction:column; background:var(--color-white); border:var(--border-light); border-radius:var(--radius-2xl); overflow:hidden; text-decoration:none; color:inherit; transition:transform var(--transition-base),box-shadow var(--transition-base),border-color var(--transition-base); }
+    .therapy-hero-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-xl); }
+    .therapy-hero-card--gastro:hover { border-color: var(--color-artemes); box-shadow: 0 10px 30px var(--color-artemes-glow); }
+    .therapy-hero-card--womens:hover { border-color: var(--color-saranya); box-shadow: 0 10px 30px var(--color-saranya-glow); }
+    .therapy-hero-card--nutrition:hover { border-color: var(--color-immunomars); box-shadow: 0 10px 30px var(--color-immunomars-glow); }
+    .therapy-hero-card__image { height:240px; background:var(--color-navy); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .therapy-hero-card__body { padding:var(--space-8); flex:1; display:flex; flex-direction:column; }
+    .therapy-hero-card__name { font-family:var(--font-heading); font-size:var(--text-3xl); font-weight:700; color:var(--color-navy); margin-bottom:var(--space-3); }
+    .therapy-hero-card__desc { font-size:var(--text-base); color:var(--color-gray-500); line-height:var(--leading-relaxed); margin-bottom:var(--space-6); flex:1; }
+    .therapy-hero-card__products { display:flex; flex-wrap:wrap; gap:var(--space-2); }
+    .therapy-hero-card__cta { margin-top:var(--space-6); display:inline-flex; align-items:center; gap:var(--space-2); font-weight:600; color:var(--color-accent); }
+  </style>
+  <script type="module" src="/js/main.js"></script>
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="nav-header"><div class="container"><nav class="nav-inner"><a href="index.html" class="nav-logo"><span class="nav-logo-icon">M</span><span>Marselus</span></a><ul class="nav-links"><li><a href="index.html" class="nav-link">Home</a></li><li><span class="nav-separator">/</span></li><li><a href="about.html" class="nav-link">About</a></li><li><span class="nav-separator">/</span></li><li><a href="therapy-areas.html" class="nav-link active">Therapy Areas</a></li><li><span class="nav-separator">/</span></li><li class="nav-dropdown"><a href="products.html" class="nav-link" aria-haspopup="true">Products</a><div class="nav-dropdown-menu" role="menu"><a href="product-artemes.html" class="nav-dropdown-item" role="menuitem"><span class="dot dot--artemes"></span> ARTEMES</a><a href="product-saranya.html" class="nav-dropdown-item" role="menuitem"><span class="dot dot--saranya"></span> SARANYA</a><a href="product-immunomars.html" class="nav-dropdown-item" role="menuitem"><span class="dot dot--immunomars"></span> IMMUNOMARS</a><a href="product-uv60k.html" class="nav-dropdown-item" role="menuitem"><span class="dot dot--uv60k"></span> UV 60K</a></div></li><li><span class="nav-separator">/</span></li><li><a href="science.html" class="nav-link">Science</a></li><li><span class="nav-separator">/</span></li><li><a href="careers.html" class="nav-link">Careers</a></li><li><span class="nav-separator">/</span></li><li><a href="contact.html" class="nav-link">Contact</a></li></ul><button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button></nav></div></header>
+    <div class="nav-mobile-overlay"></div>
+    <div class="nav-mobile-drawer"><ul class="mobile-nav-links"><li><a href="index.html" class="mobile-nav-link">Home</a></li><li><a href="about.html" class="mobile-nav-link">About</a></li><li><a href="therapy-areas.html" class="mobile-nav-link">Therapy Areas</a></li><li><a href="products.html" class="mobile-nav-link">Products</a></li><li><a href="science.html" class="mobile-nav-link">Science</a></li><li><a href="careers.html" class="mobile-nav-link">Careers</a></li><li><a href="contact.html" class="mobile-nav-link">Contact</a></li></ul></div>
+
+    <main class="page-content">
+      <section class="page-hero"><div class="container">
+        <div class="breadcrumb hero-enter hero-enter--delay-1"><a href="index.html">Home</a><span class="separator">/</span><span class="current">Therapy Areas</span></div>
+        <h1 class="page-hero__title hero-enter hero-enter--delay-2">Therapy <span class="heading-dot">Areas</span></h1>
+        <p class="page-hero__subtitle hero-enter hero-enter--delay-3">Specialised pharmaceutical solutions across three core therapy areas, driven by science and designed for meaningful clinical impact.</p>
+      </div></section>
+
+      <section class="section">
+        <div class="container">
+          <div class="grid grid--3 reveal-stagger" style="gap:var(--space-8)">
+            <!-- Gastroenterology -->
+            <a href="therapy-gastroenterology.html" class="therapy-hero-card therapy-hero-card--gastro holo-glow reveal">
+              <div class="therapy-hero-card__image">
+                <img src="assets/images/gastro-therapy.png" class="float-3d" alt="Gastroenterology 3D medical render" style="width:100%; height:100%; object-fit:cover;" />
+              </div>
+              <div class="therapy-hero-card__body">
+                <h2 class="therapy-hero-card__name">Gastroenterology</h2>
+                <p class="therapy-hero-card__desc">Addressing IBD, Ulcerative Colitis, and gut health with evidence-based therapies including anti-inflammatory agents, immunonutrition, and Vitamin D support.</p>
+                <div class="therapy-hero-card__products">
+                  <span class="therapy-card__tag"><span class="tag-dot" style="background:var(--color-artemes)"></span> ARTEMES</span>
+                  <span class="therapy-card__tag"><span class="tag-dot" style="background:var(--color-uv60k)"></span> UV 60K</span>
+                  <span class="therapy-card__tag"><span class="tag-dot" style="background:var(--color-immunomars)"></span> IMMUNOMARS</span>
+                </div>
+                <span class="therapy-hero-card__cta">Learn More →</span>
+              </div>
+            </a>
+
+            <!-- Women's Health -->
+            <a href="therapy-womens-health.html" class="therapy-hero-card therapy-hero-card--womens holo-glow reveal">
+              <div class="therapy-hero-card__image">
+                <img src="assets/images/womens-therapy.png" class="float-3d" alt="Women's Health 3D medical render" style="width:100%; height:100%; object-fit:cover;" />
+              </div>
+              <div class="therapy-hero-card__body">
+                <h2 class="therapy-hero-card__name">Women's Health</h2>
+                <p class="therapy-hero-card__desc">Supporting PCOS management, fertility, and metabolic balance with targeted inositol therapy and Vitamin D supplementation.</p>
+                <div class="therapy-hero-card__products">
+                  <span class="therapy-card__tag"><span class="tag-dot" style="background:var(--color-saranya)"></span> SARANYA</span>
+                  <span class="therapy-card__tag"><span class="tag-dot" style="background:var(--color-uv60k)"></span> UV 60K</span>
+                </div>
+                <span class="therapy-hero-card__cta">Learn More →</span>
+              </div>
+            </a>
+
+            <!-- Clinical Nutrition -->
+            <a href="therapy-clinical-nutrition.html" class="therapy-hero-card therapy-hero-card--nutrition holo-glow reveal">
+              <div class="therapy-hero-card__image">
+                <img src="assets/images/nutrition-therapy.png" class="float-3d" alt="Clinical Nutrition 3D medical render" style="width:100%; height:100%; object-fit:cover;" />
+              </div>
+              <div class="therapy-hero-card__body">
+                <h2 class="therapy-hero-card__name">Clinical Nutrition</h2>
+                <p class="therapy-hero-card__desc">Comprehensive immunonutrition solutions supporting recovery, immune function, and nutritional rehabilitation in clinical settings.</p>
+                <div class="therapy-hero-card__products">
+                  <span class="therapy-card__tag"><span class="tag-dot" style="background:var(--color-immunomars)"></span> IMMUNOMARS</span>
+                </div>
+                <span class="therapy-hero-card__cta">Learn More →</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><div class="container"><div class="footer__grid"><div class="footer__brand"><a href="index.html" class="footer__logo"><span class="footer__logo-icon">M</span>Marselus Pharmaceuticals</a><p>Heritage of Healing since 2003.</p></div><div><h3 class="footer__heading">Company</h3><ul class="footer__links"><li><a href="about.html">About Us</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div><div><h3 class="footer__heading">Products</h3><ul class="footer__links"><li><a href="product-artemes.html">ARTEMES</a></li><li><a href="product-saranya.html">SARANYA</a></li><li><a href="product-immunomars.html">IMMUNOMARS</a></li><li><a href="product-uv60k.html">UV 60K</a></li></ul></div><div><h3 class="footer__heading">Resources</h3><ul class="footer__links"><li><a href="therapy-areas.html">Therapy Areas</a></li><li><a href="science.html">Scientific Resources</a></li></ul></div></div><hr class="footer__divider"/><div class="footer__bottom"><span>&copy; 2024 Marselus Pharmaceuticals.</span><div class="footer__bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></div></footer>
+    <div class="mobile-cta"><a href="contact.html" class="btn btn--primary">Contact Us</a></div>
+  </div>
+</body>
+</html>
