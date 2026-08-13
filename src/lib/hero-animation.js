@@ -1,6 +1,7 @@
 /* ===================================================
    MARSELUS PHARMACEUTICALS — HERO SCROLL ANIMATION
    Uses preloaded 210 frame images for buttery scrolling
+   High DPI crisp canvas + smooth overlapping text slides
    =================================================== */
 
 export function initHeroScrollAnimation() {
@@ -52,17 +53,23 @@ export function initHeroScrollAnimation() {
   let currentFrame = 0;
   let targetFrame = 0;
 
-  // Resize canvas to cover viewport
+  // High DPI Retina Canvas scaling for ultra-crisp quality
   function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    canvas.style.width = window.innerWidth + 'px';
+    canvas.style.height = window.innerHeight + 'px';
     drawFrame(Math.round(currentFrame));
   }
 
-  // Draw scaled cover/contain image responsively
+  // Draw scaled cover/contain image with high smoothing
   function drawFrame(index) {
     const img = images[index];
     if (!img) return;
+
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -76,82 +83,66 @@ export function initHeroScrollAnimation() {
 
     let drawWidth, drawHeight, drawX, drawY;
 
-    // Use contain logic with safety boundaries to fit portrait and landscape displays perfectly
     if (canvasRatio > imgRatio) {
-      // Landscape (Desktops/Tablets)
-      drawHeight = canvasHeight * 0.82;
+      // Desktop
+      drawHeight = canvasHeight * 0.88;
       drawWidth = drawHeight * imgRatio;
       drawX = (canvasWidth - drawWidth) / 2;
       drawY = (canvasHeight - drawHeight) / 2;
     } else {
-      // Portrait (Mobile)
+      // Mobile
       drawWidth = canvasWidth * 0.95;
       drawHeight = drawWidth / imgRatio;
       drawX = (canvasWidth - drawWidth) / 2;
-      // Shift capsule down slightly on mobile to prevent overlapping with text slides at the top
       drawY = (canvasHeight - drawHeight) * 0.65;
     }
 
     ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
   }
 
-  // Fade control for text overlays
+  // Overlapping smooth opacity fade for text overlays
   function updateTextOverlays(progress) {
     const slides = document.querySelectorAll('.scroll-slide');
     if (!slides.length) return;
 
-    let activeIndex = -1;
-
-    // Define slide active ranges
-    if (progress >= 0 && progress < 0.22) {
-      activeIndex = 0;
-    } else if (progress >= 0.22 && progress < 0.48) {
-      activeIndex = 1;
-    } else if (progress >= 0.48 && progress < 0.74) {
-      activeIndex = 2;
-    } else if (progress >= 0.74 && progress <= 1.0) {
-      activeIndex = 3;
-    }
+    // Slide ranges (with smooth cross-fading overlaps)
+    const ranges = [
+      { start: 0.00, end: 0.25, fadeInStart: 0.00, fadeInEnd: 0.05, fadeOutStart: 0.18, fadeOutEnd: 0.25 },
+      { start: 0.20, end: 0.50, fadeInStart: 0.20, fadeInEnd: 0.27, fadeOutStart: 0.43, fadeOutEnd: 0.50 },
+      { start: 0.45, end: 0.75, fadeInStart: 0.45, fadeInEnd: 0.52, fadeOutStart: 0.68, fadeOutEnd: 0.75 },
+      { start: 0.70, end: 1.00, fadeInStart: 0.70, fadeInEnd: 0.78, fadeOutStart: 0.98, fadeOutEnd: 1.00 }
+    ];
 
     slides.forEach((slide, idx) => {
-      if (idx === activeIndex) {
+      const range = ranges[idx];
+      if (!range) return;
+
+      if (progress >= range.start && progress <= range.end) {
         slide.classList.add('active');
-        
-        // Calculate fine-grained opacity inside slide based on progress
-        let slideOpacity = 1;
-        if (idx === 0) {
-          if (progress > 0.12) {
-            slideOpacity = 1 - (progress - 0.12) / 0.1; // fades out
-          }
-        } else if (idx === 1) {
-          if (progress < 0.28) {
-            slideOpacity = (progress - 0.22) / 0.06; // fades in
-          } else if (progress > 0.42) {
-            slideOpacity = 1 - (progress - 0.42) / 0.06; // fades out
-          }
-        } else if (idx === 2) {
-          if (progress < 0.54) {
-            slideOpacity = (progress - 0.48) / 0.06; // fades in
-          } else if (progress > 0.68) {
-            slideOpacity = 1 - (progress - 0.68) / 0.06; // fades out
-          }
-        } else if (idx === 3) {
-          if (progress < 0.82) {
-            slideOpacity = (progress - 0.74) / 0.08; // fades in
-          }
+
+        let opacity = 1;
+        // Fade in
+        if (progress < range.fadeInEnd) {
+          opacity = (progress - range.fadeInStart) / (range.fadeInEnd - range.fadeInStart);
         }
-        
-        slide.style.opacity = Math.max(0, Math.min(1, slideOpacity));
+        // Fade out
+        else if (progress > range.fadeOutStart) {
+          opacity = 1 - (progress - range.fadeOutStart) / (range.fadeOutEnd - range.fadeOutStart);
+        }
+
+        opacity = Math.max(0, Math.min(1, opacity));
+        slide.style.opacity = opacity;
+        slide.style.pointerEvents = opacity > 0.3 ? 'auto' : 'none';
       } else {
         slide.classList.remove('active');
         slide.style.opacity = 0;
+        slide.style.pointerEvents = 'none';
       }
     });
   }
 
   // Animation frame scrubbing loop
   function tick() {
-    // Hero progress for text overlays
     const rect = container.getBoundingClientRect();
     const containerHeight = rect.height;
     const containerTop = rect.top;
@@ -164,8 +155,8 @@ export function initHeroScrollAnimation() {
 
     targetFrame = heroProgress * (frameCount - 1);
 
-    // Interpolation (lerp) for smooth scrubbing inertia
-    currentFrame += (targetFrame - currentFrame) * 0.12;
+    // Smooth inertia interpolation
+    currentFrame += (targetFrame - currentFrame) * 0.14;
 
     drawFrame(Math.round(currentFrame));
     updateTextOverlays(heroProgress);
@@ -175,18 +166,18 @@ export function initHeroScrollAnimation() {
 
   // Initialize
   preloadImages().then(() => {
-    // Hide loading screen and unlock page scrolling
+    // Hide loading screen
     if (loader) {
       loader.classList.add('fade-out');
       setTimeout(() => {
         loader.style.display = 'none';
       }, 500);
     }
-    
+
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
-    
-    // Start loop
+
+    // Start rendering tick loop
     requestAnimationFrame(tick);
   });
 }
