@@ -127,43 +127,16 @@ export function initHeroScrollAnimation() {
   }
 
   // Overlapping smooth opacity fade for text overlays
+  // Dynamic HUD Telemetry animation loop based on scroll progress
   function updateTextOverlays(progress) {
-    const slides = document.querySelectorAll('.scroll-slide');
-    if (!slides.length) return;
+    const hudCards = document.querySelectorAll('.hero-hud-card');
+    if (!hudCards.length) return;
 
-    // Slide ranges (with smooth cross-fading overlaps)
-    const ranges = [
-      { start: 0.00, end: 0.25, fadeInStart: 0.00, fadeInEnd: 0.00, fadeOutStart: 0.18, fadeOutEnd: 0.25 },
-      { start: 0.20, end: 0.50, fadeInStart: 0.20, fadeInEnd: 0.27, fadeOutStart: 0.43, fadeOutEnd: 0.50 },
-      { start: 0.45, end: 0.75, fadeInStart: 0.45, fadeInEnd: 0.52, fadeOutStart: 0.68, fadeOutEnd: 0.75 },
-      { start: 0.70, end: 1.00, fadeInStart: 0.70, fadeInEnd: 0.78, fadeOutStart: 0.98, fadeOutEnd: 1.00 }
-    ];
-
-    slides.forEach((slide, idx) => {
-      const range = ranges[idx];
-      if (!range) return;
-
-      if (progress >= range.start && progress <= range.end) {
-        slide.classList.add('active');
-
-        let opacity = 1;
-        // Fade in
-        if (progress < range.fadeInEnd) {
-          opacity = (progress - range.fadeInStart) / (range.fadeInEnd - range.fadeInStart);
-        }
-        // Fade out
-        else if (progress > range.fadeOutStart) {
-          opacity = 1 - (progress - range.fadeOutStart) / (range.fadeOutEnd - range.fadeOutStart);
-        }
-
-        opacity = Math.max(0, Math.min(1, opacity));
-        slide.style.opacity = opacity;
-        slide.style.pointerEvents = opacity > 0.3 ? 'auto' : 'none';
-      } else {
-        slide.classList.remove('active');
-        slide.style.opacity = 0;
-        slide.style.pointerEvents = 'none';
-      }
+    hudCards.forEach((card, idx) => {
+      // Subtle pulse and opacity dynamics based on scroll progress
+      const cardProgress = (progress + idx * 0.15) % 1;
+      const opacity = 0.85 + Math.sin(cardProgress * Math.PI * 2) * 0.15;
+      card.style.opacity = opacity.toFixed(2);
     });
   }
 

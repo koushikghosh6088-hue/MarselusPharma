@@ -28,54 +28,86 @@ export default function Home() {
       </div>
 
       <main className="page-content atrimus-white-bg">
-        {/* ═══ HERO SCROLL ANIMATION SECTION (Preserved) ═══ */}
+        {/* ═══ AWARD-WINNING INTERACTIVE CYBER-PHARMA HERO SECTION ═══ */}
         <section className="hero-scroll-container" id="hero-scroll-container">
           <div className="hero-scroll-sticky">
             <canvas id="hero-canvas"></canvas>
 
-            {/* Vibrant Ambient Mesh Orbs */}
+            {/* Scientific Grid Matrix & Vibrant Mesh Glow Orbs */}
+            <div className="hero-grid-matrix"></div>
             <div className="hero-glow-orb hero-glow-orb--1"></div>
             <div className="hero-glow-orb hero-glow-orb--2"></div>
             <div className="hero-glow-orb hero-glow-orb--3"></div>
 
-            {/* Slide 1 */}
-            <div className="scroll-slide scroll-slide--1 active">
-              <div className="scroll-slide__content glass-panel" style={{ borderTop: "3px solid #10b981" }}>
-                <span className="slide-badge slide-badge--1">/ EST 2003</span>
-                <h1 className="scroll-slide__title">Heritage of<br /><span className="italic-accent gradient-accent-1">Healing</span></h1>
-                <p className="scroll-slide__desc">Leading specialty pharmaceuticals in Gastroenterology, Women&apos;s Health &amp; Clinical Nutrition.</p>
+            {/* Non-Blocking Hero Header */}
+            <div className="hero-main-header">
+              <span className="hero-main-badge">✦ SPECIALTY PHARMACEUTICAL INNOVATION</span>
+              <h1 className="hero-main-title">
+                PRECISION FORMULATIONS.<br />
+                <span className="gradient-accent-1">TRANSFORMING CARE.</span>
+              </h1>
+              <p className="hero-main-desc">
+                Leading specialty pharmaceuticals in Gastroenterology, Women&apos;s Health &amp; Clinical Nutrition since 2003.
+              </p>
+              <div className="btn-connected-group" style={{ marginTop: "var(--space-4)" }}>
+                <Link href="/products" className="btn-connected-pill btn-connected-pill--primary">
+                  Explore Products
+                </Link>
+                <Link href="/about" className="btn-connected-pill btn-connected-pill--secondary">
+                  About Us
+                </Link>
               </div>
             </div>
 
-            {/* Slide 2 */}
-            <div className="scroll-slide scroll-slide--2">
-              <div className="scroll-slide__content glass-panel" style={{ borderTop: "3px solid #3b82f6" }}>
-                <span className="slide-badge slide-badge--2">/ QUALITY STANDARDS</span>
-                <h1 className="scroll-slide__title">Surgical <span className="italic-accent gradient-accent-2">Precision</span></h1>
-                <p className="scroll-slide__desc">Certified state-of-the-art facilities compliant with WHO-GMP and ISO standards.</p>
+            {/* Interactive HUD Telemetry Widgets */}
+            <div className="hero-hud-grid">
+              
+              {/* HUD 1: Formulation Technology */}
+              <div className="hero-hud-card hero-hud-card--1">
+                <div className="hud-badge-row">
+                  <span className="hud-status-dot"></span>
+                  <span className="hud-tag">FORMULATION TECH</span>
+                </div>
+                <div className="hud-title">1.2g MMX™ Prolonged Release</div>
+                <div className="hud-sub">Targeted Colonic Delivery System</div>
               </div>
-            </div>
 
-            {/* Slide 3 */}
-            <div className="scroll-slide scroll-slide--3">
-              <div className="scroll-slide__content glass-panel" style={{ borderTop: "3px solid #a855f7" }}>
-                <span className="slide-badge slide-badge--3">/ SCIENTIFIC APPROACH</span>
-                <h1 className="scroll-slide__title">Clinical <span className="italic-accent gradient-accent-3">Efficacy</span></h1>
-                <p className="scroll-slide__desc">Evidence-based drug formulations designed around four key patient-centric hero brands.</p>
+              {/* HUD 2: Quality Certification */}
+              <div className="hero-hud-card hero-hud-card--2">
+                <div className="hud-badge-row">
+                  <span className="hud-tag hud-tag--blue">QUALITY CERTIFIED</span>
+                </div>
+                <div className="hud-title">WHO-GMP &amp; ISO 9001:2015</div>
+                <div className="hud-sub">100% Purity &amp; Safety Compliance</div>
               </div>
-            </div>
 
-            {/* Slide 4 */}
-            <div className="scroll-slide scroll-slide--4">
-              <div className="scroll-slide__content glass-panel" style={{ borderTop: "3px solid #06b6d4" }}>
-                <span className="slide-badge slide-badge--4">/ MARSELUS PHARMA</span>
-                <h1 className="scroll-slide__title">Innovating <span className="italic-accent gradient-accent-4">Care</span></h1>
-                <p className="scroll-slide__desc">We deliver specialized pharmaceutical solutions with therapeutic integrity and patient focus.</p>
-                <div className="scroll-slide__actions">
-                  <Link href="/products" className="btn btn--primary btn--lg" style={{ background: "linear-gradient(135deg, #059669 0%, #0284c7 100%)", borderColor: "transparent", color: "#ffffff" }}>Explore Products <span className="arrow">→</span></Link>
-                  <Link href="/about" className="btn btn--secondary btn--lg">About Us <span className="arrow">→</span></Link>
+              {/* HUD 3: Targeted Absorption */}
+              <div className="hero-hud-card hero-hud-card--3">
+                <div className="hud-badge-row">
+                  <span className="hud-tag hud-tag--purple">TARGETED EFFICACY</span>
+                </div>
+                <div className="hud-title">99.4% Mucosal Absorption</div>
+                <div className="hud-progress-bar">
+                  <div className="hud-progress-fill"></div>
                 </div>
               </div>
+
+              {/* HUD 4: Clinical Impact */}
+              <div className="hero-hud-card hero-hud-card--4">
+                <div className="hud-badge-row">
+                  <span className="hud-tag hud-tag--teal">CLINICAL IMPACT</span>
+                </div>
+                <div className="hud-title">4 Hero Brands • 20K+ Patients</div>
+                <div className="hud-sub">Evidence-Based Patient Outcomes</div>
+              </div>
+
+            </div>
+
+            {/* Interactive 3D Scroll Scrub Indicator */}
+            <div className="hero-scroll-indicator">
+              <span className="scroll-icon">🖱️</span>
+              <span className="scroll-text">SCROLL TO DISSECT 3D MOLECULE SEQUENCE</span>
+              <span className="scroll-arrow">↓</span>
             </div>
 
           </div>
@@ -103,12 +135,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══ 3D CAPSULE & SYRINGE SHOWCASE (Clean Light Mode) ═══ */}
+        {/* ═══ 3D CAPSULE & SYRINGE SHOWCASE ═══ */}
         <section className="section" id="overview" style={{ padding: "var(--space-16) 0", position: "relative", background: "#ffffff" }}>
           <div className="container">
             <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "var(--space-12)", alignItems: "center" }}>
               
-              {/* Left Column: Atrimus Typography & Connected Buttons */}
+              {/* Left Column */}
               <div className="reveal">
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "var(--space-6)" }}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -132,7 +164,6 @@ export default function Home() {
                   By focusing on clinical precision and establishing enduring relationships of trust, we deliver vital, high-integrity treatments to patients and healthcare providers worldwide.
                 </p>
 
-                {/* Connected Pill Buttons */}
                 <div className="btn-connected-group">
                   <Link href="/about" className="btn-connected-pill btn-connected-pill--primary">
                     About Us
@@ -143,7 +174,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Right Column: 3D Floating Translucent Purple Capsule Rendering */}
+              {/* Right Column: 3D Capsule Rendering */}
               <div className="reveal" style={{ display: "flex", justifyContent: "center", position: "relative" }}>
                 <div style={{ position: "relative", width: "100%", maxWidth: "460px" }}>
                   <img src="/assets/images/atrimus-capsule.png" className="float-3d" alt="3D Translucent Capsule Render" style={{ width: "100%", height: "auto", filter: "drop-shadow(0 20px 35px rgba(12, 56, 37, 0.1))" }} />
@@ -154,7 +185,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══ MARSELUS BRANDS PRODUCT SHOWCASE (Clean Light Pearl Theme) ═══ */}
+        {/* ═══ MARSELUS BRANDS PRODUCT SHOWCASE ═══ */}
         <section className="section" id="products" style={{ background: "linear-gradient(180deg, #f8fafc 0%, #edf5f1 50%, #f4faf6 100%)", padding: "var(--space-20) 0", position: "relative" }}>
           <div className="container">
             
@@ -244,7 +275,7 @@ export default function Home() {
                   <div style={{ background: "linear-gradient(135deg, rgba(230, 126, 34, 0.15) 0%, rgba(12, 56, 37, 0.08) 100%)", borderRadius: "var(--radius-xl)", height: "160px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "var(--space-4)", marginBottom: "var(--space-6)", border: "1px solid rgba(230, 126, 34, 0.2)", position: "relative" }}>
                     <span style={{ position: "absolute", top: "12px", right: "12px", background: "#e67e22", color: "#ffffff", fontSize: "10px", fontWeight: 800, padding: "3px 8px", borderRadius: "10px" }}>VITAMIN THERAPY</span>
                     <h3 style={{ fontSize: "1.75rem", fontWeight: 900, color: "var(--color-navy)", letterSpacing: "-0.01em" }}>UV 60K</h3>
-                    <span style={{ fontSize: "11px", color: "#d35400", fontWeight: 700, marginTop: "4px" }}>SOFTGEL CAPSULES</span>
+                    <span style={{ fontSize: "11px", color="#d35400", fontWeight: 700, marginTop: "4px" }}>SOFTGEL CAPSULES</span>
                   </div>
                   <span style={{ background: "rgba(230, 126, 34, 0.1)", color: "#d35400", fontSize: "11px", fontWeight: 700, padding: "4px 10px", borderRadius: "6px", display: "inline-block", marginBottom: "var(--space-3)" }}>
                     Cholecalciferol 60,000 IU
@@ -264,7 +295,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══ THERAPY AREAS (Clean Light Mode + 3D DNA Visual) ═══ */}
+        {/* ═══ THERAPY AREAS ═══ */}
         <section className="section" id="expertise" style={{ padding: "var(--space-20) 0", background: "#ffffff", position: "relative" }}>
           <div className="container">
             
@@ -374,7 +405,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══ WHY CHOOSE MARSELUS (Corporate Quality) ═══ */}
+        {/* ═══ WHY CHOOSE MARSELUS ═══ */}
         <section className="section" id="why-choose-us" style={{ padding: "var(--space-20) 0", background: "#f8fafc" }}>
           <div className="container">
             
@@ -429,7 +460,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══ LATEST SCIENTIFIC INSIGHTS ═══ */}
+        {/* ═══ LATEST INSIGHTS ═══ */}
         <section className="section" style={{ padding: "var(--space-20) 0", background: "#ffffff" }}>
           <div className="container">
             
@@ -485,7 +516,7 @@ export default function Home() {
                 </div>
                 <div style={{ padding: "var(--space-6)" }}>
                   <div style={{ fontSize: "11px", color: "var(--color-gray-500)", marginBottom: "var(--space-2)", fontWeight: 700 }}>JUNE 2024 • 6 MIN READ</div>
-                  <h3 style={{ fontSize: "var(--text-lg)", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)", lineHeight: "1.4" }}>Immunonutrition in Post-Surgical Recovery</h3>
+                  <h3 style={{ fontSize: "var(--text-lg)", fontWeight 800, color: "var(--color-navy)", marginBottom: "var(--space-2)", lineHeight: "1.4" }}>Immunonutrition in Post-Surgical Recovery</h3>
                   <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", lineHeight: "1.5", margin: 0 }}>The therapeutic role of targeted L-Glutamine and L-Arginine supplementation in hospital recovery.</p>
                 </div>
               </Link>

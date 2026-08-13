@@ -2130,3 +2130,240 @@ textarea.form-input {
 .slide-badge--2 { background: rgba(37, 99, 235, 0.12); color: #2563eb; border: 1px solid rgba(37, 99, 235, 0.3); }
 .slide-badge--3 { background: rgba(168, 85, 247, 0.12); color: #7c3aed; border: 1px solid rgba(168, 85, 247, 0.3); }
 .slide-badge--4 { background: rgba(6, 182, 212, 0.12); color: #0284c7; border: 1px solid rgba(6, 182, 212, 0.3); }
+
+/* ===================================================
+   CYBER-PHARMA HUD WIDGETS & NON-BLOCKING HERO LAYOUT
+   =================================================== */
+
+/* Scientific Background Grid Matrix */
+.hero-grid-matrix {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(12, 56, 37, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(12, 56, 37, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 80% 80% at center, black 40%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at center, black 40%, transparent 90%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Non-Blocking Hero Header */
+.hero-main-header {
+  position: absolute;
+  top: 14vh;
+  left: 6vw;
+  max-width: 480px;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.hero-main-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #059669;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.hero-main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 3.8vw, 3.75rem);
+  font-weight: 900;
+  color: var(--color-navy);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.hero-main-desc {
+  font-size: 0.95rem;
+  color: var(--color-gray-600);
+  line-height: 1.5;
+  max-width: 42ch;
+}
+
+/* Floating HUD Widgets Container */
+.hero-hud-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Individual Glass HUD Widget Card */
+.hero-hud-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  padding: 14px 18px;
+  box-shadow: 0 15px 35px rgba(12, 56, 37, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+}
+
+.hero-hud-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(12, 56, 37, 0.14);
+}
+
+.hero-hud-card--1 { top: 14vh; right: 6vw; width: 270px; border-left: 3px solid #10b981; }
+.hero-hud-card--2 { top: 46vh; right: 5vw; width: 260px; border-left: 3px solid #3b82f6; }
+.hero-hud-card--3 { bottom: 12vh; left: 6vw; width: 270px; border-left: 3px solid #a855f7; }
+.hero-hud-card--4 { bottom: 12vh; right: 6vw; width: 280px; border-left: 3px solid #06b6d4; }
+
+.hud-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.hud-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: hud-pulse 2s infinite;
+}
+
+@keyframes hud-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.hud-tag {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #059669;
+  text-transform: uppercase;
+}
+
+.hud-tag--blue { color: #2563eb; }
+.hud-tag--purple { color: #7c3aed; }
+.hud-tag--teal { color: #0284c7; }
+
+.hud-title {
+  font-family: var(--font-heading);
+  font-size: 0.925rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  margin-bottom: 3px;
+}
+
+.hud-sub {
+  font-size: 0.775rem;
+  color: var(--color-gray-500);
+}
+
+.hud-progress-bar {
+  width: 100%;
+  height: 5px;
+  background: rgba(12, 56, 37, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.hud-progress-fill {
+  width: 99.4%;
+  height: 100%;
+  background: linear-gradient(90deg, #a855f7, #6366f1);
+  border-radius: 10px;
+}
+
+/* Interactive 3D Scroll Guidance Indicator */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 3vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(12, 56, 37, 0.1);
+  padding: 8px 20px;
+  border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(12, 56, 37, 0.06);
+  z-index: 15;
+  pointer-events: auto;
+}
+
+.scroll-icon { font-size: 14px; }
+.scroll-text {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--color-navy);
+  text-transform: uppercase;
+}
+
+.scroll-arrow {
+  font-size: 14px;
+  font-weight: 900;
+  color: #059669;
+  animation: bounce-arrow 1.8s infinite;
+}
+
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+/* Mobile Responsive Cyber-HUD Layout */
+@media (max-width: 768px) {
+  .hero-main-header {
+    top: 9vh !important;
+    left: 4vw !important;
+    right: 4vw !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+  .hero-main-title {
+    font-size: 1.65rem !important;
+  }
+  .hero-main-desc {
+    display: none !important;
+  }
+  .hero-hud-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    position: absolute !important;
+    bottom: 6vh !important;
+    left: 4vw !important;
+    right: 4vw !important;
+    top: auto !important;
+  }
+  .hero-hud-card {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    padding: 10px 12px !important;
+  }
+  .hud-title {
+    font-size: 0.775rem !important;
+  }
+  .hud-sub {
+    font-size: 0.7rem !important;
+  }
+  .hero-scroll-indicator {
+    display: none !important;
+  }
+}
