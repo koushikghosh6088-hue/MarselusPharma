@@ -1,244 +1,237 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import SpineTab from "@/components/SpineTab";
 
-export default function SaranyaMasterPage() {
+export default function SaranyaLuxuryPage() {
+  const [selectedThumb, setSelectedThumb] = useState(0);
+  const [openAccordion, setOpenAccordion] = useState<string | null>("discover");
+
+  const images = [
+    "/assets/images/womens-therapy.png",
+    "/assets/images/research-labs.png",
+  ];
+
+  const toggleAccordion = (id: string) => {
+    setOpenAccordion(openAccordion === id ? null : id);
+  };
+
   return (
-    <main className="page-content" style={{ paddingTop: "120px", paddingBottom: 0, background: "var(--color-cream)" }}>
+    <main className="page-content" style={{ paddingTop: "120px", paddingBottom: "var(--space-20)", background: "#FAF8F5" }}>
       
-      {/* ═══ SECTION 1: HERO (PRODUCT BOX + PINK STRIP PACK) ═══ */}
-      <section className="monograph-section spine-tab-container" style={{ background: "linear-gradient(135deg, #1E3A8A 0%, #D6438C 100%)", color: "#ffffff", padding: "var(--space-16) 0" }}>
+      {/* ═══ 1. FABLE & MANE STYLE LUXURY PRODUCT HERO ═══ */}
+      <section className="section spine-tab-container" style={{ padding: "var(--space-8) 0 var(--space-16) 0" }}>
         <SpineTab label="SARANYA® — NUTRITIONAL MONOGRAPH" />
 
         <div className="container">
-          <div className="grid-split">
+          <div className="fable-product-grid">
             
-            {/* Left Column: Copy & Positioning */}
-            <div>
-              <span className="eyebrow-badge" style={{ background: "rgba(244, 114, 182, 0.25)", color: "#ffffff", borderColor: "rgba(244, 114, 182, 0.4)", marginBottom: "var(--space-4)" }}>
+            {/* Left Vertical Thumbnails Strip */}
+            <div className="fable-thumb-column">
+              {images.map((img, idx) => (
+                <button 
+                  key={idx}
+                  className={`fable-thumb-btn ${selectedThumb === idx ? "active" : ""}`}
+                  onClick={() => setSelectedThumb(idx)}
+                >
+                  <img src={img} alt={`SARANYA View ${idx + 1}`} />
+                </button>
+              ))}
+            </div>
+
+            {/* Middle Arched Architectural Product Stage (Royal Blue + Soft Pink) */}
+            <div className="fable-arch-stage" style={{ background: "linear-gradient(180deg, rgba(244, 114, 182, 0.2) 0%, rgba(30, 58, 138, 0.1) 100%)" }}>
+              <img src={images[selectedThumb]} alt="SARANYA Box and Pink Strip Pack" />
+            </div>
+
+            {/* Right Product Specs & Accordion List */}
+            <div className="fable-product-info">
+              
+              <div className="fable-rating-row">
+                <div className="fable-star-rating">★★★★★</div>
+                <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#1E3A8A" }}>(PCOS Nutritional Wellness)</span>
+              </div>
+
+              <span className="eyebrow-badge" style={{ color: "#D6438C", borderColor: "rgba(214, 67, 140, 0.3)", marginBottom: "8px", width: "fit-content" }}>
                 WOMEN&apos;S HEALTH · 40:1 INOSITOL RATIO TABLETS
               </span>
-              
-              <h1 style={{ fontSize: "clamp(2.75rem, 5.5vw, 4.5rem)", marginBottom: "var(--space-2)", color: "#ffffff" }}>
-                SARANYA<span style={{ fontSize: "1.5rem", verticalAlign: "super", color: "#F472B6" }}>®</span>
+
+              <h1 style={{ fontSize: "clamp(2.25rem, 4vw, 3.25rem)", fontFamily: "var(--font-heading)", color: "#1E3A8A", marginBottom: "6px", lineHeight: "1.1" }}>
+                SARANYA<span style={{ fontSize: "1.2rem", verticalAlign: "super", color: "#D6438C" }}>®</span>
               </h1>
-              
-              <p style={{ fontSize: "1.1rem", fontWeight: 700, color: "#F472B6", marginBottom: "var(--space-4)" }}>
+
+              <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "#D6438C", marginBottom: "var(--space-4)" }}>
                 Myo-Inositol + D-Chiro Inositol + Chromium Picolinate + Vitamin D2 Tablets
               </p>
 
-              <p style={{ fontSize: "var(--text-xl)", color: "rgba(255, 255, 255, 0.95)", lineHeight: "1.65", marginBottom: "var(--space-6)" }}>
-                A balanced nutritional approach to women&apos;s metabolic &amp; reproductive wellness in PCOS management.
+              <p style={{ fontSize: "0.95rem", color: "var(--color-text-muted)", lineHeight: "1.65", marginBottom: "var(--space-6)" }}>
+                A balanced nutritional approach to women&apos;s metabolic &amp; reproductive wellness in PCOS management. Supplied in tablets inside pink strip packs.
               </p>
 
-              <div className="composition-pill-list" style={{ marginBottom: "var(--space-8)" }}>
-                <span className="composition-pill" style={{ background: "rgba(255,255,255,0.15)", color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>✓ Myo-Inositol 1100 mg</span>
-                <span className="composition-pill" style={{ background: "rgba(255,255,255,0.15)", color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>✓ D-Chiro Inositol 27.6 mg (~40:1)</span>
-                <span className="composition-pill" style={{ background: "rgba(255,255,255,0.15)", color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>✓ Pink Strip Pack Tablets</span>
-              </div>
-
-              <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", alignItems: "center" }}>
-                <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#F472B6", color: "#1E3A8A", fontWeight: 800 }}>
-                  Product Monograph →
+              <div style={{ display: "flex", gap: "12px", marginBottom: "var(--space-6)" }}>
+                <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#1E3A8A", color: "#ffffff", padding: "14px 32px", fontSize: "0.95rem", fontWeight: 800 }}>
+                  REQUEST PRESCRIBING MONOGRAPH →
                 </Link>
-                <span className="verify-tag" style={{ background: "rgba(255, 255, 255, 0.1)", color: "#ffffff", borderColor: "rgba(255, 255, 255, 0.3)" }}>
-                  HERITAGE OF HEALING
-                </span>
               </div>
-            </div>
 
-            {/* Right Column: Actual Box & Pink Strip Pack Render Stage */}
-            <div style={{ textAlign: "center" }}>
-              <div style={{ background: "rgba(255, 255, 255, 0.1)", backdropFilter: "blur(12px)", borderRadius: "32px", padding: "var(--space-8)", border: "1px solid rgba(255, 255, 255, 0.2)" }}>
-                <img src="/assets/images/womens-therapy.png" alt="SARANYA Box and Pink Strip Pack" style={{ width: "85%", height: "auto", maxHeight: "240px", objectFit: "contain", margin: "0 auto", filter: "drop-shadow(0 20px 35px rgba(0,0,0,0.35))" }} />
-                <div style={{ marginTop: "var(--space-4)", display: "flex", justifyContent: "center", gap: "8px" }}>
-                  <span className="slide-badge" style={{ fontSize: "11px", background: "rgba(244, 114, 182, 0.3)", color: "#ffffff" }}>Actual Pink Strip Pack</span>
-                  <span className="slide-badge" style={{ fontSize: "11px", background: "rgba(255, 255, 255, 0.15)", color: "#ffffff" }}>40:1 Ratio Tablets</span>
+              {/* Accordions */}
+              <div className="fable-accordion-wrap">
+                
+                <div className="fable-accordion-item">
+                  <button className="fable-accordion-header" onClick={() => toggleAccordion("discover")}>
+                    <span>DISCOVER MORE</span>
+                    <span>{openAccordion === "discover" ? "−" : "+"}</span>
+                  </button>
+                  {openAccordion === "discover" && (
+                    <div className="fable-accordion-content">
+                      SARANYA® provides Myo-Inositol 1100 mg + D-Chiro Inositol 27.6 mg (~40:1 ratio), Chromium Picolinate 400 mcg, and Vitamin D2 400 IU for nutritional support in PCOS care.
+                    </div>
+                  )}
+                </div>
+
+                <div className="fable-accordion-item">
+                  <button className="fable-accordion-header" onClick={() => toggleAccordion("ratio")}>
+                    <span>THE 40:1 INOSITOL CONCEPT</span>
+                    <span>{openAccordion === "ratio" ? "−" : "+"}</span>
+                  </button>
+                  {openAccordion === "ratio" && (
+                    <div className="fable-accordion-content">
+                      State clearly that current international PCOS guidance does not establish one specific inositol formulation, dose, or ratio as universally superior. SARANYA® provides a balanced nutritional option mirroring natural plasma ratio.
+                    </div>
+                  )}
+                </div>
+
+                <div className="fable-accordion-item">
+                  <button className="fable-accordion-header" onClick={() => toggleAccordion("ingredients")}>
+                    <span>FOUR-NUTRIENT COMPOSITION</span>
+                    <span>{openAccordion === "ingredients" ? "−" : "+"}</span>
+                  </button>
+                  {openAccordion === "ingredients" && (
+                    <div className="fable-accordion-content">
+                      <ul style={{ paddingLeft: "18px", margin: 0 }}>
+                        <li><strong>Myo-Inositol:</strong> 1100 mg</li>
+                        <li><strong>D-Chiro Inositol:</strong> 27.6 mg</li>
+                        <li><strong>Chromium Picolinate:</strong> 400 mcg</li>
+                        <li><strong>Vitamin D2:</strong> 400 IU</li>
+                      </ul>
+                    </div>
+                  )}
+                </div>
+
+                <div className="fable-accordion-item">
+                  <button className="fable-accordion-header" onClick={() => toggleAccordion("pack")}>
+                    <span>PACKAGING FORMAT</span>
+                    <span>{openAccordion === "pack" ? "−" : "+"}</span>
+                  </button>
+                  {openAccordion === "pack" && (
+                    <div className="fable-accordion-content">
+                      Supplied in tablets packaged inside pink strip packs (never as a sachet or Alu-Alu blister).
+                    </div>
+                  )}
+                </div>
+
+              </div>
+
+              {/* Our Promises Circular Badges */}
+              <div className="fable-promises-row">
+                <div className="fable-promise-badge">
+                  <div className="fable-promise-icon">🌸</div>
+                  <span className="fable-promise-label">PINK STRIP PACK</span>
+                </div>
+                <div className="fable-promise-badge">
+                  <div className="fable-promise-icon">⚖️</div>
+                  <span className="fable-promise-label">40:1 RATIO</span>
+                </div>
+                <div className="fable-promise-badge">
+                  <div className="fable-promise-icon">✨</div>
+                  <span className="fable-promise-label">CHROMIUM 400MCG</span>
+                </div>
+                <div className="fable-promise-badge">
+                  <div className="fable-promise-icon">☀️</div>
+                  <span className="fable-promise-label">VIT D2 400IU</span>
                 </div>
               </div>
+
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 2: DISEASE / HEALTH NEED (UNDERSTANDING PCOS) ═══ */}
-      <section className="monograph-section">
+      {/* ═══ 2. FEATURE HIGHLIGHT GRID ═══ */}
+      <section className="fable-spotlight-section">
         <div className="container">
-          <div className="monograph-card">
-            <span className="eyebrow-label" style={{ color: "#D6438C" }}>WOMEN&apos;S METABOLIC HEALTH</span>
-            <h2 style={{ fontSize: "2rem", marginBottom: "var(--space-4)" }}>Understanding PCOS</h2>
-            
-            <p style={{ fontSize: "var(--text-lg)", color: "var(--color-text-muted)", lineHeight: "1.7", marginBottom: "var(--space-6)" }}>
-              Polycystic Ovary Syndrome (PCOS) is a common complex endocrine and metabolic condition characterized by reproductive, hormonal, and metabolic features including peripheral insulin resistance and ovarian dysfunction.
-            </p>
+          <span className="eyebrow-label" style={{ color: "#D6438C" }}>METABOLIC &amp; REPRODUCTIVE WELLNESS</span>
+          <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 2.75rem)", fontFamily: "var(--font-heading)", color: "#1E3A8A" }}>
+            Hormonal &amp; Cellular Equilibrium
+          </h2>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "16px" }}>
-              <div style={{ background: "rgba(214, 67, 140, 0.05)", padding: "20px", borderRadius: "16px", borderLeft: "4px solid #D6438C" }}>
-                <strong style={{ color: "#1E3A8A", display: "block", marginBottom: "4px" }}>Hormonal Health</strong>
-                <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Elevated LH/FSH ratio and hyperandrogenism.</p>
+          <div className="fable-spotlight-grid">
+            <div className="fable-spotlight-item">
+              <img src="/assets/images/womens-therapy.png" alt="PCOS Care" className="fable-circle-img" />
+              <div>
+                <strong style={{ color: "#1E3A8A", fontSize: "1.05rem", display: "block", marginBottom: "4px" }}>
+                  Cellular Second Messengers
+                </strong>
+                <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>
+                  Participates in intracellular inositol-phosphoglycan signaling pathways.
+                </p>
               </div>
+            </div>
 
-              <div style={{ background: "rgba(214, 67, 140, 0.05)", padding: "20px", borderRadius: "16px", borderLeft: "4px solid #1E3A8A" }}>
-                <strong style={{ color: "#1E3A8A", display: "block", marginBottom: "4px" }}>Metabolic Health</strong>
-                <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Compromised cellular insulin receptor signaling.</p>
-              </div>
-
-              <div style={{ background: "rgba(214, 67, 140, 0.05)", padding: "20px", borderRadius: "16px", borderLeft: "4px solid #F472B6" }}>
-                <strong style={{ color: "#1E3A8A", display: "block", marginBottom: "4px" }}>Reproductive Health</strong>
-                <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Anovulatory menstrual irregularity &amp; follicular delay.</p>
-              </div>
-
-              <div style={{ background: "rgba(214, 67, 140, 0.05)", padding: "20px", borderRadius: "16px", borderLeft: "4px solid #0F3D28" }}>
-                <strong style={{ color: "#1E3A8A", display: "block", marginBottom: "4px" }}>Nutritional Strategy</strong>
-                <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Inositol and micronutrient nutritional support.</p>
+            <div className="fable-spotlight-item">
+              <img src="/assets/images/research-labs.png" alt="Chromium Action" className="fable-circle-img" />
+              <div>
+                <strong style={{ color: "#1E3A8A", fontSize: "1.05rem", display: "block", marginBottom: "4px" }}>
+                  Macronutrient Metabolism
+                </strong>
+                <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>
+                  Chromium picolinate contributes to normal macronutrient and glucose metabolism.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 3: SCIENTIFIC STORY (THE 40:1 INOSITOL CONCEPT) ═══ */}
-      <section className="monograph-section" style={{ background: "var(--color-cream-light)" }}>
+      {/* ═══ 3. SYNERGISTIC THERAPY ═══ */}
+      <section className="fable-ritual-section">
         <div className="container">
-          <div className="monograph-card">
-            <span className="eyebrow-label" style={{ color: "#D6438C" }}>THE 40:1 INOSITOL CONCEPT</span>
-            <h2 style={{ fontSize: "1.75rem", marginBottom: "var(--space-4)" }}>Physiological Inositol Alignment</h2>
-            
-            <p style={{ fontSize: "var(--text-base)", color: "var(--color-text-muted)", lineHeight: "1.7", marginBottom: "var(--space-6)" }}>
-              SARANYA® provides <strong>Myo-Inositol 1100 mg</strong> + <strong>D-Chiro Inositol 27.6 mg</strong> (approximating the 40:1 ratio observed in human plasma).
-            </p>
+          <span className="eyebrow-label" style={{ color: "#1E3A8A" }}>SYNERGISTIC CARE</span>
+          <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 2.75rem)", fontFamily: "var(--font-heading)", color: "#1E3A8A" }}>
+            Complete Women&apos;s Wellness
+          </h2>
 
-            <div style={{ padding: "20px", background: "rgba(30, 58, 138, 0.05)", borderRadius: "16px", borderLeft: "4px solid #1E3A8A", marginBottom: "var(--space-6)" }}>
-              <strong style={{ fontSize: "0.95rem", color: "#1E3A8A", display: "block", marginBottom: "4px" }}>International Guideline Clarification:</strong>
-              <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>
-                State clearly that current international PCOS guidance does not establish one specific inositol formulation, dose, or ratio as universally superior. SARANYA® provides a balanced nutritional option designed for individual patient suitability.
-              </p>
+          <div className="fable-ritual-card">
+            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+              <img src="/assets/images/womens-therapy.png" alt="SARANYA" style={{ width: "40px", height: "auto" }} />
+              <span style={{ fontWeight: 800, color: "#1E3A8A" }}>SARANYA® Tablets</span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ SECTION 4: FOUR COMPONENTS MATRIX ═══ */}
-      <section className="monograph-section">
-        <div className="container">
-          <div className="monograph-card">
-            <span className="eyebrow-label" style={{ color: "#D6438C" }}>FOUR-NUTRIENT MATRIX</span>
-            <h2 style={{ fontSize: "1.75rem", marginBottom: "var(--space-4)" }}>Ingredient &amp; Strength Breakdown</h2>
-            
-            <div className="nutrient-matrix-grid">
-              <div className="nutrient-card">
-                <span className="slide-badge" style={{ background: "rgba(214, 67, 140, 0.15)", color: "#D6438C", marginBottom: "8px" }}>1100 mg</span>
-                <h4 style={{ color: "#1E3A8A", marginBottom: "4px" }}>Myo-Inositol</h4>
-                <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Cellular second messenger involved in FSH signal transduction.</p>
-              </div>
-
-              <div className="nutrient-card">
-                <span className="slide-badge" style={{ background: "rgba(214, 67, 140, 0.15)", color: "#D6438C", marginBottom: "8px" }}>27.6 mg</span>
-                <h4 style={{ color: "#1E3A8A", marginBottom: "4px" }}>D-Chiro Inositol</h4>
-                <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Participates in glycogen synthesis &amp; insulin action.</p>
-              </div>
-
-              <div className="nutrient-card">
-                <span className="slide-badge" style={{ background: "rgba(30, 58, 138, 0.15)", color: "#1E3A8A", marginBottom: "8px" }}>400 mcg</span>
-                <h4 style={{ color: "#1E3A8A", marginBottom: "4px" }}>Chromium Picolinate</h4>
-                <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Trace mineral involved in normal macronutrient metabolism.</p>
-              </div>
-
-              <div className="nutrient-card">
-                <span className="slide-badge" style={{ background: "rgba(30, 58, 138, 0.15)", color: "#1E3A8A", marginBottom: "8px" }}>400 IU</span>
-                <h4 style={{ color: "#1E3A8A", marginBottom: "4px" }}>Vitamin D2</h4>
-                <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Provides nutritional support for daily Vitamin D requirements.</p>
-              </div>
+            <span style={{ fontSize: "1.2rem", fontWeight: 900, color: "#D6438C" }}>+</span>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+              <img src="/assets/images/3d-pharma-bottle.png" alt="UV 60K" style={{ width: "35px", height: "auto" }} />
+              <span style={{ fontWeight: 800, color: "#2E7FE0" }}>UV 60K Softgel</span>
             </div>
+
+            <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#1E3A8A", color: "#ffffff", padding: "10px 24px", fontSize: "0.85rem" }}>
+              REQUEST COMBINED SAMPLE →
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 5: MECHANISM / RATIONALE ═══ */}
-      <section className="monograph-section" style={{ background: "var(--color-cream-light)" }}>
-        <div className="container">
-          <div className="monograph-card">
-            <span className="eyebrow-label" style={{ color: "#D6438C" }}>SCIENTIFIC RATIONALE</span>
-            <h2 style={{ fontSize: "1.75rem", marginBottom: "var(--space-4)" }}>Cellular Signaling &amp; Metabolism</h2>
-            
-            <p style={{ fontSize: "var(--text-base)", color: "var(--color-text-muted)", lineHeight: "1.7" }}>
-              Myo- and D-Chiro Inositol participate in intracellular inositol-phosphoglycan (IPG) second messenger signaling pathways. Chromium contributes to normal macronutrient metabolism, and Vitamin D supports endocrine homeostasis.
-            </p>
-          </div>
+      {/* ═══ 4. STICKY BOTTOM FLOATING BAR ═══ */}
+      <div className="fable-sticky-bar">
+        <img src="/assets/images/womens-therapy.png" alt="SARANYA Mini" />
+        <div>
+          <strong style={{ fontSize: "0.85rem", color: "#1E3A8A", display: "block" }}>SARANYA®</strong>
+          <span style={{ fontSize: "0.75rem", color: "var(--color-text-muted)" }}>Pink Strip Pack Tablets</span>
         </div>
-      </section>
-
-      {/* ═══ SECTION 6: NUTRITIONAL ROLE ═══ */}
-      <section className="monograph-section">
-        <div className="container">
-          <div className="monograph-card">
-            <span className="eyebrow-label" style={{ color: "#D6438C" }}>NUTRITIONAL ROLE POSITIONING</span>
-            <h2 style={{ fontSize: "1.75rem", marginBottom: "var(--space-4)" }}>Support Within Comprehensive PCOS Care</h2>
-            
-            <p style={{ fontSize: "var(--text-lg)", color: "var(--color-text-muted)", lineHeight: "1.7" }}>
-              Positioned strictly as <strong>nutritional support</strong> within individualized PCOS management — not as a cure, infertility treatment, or replacement for prescribed medical or lifestyle management.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ SECTION 7: EVIDENCE & GUIDELINES ═══ */}
-      <section className="monograph-section" style={{ background: "var(--color-cream-light)" }}>
-        <div className="container">
-          <div className="monograph-card">
-            <span className="eyebrow-label" style={{ color: "#D6438C" }}>CLINICAL GUIDELINES</span>
-            <h2 style={{ fontSize: "1.75rem", marginBottom: "var(--space-4)" }}>International PCOS Consensus Context</h2>
-            
-            <p style={{ fontSize: "var(--text-base)", color: "var(--color-text-muted)", lineHeight: "1.7", marginBottom: "var(--space-4)" }}>
-              International evidence-based guidelines for PCOS acknowledge inositols as nutritional options for metabolic wellness under professional guidance.
-            </p>
-
-            <div style={{ padding: "16px 20px", background: "rgba(214, 67, 140, 0.1)", borderRadius: "12px", borderLeft: "4px solid #D6438C" }}>
-              <strong style={{ fontSize: "0.9rem", color: "#1E3A8A", display: "block" }}>Reference Citation:</strong>
-              <span style={{ fontSize: "0.85rem", color: "var(--color-text-muted)" }}>
-                Teede HJ, et al. Recommendations from the international evidence-based guideline for the assessment and management of polycystic ovary syndrome. <em>Hum Reprod.</em> 2023.
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ SECTION 8: USE & SAFETY ═══ */}
-      <section className="monograph-section">
-        <div className="container">
-          <div className="monograph-card" style={{ borderLeft: "5px solid #1E3A8A" }}>
-            <span className="eyebrow-label" style={{ color: "#1E3A8A" }}>USE &amp; SAFETY GUIDANCE</span>
-            <h2 style={{ fontSize: "1.75rem", marginBottom: "var(--space-4)" }}>Usage Instructions &amp; Precautions</h2>
-            
-            <ul style={{ paddingLeft: "20px", color: "var(--color-text-muted)", lineHeight: "1.7", fontSize: "0.95rem" }}>
-              <li style={{ marginBottom: "8px" }}><strong>Dose:</strong> Take as directed by the healthcare professional.</li>
-              <li style={{ marginBottom: "8px" }}><strong>Packaging Format:</strong> Supplied in tablets inside pink strip packs (never as a sachet).</li>
-              <li style={{ marginBottom: "8px" }}><strong>Pregnancy &amp; Fertility:</strong> Consult a healthcare provider prior to use during pregnancy or when planning pregnancy.</li>
-              <li style={{ marginBottom: "8px" }}><strong>General Precaution:</strong> Dietary food supplement / nutraceutical — not for medicinal use.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ SECTION 9: CLOSING & STATUTORY DISCLAIMER ═══ */}
-      <section className="monograph-section" style={{ background: "#1E3A8A", color: "#ffffff", padding: "var(--space-12) 0", textAlign: "center" }}>
-        <div className="container" style={{ textAlign: "center" }}>
-          <img src="/assets/images/womens-therapy.png" alt="SARANYA Box & Strip" style={{ width: "120px", height: "auto", margin: "0 auto var(--space-4)", filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.4))" }} />
-          
-          <h3 style={{ fontSize: "1.75rem", color: "#ffffff", marginBottom: "4px" }}>
-            MARSELUS PHARMACEUTICALS PVT. LTD.
-          </h3>
-          <span style={{ fontSize: "0.9rem", color: "#F472B6", fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            HERITAGE OF HEALING
-          </span>
-
-          <p style={{ fontSize: "0.8rem", color: "rgba(255, 255, 255, 0.75)", maxWidth: "70ch", margin: "var(--space-6) auto 0 auto", lineHeight: "1.6" }}>
-            The information presented is intended for healthcare-professional and general educational purposes. Products should be used according to applicable prescribing, regulatory, and label requirements.
-          </p>
-        </div>
-      </section>
+        <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#1E3A8A", color: "#ffffff", padding: "8px 18px", fontSize: "0.8rem", fontWeight: 800, marginLeft: "auto" }}>
+          REQUEST SAMPLE
+        </Link>
+      </div>
 
     </main>
   );

@@ -3092,6 +3092,270 @@ textarea.form-input {
   color: var(--color-text-muted);
 }
 
+/* ═══════════════════════════════════
+   LUXURY EDITORIAL PRODUCT PAGE LAYOUT (FABLE & MANE STYLE)
+   ═══════════════════════════════════ */
+
+/* Product Split Grid */
+.fable-product-grid {
+  display: grid;
+  grid-template-columns: 80px 1.1fr 1fr;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .fable-product-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Vertical Thumbnails */
+.fable-thumb-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 1024px) {
+  .fable-thumb-column {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.fable-thumb-btn {
+  width: 68px;
+  height: 68px;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  background: #ffffff;
+  padding: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(15, 61, 40, 0.05);
+}
+
+.fable-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fable-thumb-btn.active {
+  border-color: var(--color-forest);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(15, 61, 40, 0.15);
+}
+
+/* Arched Architectural Stage */
+.fable-arch-stage {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  border-radius: 260px 260px 32px 32px;
+  background: linear-gradient(180deg, #F9F5EC 0%, #EFE9DB 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(15, 61, 40, 0.08);
+  overflow: hidden;
+}
+
+.fable-arch-stage img {
+  max-height: 380px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 25px 40px rgba(15, 61, 40, 0.2));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fable-arch-stage:hover img {
+  transform: scale(1.06) translateY(-8px);
+}
+
+/* Product Info Right Column */
+.fable-product-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.fable-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.fable-star-rating {
+  color: #EAB308;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+.fable-accordion-wrap {
+  margin-top: 28px;
+  border-top: 1px solid rgba(15, 61, 40, 0.12);
+}
+
+.fable-accordion-item {
+  border-bottom: 1px solid rgba(15, 61, 40, 0.12);
+}
+
+.fable-accordion-header {
+  width: 100%;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  border: none;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-forest);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  text-align: left;
+}
+
+.fable-accordion-content {
+  padding-bottom: 18px;
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+/* "Our Promises" Circular Icon Badges */
+.fable-promises-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(15, 61, 40, 0.1);
+  flex-wrap: wrap;
+}
+
+.fable-promise-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+}
+
+.fable-promise-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(15, 61, 40, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--color-forest);
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(15, 61, 40, 0.05);
+}
+
+.fable-promise-label {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-forest);
+}
+
+/* Feature Spotlight Circles Section ("Hydrate & Shine") */
+.fable-spotlight-section {
+  padding: var(--space-16) 0;
+  background: var(--color-cream-light);
+  text-align: center;
+}
+
+.fable-spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.fable-spotlight-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+}
+
+.fable-circle-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(15, 61, 40, 0.12);
+  border: 3px solid #ffffff;
+}
+
+/* Complete Your Ritual / Synergistic Therapy Section */
+.fable-ritual-section {
+  padding: var(--space-16) 0;
+  background: #EAE6DA;
+  text-align: center;
+}
+
+.fable-ritual-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  background: #ffffff;
+  padding: 20px 32px;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(15, 61, 40, 0.08);
+  margin-top: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Bottom Floating Sticky Bar */
+.fable-sticky-bar {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 10px 20px;
+  border-radius: 40px;
+  border: 1px solid rgba(15, 61, 40, 0.12);
+  box-shadow: 0 12px 35px rgba(15, 61, 40, 0.18);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fable-sticky-bar img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .fable-sticky-bar {
+    left: 12px;
+    right: 12px;
+    justify-content: space-between;
+  }
+}
+
+
 
 
 

@@ -1,232 +1,238 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import SpineTab from "@/components/SpineTab";
 
-export default function ImmunomarsMasterPage() {
+export default function ImmunomarsLuxuryPage() {
+  const [selectedThumb, setSelectedThumb] = useState(0);
+  const [openAccordion, setOpenAccordion] = useState<string | null>("discover");
+
+  const images = [
+    "/assets/images/nutrition-therapy.png",
+    "/assets/images/3d-shield.png",
+  ];
+
+  const toggleAccordion = (id: string) => {
+    setOpenAccordion(openAccordion === id ? null : id);
+  };
+
   return (
-    <main className="page-content" style={{ paddingTop: "120px", paddingBottom: 0, background: "var(--color-cream)" }}>
+    <main className="page-content" style={{ paddingTop: "120px", paddingBottom: "var(--space-20)", background: "#FAF8F5" }}>
       
-      {/* ═══ SECTION 1: HERO (ACTUAL SACHET FORMAT) ═══ */}
-      <section className="monograph-section spine-tab-container" style={{ background: "linear-gradient(135deg, #F97316 0%, #1E3A8A 100%)", color: "#ffffff", padding: "var(--space-16) 0" }}>
+      {/* ═══ 1. FABLE & MANE STYLE LUXURY PRODUCT HERO ═══ */}
+      <section className="section spine-tab-container" style={{ padding: "var(--space-8) 0 var(--space-16) 0" }}>
         <SpineTab label="IMMUNOMARS™ — CLINICAL SACHET MONOGRAPH" />
 
         <div className="container">
-          <div className="grid-split">
+          <div className="fable-product-grid">
             
-            {/* Left Column: Copy & Positioning */}
-            <div>
-              <span className="eyebrow-badge" style={{ background: "rgba(255, 255, 255, 0.2)", color: "#ffffff", borderColor: "rgba(255, 255, 255, 0.4)", marginBottom: "var(--space-4)" }}>
-                CLINICAL NUTRITION · 15G SACHET DRINK MIX
-              </span>
-              
-              <h1 style={{ fontSize: "clamp(2.75rem, 5.5vw, 4.5rem)", marginBottom: "var(--space-2)", color: "#ffffff" }}>
-                IMMUNOMARS<span style={{ fontSize: "1.5rem", verticalAlign: "super", color: "#F97316" }}>™</span>
-              </h1>
-              
-              <p style={{ fontSize: "1.1rem", fontWeight: 700, color: "#FFE4E6", marginBottom: "var(--space-4)" }}>
-                L-Glutamine + L-Arginine + L-Lysine + Vitamins + Zinc + Selenium Sachets
-              </p>
-
-              <p style={{ fontSize: "var(--text-xl)", color: "rgba(255, 255, 255, 0.95)", lineHeight: "1.65", marginBottom: "var(--space-6)" }}>
-                Advanced immunonutrition &amp; targeted amino acid support. Orange flavour, sugar-free.
-              </p>
-
-              <div className="composition-pill-list" style={{ marginBottom: "var(--space-8)" }}>
-                <span className="composition-pill" style={{ background: "rgba(255,255,255,0.15)", color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>✓ L-Glutamine 10 g (Hero Nutrient)</span>
-                <span className="composition-pill" style={{ background: "rgba(255,255,255,0.15)", color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>✓ L-Arginine 1.5 g + L-Lysine 0.5 g</span>
-                <span className="composition-pill" style={{ background: "rgba(255,255,255,0.15)", color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>✓ Real Sachet Format</span>
-              </div>
-
-              <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", alignItems: "center" }}>
-                <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#ffffff", color: "#F97316", fontWeight: 800 }}>
-                  Nutritional Monograph →
-                </Link>
-                <span className="verify-tag" style={{ background: "rgba(255, 255, 255, 0.1)", color: "#ffffff", borderColor: "rgba(255, 255, 255, 0.3)" }}>
-                  HERITAGE OF HEALING
-                </span>
-              </div>
+            {/* Left Vertical Thumbnails Strip */}
+            <div className="fable-thumb-column">
+              {images.map((img, idx) => (
+                <button 
+                  key={idx}
+                  className={`fable-thumb-btn ${selectedThumb === idx ? "active" : ""}`}
+                  onClick={() => setSelectedThumb(idx)}
+                >
+                  <img src={img} alt={`IMMUNOMARS View ${idx + 1}`} />
+                </button>
+              ))}
             </div>
 
-            {/* Right Column: Actual IMMUNOMARS Box & Real Sachet Format Render Stage */}
-            <div style={{ textAlign: "center" }}>
-              <div style={{ background: "rgba(255, 255, 255, 0.1)", backdropFilter: "blur(12px)", borderRadius: "32px", padding: "var(--space-8)", border: "1px solid rgba(255, 255, 255, 0.2)" }}>
-                <img src="/assets/images/nutrition-therapy.png" alt="IMMUNOMARS Box & Real Sachet Format" style={{ width: "85%", height: "auto", maxHeight: "240px", objectFit: "contain", margin: "0 auto", filter: "drop-shadow(0 20px 35px rgba(0,0,0,0.35))" }} />
-                <div style={{ marginTop: "var(--space-4)", display: "flex", justifyContent: "center", gap: "8px" }}>
-                  <span className="slide-badge" style={{ fontSize: "11px", background: "rgba(249, 115, 22, 0.4)", color: "#ffffff" }}>Real Sachet Format</span>
-                  <span className="slide-badge" style={{ fontSize: "11px", background: "rgba(255, 255, 255, 0.15)", color: "#ffffff" }}>15g Drink Mix</span>
+            {/* Middle Arched Architectural Product Stage (Orange + Royal Blue) */}
+            <div className="fable-arch-stage" style={{ background: "linear-gradient(180deg, rgba(249, 115, 22, 0.2) 0%, rgba(30, 58, 138, 0.1) 100%)" }}>
+              <img src={images[selectedThumb]} alt="IMMUNOMARS Box and Real Sachet Format" />
+            </div>
+
+            {/* Right Product Specs & Accordion List */}
+            <div className="fable-product-info">
+              
+              <div className="fable-rating-row">
+                <div className="fable-star-rating">★★★★★</div>
+                <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#F97316" }}>(Clinical Immunonutrition Sachet)</span>
+              </div>
+
+              <span className="eyebrow-badge" style={{ color: "#F97316", borderColor: "rgba(249, 115, 22, 0.3)", marginBottom: "8px", width: "fit-content" }}>
+                CLINICAL NUTRITION · 15G DRINK MIX SACHET
+              </span>
+
+              <h1 style={{ fontSize: "clamp(2.25rem, 4vw, 3.25rem)", fontFamily: "var(--font-heading)", color: "#1E3A8A", marginBottom: "6px", lineHeight: "1.1" }}>
+                IMMUNOMARS<span style={{ fontSize: "1.2rem", verticalAlign: "super", color: "#F97316" }}>™</span>
+              </h1>
+
+              <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "#F97316", marginBottom: "var(--space-4)" }}>
+                L-Glutamine 10g + L-Arginine 1.5g + L-Lysine + Vitamins + Zinc + Selenium
+              </p>
+
+              <p style={{ fontSize: "0.95rem", color: "var(--color-text-muted)", lineHeight: "1.65", marginBottom: "var(--space-6)" }}>
+                Advanced immunonutrition &amp; targeted amino acid support in clinical nutrition settings. Orange flavour, sugar-free 15g sachet.
+              </p>
+
+              <div style={{ display: "flex", gap: "12px", marginBottom: "var(--space-6)" }}>
+                <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#F97316", color: "#ffffff", padding: "14px 32px", fontSize: "0.95rem", fontWeight: 800 }}>
+                  REQUEST NUTRITIONAL MONOGRAPH →
+                </Link>
+              </div>
+
+              {/* Accordions */}
+              <div className="fable-accordion-wrap">
+                
+                <div className="fable-accordion-item">
+                  <button className="fable-accordion-header" onClick={() => toggleAccordion("discover")}>
+                    <span>DISCOVER MORE</span>
+                    <span>{openAccordion === "discover" ? "−" : "+"}</span>
+                  </button>
+                  {openAccordion === "discover" && (
+                    <div className="fable-accordion-content">
+                      IMMUNOMARS™ combines L-Glutamine 10 g as the hero mucosal substrate, supported by L-Arginine, L-Lysine, Vitamin C 80mg, Vit E 6.7mg, B6 1.5mg, B12 2.2mcg, Zinc 12mg, and Selenium 40mcg per 15g sachet.
+                    </div>
+                  )}
+                </div>
+
+                <div className="fable-accordion-item">
+                  <button className="fable-accordion-header" onClick={() => toggleAccordion("ingredients")}>
+                    <span>FULL COMPOSITION PER 15G SACHET</span>
+                    <span>{openAccordion === "ingredients" ? "−" : "+"}</span>
+                  </button>
+                  {openAccordion === "ingredients" && (
+                    <div className="fable-accordion-content">
+                      <ul style={{ paddingLeft: "18px", margin: 0 }}>
+                        <li><strong>L-Glutamine (Hero):</strong> 10.0 g</li>
+                        <li><strong>L-Arginine:</strong> 1.5 g</li>
+                        <li><strong>L-Lysine HCl:</strong> 0.5 g</li>
+                        <li><strong>Antioxidant Matrix:</strong> Vit C 80mg, Vit E 6.7mg, B6 1.5mg, B12 2.2mcg, Zinc 12mg, Selenium 40mcg</li>
+                        <li><strong>Flavour:</strong> Orange flavour, 100% Sugar-Free</li>
+                      </ul>
+                    </div>
+                  )}
+                </div>
+
+                <div className="fable-accordion-item">
+                  <button className="fable-accordion-header" onClick={() => toggleAccordion("context")}>
+                    <span>CLINICAL NUTRITION CONTEXT</span>
+                    <span>{openAccordion === "context" ? "−" : "+"}</span>
+                  </button>
+                  {openAccordion === "context" && (
+                    <div className="fable-accordion-content">
+                      Immunonutrition is relevant in selected clinical settings, especially around major surgery and catabolic nutritional risk. (Evidence varies by formula and population).
+                    </div>
+                  )}
+                </div>
+
+                <div className="fable-accordion-item">
+                  <button className="fable-accordion-header" onClick={() => toggleAccordion("safety")}>
+                    <span>PRECAUTIONS &amp; SAFETY</span>
+                    <span>{openAccordion === "safety" ? "−" : "+"}</span>
+                  </button>
+                  {openAccordion === "safety" && (
+                    <div className="fable-accordion-content">
+                      Use current approved label warnings and appropriate professional guidance, particularly in patients with significant renal, hepatic, or metabolic conditions.
+                    </div>
+                  )}
+                </div>
+
+              </div>
+
+              {/* Our Promises Circular Badges */}
+              <div className="fable-promises-row">
+                <div className="fable-promise-badge">
+                  <div className="fable-promise-icon">🥤</div>
+                  <span className="fable-promise-label">15G REAL SACHET</span>
+                </div>
+                <div className="fable-promise-badge">
+                  <div className="fable-promise-icon">⚡</div>
+                  <span className="fable-promise-label">10G GLUTAMINE</span>
+                </div>
+                <div className="fable-promise-badge">
+                  <div className="fable-promise-icon">🍊</div>
+                  <span className="fable-promise-label">SUGAR FREE</span>
+                </div>
+                <div className="fable-promise-badge">
+                  <div className="fable-promise-icon">🛡️</div>
+                  <span className="fable-promise-label">ZINC + SELENIUM</span>
                 </div>
               </div>
+
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 2: NUTRITIONAL CONCEPT (GUT + AMINO ACIDS) ═══ */}
-      <section className="monograph-section">
+      {/* ═══ 2. FEATURE HIGHLIGHT GRID ═══ */}
+      <section className="fable-spotlight-section">
         <div className="container">
-          <div className="monograph-card">
-            <span className="eyebrow-label" style={{ color: "#F97316" }}>IMMUNONUTRITION CONCEPT</span>
-            <h2 style={{ fontSize: "2rem", marginBottom: "var(--space-4)" }}>Gut Barrier &amp; Metabolic Support</h2>
-            
-            <p style={{ fontSize: "var(--text-lg)", color: "var(--color-text-muted)", lineHeight: "1.7", marginBottom: "var(--space-6)" }}>
-              IMMUNOMARS™ combines high-dose <strong>L-Glutamine (10 g)</strong> as the hero mucosal substrate, supported by L-Arginine, L-Lysine, and targeted antioxidant micronutrients for clinical metabolic conditions.
-            </p>
+          <span className="eyebrow-label" style={{ color: "#F97316" }}>IMMUNONUTRITION &amp; ENTEROCYTE SUBSTRATE</span>
+          <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 2.75rem)", fontFamily: "var(--font-heading)", color: "#1E3A8A" }}>
+            Rebuild, Protect &amp; Recover
+          </h2>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "16px" }}>
-              <div style={{ background: "rgba(249, 115, 22, 0.05)", padding: "20px", borderRadius: "16px", borderLeft: "4px solid #F97316" }}>
-                <strong style={{ color: "#1E3A8A", display: "block", marginBottom: "4px" }}>Enterocyte Substrate</strong>
-                <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>L-Glutamine 10 g fuels rapid intestinal mucosal cell turnover.</p>
-              </div>
-
-              <div style={{ background: "rgba(249, 115, 22, 0.05)", padding: "20px", borderRadius: "16px", borderLeft: "4px solid #1E3A8A" }}>
-                <strong style={{ color: "#1E3A8A", display: "block", marginBottom: "4px" }}>Nitrogen &amp; Nitric Oxide</strong>
-                <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>L-Arginine 1.5 g supports protein synthesis pathways.</p>
-              </div>
-
-              <div style={{ background: "rgba(249, 115, 22, 0.05)", padding: "20px", borderRadius: "16px", borderLeft: "4px solid #E08A2E" }}>
-                <strong style={{ color: "#1E3A8A", display: "block", marginBottom: "4px" }}>Essential Protein Synthesis</strong>
-                <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>L-Lysine HCl 0.5 g provides essential amino acid balance.</p>
-              </div>
-
-              <div style={{ background: "rgba(249, 115, 22, 0.05)", padding: "20px", borderRadius: "16px", borderLeft: "4px solid #0F3D28" }}>
-                <strong style={{ color: "#1E3A8A", display: "block", marginBottom: "4px" }}>Antioxidant Micronutrients</strong>
-                <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Zinc, Selenium, Vit C, Vit E, B6, B12 cofactor matrix.</p>
+          <div className="fable-spotlight-grid">
+            <div className="fable-spotlight-item">
+              <img src="/assets/images/nutrition-therapy.png" alt="Sachet Mix" className="fable-circle-img" />
+              <div>
+                <strong style={{ color: "#1E3A8A", fontSize: "1.05rem", display: "block", marginBottom: "4px" }}>
+                  Intestinal Mucosal Substrate
+                </strong>
+                <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>
+                  L-Glutamine 10 g serves as the primary energy substrate for enterocytes.
+                </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ═══ SECTION 3: FORMULATION SPECIFICATION (PER 15G SACHET) ═══ */}
-      <section className="monograph-section" style={{ background: "var(--color-cream-light)" }}>
-        <div className="container">
-          <div className="monograph-card">
-            <span className="eyebrow-label" style={{ color: "#F97316" }}>COMPOSITION SPECIFICATION</span>
-            <h2 style={{ fontSize: "1.75rem", marginBottom: "var(--space-4)" }}>Per 15 g Sachet Content</h2>
-            
-            <table className="ingredient-table">
-              <thead>
-                <tr>
-                  <th>Component Category</th>
-                  <th>Active Nutrient</th>
-                  <th>Quantity Per Sachet</th>
-                  <th>Nutritional Role</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Hero Amino Acid</strong></td>
-                  <td>L-Glutamine</td>
-                  <td>10.0 g (10,000 mg)</td>
-                  <td>Enterocyte respiratory substrate</td>
-                </tr>
-                <tr>
-                  <td><strong>Supporting Amino Acid</strong></td>
-                  <td>L-Arginine</td>
-                  <td>1.5 g (1500 mg)</td>
-                  <td>Nitric oxide &amp; collagen precursor</td>
-                </tr>
-                <tr>
-                  <td><strong>Essential Amino Acid</strong></td>
-                  <td>L-Lysine HCl</td>
-                  <td>0.5 g (500 mg)</td>
-                  <td>Essential amino acid substrate</td>
-                </tr>
-                <tr>
-                  <td><strong>Vitamins</strong></td>
-                  <td>Vit C, Vit E, B6, B12</td>
-                  <td>80mg, 6.7mg, 1.5mg, 2.2mcg</td>
-                  <td>Antioxidant &amp; metabolic cofactors</td>
-                </tr>
-                <tr>
-                  <td><strong>Trace Minerals</strong></td>
-                  <td>Zinc &amp; Selenium</td>
-                  <td>12 mg &amp; 40 mcg</td>
-                  <td>Immune function &amp; enzyme cofactors</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ SECTION 4 & 5: SCIENTIFIC STORY & MECHANISM ═══ */}
-      <section className="monograph-section">
-        <div className="container">
-          <div className="amino-matrix-grid">
-            <div className="amino-card">
-              <strong style={{ color: "#F97316", display: "block", marginBottom: "4px" }}>L-Glutamine (10 g)</strong>
-              <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Amino acid substrate vital for enterocyte energy &amp; intestinal mucosal barrier seal.</p>
-            </div>
-
-            <div className="amino-card">
-              <strong style={{ color: "#F97316", display: "block", marginBottom: "4px" }}>L-Arginine (1.5 g)</strong>
-              <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Nitric oxide pathway precursor facilitating microvascular perfusion &amp; tissue repair.</p>
-            </div>
-
-            <div className="amino-card">
-              <strong style={{ color: "#F97316", display: "block", marginBottom: "4px" }}>L-Lysine HCl (0.5 g)</strong>
-              <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Essential amino acid necessary for structural protein synthesis.</p>
-            </div>
-
-            <div className="amino-card">
-              <strong style={{ color: "#1E3A8A", display: "block", marginBottom: "4px" }}>Antioxidant Co-factors</strong>
-              <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>Zinc (12mg) + Selenium (40mcg) + Vitamin C (80mg) support cellular antioxidant defenses.</p>
+            <div className="fable-spotlight-item">
+              <img src="/assets/images/3d-shield.png" alt="Antioxidant Co-factors" className="fable-circle-img" />
+              <div>
+                <strong style={{ color: "#1E3A8A", fontSize: "1.05rem", display: "block", marginBottom: "4px" }}>
+                  Antioxidant Micronutrients
+                </strong>
+                <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>
+                  Zinc, Selenium, Vitamin C, and E support cellular antioxidant defenses.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 6: CLINICAL NUTRITION CONTEXT ═══ */}
-      <section className="monograph-section" style={{ background: "var(--color-cream-light)" }}>
+      {/* ═══ 3. SYNERGISTIC THERAPY ═══ */}
+      <section className="fable-ritual-section">
         <div className="container">
-          <div className="monograph-card">
-            <span className="eyebrow-label" style={{ color: "#F97316" }}>CLINICAL NUTRITION CONTEXT</span>
-            <h2 style={{ fontSize: "1.75rem", marginBottom: "var(--space-4)" }}>Selected Clinical Settings</h2>
-            
-            <p style={{ fontSize: "var(--text-lg)", color: "var(--color-text-muted)", lineHeight: "1.7" }}>
-              Immunonutrition is relevant in selected clinical settings, especially around major surgery and catabolic nutritional risk. <em>Note: Evidence varies by formula and patient population; avoid unsupported claims such as &apos;cures infection&apos; or guaranteed faster recovery.</em>
-            </p>
+          <span className="eyebrow-label" style={{ color: "#1E3A8A" }}>SYNERGISTIC CARE</span>
+          <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 2.75rem)", fontFamily: "var(--font-heading)", color: "#1E3A8A" }}>
+            Complete Nutritional Therapy
+          </h2>
+
+          <div className="fable-ritual-card">
+            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+              <img src="/assets/images/nutrition-therapy.png" alt="IMMUNOMARS" style={{ width: "40px", height: "auto" }} />
+              <span style={{ fontWeight: 800, color: "#F97316" }}>IMMUNOMARS™ Sachet</span>
+            </div>
+            <span style={{ fontSize: "1.2rem", fontWeight: 900, color: "#1E3A8A" }}>+</span>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+              <img src="/assets/images/3d-pharma-bottle.png" alt="UV 60K" style={{ width: "35px", height: "auto" }} />
+              <span style={{ fontWeight: 800, color: "#2E7FE0" }}>UV 60K Softgel</span>
+            </div>
+
+            <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#F97316", color: "#ffffff", padding: "10px 24px", fontSize: "0.85rem" }}>
+              REQUEST COMBINED SAMPLE →
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 7 & 8: USE & PRECAUTIONS / SAFETY ═══ */}
-      <section className="monograph-section">
-        <div className="container">
-          <div className="monograph-card" style={{ borderLeft: "5px solid #F97316" }}>
-            <span className="eyebrow-label" style={{ color: "#F97316" }}>USE &amp; SAFETY GUIDANCE</span>
-            <h2 style={{ fontSize: "1.75rem", marginBottom: "var(--space-4)" }}>Preparation &amp; Precautions</h2>
-            
-            <ul style={{ paddingLeft: "20px", color: "var(--color-text-muted)", lineHeight: "1.7", fontSize: "0.95rem" }}>
-              <li style={{ marginBottom: "8px" }}><strong>Preparation:</strong> Mix 1 sachet (15 g) in a glass of cool drinking water as directed by a healthcare professional.</li>
-              <li style={{ marginBottom: "8px" }}><strong>Flavour &amp; Formulation:</strong> Refreshing orange flavour, 100% sugar-free.</li>
-              <li style={{ marginBottom: "8px" }}><strong>Renal &amp; Hepatic Precautions:</strong> Use under strict medical supervision in patients with significant renal impairment, severe hepatic dysfunction, or amino acid metabolic disorders.</li>
-              <li style={{ marginBottom: "8px" }}><strong>Statutory Caution:</strong> Food supplement / nutraceutical — not for medicinal use. Not to exceed recommended daily usage.</li>
-            </ul>
-          </div>
+      {/* ═══ 4. STICKY BOTTOM FLOATING BAR ═══ */}
+      <div className="fable-sticky-bar">
+        <img src="/assets/images/nutrition-therapy.png" alt="IMMUNOMARS Mini" />
+        <div>
+          <strong style={{ fontSize: "0.85rem", color: "#F97316", display: "block" }}>IMMUNOMARS™</strong>
+          <span style={{ fontSize: "0.75rem", color: "var(--color-text-muted)" }}>15g Sugar-Free Sachet</span>
         </div>
-      </section>
-
-      {/* ═══ SECTION 9: CLOSING & STATUTORY DISCLAIMER ═══ */}
-      <section className="monograph-section" style={{ background: "#1E3A8A", color: "#ffffff", padding: "var(--space-12) 0", textAlign: "center" }}>
-        <div className="container" style={{ textAlign: "center" }}>
-          <img src="/assets/images/nutrition-therapy.png" alt="IMMUNOMARS Box & Sachet" style={{ width: "120px", height: "auto", margin: "0 auto var(--space-4)", filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.4))" }} />
-          
-          <h3 style={{ fontSize: "1.75rem", color: "#ffffff", marginBottom: "4px" }}>
-            MARSELUS PHARMACEUTICALS PVT. LTD.
-          </h3>
-          <span style={{ fontSize: "0.9rem", color: "#F97316", fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            HERITAGE OF HEALING
-          </span>
-
-          <p style={{ fontSize: "0.8rem", color: "rgba(255, 255, 255, 0.75)", maxWidth: "70ch", margin: "var(--space-6) auto 0 auto", lineHeight: "1.6" }}>
-            The information presented is intended for healthcare-professional and general educational purposes. Products should be used according to applicable prescribing, regulatory, and product-label requirements.
-          </p>
-        </div>
-      </section>
+        <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "#F97316", color: "#ffffff", padding: "8px 18px", fontSize: "0.8rem", fontWeight: 800, marginLeft: "auto" }}>
+          REQUEST SAMPLE
+        </Link>
+      </div>
 
     </main>
   );
