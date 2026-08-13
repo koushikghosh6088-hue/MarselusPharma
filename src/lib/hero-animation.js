@@ -1,7 +1,7 @@
 /* ===================================================
    MARSELUS PHARMACEUTICALS — HERO SCROLL ANIMATION
    Uses preloaded 210 frame images for buttery scrolling
-   Centered vertical framing + compact glassmorphic overlays
+   Ultra-smooth lerp inertia + dynamic HUD telemetry scroll reactivity
    =================================================== */
 
 export function initHeroScrollAnimation() {
@@ -126,21 +126,45 @@ export function initHeroScrollAnimation() {
     ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
   }
 
-  // Overlapping smooth opacity fade for text overlays
-  // Dynamic HUD Telemetry animation loop based on scroll progress
+  // Dynamic HUD Telemetry animation loop reactively driven by scroll progress
   function updateTextOverlays(progress) {
     const hudCards = document.querySelectorAll('.hero-hud-card');
-    if (!hudCards.length) return;
+    const orb1 = document.querySelector('.hero-glow-orb--1');
+    const orb2 = document.querySelector('.hero-glow-orb--2');
+    const progressFill = document.querySelector('.hud-progress-fill');
+    const isMobile = window.innerWidth < 768;
 
-    hudCards.forEach((card, idx) => {
-      // Subtle pulse and opacity dynamics based on scroll progress
-      const cardProgress = (progress + idx * 0.15) % 1;
-      const opacity = 0.85 + Math.sin(cardProgress * Math.PI * 2) * 0.15;
-      card.style.opacity = opacity.toFixed(2);
-    });
+    // 1. Dynamic background orb parallax shift as user scrolls 3D video
+    if (orb1) {
+      orb1.style.transform = `translate(${progress * 50}px, ${progress * -30}px) scale(${1 + progress * 0.15})`;
+    }
+    if (orb2) {
+      orb2.style.transform = `translate(${progress * -40}px, ${progress * 25}px) scale(${1 - progress * 0.12})`;
+    }
+
+    // 2. Dynamic mucosal absorption telemetry counter in Widget 3
+    if (progressFill) {
+      const absorptionPercentage = Math.min(99.4, Math.max(30, progress * 100)).toFixed(1);
+      progressFill.style.width = `${absorptionPercentage}%`;
+      const titleElem = document.querySelector('.hero-hud-card--3 .hud-title');
+      if (titleElem) {
+        titleElem.textContent = `${absorptionPercentage}% Mucosal Absorption`;
+      }
+    }
+
+    // 3. Parallax float and dynamic illumination for HUD cards
+    if (hudCards.length) {
+      hudCards.forEach((card, idx) => {
+        const floatY = Math.sin(progress * Math.PI * 2 + idx) * (isMobile ? 5 : 12);
+        const floatX = Math.cos(progress * Math.PI * 1.5 + idx) * (isMobile ? 3 : 8);
+        const scale = 1 + Math.sin(progress * Math.PI + idx * 0.5) * 0.02;
+
+        card.style.transform = `translate3d(${floatX}px, ${floatY}px, 0) scale(${scale})`;
+      });
+    }
   }
 
-  // Animation frame scrubbing loop
+  // Animation frame scrubbing loop with silky 60fps lerp inertia
   function tick() {
     const rect = container.getBoundingClientRect();
     const containerHeight = rect.height;
@@ -154,8 +178,8 @@ export function initHeroScrollAnimation() {
 
     targetFrame = heroProgress * (frameCount - 1);
 
-    // Smooth inertia interpolation
-    currentFrame += (targetFrame - currentFrame) * 0.14;
+    // Silky smooth inertia interpolation (0.09 factor)
+    currentFrame += (targetFrame - currentFrame) * 0.09;
 
     drawFrame(Math.round(currentFrame));
     updateTextOverlays(heroProgress);

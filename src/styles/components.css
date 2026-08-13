@@ -2216,10 +2216,10 @@ textarea.form-input {
   box-shadow: 0 20px 45px rgba(12, 56, 37, 0.14);
 }
 
-.hero-hud-card--1 { top: 14vh; right: 6vw; width: 270px; border-left: 3px solid #10b981; }
-.hero-hud-card--2 { top: 46vh; right: 5vw; width: 260px; border-left: 3px solid #3b82f6; }
-.hero-hud-card--3 { bottom: 12vh; left: 6vw; width: 270px; border-left: 3px solid #a855f7; }
-.hero-hud-card--4 { bottom: 12vh; right: 6vw; width: 280px; border-left: 3px solid #06b6d4; }
+.hero-hud-card--1 { top: 14vh; right: 6vw; width: 270px; border-left: 4px solid #10b981; background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(236, 253, 245, 0.85) 100%); }
+.hero-hud-card--2 { top: 46vh; right: 5vw; width: 260px; border-left: 4px solid #3b82f6; background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(239, 246, 255, 0.85) 100%); }
+.hero-hud-card--3 { bottom: 12vh; left: 6vw; width: 270px; border-left: 4px solid #a855f7; background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(250, 245, 255, 0.85) 100%); }
+.hero-hud-card--4 { bottom: 12vh; right: 6vw; width: 280px; border-left: 4px solid #06b6d4; background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(236, 254, 255, 0.85) 100%); }
 
 .hud-badge-row {
   display: flex;
@@ -2343,7 +2343,7 @@ textarea.form-input {
     grid-template-columns: 1fr 1fr !important;
     gap: 8px !important;
     position: absolute !important;
-    bottom: 6vh !important;
+    bottom: 12vh !important;
     left: 4vw !important;
     right: 4vw !important;
     top: auto !important;
