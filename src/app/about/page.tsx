@@ -175,9 +175,6 @@ export default function About() {
               <div className="team-card__role">Brand Strategy</div>
             </div>
           </div>
-          <p className="text-center text-muted reveal" style={{ marginTop: "var(--space-8)", fontSize: "var(--text-sm)" }}>
-            <em>Leadership profiles will be updated with approved names and photographs.</em>
-          </p>
         </div>
       </section>
 

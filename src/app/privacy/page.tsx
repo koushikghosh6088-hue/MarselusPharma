@@ -36,9 +36,6 @@ export default function PrivacyPolicy() {
           <h2 style={{ marginTop: "var(--space-8)", marginBottom: "var(--space-4)" }}>6. Contact Us</h2>
           <p>For any privacy-related questions, please contact Marselus Pharmaceuticals at <a href="mailto:info@marseluspharma.com">info@marseluspharma.com</a> or write to our corporate office in Kolkata.</p>
           
-          <p style={{ marginTop: "var(--space-8)", fontSize: "var(--text-sm)", color: "var(--color-gray-400)" }}>
-            <em>This privacy policy is a template and should be reviewed by legal counsel before publication.</em>
-          </p>
         </div>
       </section>
     </main>

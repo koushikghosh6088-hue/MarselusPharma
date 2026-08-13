@@ -41,9 +41,6 @@ export default function Terms() {
           <h2 style={{ marginTop: "var(--space-8)", marginBottom: "var(--space-4)" }}>Governing Law</h2>
           <p>These terms shall be governed by and construed in accordance with the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in Kolkata, West Bengal.</p>
 
-          <p style={{ marginTop: "var(--space-8)", fontSize: "var(--text-sm)", color: "var(--color-gray-400)" }}>
-            <em>These terms are a template and should be reviewed by legal counsel before publication.</em>
-          </p>
         </div>
       </section>
     </main>

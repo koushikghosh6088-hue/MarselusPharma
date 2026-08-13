@@ -111,10 +111,6 @@ export default function Careers() {
               <Link href="/contact" className="btn btn--primary">Apply Now</Link>
             </div>
           </div>
-
-          <p className="text-center text-muted reveal" style={{ marginTop: "var(--space-8)", fontSize: "var(--text-sm)" }}>
-            <em>These are sample listings. Final job roles will be updated with approved content at launch.</em>
-          </p>
         </div>
       </section>
 
