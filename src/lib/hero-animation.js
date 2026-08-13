@@ -146,13 +146,10 @@ export function initHeroScrollAnimation() {
     ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
   }
 
-  // Dynamic HUD Telemetry animation loop reactively driven by scroll progress
+  // Dynamic HUD Card sequential 3D flip animation loop reactively driven by scroll progress
   function updateTextOverlays(progress) {
-    const hudCards = document.querySelectorAll('.hero-hud-card');
     const orb1 = document.querySelector('.hero-glow-orb--1');
     const orb2 = document.querySelector('.hero-glow-orb--2');
-    const progressFill = document.querySelector('.hud-progress-fill');
-    const isMobile = window.innerWidth < 768;
 
     // 1. Dynamic background orb parallax shift as user scrolls 3D video
     if (orb1) {
@@ -162,26 +159,30 @@ export function initHeroScrollAnimation() {
       orb2.style.transform = `translate(${progress * -30}px, ${progress * 20}px) scale(${1 - progress * 0.1})`;
     }
 
-    // 2. Dynamic mucosal absorption telemetry counter in Widget 3
-    if (progressFill) {
-      const absorptionPercentage = Math.min(99.4, Math.max(30, progress * 100)).toFixed(1);
-      progressFill.style.width = `${absorptionPercentage}%`;
-      const titleElem = document.querySelector('.hero-hud-card--3 .hud-title');
-      if (titleElem) {
-        titleElem.textContent = `${absorptionPercentage}% Mucosal Absorption`;
+    // 2. Sequential 3D Flip Thresholds (One by one flip open as user scrolls)
+    const card1 = document.getElementById('hud-card-1');
+    const card2 = document.getElementById('hud-card-2');
+    const card3 = document.getElementById('hud-card-3');
+    const card4 = document.getElementById('hud-card-4');
+
+    const cardThresholds = [
+      { card: card1, threshold: 0.12 },
+      { card: card2, threshold: 0.32 },
+      { card: card3, threshold: 0.52 },
+      { card: card4, threshold: 0.72 },
+    ];
+
+    cardThresholds.forEach(({ card, threshold }) => {
+      if (card) {
+        if (progress >= threshold) {
+          card.classList.add('hero-hud-card--open');
+          card.classList.remove('hero-hud-card--closed');
+        } else {
+          card.classList.add('hero-hud-card--closed');
+          card.classList.remove('hero-hud-card--open');
+        }
       }
-    }
-
-    // 3. Parallax float and dynamic illumination for HUD cards
-    if (hudCards.length) {
-      hudCards.forEach((card, idx) => {
-        const floatY = Math.sin(progress * Math.PI * 2 + idx) * (isMobile ? 4 : 8);
-        const floatX = Math.cos(progress * Math.PI * 1.5 + idx) * (isMobile ? 2 : 5);
-        const scale = 1 + Math.sin(progress * Math.PI + idx * 0.5) * 0.015;
-
-        card.style.transform = `translate3d(${floatX}px, ${floatY}px, 0) scale(${scale})`;
-      });
-    }
+    });
   }
 
   // Animation frame scrubbing loop with silky 60fps lerp inertia
@@ -216,6 +217,14 @@ export function initHeroScrollAnimation() {
         loader.style.display = 'none';
       }, 500);
     }
+
+    // Add manual tap-to-flip click listeners to HUD cards
+    document.querySelectorAll('.hero-hud-card').forEach((card) => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('hero-hud-card--open');
+        card.classList.toggle('hero-hud-card--closed');
+      });
+    });
 
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();

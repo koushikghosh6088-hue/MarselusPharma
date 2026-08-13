@@ -2319,29 +2319,83 @@ textarea.form-input {
   z-index: 10;
 }
 
-/* Individual Glass HUD Widget Card */
+/* 3D Perspective Card Flip Structure */
 .hero-hud-card {
   position: absolute;
-  background: rgba(255, 255, 255, 0.82);
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  pointer-events: auto;
+  min-height: 90px;
+  cursor: pointer;
+}
+
+.card-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 90px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-hud-card--closed .card-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.hero-hud-card--open .card-flip-inner {
+  transform: rotateY(0deg);
+}
+
+.card-flip-front,
+.card-flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 18px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-flip-front {
+  transform: rotateY(0deg);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.95);
-  border-radius: 18px;
-  padding: 14px 18px;
   box-shadow: 0 15px 35px rgba(12, 56, 37, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
-  pointer-events: auto;
-  transition: all 0.4s ease;
 }
 
-.hero-hud-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 45px rgba(12, 56, 37, 0.14);
+.card-flip-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, rgba(12, 56, 37, 0.94) 0%, rgba(24, 96, 68, 0.90) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-.hero-hud-card--1 { top: 16vh; right: 5vw; width: 260px; border-left: 4px solid #10b981; background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(236, 253, 245, 0.85) 100%); }
-.hero-hud-card--2 { top: 48vh; right: 5vw; width: 260px; border-left: 4px solid #3b82f6; background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(239, 246, 255, 0.85) 100%); }
-.hero-hud-card--3 { bottom: 12vh; left: 6vw; width: 270px; border-left: 4px solid #a855f7; background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(250, 245, 255, 0.85) 100%); }
-.hero-hud-card--4 { bottom: 12vh; right: 5vw; width: 270px; border-left: 4px solid #06b6d4; background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(236, 254, 255, 0.85) 100%); }
+.hud-closed-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--color-gold);
+  margin-top: 4px;
+}
+
+.hero-hud-card--1 { top: 16vh; right: 5vw; width: 260px; }
+.hero-hud-card--1 .card-flip-front { border-left: 4px solid #10b981; }
+.hero-hud-card--2 { top: 48vh; right: 5vw; width: 260px; }
+.hero-hud-card--2 .card-flip-front { border-left: 4px solid #3b82f6; }
+.hero-hud-card--3 { bottom: 12vh; left: 6vw; width: 270px; }
+.hero-hud-card--3 .card-flip-front { border-left: 4px solid #a855f7; }
+.hero-hud-card--4 { bottom: 12vh; right: 5vw; width: 270px; }
+.hero-hud-card--4 .card-flip-front { border-left: 4px solid #06b6d4; }
 
 .hud-badge-row {
   display: flex;

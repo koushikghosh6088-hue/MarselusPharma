@@ -66,44 +66,100 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Trust Strip HUD Cards (4 Pillars) */}
+            {/* Trust Strip HUD Cards (4 Pillars with Scroll 3D Flip) */}
             <div className="hero-hud-grid">
               
               {/* Card 1: Formulation Technology */}
-              <div className="hero-hud-card hero-hud-card--1">
-                <div className="hud-badge-row">
-                  <span className="hud-status-dot" style={{ background: "var(--color-artemes)" }}></span>
-                  <span className="hud-tag">FORMULATION TECH</span>
+              <div className="hero-hud-card hero-hud-card--1 hero-hud-card--closed" id="hud-card-1">
+                <div className="card-flip-inner">
+                  {/* Back (Closed State) */}
+                  <div className="card-flip-back">
+                    <div className="hud-badge-row">
+                      <span className="hud-status-dot" style={{ background: "var(--color-artemes)" }}></span>
+                      <span className="hud-tag" style={{ color: "#ffffff" }}>01 · FORMULATION TECH</span>
+                    </div>
+                    <div className="hud-closed-label">✦ SCROLL TO UNLOCK</div>
+                  </div>
+
+                  {/* Front (Open State) */}
+                  <div className="card-flip-front">
+                    <div className="hud-badge-row">
+                      <span className="hud-status-dot" style={{ background: "var(--color-artemes)" }}></span>
+                      <span className="hud-tag">FORMULATION TECH</span>
+                    </div>
+                    <div className="hud-title">Targeted Prolonged Release</div>
+                    <div className="hud-sub">Engineered for site-specific colonic therapeutic action</div>
+                  </div>
                 </div>
-                <div className="hud-title">Targeted Prolonged Release</div>
-                <div className="hud-sub">Engineered for site-specific colonic therapeutic action</div>
               </div>
 
               {/* Card 2: Quality Certified */}
-              <div className="hero-hud-card hero-hud-card--2">
-                <div className="hud-badge-row">
-                  <span className="hud-tag hud-tag--blue">QUALITY CERTIFIED</span>
+              <div className="hero-hud-card hero-hud-card--2 hero-hud-card--closed" id="hud-card-2">
+                <div className="card-flip-inner">
+                  {/* Back (Closed State) */}
+                  <div className="card-flip-back">
+                    <div className="hud-badge-row">
+                      <span className="hud-status-dot" style={{ background: "#3b82f6" }}></span>
+                      <span className="hud-tag" style={{ color: "#ffffff" }}>02 · QUALITY CERTIFIED</span>
+                    </div>
+                    <div className="hud-closed-label">✦ SCROLL TO UNLOCK</div>
+                  </div>
+
+                  {/* Front (Open State) */}
+                  <div className="card-flip-front">
+                    <div className="hud-badge-row">
+                      <span className="hud-tag hud-tag--blue">QUALITY CERTIFIED</span>
+                    </div>
+                    <div className="hud-title">WHO-GMP &amp; ISO 9001:2015</div>
+                    <div className="hud-sub">ISO certified quality management system &amp; GMP facilities</div>
+                  </div>
                 </div>
-                <div className="hud-title">WHO-GMP &amp; ISO 9001:2015</div>
-                <div className="hud-sub">ISO certified quality management system &amp; GMP facilities</div>
               </div>
 
               {/* Card 3: Targeted Efficacy */}
-              <div className="hero-hud-card hero-hud-card--3">
-                <div className="hud-badge-row">
-                  <span className="hud-tag hud-tag--purple" style={{ color: "var(--color-saranya)" }}>TARGETED EFFICACY</span>
+              <div className="hero-hud-card hero-hud-card--3 hero-hud-card--closed" id="hud-card-3">
+                <div className="card-flip-inner">
+                  {/* Back (Closed State) */}
+                  <div className="card-flip-back">
+                    <div className="hud-badge-row">
+                      <span className="hud-status-dot" style={{ background: "#a855f7" }}></span>
+                      <span className="hud-tag" style={{ color: "#ffffff" }}>03 · TARGETED EFFICACY</span>
+                    </div>
+                    <div className="hud-closed-label">✦ SCROLL TO UNLOCK</div>
+                  </div>
+
+                  {/* Front (Open State) */}
+                  <div className="card-flip-front">
+                    <div className="hud-badge-row">
+                      <span className="hud-tag hud-tag--purple" style={{ color: "var(--color-saranya)" }}>TARGETED EFFICACY</span>
+                    </div>
+                    <div className="hud-title">Mucosal Healing &amp; Recovery</div>
+                    <div className="hud-sub">Formulated for localized action and enhanced patient tolerance</div>
+                  </div>
                 </div>
-                <div className="hud-title">Mucosal Healing &amp; Recovery</div>
-                <div className="hud-sub">Formulated for localized action and enhanced patient tolerance</div>
               </div>
 
               {/* Card 4: Clinical Impact */}
-              <div className="hero-hud-card hero-hud-card--4">
-                <div className="hud-badge-row">
-                  <span className="hud-tag hud-tag--teal" style={{ color: "var(--color-immunomars)" }}>CLINICAL IMPACT</span>
+              <div className="hero-hud-card hero-hud-card--4 hero-hud-card--closed" id="hud-card-4">
+                <div className="card-flip-inner">
+                  {/* Back (Closed State) */}
+                  <div className="card-flip-back">
+                    <div className="hud-badge-row">
+                      <span className="hud-status-dot" style={{ background: "#06b6d4" }}></span>
+                      <span className="hud-tag" style={{ color: "#ffffff" }}>04 · CLINICAL IMPACT</span>
+                    </div>
+                    <div className="hud-closed-label">✦ SCROLL TO UNLOCK</div>
+                  </div>
+
+                  {/* Front (Open State) */}
+                  <div className="card-flip-front">
+                    <div className="hud-badge-row">
+                      <span className="hud-tag hud-tag--teal" style={{ color: "var(--color-immunomars)" }}>CLINICAL IMPACT</span>
+                    </div>
+                    <div className="hud-title">4 Hero Formulations</div>
+                    <div className="hud-sub">Across 3 speciality therapy areas</div>
+                  </div>
                 </div>
-                <div className="hud-title">4 Hero Formulations</div>
-                <div className="hud-sub">Across 3 speciality therapy areas</div>
               </div>
             </div>
           </div>
