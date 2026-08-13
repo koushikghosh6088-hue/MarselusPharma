@@ -1,7 +1,7 @@
 /* ===================================================
    MARSELUS PHARMACEUTICALS — HERO SCROLL ANIMATION
    Uses preloaded 210 frame images for buttery scrolling
-   Responsive framing: Top-anchored on mobile, centered on desktop
+   Centered vertical framing + compact glassmorphic overlays
    =================================================== */
 
 export function initHeroScrollAnimation() {
@@ -88,7 +88,7 @@ export function initHeroScrollAnimation() {
     drawFrame(Math.round(currentFrame));
   }
 
-  // Draw responsive unzoomed image frame (Upper-anchored on mobile, centered on desktop)
+  // Draw 3D capsule centered vertically across all viewports
   function drawFrame(index) {
     const img = images[index];
     if (!img) return;
@@ -106,32 +106,22 @@ export function initHeroScrollAnimation() {
     const canvasHeight = canvas.height;
 
     const imgRatio = imgWidth / imgHeight;
-    const isMobile = window.innerWidth < 768;
 
-    let drawWidth, drawHeight, drawX, drawY;
+    // Centered 0.85 height scaling for rich presence and zero blank gaps
+    const maxDrawHeight = canvasHeight * 0.85;
+    const maxDrawWidth = canvasWidth * 0.85;
 
-    if (isMobile) {
-      // Mobile: Anchor 3D capsule in top 45% region so it sits completely above the bottom text slide
-      drawWidth = canvasWidth * 0.94;
+    let drawWidth = maxDrawHeight * imgRatio;
+    let drawHeight = maxDrawHeight;
+
+    if (drawWidth > maxDrawWidth) {
+      drawWidth = maxDrawWidth;
       drawHeight = drawWidth / imgRatio;
-      drawX = (canvasWidth - drawWidth) / 2;
-      drawY = canvasHeight * 0.12;
-    } else {
-      // Desktop: Centered with 0.82 height scale
-      const maxDrawHeight = canvasHeight * 0.82;
-      const maxDrawWidth = canvasWidth * 0.80;
-
-      drawHeight = maxDrawHeight;
-      drawWidth = drawHeight * imgRatio;
-
-      if (drawWidth > maxDrawWidth) {
-        drawWidth = maxDrawWidth;
-        drawHeight = drawWidth / imgRatio;
-      }
-
-      drawX = (canvasWidth - drawWidth) / 2;
-      drawY = (canvasHeight - drawHeight) / 2;
     }
+
+    // Center perfectly in viewport
+    const drawX = (canvasWidth - drawWidth) / 2;
+    const drawY = (canvasHeight - drawHeight) / 2;
 
     ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
   }
