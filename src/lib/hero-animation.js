@@ -1,7 +1,7 @@
 /* ===================================================
    MARSELUS PHARMACEUTICALS — HERO SCROLL ANIMATION
    Uses preloaded 210 frame images for buttery scrolling
-   High DPI crisp canvas + smooth overlapping text slides
+   100% Full-Screen Cover Scaling + Ultra-Smooth Overlapping Text Slides
    =================================================== */
 
 export function initHeroScrollAnimation() {
@@ -63,7 +63,7 @@ export function initHeroScrollAnimation() {
     drawFrame(Math.round(currentFrame));
   }
 
-  // Draw scaled cover/contain image with high smoothing
+  // Draw 100% full-screen COVER image with high smoothing & zero letterbox gaps
   function drawFrame(index) {
     const img = images[index];
     if (!img) return;
@@ -78,24 +78,12 @@ export function initHeroScrollAnimation() {
     const canvasWidth = canvas.width;
     const canvasHeight = canvas.height;
 
-    const imgRatio = imgWidth / imgHeight;
-    const canvasRatio = canvasWidth / canvasHeight;
-
-    let drawWidth, drawHeight, drawX, drawY;
-
-    if (canvasRatio > imgRatio) {
-      // Desktop
-      drawHeight = canvasHeight * 0.88;
-      drawWidth = drawHeight * imgRatio;
-      drawX = (canvasWidth - drawWidth) / 2;
-      drawY = (canvasHeight - drawHeight) / 2;
-    } else {
-      // Mobile
-      drawWidth = canvasWidth * 0.95;
-      drawHeight = drawWidth / imgRatio;
-      drawX = (canvasWidth - drawWidth) / 2;
-      drawY = (canvasHeight - drawHeight) * 0.65;
-    }
+    // Full viewport COVER mode to fill 100% of the screen seamlessly
+    const scale = Math.max(canvasWidth / imgWidth, canvasHeight / imgHeight);
+    const drawWidth = imgWidth * scale;
+    const drawHeight = imgHeight * scale;
+    const drawX = (canvasWidth - drawWidth) / 2;
+    const drawY = (canvasHeight - drawHeight) / 2;
 
     ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
   }
