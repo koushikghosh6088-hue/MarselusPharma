@@ -1,7 +1,7 @@
 /* ===================================================
    MARSELUS PHARMACEUTICALS — HERO SCROLL ANIMATION
    Uses preloaded 210 frame images for buttery scrolling
-   Ultra-smooth lerp inertia + dynamic HUD telemetry scroll reactivity
+   Ultra-crisp 4K unzoomed framing for PC & mobile
    =================================================== */
 
 export function initHeroScrollAnimation() {
@@ -88,7 +88,7 @@ export function initHeroScrollAnimation() {
     drawFrame(Math.round(currentFrame));
   }
 
-  // Draw 3D capsule centered vertically across all viewports
+  // Draw 3D capsule frame un-stretched and crisp
   function drawFrame(index) {
     const img = images[index];
     if (!img) return;
@@ -106,22 +106,42 @@ export function initHeroScrollAnimation() {
     const canvasHeight = canvas.height;
 
     const imgRatio = imgWidth / imgHeight;
+    const isMobile = window.innerWidth < 768;
 
-    // Centered 0.85 height scaling for rich presence and zero blank gaps
-    const maxDrawHeight = canvasHeight * 0.85;
-    const maxDrawWidth = canvasWidth * 0.85;
+    let drawWidth, drawHeight, drawX, drawY;
 
-    let drawWidth = maxDrawHeight * imgRatio;
-    let drawHeight = maxDrawHeight;
+    if (isMobile) {
+      // Mobile: Centered 0.80 height scale
+      const maxDrawHeight = canvasHeight * 0.80;
+      const maxDrawWidth = canvasWidth * 0.88;
 
-    if (drawWidth > maxDrawWidth) {
-      drawWidth = maxDrawWidth;
-      drawHeight = drawWidth / imgRatio;
+      drawHeight = maxDrawHeight;
+      drawWidth = drawHeight * imgRatio;
+
+      if (drawWidth > maxDrawWidth) {
+        drawWidth = maxDrawWidth;
+        drawHeight = drawWidth / imgRatio;
+      }
+
+      drawX = (canvasWidth - drawWidth) / 2;
+      drawY = (canvasHeight - drawHeight) / 2;
+    } else {
+      // PC Desktop: Ultra-crisp un-stretched 0.54 scale, positioned in center-right
+      const maxDrawHeight = canvasHeight * 0.54;
+      const maxDrawWidth = canvasWidth * 0.44;
+
+      drawHeight = maxDrawHeight;
+      drawWidth = drawHeight * imgRatio;
+
+      if (drawWidth > maxDrawWidth) {
+        drawWidth = maxDrawWidth;
+        drawHeight = drawWidth / imgRatio;
+      }
+
+      // Position in center-right area so left headline never overlaps
+      drawX = canvasWidth * 0.36;
+      drawY = (canvasHeight - drawHeight) / 2 + 10;
     }
-
-    // Center perfectly in viewport
-    const drawX = (canvasWidth - drawWidth) / 2;
-    const drawY = (canvasHeight - drawHeight) / 2;
 
     ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
   }
@@ -136,10 +156,10 @@ export function initHeroScrollAnimation() {
 
     // 1. Dynamic background orb parallax shift as user scrolls 3D video
     if (orb1) {
-      orb1.style.transform = `translate(${progress * 50}px, ${progress * -30}px) scale(${1 + progress * 0.15})`;
+      orb1.style.transform = `translate(${progress * 40}px, ${progress * -25}px) scale(${1 + progress * 0.12})`;
     }
     if (orb2) {
-      orb2.style.transform = `translate(${progress * -40}px, ${progress * 25}px) scale(${1 - progress * 0.12})`;
+      orb2.style.transform = `translate(${progress * -30}px, ${progress * 20}px) scale(${1 - progress * 0.1})`;
     }
 
     // 2. Dynamic mucosal absorption telemetry counter in Widget 3
@@ -155,9 +175,9 @@ export function initHeroScrollAnimation() {
     // 3. Parallax float and dynamic illumination for HUD cards
     if (hudCards.length) {
       hudCards.forEach((card, idx) => {
-        const floatY = Math.sin(progress * Math.PI * 2 + idx) * (isMobile ? 5 : 12);
-        const floatX = Math.cos(progress * Math.PI * 1.5 + idx) * (isMobile ? 3 : 8);
-        const scale = 1 + Math.sin(progress * Math.PI + idx * 0.5) * 0.02;
+        const floatY = Math.sin(progress * Math.PI * 2 + idx) * (isMobile ? 4 : 8);
+        const floatX = Math.cos(progress * Math.PI * 1.5 + idx) * (isMobile ? 2 : 5);
+        const scale = 1 + Math.sin(progress * Math.PI + idx * 0.5) * 0.015;
 
         card.style.transform = `translate3d(${floatX}px, ${floatY}px, 0) scale(${scale})`;
       });
