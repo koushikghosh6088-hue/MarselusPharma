@@ -2721,4 +2721,180 @@ textarea.form-input {
   color: var(--color-gold);
 }
 
+/* ═══════════════════════════════════
+   LUXURY PRODUCT SHOWCASE STYLES
+   ═══════════════════════════════════ */
+
+/* Filter Pill Bar */
+.filter-pill-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-forest);
+  background: rgba(15, 61, 40, 0.05);
+  border: 1px solid rgba(15, 61, 40, 0.1);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.filter-btn:hover {
+  background: rgba(15, 61, 40, 0.1);
+  transform: translateY(-1px);
+}
+
+.filter-btn.active {
+  background: var(--color-forest);
+  color: var(--color-text-on-dark);
+  box-shadow: 0 6px 20px rgba(15, 61, 40, 0.25);
+  border-color: var(--color-forest);
+}
+
+/* Product Card Luxury */
+.product-card-luxury {
+  position: relative;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 32px;
+  border: 1px solid rgba(15, 61, 40, 0.08);
+  box-shadow: 0 10px 30px rgba(15, 61, 40, 0.05);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.product-card-luxury:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(15, 61, 40, 0.12);
+  border-color: rgba(15, 61, 40, 0.2);
+}
+
+.product-card-luxury--artemes:hover {
+  border-color: var(--color-artemes);
+  box-shadow: 0 20px 45px rgba(29, 158, 117, 0.18);
+}
+
+.product-card-luxury--saranya:hover {
+  border-color: var(--color-saranya);
+  box-shadow: 0 20px 45px rgba(214, 67, 140, 0.18);
+}
+
+.product-card-luxury--immunomars:hover {
+  border-color: var(--color-immunomars);
+  box-shadow: 0 20px 45px rgba(224, 138, 46, 0.18);
+}
+
+.product-card-luxury--uv60k:hover {
+  border-color: var(--color-uv60k);
+  box-shadow: 0 20px 45px rgba(46, 127, 224, 0.18);
+}
+
+.product-image-stage {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: radial-gradient(circle at center, rgba(244, 241, 232, 0.8) 0%, rgba(255, 255, 255, 0.9) 100%);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.product-image-stage img {
+  max-height: 180px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 20px rgba(15, 61, 40, 0.12));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card-luxury:hover .product-image-stage img {
+  transform: scale(1.08) translateY(-4px);
+}
+
+.product-ambient-glow {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.product-ambient-glow--artemes { background: var(--color-artemes); }
+.product-ambient-glow--saranya { background: var(--color-saranya); }
+.product-ambient-glow--immunomars { background: var(--color-immunomars); }
+.product-ambient-glow--uv60k { background: var(--color-uv60k); }
+
+.composition-pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0 20px 0;
+}
+
+.composition-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: var(--color-cream-light);
+  color: var(--color-forest);
+  border: 1px solid rgba(15, 61, 40, 0.1);
+}
+
+/* Comparison Table */
+.comparison-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid rgba(15, 61, 40, 0.1);
+  box-shadow: 0 10px 30px rgba(15, 61, 40, 0.05);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.comparison-table th {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-forest);
+  padding: 16px;
+  border-bottom: 2px solid rgba(15, 61, 40, 0.1);
+  background: var(--color-cream-light);
+}
+
+.comparison-table td {
+  padding: 16px;
+  border-bottom: 1px solid rgba(15, 61, 40, 0.06);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  vertical-align: middle;
+}
+
+.comparison-table tr:hover td {
+  background: rgba(15, 61, 40, 0.02);
+}
+
+
 
