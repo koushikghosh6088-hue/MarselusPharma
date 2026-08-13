@@ -1,7 +1,7 @@
 /* ===================================================
    MARSELUS PHARMACEUTICALS — HERO SCROLL ANIMATION
    Uses preloaded 210 frame images for buttery scrolling
-   Compact 1:1 original crisp scale + seamless background color matching
+   Responsive framing: Top-anchored on mobile, centered on desktop
    =================================================== */
 
 export function initHeroScrollAnimation() {
@@ -88,7 +88,7 @@ export function initHeroScrollAnimation() {
     drawFrame(Math.round(currentFrame));
   }
 
-  // Draw compact 1:1 original sharp aspect ratio (no zoom, no stretch)
+  // Draw responsive unzoomed image frame (Upper-anchored on mobile, centered on desktop)
   function drawFrame(index) {
     const img = images[index];
     if (!img) return;
@@ -106,22 +106,32 @@ export function initHeroScrollAnimation() {
     const canvasHeight = canvas.height;
 
     const imgRatio = imgWidth / imgHeight;
+    const isMobile = window.innerWidth < 768;
 
-    // Optimal 0.85 height scale for crisp, high-impact presence without zoom distortion
-    const maxDrawHeight = canvasHeight * 0.85;
-    const maxDrawWidth = canvasWidth * 0.85;
+    let drawWidth, drawHeight, drawX, drawY;
 
-    let drawWidth = maxDrawHeight * imgRatio;
-    let drawHeight = maxDrawHeight;
-
-    if (drawWidth > maxDrawWidth) {
-      drawWidth = maxDrawWidth;
+    if (isMobile) {
+      // Mobile: Anchor 3D capsule in top 45% region so it sits completely above the bottom text slide
+      drawWidth = canvasWidth * 0.94;
       drawHeight = drawWidth / imgRatio;
-    }
+      drawX = (canvasWidth - drawWidth) / 2;
+      drawY = canvasHeight * 0.12;
+    } else {
+      // Desktop: Centered with 0.82 height scale
+      const maxDrawHeight = canvasHeight * 0.82;
+      const maxDrawWidth = canvasWidth * 0.80;
 
-    // Center perfectly in viewport
-    const drawX = (canvasWidth - drawWidth) / 2;
-    const drawY = (canvasHeight - drawHeight) / 2;
+      drawHeight = maxDrawHeight;
+      drawWidth = drawHeight * imgRatio;
+
+      if (drawWidth > maxDrawWidth) {
+        drawWidth = maxDrawWidth;
+        drawHeight = drawWidth / imgRatio;
+      }
+
+      drawX = (canvasWidth - drawWidth) / 2;
+      drawY = (canvasHeight - drawHeight) / 2;
+    }
 
     ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
   }

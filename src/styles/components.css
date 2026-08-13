@@ -1735,14 +1735,15 @@ textarea.form-input {
 }
 
 /* Dynamic Positioning for each slide to completely avoid the center capsule */
-.scroll-slide--1 { align-items: flex-start; justify-content: flex-start; padding-top: 22vh; padding-left: 5vw; }
-.scroll-slide--2 { align-items: flex-end; justify-content: flex-end; padding-bottom: 15vh; padding-right: 5vw; }
-.scroll-slide--3 { align-items: flex-end; justify-content: flex-start; padding-bottom: 15vh; padding-left: 5vw; }
-.scroll-slide--4 { align-items: flex-start; justify-content: flex-end; padding-top: 22vh; padding-right: 5vw; }
+/* Dynamic Positioning for each slide to completely avoid the center capsule */
+.scroll-slide--1 { align-items: flex-start; justify-content: flex-start; padding-top: 14vh; padding-left: 5vw; }
+.scroll-slide--2 { align-items: flex-end; justify-content: flex-end; padding-bottom: 12vh; padding-right: 5vw; }
+.scroll-slide--3 { align-items: flex-end; justify-content: flex-start; padding-bottom: 12vh; padding-left: 5vw; }
+.scroll-slide--4 { align-items: flex-start; justify-content: flex-end; padding-top: 14vh; padding-right: 5vw; }
 
 .scroll-slide--1 .scroll-slide__content {
   text-align: left;
-  max-width: 480px;
+  max-width: 460px;
 }
 
 .scroll-slide--2 .scroll-slide__content,
@@ -1752,7 +1753,7 @@ textarea.form-input {
 
 .scroll-slide--4 .scroll-slide__content {
   text-align: left;
-  max-width: 480px;
+  max-width: 460px;
 }
 
 .scroll-slide__est {
@@ -1796,27 +1797,36 @@ textarea.form-input {
 
 @media (max-width: 768px) {
   .scroll-slide {
-    align-items: flex-start !important;
+    align-items: flex-end !important;
     justify-content: center !important;
-    padding: var(--space-4);
-    padding-top: 15vh !important;
+    padding: var(--space-4) !important;
+    padding-bottom: 5vh !important;
   }
   .scroll-slide__content {
-    padding: var(--space-6);
-    text-align: center;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: var(--space-5) var(--space-6) !important;
+    border-radius: var(--radius-xl) !important;
+    text-align: left !important;
   }
   .scroll-slide__title {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: 1.65rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: var(--space-3) !important;
   }
   .scroll-slide__desc {
-    font-size: var(--text-base);
+    font-size: 0.875rem !important;
+    line-height: 1.45 !important;
   }
   .scroll-slide__actions {
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row !important;
+    gap: var(--space-3) !important;
+    margin-top: var(--space-4) !important;
   }
   .scroll-slide__actions .btn {
-    width: 100%;
+    flex: 1;
+    padding: 10px 16px !important;
+    font-size: 12px !important;
   }
 }
 
