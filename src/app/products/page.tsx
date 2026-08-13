@@ -218,59 +218,6 @@ export default function ProductsMasterCataloguePage() {
         </div>
       </section>
 
-      {/* ═══ 4. FORMULATION COMPARISON MATRIX ═══ */}
-      <section className="section" style={{ padding: "0 0 var(--space-20) 0" }}>
-        <div className="container">
-          <div style={{ textAlign: "center", maxWidth: "700px", margin: "0 auto var(--space-12)" }}>
-            <span className="eyebrow-label">MASTER BRAND COMPARISON</span>
-            <h2>Product Colour &amp; Architecture <span className="italic-accent">Matrix.</span></h2>
-          </div>
-
-          <div className="comparison-table-wrap">
-            <table className="comparison-table">
-              <thead>
-                <tr>
-                  <th>Brand Name</th>
-                  <th>Colour Identity</th>
-                  <th>Packaging Format</th>
-                  <th>Key Hero Concept</th>
-                  <th>Monograph Link</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong style={{ color: "#0F3D28" }}>ARTEMES™</strong></td>
-                  <td>Deep Green + Lime + White</td>
-                  <td>Prolonged Release Tablets IP</td>
-                  <td>A-R-T-E-M-E-S Mnemonic</td>
-                  <td><Link href="/products/artemes" style={{ color: "#1D9E75", fontWeight: 700 }}>Monograph →</Link></td>
-                </tr>
-                <tr>
-                  <td><strong style={{ color: "#1E3A8A" }}>SARANYA®</strong></td>
-                  <td>Royal Blue + Soft Pink + White</td>
-                  <td>Pink Strip Pack Tablets</td>
-                  <td>40:1 Inositol Concept</td>
-                  <td><Link href="/products/saranya" style={{ color: "#D6438C", fontWeight: 700 }}>Monograph →</Link></td>
-                </tr>
-                <tr>
-                  <td><strong style={{ color: "#F97316" }}>IMMUNOMARS™</strong></td>
-                  <td>Orange + Royal Blue + White</td>
-                  <td>15 g Real Sachet</td>
-                  <td>L-Glutamine 10g Hero</td>
-                  <td><Link href="/products/immunomars" style={{ color: "#F97316", fontWeight: 700 }}>Monograph →</Link></td>
-                </tr>
-                <tr>
-                  <td><strong style={{ color: "#2E7FE0" }}>UV 60K</strong></td>
-                  <td>Sun Yellow + Blue + White</td>
-                  <td>Softgel Capsule</td>
-                  <td>Assess-Correct-Maintain Pathway</td>
-                  <td><Link href="/products/uv60k" style={{ color: "#2E7FE0", fontWeight: 700 }}>Monograph →</Link></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
 
       {/* ═══ 5. COMMON FOOTER DISCLAIMER BANNER ═══ */}
       <section className="section" style={{ padding: "0 0 var(--space-12) 0" }}>
