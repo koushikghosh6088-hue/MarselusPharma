@@ -2381,12 +2381,12 @@ textarea.form-input {
 
 .card-flip-back {
   transform: rotateY(180deg);
-  background: linear-gradient(135deg, rgba(8, 48, 32, 0.97) 0%, rgba(15, 80, 54, 0.94) 60%, rgba(5, 36, 24, 0.98) 100%);
+  background: linear-gradient(135deg, rgba(16, 60, 75, 0.97) 0%, rgba(25, 103, 128, 0.95) 60%, rgba(12, 48, 60, 0.98) 100%);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1.5px solid rgba(251, 191, 36, 0.45);
+  border: 1.5px solid rgba(217, 164, 65, 0.55);
   color: #ffffff;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3), 0 0 20px rgba(16, 185, 129, 0.2) inset;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3), 0 0 25px rgba(36, 136, 166, 0.35) inset;
 }
 
 .hud-closed-label {
