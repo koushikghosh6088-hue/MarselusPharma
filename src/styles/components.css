@@ -2533,3 +2533,167 @@ textarea.form-input {
   box-shadow: 0 4px 14px rgba(46, 127, 224, 0.3);
 }
 
+/* ═══════════════════════════════════
+   SIGNATURE DESIGN DEVICES (GUIDE SPEC)
+   ═══════════════════════════════════ */
+
+/* 1. Vertical Spine Tab */
+.spine-tab-container {
+  position: relative;
+}
+
+.spine-tab {
+  position: absolute;
+  left: -44px;
+  top: 40px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-forest);
+  opacity: 0.65;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  z-index: 10;
+}
+
+@media (max-width: 1024px) {
+  .spine-tab {
+    display: none;
+  }
+}
+
+.spine-tab::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+/* 2. Annotation Leader Lines */
+.annotation-leader {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.annotation-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-forest);
+  border: 2px solid var(--color-cream);
+  box-shadow: 0 0 0 2px var(--color-forest);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.annotation-line {
+  flex-grow: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-forest) 0%, rgba(15, 61, 40, 0.1) 100%);
+  margin-top: 10px;
+}
+
+.annotation-content {
+  flex-shrink: 1;
+}
+
+.annotation-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-forest);
+}
+
+.annotation-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* 3. Giant Footer Wordmark Reveal */
+.giant-wordmark-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0 20px 0;
+  text-align: center;
+  background: var(--color-cream);
+  border-top: 1px solid rgba(15, 61, 40, 0.08);
+}
+
+.giant-wordmark {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 14vw, 14rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: rgba(15, 61, 40, 0.08);
+  text-transform: uppercase;
+  user-select: none;
+  transition: color 0.6s ease;
+}
+
+.giant-wordmark:hover {
+  color: rgba(15, 61, 40, 0.15);
+}
+
+/* 4. Product Color-Coded Full-Bleed Section Tints */
+.section-tint--artemes {
+  background-color: rgba(29, 158, 117, 0.06);
+  border-top: 1px solid rgba(29, 158, 117, 0.15);
+  border-bottom: 1px solid rgba(29, 158, 117, 0.15);
+}
+
+.section-tint--saranya {
+  background-color: rgba(214, 67, 140, 0.06);
+  border-top: 1px solid rgba(214, 67, 140, 0.15);
+  border-bottom: 1px solid rgba(214, 67, 140, 0.15);
+}
+
+.section-tint--immunomars {
+  background-color: rgba(224, 138, 46, 0.06);
+  border-top: 1px solid rgba(224, 138, 46, 0.15);
+  border-bottom: 1px solid rgba(224, 138, 46, 0.15);
+}
+
+.section-tint--uv60k {
+  background-color: rgba(46, 127, 224, 0.06);
+  border-top: 1px solid rgba(46, 127, 224, 0.15);
+  border-bottom: 1px solid rgba(46, 127, 224, 0.15);
+}
+
+/* Career Card Spine Tab */
+.career-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.career-card-spine {
+  position: absolute;
+  right: -24px;
+  top: 36px;
+  writing-mode: vertical-rl;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--color-forest);
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.career-card:hover .career-card-spine {
+  opacity: 1;
+  color: var(--color-gold);
+}
+
+

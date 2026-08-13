@@ -1,12 +1,11 @@
 import Link from "next/link";
+import GiantWordmark from "./GiantWordmark";
 
 export default function Footer() {
   return (
     <>
       {/* Giant MARSELUS Wordmark Signature Reveal */}
-      <div className="giant-wordmark-wrapper" aria-hidden="true">
-        <span className="giant-wordmark-text">MARSELUS</span>
-      </div>
+      <GiantWordmark />
 
       <footer className="footer" id="main-footer">
         <div className="container">
@@ -43,7 +42,7 @@ export default function Footer() {
             <div className="footer-col">
               <h4 className="footer-heading">Products</h4>
               <ul className="footer-links">
-                <li><Link href="/products/artemes"><span className="dot dot--artemes"></span> ARTEMES 1.2g</Link></li>
+                <li><Link href="/products/artemes"><span className="dot dot--artemes"></span> ARTEMES</Link></li>
                 <li><Link href="/products/saranya"><span className="dot dot--saranya"></span> SARANYA</Link></li>
                 <li><Link href="/products/immunomars"><span className="dot dot--immunomars"></span> IMMUNOMARS</Link></li>
                 <li><Link href="/products/uv60k"><span className="dot dot--uv60k"></span> UV 60K</Link></li>
@@ -56,8 +55,8 @@ export default function Footer() {
               <ul className="footer-links">
                 <li><Link href="/therapy-areas">Therapy Areas</Link></li>
                 <li><Link href="/science">Scientific Resources</Link></li>
-                <li><Link href="/science#monographs">Product Monographs</Link></li>
-                <li><Link href="/science#downloads">Download Centre</Link></li>
+                <li><Link href="/science">Product Monographs</Link></li>
+                <li><Link href="/science">Download Centre</Link></li>
               </ul>
             </div>
 

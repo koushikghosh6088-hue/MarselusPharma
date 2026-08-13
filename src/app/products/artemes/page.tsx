@@ -1,92 +1,104 @@
-import { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
+import SpineTab from "@/components/SpineTab";
+import AnnotationLeader from "@/components/AnnotationLeader";
 
-export const metadata: Metadata = {
-  title: "ARTEMES 1.2g (Mesalamine Prolonged Release) | Marselus Pharmaceuticals",
-  description:
-    "Product monograph for ARTEMES 1.2g Tablets featuring MMX™ Prolonged Release Technology for active Ulcerative Colitis remission and mucosal healing.",
-  openGraph: {
-    title: "ARTEMES 1.2g | Mesalamine Prolonged Release MMX™",
-    description:
-      "Targeted colonic delivery system for active ulcerative colitis treatment and maintenance of mucosal remission.",
-  },
-};
-
-export default function ArtemesProductPage() {
+export default function ArtemesPage() {
   return (
-    <main className="page-content atrimus-white-bg" style={{ paddingTop: "120px", paddingBottom: "var(--space-20)" }}>
-      <div className="container">
-        {/* Breadcrumb Navigation */}
-        <div style={{ fontSize: "12px", color: "var(--color-gray-500)", marginBottom: "var(--space-6)" }}>
-          <Link href="/" style={{ color: "var(--color-gray-500)", textDecoration: "none" }}>Home</Link> /{" "}
-          <Link href="/products" style={{ color: "var(--color-gray-500)", textDecoration: "none" }}>Products</Link> /{" "}
-          <span style={{ color: "var(--color-accent)", fontWeight: 700 }}>ARTEMES 1.2g</span>
-        </div>
+    <main className="page-content section-tint--artemes" style={{ paddingTop: "120px", paddingBottom: "var(--space-20)" }}>
+      
+      {/* Hero Banner with Spine Tab */}
+      <section className="section spine-tab-container" style={{ padding: "var(--space-12) 0" }}>
+        <SpineTab label="ARTEMES 1.2G — MONOGRAPH" />
 
-        {/* Hero Section */}
-        <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "var(--space-12)", alignItems: "center", marginBottom: "var(--space-16)" }}>
-          <div>
-            <span style={{ background: "var(--color-accent-soft)", color: "var(--color-accent)", fontSize: "11px", fontWeight: 800, padding: "6px 14px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: "var(--space-4)", display: "inline-block" }}>
-              GASTROENTEROLOGY • MMX™ TECHNOLOGY
-            </span>
-            <h1 style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 900, color: "var(--color-navy)", lineHeight: 1.05, marginBottom: "var(--space-4)", letterSpacing: "-0.02em" }}>
-              ARTEMES <span className="gradient-accent-1">1.2g TABLETS</span>
-            </h1>
-            <p style={{ fontSize: "var(--text-xl)", fontWeight: 700, color: "var(--color-accent)", marginBottom: "var(--space-6)" }}>
-              Mesalamine Prolonged Release Tablets USP 1.2g
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-12)", alignItems: "center" }}>
+            
+            {/* Left Column: Pack Artwork & Tablet Animation */}
+            <div>
+              <div className="atrimus-glass-card" style={{ padding: "var(--space-8)", background: "#ffffff", borderRadius: "var(--radius-xl)", textAlign: "center" }}>
+                <img src="/assets/images/atrimus-capsule.png" alt="ARTEMES Pack & Tablet Render" style={{ width: "75%", height: "auto", margin: "0 auto var(--space-4)" }} />
+                <span className="eyebrow-badge" style={{ color: "var(--color-artemes)", borderColor: "rgba(29, 158, 117, 0.3)" }}>
+                  Targeted Prolonged Release Tablet
+                </span>
+              </div>
+            </div>
+
+            {/* Right Column: Composition & Overview */}
+            <div>
+              <span className="slide-badge" style={{ background: "rgba(29, 158, 117, 0.15)", color: "var(--color-artemes)", marginBottom: "var(--space-4)" }}>
+                GASTROENTEROLOGY · PROLONGED RELEASE
+              </span>
+              <h1 style={{ fontSize: "clamp(2.5rem, 4.5vw, 3.75rem)", marginBottom: "var(--space-3)", color: "var(--color-forest)" }}>
+                ARTEMES <small style={{ fontSize: "1.2rem", color: "var(--color-artemes)" }}>1.2g</small>
+              </h1>
+              <p style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--color-forest)", marginBottom: "var(--space-4)" }}>
+                Composition: Mesalamine 1.2 g Prolonged Release Tablets
+              </p>
+
+              <p style={{ fontSize: "var(--text-lg)", color: "var(--color-text-muted)", marginBottom: "var(--space-6)" }}>
+                <strong>What it is:</strong> ARTEMES is a prolonged-release mesalamine formulation developed for the management of ulcerative colitis (mild to moderate).
+              </p>
+
+              <div style={{ padding: "var(--space-4) var(--space-6)", background: "#ffffff", borderRadius: "var(--radius-md)", borderLeft: "4px solid var(--color-artemes)", marginBottom: "var(--space-6)" }}>
+                <strong style={{ fontSize: "0.95rem", color: "var(--color-forest)" }}>Indications:</strong>
+                <p style={{ fontSize: "0.9rem", color: "var(--color-text-muted)", margin: "4px 0 0 0" }}>
+                  In the management of Ulcerative Colitis (Mild to Moderate).
+                </p>
+              </div>
+
+              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                <span className="verify-tag" title="Confirm pricing before publication">[VERIFY: Pricing Rs. 33]</span>
+                <span className="slide-badge" style={{ fontSize: "11px" }}>WHO-GMP CERTIFIED PLANT</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Key Information with Annotation Leader Lines */}
+      <section className="section" style={{ padding: "var(--space-12) 0" }}>
+        <div className="container">
+          <h2 style={{ marginBottom: "var(--space-8)" }}>Key Clinical Information</h2>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-12)" }}>
+            <div style={{ background: "#ffffff", padding: "var(--space-8)", borderRadius: "var(--radius-lg)" }}>
+              <AnnotationLeader title="Anti-Inflammatory Action" description="Direct topically active 5-ASA concentration along inflamed colonic mucosa." accentColor="var(--color-artemes)" />
+              <AnnotationLeader title="Remission Induction" description="Supports rapid induction and long-term maintenance of ulcerative colitis remission." accentColor="var(--color-artemes)" />
+              <AnnotationLeader title="Targeted Release Precision" description="Enteric-coated prolonged release system ensures active drug delivers directly to target site." accentColor="var(--color-artemes)" />
+            </div>
+
+            <div style={{ background: "#ffffff", padding: "var(--space-8)", borderRadius: "var(--radius-lg)" }}>
+              <AnnotationLeader title="Mucosal Healing Optimized" description="Promotes epithelial barrier recovery and mucosal restitution." accentColor="var(--color-artemes)" />
+              <AnnotationLeader title="Efficacy Sustained" description="Sustained therapeutic effect enhances daily symptom relief and patient comfort." accentColor="var(--color-artemes)" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Manufacturing & Science */}
+      <section className="section" style={{ padding: "var(--space-12) 0" }}>
+        <div className="container">
+          <div className="atrimus-glass-card" style={{ padding: "var(--space-8)", background: "#ffffff", borderRadius: "var(--radius-xl)" }}>
+            <h3 style={{ marginBottom: "var(--space-4)" }}>Manufacturing &amp; Scientific Data</h3>
+            <p style={{ fontSize: "0.95rem", color: "var(--color-text-muted)", marginBottom: "var(--space-4)" }}>
+              <strong>Manufacturing:</strong> Manufactured in India at a WHO-GMP certified facility enforcing international quality control standards.
             </p>
-            <p style={{ fontSize: "var(--text-base)", color: "var(--color-gray-600)", lineHeight: 1.65, marginBottom: "var(--space-8)", maxWidth: "54ch" }}>
-              ARTEMES 1.2g is engineered using proprietary Multi-Matrix (MMX™) prolonged-release technology to deliver active mesalamine continuously throughout the entire length of the colon, promoting mucosal healing in active mild-to-moderate ulcerative colitis.
+            <p style={{ fontSize: "0.95rem", color: "var(--color-text-muted)", marginBottom: "var(--space-6)" }}>
+              <strong>Science:</strong> Study references supporting remission induction and mucosal healing timelines are available in the product monograph.
+              <span className="verify-tag" style={{ marginLeft: "8px" }}>Citations subject to medical sign-off</span>
             </p>
-
-            <div className="btn-connected-group">
-              <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary">
-                Request Prescribing Dossier
-              </Link>
-              <Link href="/products" className="btn-connected-pill btn-connected-pill--secondary">
-                Back to Products
-              </Link>
-            </div>
-          </div>
-
-          {/* Product Image Render */}
-          <div className="atrimus-glass-card" style={{ padding: "var(--space-10)", textAlign: "center", background: "linear-gradient(135deg, rgba(24, 154, 180, 0.08) 0%, rgba(255, 255, 255, 0.9) 100%)", borderRadius: "28px" }}>
-            <img src="/assets/images/atrimus-capsule.png" alt="ARTEMES 1.2g 3D Render" style={{ width: "100%", maxWidth: "340px", height: "auto", filter: "drop-shadow(0 15px 30px rgba(12, 56, 37, 0.12))" }} />
-            <div style={{ marginTop: "var(--space-6)", fontSize: "11px", fontWeight: 800, color: "var(--color-accent)", letterSpacing: "0.14em", textTransform: "uppercase" }}>
-              MMX™ MULTI-MATRIX COLONIC TARGETING
+            <div style={{ padding: "var(--space-4) var(--space-6)", background: "rgba(15, 61, 40, 0.05)", borderRadius: "var(--radius-md)" }}>
+              <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>
+                <em>Disclaimer: For healthcare professionals. Please refer to full prescribing information before use.</em>
+              </p>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Monograph Specifications Table */}
-        <div className="atrimus-glass-card" style={{ padding: "var(--space-10)", borderRadius: "24px", marginBottom: "var(--space-16)" }}>
-          <h2 style={{ fontSize: "1.75rem", fontWeight: 900, color: "var(--color-navy)", marginBottom: "var(--space-8)", textTransform: "uppercase" }}>
-            PRODUCT <span className="gradient-accent-1">SPECIFICATIONS &amp; MONOGRAPH</span>
-          </h2>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "var(--space-8)" }}>
-            <div>
-              <h3 style={{ fontSize: "var(--text-base)", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Active Substance</h3>
-              <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", margin: 0 }}>Mesalamine USP 1.2g (5-aminosalicylic acid / 5-ASA)</p>
-            </div>
-
-            <div>
-              <h3 style={{ fontSize: "var(--text-base)", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Therapeutic Class</h3>
-              <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", margin: 0 }}>Anti-inflammatory Gastrointestinal Agent</p>
-            </div>
-
-            <div>
-              <h3 style={{ fontSize: "var(--text-base)", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Indication</h3>
-              <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", margin: 0 }}>Induction and maintenance of remission in ulcerative colitis</p>
-            </div>
-
-            <div>
-              <h3 style={{ fontSize: "var(--text-base)", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Delivery System</h3>
-              <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", margin: 0 }}>MMX™ Gastro-resistant &amp; Lipophilic Prolonged Release Matrix</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </main>
   );
 }

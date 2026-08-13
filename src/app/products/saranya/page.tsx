@@ -1,92 +1,85 @@
-import { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
+import SpineTab from "@/components/SpineTab";
+import AnnotationLeader from "@/components/AnnotationLeader";
 
-export const metadata: Metadata = {
-  title: "SARANYA (Myo-Inositol + D-Chiro 40:1 Ratio) | Marselus Pharmaceuticals",
-  description:
-    "Product monograph for SARANYA Tablets featuring clinically validated 40:1 ratio of Myo-Inositol to D-Chiro Inositol for PCOS and metabolic management.",
-  openGraph: {
-    title: "SARANYA | Myo-Inositol 40:1 Ratio Formula",
-    description:
-      "Targeted formulation for PCOS management, metabolic equilibrium, and restoration of ovulatory health.",
-  },
-};
-
-export default function SaranyaProductPage() {
+export default function SaranyaPage() {
   return (
-    <main className="page-content atrimus-white-bg" style={{ paddingTop: "120px", paddingBottom: "var(--space-20)" }}>
-      <div className="container">
-        {/* Breadcrumb Navigation */}
-        <div style={{ fontSize: "12px", color: "var(--color-gray-500)", marginBottom: "var(--space-6)" }}>
-          <Link href="/" style={{ color: "var(--color-gray-500)", textDecoration: "none" }}>Home</Link> /{" "}
-          <Link href="/products" style={{ color: "var(--color-gray-500)", textDecoration: "none" }}>Products</Link> /{" "}
-          <span style={{ color: "var(--color-saranya)", fontWeight: 700 }}>SARANYA</span>
-        </div>
+    <main className="page-content section-tint--saranya" style={{ paddingTop: "120px", paddingBottom: "var(--space-20)" }}>
+      
+      {/* Hero Banner with Spine Tab */}
+      <section className="section spine-tab-container" style={{ padding: "var(--space-12) 0" }}>
+        <SpineTab label="SARANYA — MONOGRAPH" />
 
-        {/* Hero Section */}
-        <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "var(--space-12)", alignItems: "center", marginBottom: "var(--space-16)" }}>
-          <div>
-            <span style={{ background: "var(--color-saranya-soft)", color: "var(--color-saranya)", fontSize: "11px", fontWeight: 800, padding: "6px 14px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: "var(--space-4)", display: "inline-block" }}>
-              WOMEN&apos;S HEALTH • 40:1 RATIO MATRIX
-            </span>
-            <h1 style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 900, color: "var(--color-navy)", lineHeight: 1.05, marginBottom: "var(--space-4)", letterSpacing: "-0.02em" }}>
-              SARANYA <span style={{ color: "var(--color-saranya)" }}>TABLETS</span>
-            </h1>
-            <p style={{ fontSize: "var(--text-xl)", fontWeight: 700, color: "var(--color-saranya)", marginBottom: "var(--space-6)" }}>
-              Myo-Inositol + D-Chiro Inositol (40:1 Ratio) + L-Methylfolate + Vit D3
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-12)", alignItems: "center" }}>
+            
+            {/* Left Column: Pack Artwork */}
+            <div>
+              <div className="atrimus-glass-card" style={{ padding: "var(--space-8)", background: "#ffffff", borderRadius: "var(--radius-xl)", textAlign: "center" }}>
+                <img src="/assets/images/womens-therapy.png" alt="SARANYA Pack Render" style={{ width: "75%", height: "auto", margin: "0 auto var(--space-4)" }} />
+                <span className="eyebrow-badge" style={{ color: "var(--color-saranya)", borderColor: "rgba(214, 67, 140, 0.3)" }}>
+                  40:1 Physiological Inositol Formula
+                </span>
+              </div>
+            </div>
+
+            {/* Right Column: Composition & Overview */}
+            <div>
+              <span className="slide-badge" style={{ background: "rgba(214, 67, 140, 0.15)", color: "var(--color-saranya)", marginBottom: "var(--space-4)" }}>
+                WOMEN&apos;S HEALTH · 40:1 RATIO FORMULA
+              </span>
+              <h1 style={{ fontSize: "clamp(2.5rem, 4.5vw, 3.75rem)", marginBottom: "var(--space-3)", color: "var(--color-forest)" }}>
+                SARANYA
+              </h1>
+              <p style={{ fontSize: "1rem", fontWeight: 700, color: "var(--color-forest)", marginBottom: "var(--space-4)" }}>
+                Composition: Myo-Inositol 1100 mg, D-Chiro Inositol 27.6 mg, Chromium Picolinate 400 mcg, Vitamin D2 400 IU
+              </p>
+
+              <p style={{ fontSize: "var(--text-lg)", color: "var(--color-text-muted)", marginBottom: "var(--space-6)" }}>
+                <strong>What it is:</strong> SARANYA is formulated for hormonal and metabolic balance in PCOS.
+              </p>
+
+              <div style={{ padding: "var(--space-4) var(--space-6)", background: "#ffffff", borderRadius: "var(--radius-md)", borderLeft: "4px solid var(--color-saranya)", marginBottom: "var(--space-6)" }}>
+                <strong style={{ fontSize: "0.95rem", color: "var(--color-forest)" }}>Indications:</strong>
+                <p style={{ fontSize: "0.9rem", color: "var(--color-text-muted)", margin: "4px 0 0 0" }}>
+                  Hormonal &amp; metabolic balance for PCOS.
+                </p>
+              </div>
+
+              <span className="verify-tag" title="Comparative claims held back pending approval">[VERIFY: Comparative Claims Held Back]</span>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Key Information & Evidence */}
+      <section className="section" style={{ padding: "var(--space-12) 0" }}>
+        <div className="container">
+          <h2 style={{ marginBottom: "var(--space-8)" }}>Composition &amp; Synergistic Actions</h2>
+
+          <div style={{ background: "#ffffff", padding: "var(--space-8)", borderRadius: "var(--radius-lg)", marginBottom: "var(--space-8)" }}>
+            <AnnotationLeader title="Myo-Inositol & D-Chiro-Inositol (40:1)" description="Formulated to reflect the natural plasma ratio required for follicular health and insulin pathway signaling." accentColor="var(--color-saranya)" />
+            <AnnotationLeader title="Chromium Picolinate (400 mcg)" description="Enhances cellular glucose uptake and insulin receptor activity." accentColor="var(--color-saranya)" />
+            <AnnotationLeader title="Vitamin D2 (400 IU)" description="Essential co-factor supporting follicular development and endocrine equilibrium." accentColor="var(--color-saranya)" />
+          </div>
+
+          <div className="atrimus-glass-card" style={{ padding: "var(--space-8)", background: "#ffffff", borderRadius: "var(--radius-xl)" }}>
+            <h3 style={{ marginBottom: "var(--space-4)" }}>Clinical Resources &amp; Prescribing Note</h3>
+            <p style={{ fontSize: "0.95rem", color: "var(--color-text-muted)", marginBottom: "var(--space-6)" }}>
+              Detailed comparative trial summaries and prescribing guidelines are available for registered healthcare professionals.
             </p>
-            <p style={{ fontSize: "var(--text-base)", color: "var(--color-gray-600)", lineHeight: 1.65, marginBottom: "var(--space-8)", maxWidth: "54ch" }}>
-              SARANYA is formulated with the physiologically optimal 40:1 ratio of Myo-Inositol to D-Chiro Inositol. It addresses the underlying insulin resistance and androgenic excess associated with Polycystic Ovary Syndrome (PCOS), aiding in regularizing menstrual cycles and restoring fertility.
-            </p>
-
-            <div className="btn-connected-group">
-              <Link href="/contact" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "var(--color-saranya)", border: "none" }}>
-                Request Prescribing Dossier
-              </Link>
-              <Link href="/products" className="btn-connected-pill btn-connected-pill--secondary">
-                Back to Products
-              </Link>
-            </div>
-          </div>
-
-          {/* Product Image Render */}
-          <div className="atrimus-glass-card" style={{ padding: "var(--space-10)", textAlign: "center", background: "linear-gradient(135deg, rgba(224, 86, 136, 0.08) 0%, rgba(255, 255, 255, 0.9) 100%)", borderRadius: "28px" }}>
-            <img src="/assets/images/atrimus-dna.png" alt="SARANYA 3D DNA Helix Render" style={{ width: "100%", maxWidth: "340px", height: "auto", filter: "drop-shadow(0 15px 30px rgba(224, 86, 136, 0.15))" }} />
-            <div style={{ marginTop: "var(--space-6)", fontSize: "11px", fontWeight: 800, color: "var(--color-saranya)", letterSpacing: "0.14em", textTransform: "uppercase" }}>
-              CLINICALLY VALIDATED 40:1 ISOMER SYNERGY
+            <div style={{ padding: "var(--space-4) var(--space-6)", background: "rgba(15, 61, 40, 0.05)", borderRadius: "var(--radius-md)" }}>
+              <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>
+                <em>Disclaimer: For healthcare professionals. Please refer to full prescribing information before use.</em>
+              </p>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Specifications Table */}
-        <div className="atrimus-glass-card" style={{ padding: "var(--space-10)", borderRadius: "24px", marginBottom: "var(--space-16)" }}>
-          <h2 style={{ fontSize: "1.75rem", fontWeight: 900, color: "var(--color-navy)", marginBottom: "var(--space-8)", textTransform: "uppercase" }}>
-            PRODUCT <span style={{ color: "var(--color-saranya)" }}>SPECIFICATIONS &amp; MONOGRAPH</span>
-          </h2>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "var(--space-8)" }}>
-            <div>
-              <h3 style={{ fontSize: "var(--text-base)", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Active Ingredients</h3>
-              <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", margin: 0 }}>Myo-Inositol 2000mg + D-Chiro Inositol 50mg (40:1)</p>
-            </div>
-
-            <div>
-              <h3 style={{ fontSize: "var(--text-base)", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Therapeutic Class</h3>
-              <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", margin: 0 }}>Insulin Sensitizer &amp; Gynecological Therapeutic</p>
-            </div>
-
-            <div>
-              <h3 style={{ fontSize: "var(--text-base)", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Indication</h3>
-              <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", margin: 0 }}>PCOS, Insulin Resistance, Anovulatory Infertility</p>
-            </div>
-
-            <div>
-              <h3 style={{ fontSize: "var(--text-base)", fontWeight: 800, color: "var(--color-navy)", marginBottom: "var(--space-2)" }}>Synergistic Actives</h3>
-              <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", margin: 0 }}>L-Methylfolate 1mg + Vitamin D3 1000 IU</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </main>
   );
 }

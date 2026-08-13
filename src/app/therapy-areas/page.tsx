@@ -1,150 +1,90 @@
-import { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
+import SpineTab from "@/components/SpineTab";
 
-export const metadata: Metadata = {
-  title: "Therapeutic Areas & Research Specialties | Marselus Pharmaceuticals",
-  description:
-    "Explore Marselus Pharmaceuticals' specialized research focus in Gastroenterology, Women's Health (PCOS), and Clinical Nutrition.",
-  openGraph: {
-    title: "Therapeutic Focus | Marselus Pharmaceuticals",
-    description:
-      "Dedicated R&D and clinical formulation development across specialized therapeutic areas.",
-  },
-};
-
-const therapyAreas = [
-  {
-    id: "gastroenterology",
-    title: "Gastroenterology",
-    tag: "IBD & GUT HEALTH",
-    description:
-      "Targeted prolonged-release mesalamine delivery systems designed for mucosal healing in Ulcerative Colitis and Inflammatory Bowel Disease.",
-    products: ["ARTEMES 1.2g Tablets"],
-    href: "/therapy-areas/gastroenterology",
-    color: "var(--color-accent)",
-    colorSoft: "var(--color-accent-soft)",
-  },
-  {
-    id: "womens-health",
-    title: "Women's Health",
-    tag: "PCOS & ENDOCRINE EQUILIBRIUM",
-    description:
-      "Clinically validated 40:1 Myo-Inositol formulations addressing insulin resistance, ovulatory dysfunction, and hyperandrogenism in PCOS.",
-    products: ["SARANYA Tablets"],
-    href: "/therapy-areas/womens-health",
-    color: "var(--color-saranya)",
-    colorSoft: "var(--color-saranya-soft)",
-  },
-  {
-    id: "clinical-nutrition",
-    title: "Clinical Nutrition",
-    tag: "IMMUNONUTRITION & RECOVERY",
-    description:
-      "Targeted amino acid therapy (L-Glutamine & L-Arginine) engineered to accelerate surgical wound healing and bolster intestinal barrier defense.",
-    products: ["IMMUNOMARS Sachet", "UV 60K Softgels"],
-    href: "/therapy-areas/clinical-nutrition",
-    color: "var(--color-immunomars)",
-    colorSoft: "var(--color-immunomars-soft)",
-  },
-];
-
-export default function TherapyAreasPage() {
+export default function TherapyAreas() {
   return (
-    <main className="page-content atrimus-white-bg" style={{ paddingTop: "120px", paddingBottom: "var(--space-20)" }}>
-      <section className="section" style={{ padding: "0 0 var(--space-12) 0" }}>
+    <main className="page-content" style={{ paddingTop: "120px", paddingBottom: "var(--space-20)" }}>
+      <section className="section spine-tab-container" style={{ padding: "var(--space-12) 0" }}>
+        <SpineTab label="THERAPY AREAS — MARSELUS" />
+
         <div className="container">
           <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
-            <span
-              style={{
-                background: "rgba(12, 56, 37, 0.08)",
-                color: "var(--color-navy)",
-                fontSize: "11px",
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-                padding: "6px 16px",
-                borderRadius: "20px",
-                fontWeight: 800,
-                marginBottom: "var(--space-4)",
-                display: "inline-block",
-              }}
-            >
-              Therapeutic Focus
+            <span className="eyebrow-badge" style={{ marginBottom: "var(--space-4)" }}>
+              ✦ CLINICAL DOMAINS
             </span>
-            <h1
-              style={{
-                fontSize: "clamp(2.5rem, 5vw, 4rem)",
-                color: "var(--color-navy)",
-                fontWeight: 900,
-                lineHeight: 1.08,
-                letterSpacing: "-0.02em",
-                marginBottom: "var(--space-6)",
-                textTransform: "uppercase",
-              }}
-            >
-              RESEARCH &amp; CLINICAL <span className="gradient-accent-1">SPECIALIZATION</span>
+            <h1 style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", marginBottom: "var(--space-6)" }}>
+              Therapy <span className="italic-accent">Areas.</span>
             </h1>
-            <p style={{ color: "var(--color-gray-600)", fontSize: "var(--text-lg)", lineHeight: "1.6" }}>
-              Our R&amp;D efforts are focused on specialized therapeutic domains where targeted delivery and high purity make a transformative difference to patient outcomes.
+            <p style={{ fontSize: "var(--text-xl)", color: "var(--color-text-muted)" }}>
+              Three speciality focuses. One scientific standard.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="section" style={{ padding: "0" }}>
+      <section className="section" style={{ padding: "var(--space-12) 0" }}>
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "var(--space-8)" }}>
-            {therapyAreas.map((area) => (
-              <div
-                key={area.id}
-                className="atrimus-glass-card"
-                style={{
-                  padding: "var(--space-8)",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  borderRadius: "24px",
-                }}
-              >
-                <div>
-                  <span
-                    style={{
-                      background: area.colorSoft,
-                      color: area.color,
-                      fontSize: "11px",
-                      fontWeight: 800,
-                      padding: "4px 12px",
-                      borderRadius: "12px",
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                      display: "inline-block",
-                      marginBottom: "var(--space-4)",
-                    }}
-                  >
-                    {area.tag}
-                  </span>
-
-                  <h2 style={{ fontSize: "2rem", fontWeight: 900, color: "var(--color-navy)", marginBottom: "var(--space-3)" }}>
-                    {area.title}
-                  </h2>
-
-                  <p style={{ fontSize: "var(--text-sm)", color: "var(--color-gray-600)", lineHeight: "1.6", marginBottom: "var(--space-6)" }}>
-                    {area.description}
-                  </p>
-
-                  <div style={{ fontSize: "12px", color: "var(--color-navy)", fontWeight: 700, marginBottom: "var(--space-6)" }}>
-                    Lead Formulations: <span style={{ color: "var(--color-gray-600)", fontWeight: 500 }}>{area.products.join(", ")}</span>
-                  </div>
+            
+            {/* Gastroenterology */}
+            <div className="atrimus-glass-card glow-border glow-border--artemes" style={{ padding: "var(--space-8)", borderRadius: "var(--radius-xl)", background: "rgba(29, 158, 117, 0.05)", borderTop: "4px solid var(--color-artemes)" }}>
+              <span className="eyebrow-label" style={{ color: "var(--color-artemes)" }}>GASTROENTEROLOGY</span>
+              <h2 style={{ fontSize: "1.75rem", marginBottom: "var(--space-3)" }}>Gut Mucosal Healing &amp; Remission</h2>
+              <p style={{ fontSize: "0.95rem", color: "var(--color-text-muted)", marginBottom: "var(--space-4)" }}>
+                Targeted, prolonged-release formulations for inflammatory bowel disease, ulcerative colitis, and gut mucosal recovery.
+              </p>
+              <div style={{ marginBottom: "var(--space-6)" }}>
+                <strong style={{ fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>Featured Products:</strong>
+                <div style={{ display: "flex", gap: "8px", marginTop: "8px", flexWrap: "wrap" }}>
+                  <span className="slide-badge" style={{ fontSize: "11px", background: "rgba(29, 158, 117, 0.15)", color: "var(--color-artemes)" }}>ARTEMES 1.2g</span>
+                  <span className="slide-badge" style={{ fontSize: "11px", background: "rgba(46, 127, 224, 0.15)", color: "var(--color-uv60k)" }}>UV 60K</span>
+                  <span className="slide-badge" style={{ fontSize: "11px", background: "rgba(224, 138, 46, 0.15)", color: "var(--color-immunomars)" }}>IMMUNOMARS</span>
                 </div>
-
-                <Link
-                  href={area.href}
-                  className="btn-connected-pill btn-connected-pill--primary"
-                  style={{ width: "100%", justifyContent: "center", display: "flex", textDecoration: "none" }}
-                >
-                  Explore Therapeutic Specialty →
-                </Link>
               </div>
-            ))}
+              <Link href="/therapy-areas/gastroenterology" style={{ fontWeight: 700, color: "var(--color-artemes)", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                Explore Gastroenterology →
+              </Link>
+            </div>
+
+            {/* Women's Health */}
+            <div className="atrimus-glass-card glow-border glow-border--saranya" style={{ padding: "var(--space-8)", borderRadius: "var(--radius-xl)", background: "rgba(214, 67, 140, 0.05)", borderTop: "4px solid var(--color-saranya)" }}>
+              <span className="eyebrow-label" style={{ color: "var(--color-saranya)" }}>WOMEN&apos;S HEALTH</span>
+              <h2 style={{ fontSize: "1.75rem", marginBottom: "var(--space-3)" }}>Hormonal &amp; Metabolic Balance</h2>
+              <p style={{ fontSize: "0.95rem", color: "var(--color-text-muted)", marginBottom: "var(--space-4)" }}>
+                Formulations supporting hormonal and metabolic balance in conditions such as PCOS, addressing fertility and endocrine equilibrium.
+              </p>
+              <div style={{ marginBottom: "var(--space-6)" }}>
+                <strong style={{ fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>Featured Products:</strong>
+                <div style={{ display: "flex", gap: "8px", marginTop: "8px", flexWrap: "wrap" }}>
+                  <span className="slide-badge" style={{ fontSize: "11px", background: "rgba(214, 67, 140, 0.15)", color: "var(--color-saranya)" }}>SARANYA</span>
+                  <span className="slide-badge" style={{ fontSize: "11px", background: "rgba(46, 127, 224, 0.15)", color: "var(--color-uv60k)" }}>UV 60K</span>
+                </div>
+              </div>
+              <Link href="/therapy-areas/womens-health" style={{ fontWeight: 700, color: "var(--color-saranya)", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                Explore Women&apos;s Health →
+              </Link>
+            </div>
+
+            {/* Clinical Nutrition */}
+            <div className="atrimus-glass-card glow-border glow-border--immunomars" style={{ padding: "var(--space-8)", borderRadius: "var(--radius-xl)", background: "rgba(224, 138, 46, 0.05)", borderTop: "4px solid var(--color-immunomars)" }}>
+              <span className="eyebrow-label" style={{ color: "var(--color-immunomars)" }}>CLINICAL NUTRITION</span>
+              <h2 style={{ fontSize: "1.75rem", marginBottom: "var(--space-3)" }}>Immunonutrition &amp; Recovery</h2>
+              <p style={{ fontSize: "0.95rem", color: "var(--color-text-muted)", marginBottom: "var(--space-4)" }}>
+                Amino-acid and micronutrient immunonutrition formulated to support recovery, immune function, and nutritional status.
+              </p>
+              <div style={{ marginBottom: "var(--space-6)" }}>
+                <strong style={{ fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>Featured Products:</strong>
+                <div style={{ display: "flex", gap: "8px", marginTop: "8px", flexWrap: "wrap" }}>
+                  <span className="slide-badge" style={{ fontSize: "11px", background: "rgba(224, 138, 46, 0.15)", color: "var(--color-immunomars)" }}>IMMUNOMARS</span>
+                </div>
+              </div>
+              <Link href="/therapy-areas/clinical-nutrition" style={{ fontWeight: 700, color: "var(--color-immunomars)", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                Explore Clinical Nutrition →
+              </Link>
+            </div>
+
           </div>
         </div>
       </section>

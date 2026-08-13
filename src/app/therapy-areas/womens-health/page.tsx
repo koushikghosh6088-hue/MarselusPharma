@@ -1,50 +1,106 @@
-import { Metadata } from "next";
-import Link from "next/link";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Women's Health & PCOS Research | Marselus Pharmaceuticals",
-  description:
-    "Marselus Pharmaceuticals Women's Health division dedicated to 40:1 Inositol formulations for PCOS management and ovulatory health.",
-  openGraph: {
-    title: "Women's Health Specialty | Marselus Pharmaceuticals",
-    description: "Endocrine balance, PCOS management, and metabolic equilibrium therapeutics.",
-  },
-};
+import Link from "next/link";
+import SpineTab from "@/components/SpineTab";
+import AnnotationLeader from "@/components/AnnotationLeader";
 
 export default function WomensHealthPage() {
   return (
-    <main className="page-content atrimus-white-bg" style={{ paddingTop: "120px", paddingBottom: "var(--space-20)" }}>
-      <div className="container">
-        <div style={{ fontSize: "12px", color: "var(--color-gray-500)", marginBottom: "var(--space-6)" }}>
-          <Link href="/" style={{ color: "var(--color-gray-500)", textDecoration: "none" }}>Home</Link> /{" "}
-          <Link href="/therapy-areas" style={{ color: "var(--color-gray-500)", textDecoration: "none" }}>Therapy Areas</Link> /{" "}
-          <span style={{ color: "var(--color-saranya)", fontWeight: 700 }}>Women&apos;s Health</span>
-        </div>
+    <main className="page-content section-tint--saranya" style={{ paddingTop: "120px", paddingBottom: "var(--space-20)" }}>
+      
+      {/* Hero Banner with Spine Tab */}
+      <section className="section spine-tab-container" style={{ padding: "var(--space-12) 0" }}>
+        <SpineTab label="WOMEN'S HEALTH — HORMONAL WELLNESS" />
 
-        <div style={{ maxWidth: "800px", marginBottom: "var(--space-12)" }}>
-          <span style={{ background: "var(--color-saranya-soft)", color: "var(--color-saranya)", fontSize: "11px", fontWeight: 800, padding: "6px 14px", borderRadius: "20px", textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: "var(--space-4)", display: "inline-block" }}>
-            THERAPEUTIC SPECIALTY
-          </span>
-          <h1 style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 900, color: "var(--color-navy)", lineHeight: 1.05, marginBottom: "var(--space-4)" }}>
-            WOMEN&apos;S HEALTH &amp; <span style={{ color: "var(--color-saranya)" }}>ENDOCRINE EQUILIBRIUM</span>
-          </h1>
-          <p style={{ fontSize: "var(--text-lg)", color: "var(--color-gray-600)", lineHeight: 1.65 }}>
-            Our Gynaecology &amp; Reproductive Health division focuses on evidence-based inositol isomer ratios designed to address insulin resistance, hyperandrogenism, and metabolic dysregulation in Polycystic Ovary Syndrome (PCOS).
-          </p>
+        <div className="container">
+          <div style={{ maxWidth: "840px" }}>
+            <span className="slide-badge" style={{ background: "rgba(214, 67, 140, 0.15)", color: "var(--color-saranya)", marginBottom: "var(--space-4)" }}>
+              ✦ SPECIALITY THERAPY DOMAIN
+            </span>
+            <h1 style={{ fontSize: "clamp(2.75rem, 5vw, 4.25rem)", marginBottom: "var(--space-6)", color: "var(--color-forest)" }}>
+              Women&apos;s Health &amp; <span className="italic-accent" style={{ color: "var(--color-saranya)" }}>Metabolic Balance.</span>
+            </h1>
+            <p style={{ fontSize: "var(--text-xl)", color: "var(--color-text-muted)", lineHeight: "1.65" }}>
+              Formulations supporting hormonal and metabolic balance in conditions such as PCOS, addressing fertility and endocrine equilibrium.
+            </p>
+          </div>
         </div>
+      </section>
 
-        {/* Lead Product Monograph Card */}
-        <div className="atrimus-glass-card" style={{ padding: "var(--space-10)", borderRadius: "24px" }}>
-          <span style={{ color: "var(--color-saranya)", fontWeight: 800, fontSize: "12px", letterSpacing: "0.12em", textTransform: "uppercase" }}>LEAD BRAND</span>
-          <h2 style={{ fontSize: "2rem", fontWeight: 900, color: "var(--color-navy)", marginTop: "8px", marginBottom: "12px" }}>SARANYA Tablets</h2>
-          <p style={{ color: "var(--color-gray-600)", lineHeight: 1.6, marginBottom: "var(--space-6)" }}>
-            Clinically validated 40:1 ratio of Myo-Inositol to D-Chiro Inositol fortified with L-Methylfolate and Vitamin D3 for holistic PCOS management and fertility restoration.
-          </p>
-          <Link href="/products/saranya" className="btn-connected-pill btn-connected-pill--primary" style={{ background: "var(--color-saranya)", border: "none", textDecoration: "none" }}>
-            Explore SARANYA Monograph →
-          </Link>
+      {/* Scientific Rationale with Annotation Leader Lines */}
+      <section className="section" style={{ padding: "var(--space-12) 0" }}>
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-12)", alignItems: "center" }}>
+            
+            <div>
+              <span className="eyebrow-label" style={{ color: "var(--color-saranya)" }}>SCIENTIFIC RATIONALE</span>
+              <h2 style={{ marginBottom: "var(--space-6)" }}>Dual Inositol Synergy</h2>
+              <p style={{ fontSize: "var(--text-lg)", color: "var(--color-text-muted)", marginBottom: "var(--space-8)" }}>
+                Combination inositol and micronutrient therapy is studied for its role in restoring ovulatory function and insulin sensitivity in PCOS.
+              </p>
+
+              <div style={{ background: "#ffffff", padding: "var(--space-8)", borderRadius: "var(--radius-lg)", boxShadow: "var(--shadow-md)" }}>
+                <AnnotationLeader 
+                  title="40:1 Physiological Inositol Ratio" 
+                  description="Restores physiological Myo-Inositol to D-Chiro-Inositol plasma concentrations."
+                  accentColor="var(--color-saranya)" 
+                />
+                <AnnotationLeader 
+                  title="Insulin Sensitizing Action" 
+                  description="Chromium picolinate enhances glucose transporter recruitment and cellular sensitivity."
+                  accentColor="var(--color-saranya)" 
+                />
+                <AnnotationLeader 
+                  title="Endocrine & Ovulatory Restore" 
+                  description="Vitamin D2 co-factor supports follicular maturation and endocrine homeostasis."
+                  accentColor="var(--color-saranya)" 
+                />
+              </div>
+            </div>
+
+            <div>
+              <div className="atrimus-glass-card" style={{ padding: "var(--space-8)", borderRadius: "var(--radius-xl)", background: "#ffffff", textAlign: "center" }}>
+                <img src="/assets/images/womens-therapy.png" alt="Women's Health Therapy Render" style={{ width: "85%", height: "auto", margin: "0 auto var(--space-4)" }} />
+                <span className="eyebrow-badge" style={{ color: "var(--color-saranya)", borderColor: "rgba(214, 67, 140, 0.3)" }}>
+                  Women&apos;s Health Portfolio
+                </span>
+              </div>
+            </div>
+
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Featured Products */}
+      <section className="section" style={{ padding: "var(--space-12) 0" }}>
+        <div className="container">
+          <h2 style={{ marginBottom: "var(--space-8)" }}>Featured Formulations</h2>
+          
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "var(--space-8)" }}>
+            <div className="atrimus-glass-card" style={{ padding: "var(--space-6)", borderRadius: "var(--radius-lg)", background: "#ffffff" }}>
+              <span className="slide-badge" style={{ background: "rgba(214, 67, 140, 0.15)", color: "var(--color-saranya)", marginBottom: "var(--space-2)" }}>HERO BRAND</span>
+              <h3 style={{ fontSize: "1.35rem", marginBottom: "4px" }}>SARANYA</h3>
+              <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", marginBottom: "var(--space-4)" }}>Myo-Inositol 1100mg + D-Chiro 27.6mg Formula</p>
+              <Link href="/products/saranya" style={{ fontWeight: 700, color: "var(--color-saranya)" }}>View Monograph →</Link>
+            </div>
+
+            <div className="atrimus-glass-card" style={{ padding: "var(--space-6)", borderRadius: "var(--radius-lg)", background: "#ffffff" }}>
+              <span className="slide-badge" style={{ background: "rgba(46, 127, 224, 0.15)", color: "var(--color-uv60k)", marginBottom: "var(--space-2)" }}>VITAMIN THERAPY</span>
+              <h3 style={{ fontSize: "1.35rem", marginBottom: "4px" }}>UV 60K</h3>
+              <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", marginBottom: "var(--space-4)" }}>Cholecalciferol (Vitamin D3) 60,000 IU Softgel</p>
+              <Link href="/products/uv60k" style={{ fontWeight: 700, color: "var(--color-uv60k)" }}>View Monograph →</Link>
+            </div>
+          </div>
+
+          {/* Healthcare Disclaimer */}
+          <div style={{ marginTop: "var(--space-12)", padding: "var(--space-4) var(--space-6)", background: "rgba(15, 61, 40, 0.05)", borderRadius: "var(--radius-md)", borderLeft: "3px solid var(--color-forest)" }}>
+            <p style={{ fontSize: "0.85rem", color: "var(--color-text-muted)", margin: 0 }}>
+              <em>Disclaimer: This information is intended for healthcare professionals and for educational purposes. It does not constitute medical advice.</em>
+            </p>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }
