@@ -75,28 +75,23 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 4 Pillars 3D Flip Cards Grid (Full Rich Content on BOTH Sides) */}
+            {/* 4 Pillars 3D Flip Cards Grid (Unified Clean White Design Both Sides) */}
             <div className="hero-hud-grid">
               
               {/* Card 1: Formulation Technology */}
               <div className="hero-hud-card hero-hud-card--1 hero-hud-card--closed" id="hud-card-1">
                 <div className="card-flip-inner">
-                  {/* Side 1 (Back - Closed State) */}
+                  {/* Side 1 (Initial View) */}
                   <div className="card-flip-back">
                     <div className="hud-badge-row">
-                      <span className="hud-status-dot" style={{ background: "#10b981", boxShadow: "0 0 12px #10b981" }}></span>
-                      <span className="hud-tag" style={{ color: "#34d399" }}>01 · FORMULATION TECH</span>
+                      <span className="hud-status-dot" style={{ background: "#10b981" }}></span>
+                      <span className="hud-tag">01 · FORMULATION TECH</span>
                     </div>
-                    <div className="hud-title" style={{ color: "#ffffff", background: "none", WebkitTextFillColor: "initial" }}>
-                      Targeted Site Release
-                    </div>
-                    <div className="hud-sub" style={{ color: "#a7f3d0" }}>
-                      pH &gt; 6.8 Colonic Dissolution
-                    </div>
-                    <div className="hud-closed-label">✦ SCROLL TO FLIP ↻</div>
+                    <div className="hud-title">Targeted Site Release</div>
+                    <div className="hud-sub">pH &gt; 6.8 Colonic Dissolution</div>
                   </div>
 
-                  {/* Side 2 (Front - Flipped Open State) */}
+                  {/* Side 2 (Flipped View) */}
                   <div className="card-flip-front">
                     <div className="hud-badge-row">
                       <span className="hud-status-dot" style={{ background: "#10b981" }}></span>
@@ -113,22 +108,17 @@ export default function Home() {
               {/* Card 2: Quality Certified */}
               <div className="hero-hud-card hero-hud-card--2 hero-hud-card--closed" id="hud-card-2">
                 <div className="card-flip-inner">
-                  {/* Side 1 (Back - Closed State) */}
+                  {/* Side 1 (Initial View) */}
                   <div className="card-flip-back">
                     <div className="hud-badge-row">
-                      <span className="hud-status-dot" style={{ background: "#3b82f6", boxShadow: "0 0 12px #3b82f6" }}></span>
-                      <span className="hud-tag" style={{ color: "#60a5fa" }}>02 · QUALITY CERTIFIED</span>
+                      <span className="hud-status-dot" style={{ background: "#3b82f6" }}></span>
+                      <span className="hud-tag hud-tag--blue">02 · QUALITY CERTIFIED</span>
                     </div>
-                    <div className="hud-title" style={{ color: "#ffffff", background: "none", WebkitTextFillColor: "initial" }}>
-                      WHO-GMP &amp; ISO 9001:2015
-                    </div>
-                    <div className="hud-sub" style={{ color: "#bfdbfe" }}>
-                      100% In-Process QA System
-                    </div>
-                    <div className="hud-closed-label">✦ SCROLL TO FLIP ↻</div>
+                    <div className="hud-title">WHO-GMP &amp; ISO 9001:2015</div>
+                    <div className="hud-sub">100% In-Process QA System</div>
                   </div>
 
-                  {/* Side 2 (Front - Flipped Open State) */}
+                  {/* Side 2 (Flipped View) */}
                   <div className="card-flip-front">
                     <div className="hud-badge-row">
                       <span className="hud-status-dot" style={{ background: "#3b82f6" }}></span>
@@ -145,22 +135,17 @@ export default function Home() {
               {/* Card 3: Targeted Efficacy */}
               <div className="hero-hud-card hero-hud-card--3 hero-hud-card--closed" id="hud-card-3">
                 <div className="card-flip-inner">
-                  {/* Side 1 (Back - Closed State) */}
+                  {/* Side 1 (Initial View) */}
                   <div className="card-flip-back">
                     <div className="hud-badge-row">
-                      <span className="hud-status-dot" style={{ background: "#a855f7", boxShadow: "0 0 12px #a855f7" }}></span>
-                      <span className="hud-tag" style={{ color: "#c084fc" }}>03 · TARGETED EFFICACY</span>
+                      <span className="hud-status-dot" style={{ background: "#a855f7" }}></span>
+                      <span className="hud-tag hud-tag--purple">03 · TARGETED EFFICACY</span>
                     </div>
-                    <div className="hud-title" style={{ color: "#ffffff", background: "none", WebkitTextFillColor: "initial" }}>
-                      Mucosal Healing &amp; Restore
-                    </div>
-                    <div className="hud-sub" style={{ color: "#e9d5ff" }}>
-                      40:1 Physiological Formula
-                    </div>
-                    <div className="hud-closed-label">✦ SCROLL TO FLIP ↻</div>
+                    <div className="hud-title">Mucosal Healing &amp; Restore</div>
+                    <div className="hud-sub">40:1 Physiological Formula</div>
                   </div>
 
-                  {/* Side 2 (Front - Flipped Open State) */}
+                  {/* Side 2 (Flipped View) */}
                   <div className="card-flip-front">
                     <div className="hud-badge-row">
                       <span className="hud-status-dot" style={{ background: "#a855f7" }}></span>
@@ -177,22 +162,17 @@ export default function Home() {
               {/* Card 4: Clinical Impact */}
               <div className="hero-hud-card hero-hud-card--4 hero-hud-card--closed" id="hud-card-4">
                 <div className="card-flip-inner">
-                  {/* Side 1 (Back - Closed State) */}
+                  {/* Side 1 (Initial View) */}
                   <div className="card-flip-back">
                     <div className="hud-badge-row">
-                      <span className="hud-status-dot" style={{ background: "#06b6d4", boxShadow: "0 0 12px #06b6d4" }}></span>
-                      <span className="hud-tag" style={{ color: "#22d3ee" }}>04 · CLINICAL IMPACT</span>
+                      <span className="hud-status-dot" style={{ background: "#06b6d4" }}></span>
+                      <span className="hud-tag hud-tag--teal">04 · CLINICAL IMPACT</span>
                     </div>
-                    <div className="hud-title" style={{ color: "#ffffff", background: "none", WebkitTextFillColor: "initial" }}>
-                      4 Specialty Formulations
-                    </div>
-                    <div className="hud-sub" style={{ color: "#c5f6fa" }}>
-                      20+ Years Trusted Physician Care
-                    </div>
-                    <div className="hud-closed-label">✦ SCROLL TO FLIP ↻</div>
+                    <div className="hud-title">4 Specialty Formulations</div>
+                    <div className="hud-sub">20+ Years Trusted Physician Care</div>
                   </div>
 
-                  {/* Side 2 (Front - Flipped Open State) */}
+                  {/* Side 2 (Flipped View) */}
                   <div className="card-flip-front">
                     <div className="hud-badge-row">
                       <span className="hud-status-dot" style={{ background: "#06b6d4" }}></span>
