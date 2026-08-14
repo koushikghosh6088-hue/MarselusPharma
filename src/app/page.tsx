@@ -75,7 +75,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 4 Pillars 3D Flip Cards Grid (Unified Clean White Design Both Sides) */}
+            {/* 4 Pillars 3D Flip Cards Grid (Distinct High-Impact Copy on Both Sides) */}
             <div className="hero-hud-grid">
               
               {/* Card 1: Formulation Technology */}
@@ -88,19 +88,17 @@ export default function Home() {
                       <span className="hud-tag">01 · FORMULATION TECH</span>
                     </div>
                     <div className="hud-title">Targeted Site Release</div>
-                    <div className="hud-sub">pH &gt; 6.8 Colonic Dissolution</div>
+                    <div className="hud-sub">pH &gt; 6.8 Site-Specific Colonic Dissolution</div>
                   </div>
 
                   {/* Side 2 (Flipped View) */}
                   <div className="card-flip-front">
                     <div className="hud-badge-row">
                       <span className="hud-status-dot" style={{ background: "#10b981" }}></span>
-                      <span className="hud-tag">FORMULATION TECH · ACTIVE</span>
+                      <span className="hud-tag">ARTEMES™ 1.2g</span>
                     </div>
-                    <div className="hud-title">Targeted Colonic Remission</div>
-                    <div className="hud-sub">
-                      <span style={{ color: "#059669", fontWeight: "800" }}>ARTEMES™ 1.2g</span> · 5-ASA Multi-Matrix
-                    </div>
+                    <div className="hud-title">99.4% Targeted Delivery</div>
+                    <div className="hud-sub">5-ASA Prolonged Release Multi-Matrix Tech</div>
                   </div>
                 </div>
               </div>
@@ -114,20 +112,18 @@ export default function Home() {
                       <span className="hud-status-dot" style={{ background: "#3b82f6" }}></span>
                       <span className="hud-tag hud-tag--blue">02 · QUALITY CERTIFIED</span>
                     </div>
-                    <div className="hud-title">WHO-GMP &amp; ISO 9001:2015</div>
-                    <div className="hud-sub">100% In-Process QA System</div>
+                    <div className="hud-title">WHO-GMP &amp; ISO Accredited</div>
+                    <div className="hud-sub">100% Analytical In-Process QA System</div>
                   </div>
 
                   {/* Side 2 (Flipped View) */}
                   <div className="card-flip-front">
                     <div className="hud-badge-row">
                       <span className="hud-status-dot" style={{ background: "#3b82f6" }}></span>
-                      <span className="hud-tag hud-tag--blue">QUALITY CERTIFIED · VERIFIED</span>
+                      <span className="hud-tag hud-tag--blue">GLOBAL COMPLIANCE</span>
                     </div>
-                    <div className="hud-title">Analytical QA Standards</div>
-                    <div className="hud-sub">
-                      <span style={{ color: "#2563eb", fontWeight: "800" }}>Strict Quality</span> · Accredited Facility
-                    </div>
+                    <div className="hud-title">Zero-Defect Standard</div>
+                    <div className="hud-sub">Certified Sterile &amp; Oral Solid Dose Facilities</div>
                   </div>
                 </div>
               </div>
@@ -142,19 +138,17 @@ export default function Home() {
                       <span className="hud-tag hud-tag--purple">03 · TARGETED EFFICACY</span>
                     </div>
                     <div className="hud-title">Mucosal Healing &amp; Restore</div>
-                    <div className="hud-sub">40:1 Physiological Formula</div>
+                    <div className="hud-sub">Physiological 40:1 Ratio Inositol Concept</div>
                   </div>
 
                   {/* Side 2 (Flipped View) */}
                   <div className="card-flip-front">
                     <div className="hud-badge-row">
                       <span className="hud-status-dot" style={{ background: "#a855f7" }}></span>
-                      <span className="hud-tag hud-tag--purple">TARGETED EFFICACY · PROVEN</span>
+                      <span className="hud-tag hud-tag--purple">SARANYA® 40:1</span>
                     </div>
-                    <div className="hud-title">Endocrine &amp; Mucosal Care</div>
-                    <div className="hud-sub">
-                      <span style={{ color: "#7c3aed", fontWeight: "800" }}>SARANYA® 40:1</span> · Inositol Concept
-                    </div>
+                    <div className="hud-title">Endocrine Balance</div>
+                    <div className="hud-sub">Enhanced Patient Tolerance &amp; Fast Recovery</div>
                   </div>
                 </div>
               </div>
@@ -168,66 +162,64 @@ export default function Home() {
                       <span className="hud-status-dot" style={{ background: "#06b6d4" }}></span>
                       <span className="hud-tag hud-tag--teal">04 · CLINICAL IMPACT</span>
                     </div>
-                    <div className="hud-title">4 Specialty Formulations</div>
-                    <div className="hud-sub">20+ Years Trusted Physician Care</div>
+                    <div className="hud-title">4 Hero Specialty Brands</div>
+                    <div className="hud-sub">20+ Years Trusted Physician Partnership</div>
                   </div>
 
                   {/* Side 2 (Flipped View) */}
                   <div className="card-flip-front">
                     <div className="hud-badge-row">
                       <span className="hud-status-dot" style={{ background: "#06b6d4" }}></span>
-                      <span className="hud-tag hud-tag--teal">CLINICAL IMPACT · HERITAGE</span>
+                      <span className="hud-tag hud-tag--teal">IMMUNOMARS™ &amp; UV-60K</span>
                     </div>
-                    <div className="hud-title">3 Specialty Therapy Areas</div>
-                    <div className="hud-sub">
-                      <span style={{ color: "#0284c7", fontWeight: "800" }}>IMMUNOMARS™ 15g</span> · Immunonutrition
-                    </div>
+                    <div className="hud-title">Therapy Area Leadership</div>
+                    <div className="hud-sub">High-Dose Immunonutrition &amp; D3 Care</div>
                   </div>
                 </div>
               </div>
 
             </div>
 
-            {/* Running Brand Highlight Ticker Banner (Fills Space Below Cards) */}
+            {/* Corporate Professional Marquee Ticker Banner */}
             <div className="hero-running-ticker-wrapper">
               <div className="hero-ticker-track">
                 <div className="hero-ticker-item">
-                  <span className="ticker-star">✦</span> 20+ YEARS PHARMACEUTICAL EXCELLENCE
+                  SPECIALTY PHARMACEUTICAL INNOVATION <span className="ticker-sep">◆</span>
                 </div>
                 <div className="hero-ticker-item">
-                  <span className="ticker-star">✦</span> WHO-GMP &amp; ISO 9001:2015 ACCREDITED
+                  WHO-GMP &amp; ISO 9001:2015 ACCREDITED <span className="ticker-sep">◆</span>
                 </div>
                 <div className="hero-ticker-item">
-                  <span className="ticker-star">✦</span> TARGETED PROLONGED RELEASE TECHNOLOGY
+                  TARGETED PROLONGED RELEASE TECHNOLOGY <span className="ticker-sep">◆</span>
                 </div>
                 <div className="hero-ticker-item">
-                  <span className="ticker-star">✦</span> ARTEMES™ 1.2g · SARANYA® 40:1 · IMMUNOMARS™ 15g · UV-60K
+                  GASTROENTEROLOGY · WOMEN&apos;S HEALTH · CLINICAL NUTRITION <span className="ticker-sep">◆</span>
                 </div>
                 <div className="hero-ticker-item">
-                  <span className="ticker-star">✦</span> GASTROENTEROLOGY · WOMEN&apos;S HEALTH · CLINICAL NUTRITION
+                  TRUSTED BY LEADING PHYSICIANS &amp; SPECIALISTS NATIONWIDE <span className="ticker-sep">◆</span>
                 </div>
                 <div className="hero-ticker-item">
-                  <span className="ticker-star">✦</span> TRUSTED BY LEADING PHYSICIANS NATIONWIDE
+                  20+ YEARS OF FORMULATION EXCELLENCE <span className="ticker-sep">◆</span>
                 </div>
 
-                {/* Duplicated for smooth infinite loop */}
+                {/* Duplicated for seamless loop */}
                 <div className="hero-ticker-item">
-                  <span className="ticker-star">✦</span> 20+ YEARS PHARMACEUTICAL EXCELLENCE
+                  SPECIALTY PHARMACEUTICAL INNOVATION <span className="ticker-sep">◆</span>
                 </div>
                 <div className="hero-ticker-item">
-                  <span className="ticker-star">✦</span> WHO-GMP &amp; ISO 9001:2015 ACCREDITED
+                  WHO-GMP &amp; ISO 9001:2015 ACCREDITED <span className="ticker-sep">◆</span>
                 </div>
                 <div className="hero-ticker-item">
-                  <span className="ticker-star">✦</span> TARGETED PROLONGED RELEASE TECHNOLOGY
+                  TARGETED PROLONGED RELEASE TECHNOLOGY <span className="ticker-sep">◆</span>
                 </div>
                 <div className="hero-ticker-item">
-                  <span className="ticker-star">✦</span> ARTEMES™ 1.2g · SARANYA® 40:1 · IMMUNOMARS™ 15g · UV-60K
+                  GASTROENTEROLOGY · WOMEN&apos;S HEALTH · CLINICAL NUTRITION <span className="ticker-sep">◆</span>
                 </div>
                 <div className="hero-ticker-item">
-                  <span className="ticker-star">✦</span> GASTROENTEROLOGY · WOMEN&apos;S HEALTH · CLINICAL NUTRITION
+                  TRUSTED BY LEADING PHYSICIANS &amp; SPECIALISTS NATIONWIDE <span className="ticker-sep">◆</span>
                 </div>
                 <div className="hero-ticker-item">
-                  <span className="ticker-star">✦</span> TRUSTED BY LEADING PHYSICIANS NATIONWIDE
+                  20+ YEARS OF FORMULATION EXCELLENCE <span className="ticker-sep">◆</span>
                 </div>
               </div>
             </div>
