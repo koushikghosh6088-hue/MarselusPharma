@@ -21,7 +21,7 @@ export default function AboutPage() {
         }}
       >
         <SpineTab label="ABOUT MARSELUS PHARMACEUTICALS" />
-        <div className="about-hero-watermark">MARSELUS EST. 2003</div>
+        <div className="about-hero-watermark">MARSELUS EST. 2024</div>
 
         {/* Animated Radial Color Orbs */}
         <div
@@ -109,7 +109,7 @@ export default function AboutPage() {
               {/* Colorful Stat Pills */}
               <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
                 <span style={{ padding: "8px 16px", borderRadius: "20px", background: "rgba(16, 185, 129, 0.2)", color: "#34d399", border: "1px solid #10b981", fontSize: "11px", fontWeight: "900" }}>
-                  ✦ 20+ YEARS HERITAGE
+                  ✦ 2+ YEARS HERITAGE
                 </span>
                 <span style={{ padding: "8px 16px", borderRadius: "20px", background: "rgba(217, 164, 65, 0.2)", color: "var(--color-gold)", border: "1px solid #d9a441", fontSize: "11px", fontWeight: "900" }}>
                   ✦ WHO-GMP ACCREDITED
@@ -181,7 +181,7 @@ export default function AboutPage() {
               </p>
               
               <p style={{ fontSize: "var(--text-base)", color: "var(--color-text-muted)", lineHeight: "1.75", marginBottom: "var(--space-6)" }}>
-                Over two decades, we have maintained an unyielding focus on quality, ethical compliance, and clinical evidence. By collaborating with leading clinicians and certified manufacturing units, Marselus has established a strong presence in Gastroenterology, Women&apos;s Health, Clinical Nutrition, and Vitamin Therapy.
+                Over 2 years of dedicated innovation, we have maintained an unyielding focus on quality, ethical compliance, and clinical evidence. By collaborating with leading clinicians and certified manufacturing units, Marselus has established a strong presence in Gastroenterology, Women&apos;s Health, Clinical Nutrition, and Vitamin Therapy.
               </p>
 
               <div style={{ padding: "18px 24px", background: "#ffffff", borderRadius: "16px", borderLeft: "4px solid #10b981", boxShadow: "0 8px 24px rgba(15, 61, 40, 0.06)" }}>
@@ -197,7 +197,7 @@ export default function AboutPage() {
               <div style={{ padding: "20px", borderRadius: "18px", background: "#ffffff", border: "1.5px solid rgba(16, 185, 129, 0.2)", borderLeft: "5px solid #10b981", boxShadow: "0 10px 25px rgba(0,0,0,0.04)" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
                   <strong style={{ fontSize: "1.1rem", color: "var(--color-forest-dark)", fontFamily: "var(--font-heading)" }}>Kolkata Founding</strong>
-                  <span style={{ fontSize: "10px", fontWeight: "900", padding: "4px 10px", borderRadius: "12px", background: "rgba(16, 185, 129, 0.15)", color: "#10b981" }}>2003</span>
+                  <span style={{ fontSize: "10px", fontWeight: "900", padding: "4px 10px", borderRadius: "12px", background: "rgba(16, 185, 129, 0.15)", color: "#10b981" }}>EST. 2024</span>
                 </div>
                 <p style={{ fontSize: "0.88rem", color: "var(--color-text-muted)", margin: 0, lineHeight: "1.5" }}>
                   Inception in Kolkata with a focus on delivering high-integrity formulations across Eastern India.

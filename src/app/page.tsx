@@ -166,7 +166,7 @@ export default function Home() {
                       <span className="hud-tag hud-tag--teal">04 · CLINICAL IMPACT</span>
                     </div>
                     <div className="hud-title">4 Hero Specialty Brands</div>
-                    <div className="hud-sub">20+ Years Trusted Physician Partnership</div>
+                    <div className="hud-sub">2+ Years Trusted Physician Partnership</div>
                   </div>
 
                   {/* Side 2 (Flipped View) */}
@@ -208,7 +208,7 @@ export default function Home() {
                 </div>
                 <div className="hero-ticker-item hero-ticker-item--gold">
                   <svg className="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  <span>20+ YEARS OF FORMULATION EXCELLENCE</span>
+                  <span>2+ YEARS OF FORMULATION EXCELLENCE</span>
                 </div>
 
                 {/* Duplicated for seamless infinite loop */}
@@ -234,7 +234,7 @@ export default function Home() {
                 </div>
                 <div className="hero-ticker-item hero-ticker-item--gold">
                   <svg className="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  <span>20+ YEARS OF FORMULATION EXCELLENCE</span>
+                  <span>2+ YEARS OF FORMULATION EXCELLENCE</span>
                 </div>
               </div>
             </div>
@@ -243,7 +243,7 @@ export default function Home() {
 
         {/* ═══ 2. MISSION & 3D INTERACTIVE DNA HELIX MODEL ═══ */}
         <section className="mission-dna-section">
-          <div className="mission-watermark">2003</div>
+          <div className="mission-watermark">MARSELUS</div>
           <div className="container">
             <div className="mission-grid">
               
@@ -278,7 +278,7 @@ export default function Home() {
                 {/* Trust Bar */}
                 <div className="mission-trust-bar">
                   <div className="trust-chip">
-                    <span className="trust-chip-dot"></span> EST. 2003
+                    <span className="trust-chip-dot"></span> EST. 2024
                   </div>
                   <div style={{ width: "1px", height: "12px", background: "rgba(0,0,0,0.15)" }}></div>
                   <div className="trust-chip">
