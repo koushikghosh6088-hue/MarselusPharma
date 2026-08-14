@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import SpineTab from "@/components/SpineTab";
 import DNAHelix3D from "@/components/DNAHelix3D";
+import FormulationCardsShowcase from "@/components/FormulationCardsShowcase";
 import { Badge } from "@/components/ui/badge-2";
 import { Button } from "@/components/ui/button-1";
 import { Card, CardContent, CardHeader, CardTitle, CardToolbar } from "@/components/ui/card";
@@ -298,7 +299,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══ 3. HERO FORMULATIONS (BENTO GRID WITH BRAND TINTS & 3D RENDERS) ═══ */}
+        {/* ═══ 3. HERO FORMULATIONS (INTERACTIVE CARDS SHOWCASE) ═══ */}
         <section className="formulations-bento-section">
           <div className="container">
             <div style={{ textAlign: "center", maxWidth: "720px", margin: "0 auto var(--space-12)" }}>
@@ -309,108 +310,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bento-grid">
-              
-              {/* Product 1: ARTEMES (Flagship Spans 7 Columns) */}
-              <div className="bento-card bento-card--flagship reveal glow-border glow-border--artemes">
-                <svg className="bento-corner-icon" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" strokeWidth="2"><rect x="3" y="11" width="18" height="8" rx="4"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-
-                <div className="bento-flagship-content">
-                  <div className="bento-flagship-text">
-                    <span className="slide-badge" style={{ background: "rgba(29, 158, 117, 0.15)", color: "var(--color-artemes)", marginBottom: "var(--space-4)" }}>
-                      GASTROENTEROLOGY · FLAGSHIP
-                    </span>
-                    <h3 style={{ fontSize: "2rem", fontFamily: "var(--font-heading)", color: "var(--color-forest-dark)", marginBottom: "4px" }}>
-                      ARTEMES <small style={{ fontSize: "1rem", color: "var(--color-artemes)", fontWeight: "800" }}>1.2g</small>
-                    </h3>
-                    <p style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--color-artemes)", marginBottom: "var(--space-3)" }}>
-                      Mesalamine 1.2 g Prolonged Release Tablets
-                    </p>
-                    <p style={{ fontSize: "0.9rem", color: "var(--color-text-muted)", marginBottom: "var(--space-6)" }}>
-                      Prolonged-release colonic targeted delivery for ulcerative colitis induction &amp; maintenance of remission.
-                    </p>
-                    <Link href="/products/artemes" style={{ fontWeight: 700, color: "var(--color-artemes)", display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                      Monograph Details →
-                    </Link>
-                  </div>
-
-                  <img src="/assets/images/capsule-release.png" alt="ARTEMES Formulation Render" className="bento-flagship-img" />
-                </div>
-              </div>
-
-              {/* Product 2: SARANYA (Spans 5 Columns) */}
-              <div className="bento-card bento-card--saranya reveal glow-border glow-border--saranya">
-                <svg className="bento-corner-icon" viewBox="0 0 24 24" fill="none" stroke="#D6438C" strokeWidth="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-
-                <div>
-                  <span className="slide-badge" style={{ background: "rgba(214, 67, 140, 0.15)", color: "var(--color-saranya)", marginBottom: "var(--space-4)" }}>
-                    WOMEN&apos;S HEALTH
-                  </span>
-                  <h3 style={{ fontSize: "1.75rem", fontFamily: "var(--font-heading)", color: "var(--color-forest-dark)", marginBottom: "4px" }}>
-                    SARANYA®
-                  </h3>
-                  <p style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--color-saranya)", marginBottom: "var(--space-3)" }}>
-                    Myo-Inositol + D-Chiro Inositol (40:1) + Chromium + Vit D2
-                  </p>
-                  <p style={{ fontSize: "0.9rem", color: "var(--color-text-muted)", marginBottom: "var(--space-6)" }}>
-                    Formulated for physiological hormonal &amp; metabolic balance in PCOS management.
-                  </p>
-                </div>
-
-                <Link href="/products/saranya" style={{ fontWeight: 700, color: "var(--color-saranya)", display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                  Monograph Details →
-                </Link>
-              </div>
-
-              {/* Product 3: IMMUNOMARS (Spans 6 Columns) */}
-              <div className="bento-card bento-card--immunomars reveal glow-border glow-border--immunomars">
-                <svg className="bento-corner-icon" viewBox="0 0 24 24" fill="none" stroke="#E08A2E" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-
-                <div>
-                  <span className="slide-badge" style={{ background: "rgba(224, 138, 46, 0.15)", color: "var(--color-immunomars)", marginBottom: "var(--space-4)" }}>
-                    CLINICAL NUTRITION
-                  </span>
-                  <h3 style={{ fontSize: "1.75rem", fontFamily: "var(--font-heading)", color: "var(--color-forest-dark)", marginBottom: "4px" }}>
-                    IMMUNOMARS™
-                  </h3>
-                  <p style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--color-immunomars)", marginBottom: "var(--space-3)" }}>
-                    L-Glutamine + Amino Acids + Micronutrient Sachet
-                  </p>
-                  <p style={{ fontSize: "0.9rem", color: "var(--color-text-muted)", marginBottom: "var(--space-6)" }}>
-                    Targeted immunonutrition blend: Rebuild. Protect. Recover.
-                  </p>
-                </div>
-
-                <Link href="/products/immunomars" style={{ fontWeight: 700, color: "var(--color-immunomars)", display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                  Monograph Details →
-                </Link>
-              </div>
-
-              {/* Product 4: UV 60K (Spans 6 Columns) */}
-              <div className="bento-card bento-card--uv60k reveal glow-border glow-border--uv60k">
-                <svg className="bento-corner-icon" viewBox="0 0 24 24" fill="none" stroke="#2488A6" strokeWidth="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-
-                <div>
-                  <span className="slide-badge" style={{ background: "rgba(36, 136, 166, 0.15)", color: "var(--color-uv60k)", marginBottom: "var(--space-4)" }}>
-                    VITAMIN THERAPY
-                  </span>
-                  <h3 style={{ fontSize: "1.75rem", fontFamily: "var(--font-heading)", color: "var(--color-forest-dark)", marginBottom: "4px" }}>
-                    UV 60K®
-                  </h3>
-                  <p style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--color-uv60k)", marginBottom: "var(--space-3)" }}>
-                    Cholecalciferol (Vitamin D3) 60,000 IU Softgel Capsule
-                  </p>
-                  <p style={{ fontSize: "0.9rem", color: "var(--color-text-muted)", marginBottom: "var(--space-6)" }}>
-                    High-potency softgel formulation for rapid clinical correction of severe Vitamin D deficiency.
-                  </p>
-                </div>
-
-                <Link href="/products/uv60k" style={{ fontWeight: 700, color: "var(--color-uv60k)", display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                  Monograph Details →
-                </Link>
-              </div>
-
-            </div>
+            <FormulationCardsShowcase />
           </div>
         </section>
 
