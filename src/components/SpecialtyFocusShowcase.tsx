@@ -98,7 +98,6 @@ const SPECIALTY_DOMAINS: Domain[] = [
 
 export default function SpecialtyFocusShowcase() {
   const [selectedDomainId, setSelectedDomainId] = useState<string>("gastroenterology");
-  const [activeDrawerId, setActiveDrawerId] = useState<string | null>("gastroenterology");
 
   const activeDomain = SPECIALTY_DOMAINS.find((d) => d.id === selectedDomainId) || SPECIALTY_DOMAINS[0];
 
@@ -108,13 +107,15 @@ export default function SpecialtyFocusShowcase() {
       style={{
         position: "relative",
         zIndex: 1,
-        borderRadius: "32px",
+        borderRadius: "24px",
         background: "linear-gradient(135deg, #051a14 0%, #092c34 50%, #051a14 100%)",
         border: "1.5px solid rgba(217, 164, 65, 0.4)",
-        boxShadow: "0 25px 70px rgba(0, 0, 0, 0.45), 0 0 40px rgba(16, 185, 129, 0.15) inset",
-        padding: "clamp(24px, 4vw, 48px)",
+        boxShadow: "0 25px 70px rgba(0, 0, 0, 0.45)",
+        padding: "clamp(16px, 3vw, 40px)",
         color: "#ffffff",
         overflow: "hidden",
+        width: "100%",
+        boxSizing: "border-box",
       }}
     >
       {/* Background Radial Glow Orbs */}
@@ -123,77 +124,66 @@ export default function SpecialtyFocusShowcase() {
           position: "absolute",
           top: "-100px",
           left: "20%",
-          width: "450px",
-          height: "450px",
+          width: "350px",
+          height: "350px",
           background: `radial-gradient(circle, ${activeDomain.glowColor} 0%, transparent 70%)`,
           pointerEvents: "none",
           transition: "all 0.6s ease",
-          opacity: 0.6,
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          bottom: "-100px",
-          right: "10%",
-          width: "400px",
-          height: "400px",
-          background: "radial-gradient(circle, rgba(217, 164, 65, 0.15) 0%, transparent 70%)",
-          pointerEvents: "none",
+          opacity: 0.5,
         }}
       />
 
-      {/* Top Header Badge Row */}
+      {/* Top Header & Category Selector Row */}
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: "wrap",
-          gap: "16px",
-          marginBottom: "var(--space-10)",
+          gap: "12px",
+          marginBottom: "var(--space-6)",
           position: "relative",
           zIndex: 2,
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <span
             style={{
               width: "10px",
               height: "10px",
               borderRadius: "50%",
               background: activeDomain.color,
-              boxShadow: `0 0 14px ${activeDomain.color}`,
+              boxShadow: `0 0 12px ${activeDomain.color}`,
+              flexShrink: 0,
             }}
           />
-          <span style={{ fontSize: "11px", fontWeight: "900", letterSpacing: "0.18em", color: "var(--color-gold)", textTransform: "uppercase" }}>
-            HIGH-PRECISION SPECIALTY DOMAINS
+          <span style={{ fontSize: "11px", fontWeight: "900", letterSpacing: "0.14em", color: "var(--color-gold)", textTransform: "uppercase" }}>
+            SPECIALTY FOCUS SHOWCASE
           </span>
         </div>
 
-        {/* Domain Navigation Selector Pills */}
-        <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+        {/* Category Filter Pills (Fully Responsive) */}
+        <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", width: "100%", maxWidth: "100%" }}>
           {SPECIALTY_DOMAINS.map((domain) => {
             const isSelected = domain.id === selectedDomainId;
             return (
               <button
                 key={domain.id}
-                onClick={() => {
-                  setSelectedDomainId(domain.id);
-                  setActiveDrawerId(domain.id);
-                }}
+                onClick={() => setSelectedDomainId(domain.id)}
                 style={{
-                  padding: "8px 16px",
-                  borderRadius: "24px",
-                  fontSize: "11px",
+                  padding: "8px 14px",
+                  borderRadius: "20px",
+                  fontSize: "10.5px",
                   fontWeight: "900",
-                  letterSpacing: "0.1em",
-                  border: isSelected ? `2px solid ${domain.color}` : "1px solid rgba(255, 255, 255, 0.15)",
-                  background: isSelected ? domain.color : "rgba(255, 255, 255, 0.06)",
-                  color: isSelected ? "#ffffff" : "rgba(255, 255, 255, 0.75)",
-                  boxShadow: isSelected ? `0 6px 20px ${domain.glowColor}` : "none",
+                  letterSpacing: "0.08em",
+                  border: isSelected ? `2px solid ${domain.color}` : "1px solid rgba(255, 255, 255, 0.18)",
+                  background: isSelected ? domain.color : "rgba(255, 255, 255, 0.08)",
+                  color: isSelected ? "#ffffff" : "rgba(255, 255, 255, 0.85)",
+                  boxShadow: isSelected ? `0 6px 18px ${domain.glowColor}` : "none",
                   cursor: "pointer",
                   transition: "all 0.3s ease",
+                  flex: "1 1 auto",
+                  textAlign: "center",
                 }}
               >
                 {domain.category}
@@ -203,252 +193,205 @@ export default function SpecialtyFocusShowcase() {
         </div>
       </div>
 
-      {/* Main Split Showcase Layout */}
+      {/* Main Responsive Grid Layout (Stacks on mobile screens <= 992px) */}
       <div
+        className="specialty-split-grid"
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(12, 1fr)",
-          gap: "var(--space-8)",
-          alignItems: "stretch",
+          gridTemplateColumns: "1fr",
+          gap: "20px",
           position: "relative",
           zIndex: 2,
         }}
       >
-        {/* Left Interactive 3D Card (Spans 5 Columns) */}
+        {/* Domain Card & Lab Details Stack */}
         <div
-          className="reveal"
           style={{
-            gridColumn: "span 5",
-            borderRadius: "24px",
-            background: activeDomain.accentGradient,
-            border: `1.5px solid ${activeDomain.color}`,
-            boxShadow: `0 18px 45px rgba(0, 0, 0, 0.4), 0 0 30px ${activeDomain.glowColor}25`,
-            overflow: "hidden",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            transition: "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))",
+            gap: "20px",
+            alignItems: "stretch",
           }}
         >
-          {/* Image Banner */}
-          <div style={{ position: "relative", width: "100%", height: "220px", overflow: "hidden" }}>
-            <img
-              src={activeDomain.image}
-              alt={activeDomain.title}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                filter: "brightness(0.9) contrast(1.1)",
-              }}
-            />
-            
-            <div
-              style={{
-                position: "absolute",
-                top: "16px",
-                left: "16px",
-                background: activeDomain.badgeBg,
-                color: "#ffffff",
-                fontSize: "10px",
-                fontWeight: "900",
-                letterSpacing: "0.14em",
-                padding: "5px 14px",
-                borderRadius: "18px",
-                boxShadow: "0 6px 16px rgba(0,0,0,0.3)",
-              }}
-            >
-              {activeDomain.category}
-            </div>
-          </div>
-
-          {/* Card Body Copy */}
-          <div style={{ padding: "24px", flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-            <div>
-              <h3 style={{ fontSize: "1.75rem", fontFamily: "var(--font-heading)", fontWeight: "900", color: "#ffffff", marginBottom: "6px" }}>
-                {activeDomain.title}
-              </h3>
-              <p style={{ fontSize: "0.82rem", fontWeight: "800", color: activeDomain.secondaryColor, marginBottom: "14px" }}>
-                {activeDomain.subtitle}
-              </p>
-              <p style={{ fontSize: "0.9rem", color: "rgba(255, 255, 255, 0.85)", lineHeight: "1.6", marginBottom: "20px" }}>
-                {activeDomain.description}
-              </p>
-
-              {/* Stat Badge */}
+          
+          {/* Left Domain Overview Card */}
+          <div
+            style={{
+              borderRadius: "20px",
+              background: activeDomain.accentGradient,
+              border: `1.5px solid ${activeDomain.color}`,
+              boxShadow: `0 16px 40px rgba(0, 0, 0, 0.4)`,
+              overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
+          >
+            <div style={{ position: "relative", width: "100%", height: "200px", overflow: "hidden" }}>
+              <img
+                src={activeDomain.image}
+                alt={activeDomain.title}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              />
               <div
                 style={{
-                  display: "inline-flex",
-                  alignItems: "center",
+                  position: "absolute",
+                  top: "14px",
+                  left: "14px",
+                  background: activeDomain.badgeBg,
+                  color: "#ffffff",
                   fontSize: "10px",
                   fontWeight: "900",
-                  letterSpacing: "0.08em",
-                  padding: "6px 14px",
-                  borderRadius: "20px",
-                  background: "rgba(255, 255, 255, 0.1)",
-                  color: "var(--color-gold)",
-                  border: "1px solid rgba(217, 164, 65, 0.4)",
+                  letterSpacing: "0.12em",
+                  padding: "5px 12px",
+                  borderRadius: "16px",
                 }}
               >
-                {activeDomain.statChip}
+                {activeDomain.category}
               </div>
             </div>
 
-            <div style={{ marginTop: "24px" }}>
-              <Link
-                href={activeDomain.href}
-                className="btn-connected-pill btn-connected-pill--primary"
-                style={{
-                  background: activeDomain.color,
-                  color: "#ffffff",
-                  fontWeight: "900",
-                  width: "100%",
-                  textAlign: "center",
-                  justifyContent: "center",
-                }}
-              >
-                Explore {activeDomain.category} Monographs →
-              </Link>
-            </div>
-          </div>
-        </div>
+            <div style={{ padding: "20px", flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div>
+                <h3 style={{ fontSize: "1.5rem", fontFamily: "var(--font-heading)", fontWeight: "900", color: "#ffffff", marginBottom: "4px" }}>
+                  {activeDomain.title}
+                </h3>
+                <p style={{ fontSize: "0.82rem", fontWeight: "800", color: activeDomain.secondaryColor, marginBottom: "12px" }}>
+                  {activeDomain.subtitle}
+                </p>
+                <p style={{ fontSize: "0.88rem", color: "rgba(255, 255, 255, 0.85)", lineHeight: "1.55", marginBottom: "16px" }}>
+                  {activeDomain.description}
+                </p>
 
-        {/* Right Interactive Laboratory HUD (Spans 7 Columns) */}
-        <div
-          className="reveal"
-          style={{
-            gridColumn: "span 7",
-            borderRadius: "24px",
-            background: "rgba(8, 30, 24, 0.85)",
-            backdropFilter: "blur(20px)",
-            border: "1.5px solid rgba(255, 255, 255, 0.14)",
-            boxShadow: "0 18px 45px rgba(0, 0, 0, 0.35)",
-            padding: "32px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-          }}
-        >
-          <div>
-            
-            {/* Header Telemetry Badge */}
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px", borderBottom: "1px solid rgba(255, 255, 255, 0.1)", paddingBottom: "14px" }}>
-              <div style={{ fontSize: "11px", fontWeight: "900", letterSpacing: "0.14em", color: activeDomain.color, textTransform: "uppercase" }}>
-                ✦ MOLECULAR LAB PROFILE: {activeDomain.title}
-              </div>
-              <span style={{ fontSize: "10px", fontWeight: "800", color: "var(--color-gold)", letterSpacing: "0.08em" }}>
-                WHO-GMP CLINICAL EVIDENCE
-              </span>
-            </div>
-
-            {/* Metrics Chips Grid */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "24px" }}>
-              {activeDomain.clinicalMetrics.map((metric, idx) => (
                 <div
-                  key={idx}
                   style={{
-                    padding: "14px 18px",
+                    display: "inline-block",
+                    fontSize: "10px",
+                    fontWeight: "900",
+                    letterSpacing: "0.06em",
+                    padding: "6px 12px",
                     borderRadius: "16px",
-                    background: "rgba(255, 255, 255, 0.05)",
-                    border: `1px solid ${activeDomain.color}44`,
+                    background: "rgba(255, 255, 255, 0.1)",
+                    color: "var(--color-gold)",
+                    border: "1px solid rgba(217, 164, 65, 0.4)",
+                    marginBottom: "16px",
                   }}
                 >
-                  <div style={{ fontSize: "10px", fontWeight: "900", letterSpacing: "0.12em", color: "rgba(255, 255, 255, 0.6)", textTransform: "uppercase" }}>
-                    {metric.label}
-                  </div>
-                  <div style={{ fontSize: "1.35rem", fontWeight: "900", fontFamily: "var(--font-heading)", color: activeDomain.color, marginTop: "2px" }}>
-                    {metric.val}
-                  </div>
+                  {activeDomain.statChip}
                 </div>
-              ))}
-            </div>
+              </div>
 
-            {/* Target Mechanism Section */}
-            <div style={{ marginBottom: "24px" }}>
-              <div style={{ fontSize: "10px", fontWeight: "900", letterSpacing: "0.14em", color: "var(--color-gold)", textTransform: "uppercase", marginBottom: "8px" }}>
-                ✦ TARGET MOLECULAR MECHANISM
-              </div>
-              <div
-                style={{
-                  padding: "16px 20px",
-                  borderRadius: "16px",
-                  background: "rgba(255, 255, 255, 0.04)",
-                  border: "1px solid rgba(255, 255, 255, 0.1)",
-                  fontSize: "0.9rem",
-                  color: "rgba(255, 255, 255, 0.9)",
-                  lineHeight: "1.65",
-                }}
-              >
-                {activeDomain.pathwayDetails}
-              </div>
-            </div>
-
-            {/* Patient Clinical Impact */}
-            <div style={{ marginBottom: "24px" }}>
-              <div style={{ fontSize: "10px", fontWeight: "900", letterSpacing: "0.14em", color: activeDomain.secondaryColor, textTransform: "uppercase", marginBottom: "8px" }}>
-                ✦ CLINICAL PATIENT IMPACT
-              </div>
-              <div style={{ fontSize: "0.88rem", color: "rgba(255, 255, 255, 0.85)", lineHeight: "1.6" }}>
-                {activeDomain.patientImpact}
+              <div>
+                <Link
+                  href={activeDomain.href}
+                  className="btn-connected-pill btn-connected-pill--primary"
+                  style={{
+                    background: activeDomain.color,
+                    color: "#ffffff",
+                    fontWeight: "900",
+                    width: "100%",
+                    textAlign: "center",
+                    justifyContent: "center",
+                    padding: "10px 16px",
+                    fontSize: "12px",
+                  }}
+                >
+                  Explore {activeDomain.category} Monographs →
+                </Link>
               </div>
             </div>
+          </div>
 
-            {/* Key Formulations Badges */}
+          {/* Right Laboratory HUD Panel */}
+          <div
+            style={{
+              borderRadius: "20px",
+              background: "rgba(8, 30, 24, 0.9)",
+              backdropFilter: "blur(16px)",
+              border: "1.5px solid rgba(255, 255, 255, 0.14)",
+              padding: "20px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
+          >
             <div>
-              <div style={{ fontSize: "10px", fontWeight: "900", letterSpacing: "0.14em", color: "rgba(255, 255, 255, 0.6)", textTransform: "uppercase", marginBottom: "10px" }}>
-                CORE FORMULATIONS IN DOMAIN
+              <div style={{ fontSize: "11px", fontWeight: "900", letterSpacing: "0.12em", color: activeDomain.color, textTransform: "uppercase", marginBottom: "14px", borderBottom: "1px solid rgba(255, 255, 255, 0.1)", paddingBottom: "10px" }}>
+                ✦ CLINICAL METRICS &amp; MOLECULAR PATHWAY
               </div>
-              <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-                {activeDomain.keyFormulations.map((form, idx) => (
-                  <span
+
+              {/* Metrics Grid */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+                {activeDomain.clinicalMetrics.map((m, idx) => (
+                  <div
                     key={idx}
                     style={{
-                      fontSize: "11px",
-                      fontWeight: "800",
-                      padding: "6px 14px",
+                      padding: "10px 14px",
                       borderRadius: "14px",
-                      background: `rgba(${activeDomain.id === "gastroenterology" ? "16, 185, 129" : activeDomain.id === "womens-health" ? "214, 67, 140" : "224, 138, 46"}, 0.15)`,
-                      color: activeDomain.secondaryColor,
+                      background: "rgba(255, 255, 255, 0.05)",
                       border: `1px solid ${activeDomain.color}44`,
                     }}
                   >
-                    ✦ {form}
-                  </span>
+                    <div style={{ fontSize: "9.5px", fontWeight: "900", letterSpacing: "0.1em", color: "rgba(255, 255, 255, 0.6)", textTransform: "uppercase" }}>
+                      {m.label}
+                    </div>
+                    <div style={{ fontSize: "1.2rem", fontWeight: "900", fontFamily: "var(--font-heading)", color: activeDomain.color, marginTop: "2px" }}>
+                      {m.val}
+                    </div>
+                  </div>
                 ))}
               </div>
+
+              {/* Mechanism */}
+              <div style={{ marginBottom: "16px" }}>
+                <div style={{ fontSize: "10px", fontWeight: "900", letterSpacing: "0.12em", color: "var(--color-gold)", textTransform: "uppercase", marginBottom: "6px" }}>
+                  ✦ MOLECULAR MECHANISM OF ACTION
+                </div>
+                <p style={{ fontSize: "0.85rem", color: "rgba(255, 255, 255, 0.88)", lineHeight: "1.55", margin: 0 }}>
+                  {activeDomain.pathwayDetails}
+                </p>
+              </div>
+
+              {/* Core Formulations Pills */}
+              <div>
+                <div style={{ fontSize: "9.5px", fontWeight: "900", letterSpacing: "0.1em", color: "rgba(255, 255, 255, 0.6)", textTransform: "uppercase", marginBottom: "8px" }}>
+                  CORE FORMULATIONS
+                </div>
+                <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
+                  {activeDomain.keyFormulations.map((form, i) => (
+                    <span
+                      key={i}
+                      style={{
+                        fontSize: "10.5px",
+                        fontWeight: "800",
+                        padding: "5px 12px",
+                        borderRadius: "12px",
+                        background: "rgba(255, 255, 255, 0.08)",
+                        color: activeDomain.secondaryColor,
+                        border: `1px solid ${activeDomain.color}33`,
+                      }}
+                    >
+                      ✦ {form}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
             </div>
 
-          </div>
+            <div style={{ marginTop: "20px", paddingTop: "12px", borderTop: "1px solid rgba(255, 255, 255, 0.1)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <span style={{ fontSize: "10.5px", color: "rgba(255, 255, 255, 0.6)", fontWeight: "700" }}>
+                WHO-GMP CLINICAL DATA
+              </span>
+              <Link href="/science" style={{ fontSize: "11.5px", fontWeight: "900", color: "var(--color-gold)", textDecoration: "none" }}>
+                Research Papers →
+              </Link>
+            </div>
 
-          {/* HUD Footer Action Bar */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginTop: "28px",
-              paddingTop: "16px",
-              borderTop: "1px solid rgba(255, 255, 255, 0.1)",
-            }}
-          >
-            <span style={{ fontSize: "11px", color: "rgba(255, 255, 255, 0.6)", fontWeight: "700" }}>
-              SELECT DOMAIN TO INSPECT MOLECULAR DATA
-            </span>
-
-            <Link
-              href="/science"
-              style={{
-                fontSize: "12px",
-                fontWeight: "900",
-                color: "var(--color-gold)",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "6px",
-                textDecoration: "none",
-              }}
-            >
-              Scientific Research Papers →
-            </Link>
           </div>
 
         </div>
