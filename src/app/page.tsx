@@ -180,46 +180,58 @@ export default function Home() {
 
             </div>
 
-            {/* Corporate Professional Marquee Ticker Banner */}
+            {/* Corporate Professional Marquee Ticker Banner with Micro-Graphics & Brand Colors */}
             <div className="hero-running-ticker-wrapper">
               <div className="hero-ticker-track">
-                <div className="hero-ticker-item">
-                  SPECIALTY PHARMACEUTICAL INNOVATION <span className="ticker-sep">◆</span>
+                <div className="hero-ticker-item hero-ticker-item--green">
+                  <svg className="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M10 2v7.5M14 2v7.5M8.5 2h7M5 16a6 6 0 0012 0l-1.5-6.5h-9L5 16z"/></svg>
+                  <span>SPECIALTY PHARMACEUTICAL INNOVATION</span>
                 </div>
-                <div className="hero-ticker-item">
-                  WHO-GMP &amp; ISO 9001:2015 ACCREDITED <span className="ticker-sep">◆</span>
+                <div className="hero-ticker-item hero-ticker-item--blue">
+                  <svg className="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg>
+                  <span>WHO-GMP &amp; ISO 9001:2015 ACCREDITED</span>
                 </div>
-                <div className="hero-ticker-item">
-                  TARGETED PROLONGED RELEASE TECHNOLOGY <span className="ticker-sep">◆</span>
+                <div className="hero-ticker-item hero-ticker-item--teal">
+                  <svg className="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><rect x="3" y="11" width="18" height="8" rx="4"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                  <span>TARGETED PROLONGED RELEASE TECH</span>
                 </div>
-                <div className="hero-ticker-item">
-                  GASTROENTEROLOGY · WOMEN&apos;S HEALTH · CLINICAL NUTRITION <span className="ticker-sep">◆</span>
+                <div className="hero-ticker-item hero-ticker-item--pink">
+                  <svg className="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                  <span>GASTROENTEROLOGY · WOMEN&apos;S HEALTH · NUTRITION</span>
                 </div>
-                <div className="hero-ticker-item">
-                  TRUSTED BY LEADING PHYSICIANS &amp; SPECIALISTS NATIONWIDE <span className="ticker-sep">◆</span>
+                <div className="hero-ticker-item hero-ticker-item--purple">
+                  <svg className="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                  <span>TRUSTED BY LEADING PHYSICIANS NATIONWIDE</span>
                 </div>
-                <div className="hero-ticker-item">
-                  20+ YEARS OF FORMULATION EXCELLENCE <span className="ticker-sep">◆</span>
+                <div className="hero-ticker-item hero-ticker-item--gold">
+                  <svg className="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <span>20+ YEARS OF FORMULATION EXCELLENCE</span>
                 </div>
 
-                {/* Duplicated for seamless loop */}
-                <div className="hero-ticker-item">
-                  SPECIALTY PHARMACEUTICAL INNOVATION <span className="ticker-sep">◆</span>
+                {/* Duplicated for seamless infinite loop */}
+                <div className="hero-ticker-item hero-ticker-item--green">
+                  <svg className="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M10 2v7.5M14 2v7.5M8.5 2h7M5 16a6 6 0 0012 0l-1.5-6.5h-9L5 16z"/></svg>
+                  <span>SPECIALTY PHARMACEUTICAL INNOVATION</span>
                 </div>
-                <div className="hero-ticker-item">
-                  WHO-GMP &amp; ISO 9001:2015 ACCREDITED <span className="ticker-sep">◆</span>
+                <div className="hero-ticker-item hero-ticker-item--blue">
+                  <svg className="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg>
+                  <span>WHO-GMP &amp; ISO 9001:2015 ACCREDITED</span>
                 </div>
-                <div className="hero-ticker-item">
-                  TARGETED PROLONGED RELEASE TECHNOLOGY <span className="ticker-sep">◆</span>
+                <div className="hero-ticker-item hero-ticker-item--teal">
+                  <svg className="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><rect x="3" y="11" width="18" height="8" rx="4"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                  <span>TARGETED PROLONGED RELEASE TECH</span>
                 </div>
-                <div className="hero-ticker-item">
-                  GASTROENTEROLOGY · WOMEN&apos;S HEALTH · CLINICAL NUTRITION <span className="ticker-sep">◆</span>
+                <div className="hero-ticker-item hero-ticker-item--pink">
+                  <svg className="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                  <span>GASTROENTEROLOGY · WOMEN&apos;S HEALTH · NUTRITION</span>
                 </div>
-                <div className="hero-ticker-item">
-                  TRUSTED BY LEADING PHYSICIANS &amp; SPECIALISTS NATIONWIDE <span className="ticker-sep">◆</span>
+                <div className="hero-ticker-item hero-ticker-item--purple">
+                  <svg className="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                  <span>TRUSTED BY LEADING PHYSICIANS NATIONWIDE</span>
                 </div>
-                <div className="hero-ticker-item">
-                  20+ YEARS OF FORMULATION EXCELLENCE <span className="ticker-sep">◆</span>
+                <div className="hero-ticker-item hero-ticker-item--gold">
+                  <svg className="ticker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <span>20+ YEARS OF FORMULATION EXCELLENCE</span>
                 </div>
               </div>
             </div>
