@@ -11,12 +11,14 @@ interface ProductItem {
   category: string;
   categoryColor: string;
   brandTint: string;
+  cardGrad: string;
   glowColor: string;
   description: string;
   image: string;
   href: string;
   badgeText: string;
-  metrics: { label: string; val: string }[];
+  badgeBg: string;
+  metrics: { label: string; val: string; color: string; bg: string }[];
   clinicalHighlights: string[];
   mechanism: string;
 }
@@ -28,16 +30,18 @@ const PRODUCTS: ProductItem[] = [
     dosage: "1.2g",
     generic: "Mesalamine 1.2 g Prolonged Release Tablets",
     category: "GASTROENTEROLOGY",
-    categoryColor: "#1D9E75",
-    brandTint: "rgba(29, 158, 117, 0.08)",
-    glowColor: "rgba(29, 158, 117, 0.35)",
+    categoryColor: "#10b981",
+    brandTint: "rgba(16, 185, 129, 0.12)",
+    cardGrad: "linear-gradient(145deg, rgba(16, 185, 129, 0.1) 0%, rgba(255, 255, 255, 0.98) 55%, rgba(16, 185, 129, 0.05) 100%)",
+    glowColor: "rgba(16, 185, 129, 0.45)",
     description: "Prolonged-release colonic targeted delivery engineered for ulcerative colitis induction & long-term maintenance of remission.",
     image: "/assets/images/capsule-release.png",
     href: "/products/artemes",
     badgeText: "FLAGSHIP COLONIC RELEASE",
+    badgeBg: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
     metrics: [
-      { label: "TARGET DISSOLUTION", val: "pH > 6.8" },
-      { label: "CLINICAL EFFICACY", val: "99.2%" },
+      { label: "TARGET DISSOLUTION", val: "pH > 6.8", color: "#10b981", bg: "rgba(16, 185, 129, 0.12)" },
+      { label: "CLINICAL EFFICACY", val: "99.2%", color: "#047857", bg: "rgba(4, 120, 87, 0.1)" },
     ],
     clinicalHighlights: [
       "Multi-matrix technology avoids premature gastric breakdown",
@@ -52,16 +56,18 @@ const PRODUCTS: ProductItem[] = [
     dosage: "TABLETS",
     generic: "Myo-Inositol + D-Chiro Inositol (40:1) + Chromium + Vit D2",
     category: "WOMEN'S HEALTH",
-    categoryColor: "#D6438C",
-    brandTint: "rgba(214, 67, 140, 0.08)",
-    glowColor: "rgba(214, 67, 140, 0.35)",
+    categoryColor: "#d6438c",
+    brandTint: "rgba(214, 67, 140, 0.12)",
+    cardGrad: "linear-gradient(145deg, rgba(214, 67, 140, 0.1) 0%, rgba(255, 255, 255, 0.98) 55%, rgba(214, 67, 140, 0.05) 100%)",
+    glowColor: "rgba(214, 67, 140, 0.45)",
     description: "Formulated for physiological hormonal & metabolic balance in PCOS management and metabolic endocrine restore.",
     image: "/assets/images/capsules-dual.png",
     href: "/products/saranya",
     badgeText: "40:1 PHYSIOLOGICAL RATIO",
+    badgeBg: "linear-gradient(135deg, #d6438c 0%, #be185d 100%)",
     metrics: [
-      { label: "INOSITOL RATIO", val: "40 : 1" },
-      { label: "OVULATORY RESTORE", val: "Clinical Grade" },
+      { label: "INOSITOL RATIO", val: "40 : 1", color: "#d6438c", bg: "rgba(214, 67, 140, 0.12)" },
+      { label: "OVULATORY RESTORE", val: "Clinical Grade", color: "#9d174d", bg: "rgba(157, 23, 77, 0.1)" },
     ],
     clinicalHighlights: [
       "Mirrors physiological plasma ratio of Myo to D-Chiro Inositol",
@@ -76,16 +82,18 @@ const PRODUCTS: ProductItem[] = [
     dosage: "SACHETS",
     generic: "L-Glutamine + Amino Acids + Micronutrient Sachet",
     category: "CLINICAL NUTRITION",
-    categoryColor: "#E08A2E",
-    brandTint: "rgba(224, 138, 46, 0.08)",
-    glowColor: "rgba(224, 138, 46, 0.35)",
+    categoryColor: "#e08a2e",
+    brandTint: "rgba(224, 138, 46, 0.12)",
+    cardGrad: "linear-gradient(145deg, rgba(224, 138, 46, 0.1) 0%, rgba(255, 255, 255, 0.98) 55%, rgba(224, 138, 46, 0.05) 100%)",
+    glowColor: "rgba(224, 138, 46, 0.45)",
     description: "Targeted immunonutrition blend engineered to rebuild mucosal barrier integrity, support cell repair & accelerate recovery.",
     image: "/assets/images/3d-shield.png",
     href: "/products/immunomars",
     badgeText: "BARRIER PROTECTION",
+    badgeBg: "linear-gradient(135deg, #e08a2e 0%, #c2410c 100%)",
     metrics: [
-      { label: "L-GLUTAMINE", val: "15g / Dose" },
-      { label: "MUCOSAL REBUILD", val: "Fast-Acting" },
+      { label: "L-GLUTAMINE", val: "15g / Dose", color: "#e08a2e", bg: "rgba(224, 138, 46, 0.12)" },
+      { label: "MUCOSAL REBUILD", val: "Fast-Acting", color: "#b45309", bg: "rgba(180, 83, 9, 0.1)" },
     ],
     clinicalHighlights: [
       "Provides primary energy source for enterocytes & lymphocytes",
@@ -100,16 +108,18 @@ const PRODUCTS: ProductItem[] = [
     dosage: "SOFTGELS",
     generic: "Cholecalciferol (Vitamin D3) 60,000 IU Softgel Capsule",
     category: "VITAMIN THERAPY",
-    categoryColor: "#2488A6",
-    brandTint: "rgba(36, 136, 166, 0.08)",
-    glowColor: "rgba(36, 136, 166, 0.35)",
+    categoryColor: "#2488a6",
+    brandTint: "rgba(36, 136, 166, 0.12)",
+    cardGrad: "linear-gradient(145deg, rgba(36, 136, 166, 0.1) 0%, rgba(255, 255, 255, 0.98) 55%, rgba(36, 136, 166, 0.05) 100%)",
+    glowColor: "rgba(36, 136, 166, 0.45)",
     description: "High-potency softgel formulation for rapid clinical correction of severe Vitamin D deficiency and immune modulation.",
     image: "/assets/images/atrimus-capsule.png",
     href: "/products/uv60k",
     badgeText: "HIGH POTENCY 60K IU",
+    badgeBg: "linear-gradient(135deg, #2488a6 0%, #0369a1 100%)",
     metrics: [
-      { label: "CHOLECALCIFEROL", val: "60,000 IU" },
-      { label: "BIOAVAILABILITY", val: "Enhanced Softgel" },
+      { label: "CHOLECALCIFEROL", val: "60,000 IU", color: "#2488a6", bg: "rgba(36, 136, 166, 0.12)" },
+      { label: "BIOAVAILABILITY", val: "Enhanced Softgel", color: "#0284c7", bg: "rgba(2, 132, 199, 0.1)" },
     ],
     clinicalHighlights: [
       "Rapidly raises serum 25(OH)D to therapeutic levels",
@@ -129,11 +139,11 @@ export default function FormulationCardsShowcase() {
     : PRODUCTS.filter((p) => p.category === activeCategory);
 
   const categories = [
-    { label: "ALL FORMULATIONS", val: "ALL" },
-    { label: "GASTROENTEROLOGY", val: "GASTROENTEROLOGY" },
-    { label: "WOMEN'S HEALTH", val: "WOMEN'S HEALTH" },
-    { label: "CLINICAL NUTRITION", val: "CLINICAL NUTRITION" },
-    { label: "VITAMIN THERAPY", val: "VITAMIN THERAPY" },
+    { label: "ALL FORMULATIONS", val: "ALL", color: "var(--color-forest)" },
+    { label: "GASTROENTEROLOGY", val: "GASTROENTEROLOGY", color: "#10b981" },
+    { label: "WOMEN'S HEALTH", val: "WOMEN'S HEALTH", color: "#d6438c" },
+    { label: "CLINICAL NUTRITION", val: "CLINICAL NUTRITION", color: "#e08a2e" },
+    { label: "VITAMIN THERAPY", val: "VITAMIN THERAPY", color: "#2488a6" },
   ];
 
   return (
@@ -145,7 +155,7 @@ export default function FormulationCardsShowcase() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          gap: "10px",
+          gap: "12px",
           flexWrap: "wrap",
           marginBottom: "var(--space-12)",
         }}
@@ -157,15 +167,15 @@ export default function FormulationCardsShowcase() {
               key={cat.val}
               onClick={() => setActiveCategory(cat.val)}
               style={{
-                padding: "8px 18px",
+                padding: "10px 22px",
                 borderRadius: "30px",
                 fontSize: "11px",
                 fontWeight: "900",
                 letterSpacing: "0.12em",
-                border: isActive ? "1.5px solid var(--color-forest)" : "1px solid rgba(15, 61, 40, 0.15)",
-                background: isActive ? "var(--color-forest)" : "rgba(255, 255, 255, 0.8)",
+                border: isActive ? `2px solid ${cat.color}` : "1.5px solid rgba(15, 61, 40, 0.12)",
+                background: isActive ? cat.color : "rgba(255, 255, 255, 0.9)",
                 color: isActive ? "#ffffff" : "var(--color-forest-dark)",
-                boxShadow: isActive ? "0 8px 20px rgba(15, 61, 40, 0.2)" : "none",
+                boxShadow: isActive ? `0 8px 25px ${cat.color}44` : "0 4px 12px rgba(0,0,0,0.03)",
                 cursor: "pointer",
                 transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
               }}
@@ -176,7 +186,7 @@ export default function FormulationCardsShowcase() {
         })}
       </div>
 
-      {/* Grid of Interactive 3D Product Cards */}
+      {/* Grid of Colorful Interactive Product Cards */}
       <div
         style={{
           display: "grid",
@@ -192,10 +202,10 @@ export default function FormulationCardsShowcase() {
               key={prod.id}
               className="reveal"
               style={{
-                borderRadius: "24px",
-                background: "#ffffff",
-                border: `1.5px solid ${prod.glowColor}`,
-                boxShadow: `0 16px 45px rgba(0, 0, 0, 0.06), 0 0 25px ${prod.glowColor}15`,
+                borderRadius: "26px",
+                background: prod.cardGrad,
+                border: `2px solid ${prod.glowColor}`,
+                boxShadow: `0 20px 50px rgba(0, 0, 0, 0.07), 0 0 30px ${prod.glowColor}22`,
                 overflow: "hidden",
                 display: "flex",
                 flexDirection: "column",
@@ -204,10 +214,10 @@ export default function FormulationCardsShowcase() {
                 transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
               }}
             >
-              {/* Top Accent Bar */}
+              {/* Top Vibrant Accent Bar */}
               <div
                 style={{
-                  height: "5px",
+                  height: "6px",
                   width: "100%",
                   background: prod.categoryColor,
                 }}
@@ -216,46 +226,48 @@ export default function FormulationCardsShowcase() {
               <div style={{ padding: "28px" }}>
                 
                 {/* Header Badge Row */}
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "18px" }}>
                   <span
                     style={{
-                      fontSize: "10px",
+                      fontSize: "10.5px",
                       fontWeight: "900",
                       letterSpacing: "0.14em",
-                      color: prod.categoryColor,
-                      background: prod.brandTint,
-                      padding: "4px 12px",
-                      borderRadius: "14px",
-                      border: `1px solid ${prod.glowColor}`,
+                      color: "#ffffff",
+                      background: prod.badgeBg,
+                      padding: "5px 14px",
+                      borderRadius: "16px",
+                      boxShadow: `0 4px 14px ${prod.glowColor}`,
                       textTransform: "uppercase",
                     }}
                   >
                     {prod.category}
                   </span>
 
-                  <span style={{ fontSize: "10px", fontWeight: "800", color: "var(--color-gold)", letterSpacing: "0.08em" }}>
+                  <span style={{ fontSize: "10.5px", fontWeight: "900", color: prod.categoryColor, letterSpacing: "0.08em" }}>
                     ✦ {prod.badgeText}
                   </span>
                 </div>
 
-                {/* 3D Product Image & Title Split */}
+                {/* Product Image & Title Split */}
                 <div style={{ display: "flex", gap: "16px", alignItems: "center", marginBottom: "20px" }}>
                   <div style={{ flex: 1 }}>
-                    <h3 style={{ fontSize: "1.85rem", fontFamily: "var(--font-heading)", fontWeight: "900", color: "var(--color-forest-dark)", margin: 0, lineHeight: 1.1 }}>
-                      {prod.name} {prod.dosage && <small style={{ fontSize: "1rem", color: prod.categoryColor }}>{prod.dosage}</small>}
+                    <h3 style={{ fontSize: "1.9rem", fontFamily: "var(--font-heading)", fontWeight: "900", color: "var(--color-forest-dark)", margin: 0, lineHeight: 1.1 }}>
+                      {prod.name} {prod.dosage && <small style={{ fontSize: "1rem", color: prod.categoryColor, fontWeight: "800" }}>{prod.dosage}</small>}
                     </h3>
-                    <p style={{ fontSize: "0.82rem", fontWeight: "700", color: "var(--color-text-muted)", marginTop: "6px" }}>
+                    <p style={{ fontSize: "0.84rem", fontWeight: "700", color: "var(--color-forest)", marginTop: "6px", opacity: 0.95 }}>
                       {prod.generic}
                     </p>
                   </div>
 
-                  {/* Render Image Box */}
+                  {/* Render Image Box with Subtle Float */}
                   <div
                     style={{
-                      width: "90px",
-                      height: "90px",
-                      borderRadius: "18px",
-                      background: prod.brandTint,
+                      width: "95px",
+                      height: "95px",
+                      borderRadius: "20px",
+                      background: "rgba(255, 255, 255, 0.9)",
+                      border: `1.5px solid ${prod.glowColor}`,
+                      boxShadow: `0 10px 25px ${prod.glowColor}33`,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -270,33 +282,33 @@ export default function FormulationCardsShowcase() {
                         width: "100%",
                         height: "100%",
                         objectFit: "contain",
-                        filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.15))",
+                        filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.18))",
                       }}
                     />
                   </div>
                 </div>
 
                 {/* Description */}
-                <p style={{ fontSize: "0.92rem", color: "var(--color-text-muted)", lineHeight: "1.6", marginBottom: "20px" }}>
+                <p style={{ fontSize: "0.93rem", color: "var(--color-text-muted)", lineHeight: "1.65", marginBottom: "22px" }}>
                   {prod.description}
                 </p>
 
-                {/* Key Metrics Chips */}
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "20px" }}>
+                {/* Colorful Key Metrics Chips */}
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginBottom: "22px" }}>
                   {prod.metrics.map((m, idx) => (
                     <div
                       key={idx}
                       style={{
-                        padding: "10px 12px",
-                        borderRadius: "12px",
-                        background: "rgba(247, 244, 236, 0.8)",
-                        border: "1px solid rgba(15, 61, 40, 0.08)",
+                        padding: "12px 14px",
+                        borderRadius: "14px",
+                        background: m.bg,
+                        border: `1px solid ${m.color}33`,
                       }}
                     >
-                      <div style={{ fontSize: "9px", fontWeight: "900", letterSpacing: "0.1em", color: "var(--color-text-muted)", textTransform: "uppercase" }}>
+                      <div style={{ fontSize: "9.5px", fontWeight: "900", letterSpacing: "0.12em", color: m.color, textTransform: "uppercase" }}>
                         {m.label}
                       </div>
-                      <div style={{ fontSize: "1.05rem", fontWeight: "900", color: prod.categoryColor, fontFamily: "var(--font-heading)" }}>
+                      <div style={{ fontSize: "1.1rem", fontWeight: "900", color: m.color, fontFamily: "var(--font-heading)", marginTop: "2px" }}>
                         {m.val}
                       </div>
                     </div>
@@ -307,26 +319,27 @@ export default function FormulationCardsShowcase() {
                 {isExpanded && (
                   <div
                     style={{
-                      padding: "16px",
-                      borderRadius: "14px",
-                      background: "rgba(8, 30, 24, 0.95)",
+                      padding: "18px",
+                      borderRadius: "16px",
+                      background: "linear-gradient(145deg, #092820 0%, #0d3844 100%)",
                       color: "#ffffff",
                       marginBottom: "20px",
-                      animation: "fadeIn 0.3s ease-in-out",
+                      border: `1.5px solid ${prod.categoryColor}`,
+                      boxShadow: "0 12px 30px rgba(0,0,0,0.35)",
                     }}
                   >
                     <div style={{ fontSize: "10px", fontWeight: "900", letterSpacing: "0.14em", color: "var(--color-gold)", textTransform: "uppercase", marginBottom: "8px" }}>
                       ✦ CLINICAL HIGHLIGHTS
                     </div>
-                    <ul style={{ paddingLeft: "16px", margin: "0 0 12px 0", fontSize: "0.82rem", color: "rgba(255,255,255,0.9)", lineHeight: "1.5" }}>
+                    <ul style={{ paddingLeft: "16px", margin: "0 0 12px 0", fontSize: "0.83rem", color: "rgba(255,255,255,0.92)", lineHeight: "1.55" }}>
                       {prod.clinicalHighlights.map((hl, i) => (
-                        <li key={i} style={{ marginBottom: "4px" }}>{hl}</li>
+                        <li key={i} style={{ marginBottom: "5px" }}>{hl}</li>
                       ))}
                     </ul>
                     <div style={{ fontSize: "10px", fontWeight: "900", letterSpacing: "0.14em", color: prod.categoryColor, textTransform: "uppercase", marginBottom: "4px" }}>
                       MECHANISM OF ACTION
                     </div>
-                    <p style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.8)", margin: 0, lineHeight: "1.4" }}>
+                    <p style={{ fontSize: "0.81rem", color: "rgba(255,255,255,0.85)", margin: 0, lineHeight: "1.45" }}>
                       {prod.mechanism}
                     </p>
                   </div>
@@ -338,8 +351,9 @@ export default function FormulationCardsShowcase() {
               <div
                 style={{
                   padding: "16px 28px",
-                  background: "rgba(247, 244, 236, 0.5)",
-                  borderTop: "1px solid rgba(15, 61, 40, 0.08)",
+                  background: "rgba(255, 255, 255, 0.75)",
+                  backdropFilter: "blur(10px)",
+                  borderTop: `1px solid ${prod.glowColor}`,
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
@@ -348,7 +362,7 @@ export default function FormulationCardsShowcase() {
                 <button
                   onClick={() => setExpandedId(isExpanded ? null : prod.id)}
                   style={{
-                    fontSize: "11px",
+                    fontSize: "11.5px",
                     fontWeight: "800",
                     letterSpacing: "0.06em",
                     color: "var(--color-forest-dark)",
@@ -366,7 +380,7 @@ export default function FormulationCardsShowcase() {
                 <Link
                   href={prod.href}
                   style={{
-                    fontSize: "12px",
+                    fontSize: "12.5px",
                     fontWeight: "900",
                     color: prod.categoryColor,
                     display: "inline-flex",

@@ -5,6 +5,7 @@ import Link from "next/link";
 import SpineTab from "@/components/SpineTab";
 import DNAHelix3D from "@/components/DNAHelix3D";
 import FormulationCardsShowcase from "@/components/FormulationCardsShowcase";
+import SpecialtyFocusShowcase from "@/components/SpecialtyFocusShowcase";
 import { Badge } from "@/components/ui/badge-2";
 import { Button } from "@/components/ui/button-1";
 import { Card, CardContent, CardHeader, CardTitle, CardToolbar } from "@/components/ui/card";
@@ -314,7 +315,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══ 4. THERAPEUTIC DOMAINS (INTERACTIVE CARDS WITH CLINICAL PHOTOGRAPHY) ═══ */}
+        {/* ═══ 4. THERAPEUTIC DOMAINS (SPECIALTY FOCUS SHOWCASE) ═══ */}
         <section className="therapy-domains-section">
           <div className="container">
             <div style={{ textAlign: "center", maxWidth: "720px", margin: "0 auto var(--space-12)" }}>
@@ -325,90 +326,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="therapy-domains-grid">
-              
-              {/* Domain 1: Gastroenterology */}
-              <div className="therapy-domain-card reveal" style={{ borderTop: "4px solid var(--color-artemes)" }}>
-                <div className="domain-img-wrap">
-                  <img src="/assets/images/gastro-therapy.png" alt="Gastroenterology Science" className="domain-img" />
-                </div>
-                <div className="domain-body">
-                  <div>
-                    <span className="eyebrow-label" style={{ color: "var(--color-artemes)" }}>GASTROENTEROLOGY</span>
-                    <h3 style={{ fontSize: "1.45rem", marginBottom: "var(--space-3)", fontFamily: "var(--font-heading)" }}>
-                      Gut Mucosal Healing &amp; IBD
-                    </h3>
-                    <p style={{ fontSize: "0.9rem", color: "var(--color-text-muted)", lineHeight: "1.6" }}>
-                      Targeted, prolonged-release formulations for inflammatory bowel disease, ulcerative colitis, and mucosal recovery.
-                    </p>
-                    <div className="domain-stat-chip" style={{ background: "rgba(29, 158, 117, 0.12)", color: "var(--color-artemes)" }}>
-                      ✦ IBD REMISSION &amp; COLONIC RELEASE
-                    </div>
-                  </div>
-
-                  <div style={{ marginTop: "var(--space-6)" }}>
-                    <Link href="/therapy-areas/gastroenterology" style={{ fontWeight: 700, color: "var(--color-artemes)", display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                      Explore Gastroenterology →
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              {/* Domain 2: Women's Health */}
-              <div className="therapy-domain-card reveal" style={{ borderTop: "4px solid var(--color-saranya)" }}>
-                <div className="domain-img-wrap">
-                  <img src="/assets/images/womens-therapy.png" alt="Women's Health Science" className="domain-img" />
-                </div>
-                <div className="domain-body">
-                  <div>
-                    <span className="eyebrow-label" style={{ color: "var(--color-saranya)" }}>WOMEN&apos;S HEALTH</span>
-                    <h3 style={{ fontSize: "1.45rem", marginBottom: "var(--space-3)", fontFamily: "var(--font-heading)" }}>
-                      Hormonal &amp; Metabolic Balance
-                    </h3>
-                    <p style={{ fontSize: "0.9rem", color: "var(--color-text-muted)", lineHeight: "1.6" }}>
-                      Formulations supporting hormonal equilibrium in PCOS, ovulatory function, and metabolic wellness.
-                    </p>
-                    <div className="domain-stat-chip" style={{ background: "rgba(214, 67, 140, 0.12)", color: "var(--color-saranya)" }}>
-                      ✦ 40:1 PHYSIOLOGICAL INOSITOL RATIO
-                    </div>
-                  </div>
-
-                  <div style={{ marginTop: "var(--space-6)" }}>
-                    <Link href="/therapy-areas/womens-health" style={{ fontWeight: 700, color: "var(--color-saranya)", display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                      Explore Women&apos;s Health →
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              {/* Domain 3: Clinical Nutrition */}
-              <div className="therapy-domain-card reveal" style={{ borderTop: "4px solid var(--color-immunomars)" }}>
-                <div className="domain-img-wrap">
-                  <img src="/assets/images/nutrition-therapy.png" alt="Clinical Nutrition Science" className="domain-img" />
-                </div>
-                <div className="domain-body">
-                  <div>
-                    <span className="eyebrow-label" style={{ color: "var(--color-immunomars)" }}>CLINICAL NUTRITION</span>
-                    <h3 style={{ fontSize: "1.45rem", marginBottom: "var(--space-3)", fontFamily: "var(--font-heading)" }}>
-                      Immunonutrition &amp; Recovery
-                    </h3>
-                    <p style={{ fontSize: "0.9rem", color: "var(--color-text-muted)", lineHeight: "1.6" }}>
-                      Amino-acid and micronutrient immunonutrition engineered to support mucosal barrier integrity and post-illness recovery.
-                    </p>
-                    <div className="domain-stat-chip" style={{ background: "rgba(224, 138, 46, 0.12)", color: "var(--color-immunomars)" }}>
-                      ✦ MUCOSAL BARRIER REBUILD
-                    </div>
-                  </div>
-
-                  <div style={{ marginTop: "var(--space-6)" }}>
-                    <Link href="/therapy-areas/clinical-nutrition" style={{ fontWeight: 700, color: "var(--color-immunomars)", display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                      Explore Clinical Nutrition →
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+            <SpecialtyFocusShowcase />
           </div>
         </section>
 
